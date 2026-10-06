@@ -1,0 +1,12 @@
+[submodule "src/frontend"]
+	path = src/frontend
+	url = https://github.com/Wanderer2414/studitopia-frontend.git
+	branch = dev
+[submodule "src/backend"]
+	path = src/backend
+	url = https://github.com/Wanderer2414/studitopia-backend.git
+	branch = dev
+[submodule "src/database"]
+	path = src/database
+	url = https://github.com/Wanderer2414/studitopia-database.git
+	branch = dev
