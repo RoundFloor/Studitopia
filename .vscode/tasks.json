@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Markdown build",
+            "command": "output=\"${fileDirname}/../${fileDirnameBasename}.md\"; files=$(find \"${fileDirname}\" -maxdepth 1 -type f -name '*.md' -print); if [ -n \"$files\" ]; then find \"${fileDirname}\" -maxdepth 1 -type f -name '*.md' | sort | while read -r file; do cat \"$file\"; echo \"\"; done > \"$output\"; fi",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
