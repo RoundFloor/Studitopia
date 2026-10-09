@@ -18,15 +18,15 @@
 
 ## 2. Team Members and Roles
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [Name]
 
 | No. | Student ID | Full Name | Email | Primary Role |
 |:---:|:---:|---|---|---|
-| 1 | 24125024 | Nguyễn Thanh An | ntan2419@apcs.fitus.edu.vn | [To be assigned] |
-| 2 | 24125025 | Nguyễn Chí Bảo | ncbao2434@apcs.fitus.edu.vn | [To be assigned] |
-| 3 | 24125026 | Trần Nguyễn Khánh Bình | tnkbinh2414@apcs.fitus.edu.vn | [To be assigned] |
-| 4 | 24125048 | Trần Cảnh Anh Tuấn | tcatuan2413@apcs.fitus.edu.vn | [To be assigned] |
-| 5 | 24125100 | Nguyễn Lê Quốc Huy | nlqhuy2414@apcs.fitus.edu.vn | [To be assigned] |
+| 1 | 24125024 | Nguyễn Thanh An | ntan2419@apcs.fitus.edu.vn | Front-end Developer |
+| 2 | 24125025 | Nguyễn Chí Bảo | ncbao2434@apcs.fitus.edu.vn | Tester + AI Developer |
+| 3 | 24125026 | Trần Nguyễn Khánh Bình | tnkbinh2414@apcs.fitus.edu.vn | UI Designer |
+| 4 | 24125048 | Trần Cảnh Anh Tuấn | tcatuan2413@apcs.fitus.edu.vn | Database Manager |
+| 5 | 24125100 | Nguyễn Lê Quốc Huy | nlqhuy2414@apcs.fitus.edu.vn | Back-end Developer |
 
 All members are full-stack engineers. A primary role identifies an area of leadership and responsibility; it does not limit a member's participation in other areas. Every member participates in requirements, design, implementation, testing, documentation, and review.
 
@@ -257,3 +257,4 @@ By approving this contract, each member agrees to:
 | Version | Date | Changes | Approved By |
 |:---:|:---:|---|---|
 | 1.0 | 06/10/2026 | Initial team contract | Group 5 |
+| 2.0 | 09/10/2026 | Modify team contract | Group 5 |
