@@ -30,9 +30,49 @@ To understand more about the project we want to build, we investigated two follo
     
 **Performed by:** [Bao] | **Reviewed by:** [Name] | **Edited by:** [Name]
 
-## Studystream
+- Focusmate is a virtual coworking platform that allows you to work alongside another person in real time, helping you stay focused, motivated, and accountable while improving your productivity.
 
-**Performed by:** [Bao] | **Reviewed by:** [Name] | **Edited by:** [Name]
+- Link web: https://www.focusmate.com/
+
+- Focusmate is organized around sessions with the following features:
+    - **24/7 availability:** Sessions are available around the clock, with new sessions starting every 15 minutes
+    - **Flexible durations:** Each session can last 25, 50, or 75 minutes
+    - **Video calls and quiet mode:** Each session takes place over a video call, with the option to communicate via text and enable quiet mode
+    - **Advance booking:** Users can schedule sessions in advance by specifying the time, duration, task, and quiet mode preference
+    - **Calendar-based scheduling:** Users can select their preferred date and time directly from a calendar
+    - **Favorite users:** Users can mark other participants as favorites and prioritize matching with them when booking future sessions
+
+### Booking session
+
+![Session booking panel](./image/Focusmate/book_session.png)
+
+- To book a session, users follow these steps:
+    1. Choose the session duration
+    2. Specify the task they intend to work on
+    3. Choose whether to enable quiet mode
+    4. Choose whether to prioritize matching with favorite users
+    5. Select a session date using the date bar or calendar
+    6. Confirm the booking
+
+- Users can also select a specific date and time directly from the calendar.
+    - **Note:** When booking through the calendar, all other session settings remain consistent with the selections made in the session booking panel.
+
+![Calendear](./image/Focusmate/calendar.png)
+
+### Joining session:
+
+- Once a session is ready, user can join it:
+
+![Session joining](./image/Focusmate/join_session.png)
+
+- Before joining the video call, users can configure their camera, microphone, speakers, and background effects.
+    - Users can also turn off their camera or mute their microphone as needed.
+
+![Pre-session setup](./image/Focusmate/pre_session_setup.png)
+
+- After setup, users can join the video call:
+
+![Session](./image/Focusmate/session.png)
 
 ## Lifeat
 
