@@ -1,24 +1,8 @@
 # CS300 PA1 — Team Contract
 
-## 1. Team Information
+## 1. Team Members and Roles
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
-
-| Field | Details |
-|---|---|
-| **Course** | Elements of Software Engineering |
-| **Assignment** | PA1-2026 |
-| **Group** | Group 5 |
-| **Project** | Studitopia |
-| **Date** | 06/10/2026 |
-
-**Project Description:** Studitopia is a collaborative learning and social platform where learners create or join learning rooms based on their goals, interests, habits, and preferred environments. It provides communication, study tools, and social interaction through different room types, including self-study rooms, libraries, forums, help rooms, and customized rooms.
-
----
-
-## 2. Team Members and Roles
-
-**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 | No. | Student ID | Full Name | Email | Primary Role |
 |:---:|:---:|---|---|---|
@@ -32,14 +16,13 @@ All members are full-stack engineers. A primary role identifies an area of leade
 
 ---
 
-## 3. Communication Plan
+## 2. Communication Plan
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]**
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]**
 
 | Tool | Purpose |
 |---|---|
-| Moodle | Official assignment submission |
-| Moodle | Course announcements and discussion |
+| Moodle | Official assignment submission, course announcements and discussion |
 | Messenger, Discord | Team communication |
 | Jira | Task management |
 | GitHub | Source code and documentation |
@@ -48,15 +31,15 @@ All members are full-stack engineers. A primary role identifies an area of leade
 - Urgent issues should be acknowledged as soon as reasonably possible, preferably within **2 hours during normal availability**.
 - Members should notify the team when they will be unavailable for an extended period.
 - Important decisions and action items are recorded in the project workspace.
-- Conflicts follow the process defined in Section 8.
+- Conflicts follow the process defined in Section 7.
 
 ---
 
-## 4. Work Schedule and Scrum Process
+## 3. Work Schedule and Scrum Process
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
-The team follows the Scrum process required by PA1. Each Sprint includes:
+The team follows the Scrum process. Each Sprint includes:
 
 - **1 Sprint Planning meeting**
 - **2 Scrum meetings**
@@ -84,9 +67,9 @@ Each task:
 
 ---
 
-## 5. Code, Git, Documentation, and Testing Standards
+## 4. Code, Git, Documentation, and Testing Standards
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 ### Code
 
@@ -101,7 +84,7 @@ Each task:
 - All source code and Markdown documentation are version-controlled.
 - Use clear commit messages.
 - Significant changes should be reviewed before merging.
-- The repository remains private as required by PA1.
+- The repository remains private.
 
 ### Documentation
 
@@ -115,9 +98,9 @@ Testing is a shared responsibility. The team performs appropriate component/unit
 
 ---
 
-## 6. Accountability and Performance
+## 5. Accountability and Performance
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 Contribution is evaluated using evidence such as:
 
@@ -141,9 +124,9 @@ If a member repeatedly fails to participate or complete assigned work:
 
 ---
 
-## 7. Decision-Making
+## 6. Decision-Making
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 The team uses the following process:
 
@@ -155,9 +138,9 @@ The primary coordinator facilitates decisions but has no unilateral authority to
 
 ---
 
-## 8. Conflict Resolution
+## 7. Conflict Resolution
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 The team resolves conflicts as follows:
 
@@ -173,9 +156,9 @@ Personal attacks, harassment, deliberate exclusion, and withholding important pr
 
 ---
 
-## 9. AI-Assisted Development
+## 8. AI-Assisted Development
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 The team may use AI coding tools as development aids in accordance with the requirements and policies officially specified by CS300.
 
@@ -191,9 +174,9 @@ AI assistance does not transfer responsibility for the resulting work from the t
 
 ---
 
-## 10. Change and Risk Management
+## 9. Change and Risk Management
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 The team expects requirements and technical decisions to evolve during development.
 
@@ -209,9 +192,9 @@ Important changes are discussed before implementation. Risks and blockers are re
 
 ---
 
-## 11. Contract Review and Updates
+## 10. Contract Review and Updates
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 The contract is reviewed:
 
@@ -226,7 +209,7 @@ A contract change requires majority approval and must be recorded with its date 
 
 ## 12. Team Agreement
 
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Tuan] | **Reviewed by:** [An] | **Edited by:** [An]
 
 By approving this contract, each member agrees to:
 
@@ -247,14 +230,3 @@ By approving this contract, each member agrees to:
 | 3 | Trần Nguyễn Khánh Bình | 24125026 | Agreed |
 | 4 | Trần Cảnh Anh Tuấn | 24125048 | Agreed |
 | 5 | Nguyễn Lê Quốc Huy | 24125100 | Agreed |
-
----
-
-## 13. Revision History
-
-**Performed by:** [Tuan] | **Reviewed by:** [Name] | **Edited by:** [Name]
-
-| Version | Date | Changes | Approved By |
-|:---:|:---:|---|---|
-| 1.0 | 06/10/2026 | Initial team contract | Group 5 |
-| 2.0 | 09/10/2026 | Modify team contract | Group 5 |
