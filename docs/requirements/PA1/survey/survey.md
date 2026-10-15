@@ -22,15 +22,15 @@
     - Find friends who will study together with us
     - Share documents, material with community
     - Ask and answer question for studying problems
-    - Create group to learn with our friends
+    - Create group to learn with users' friends
 
 To understand more about the project we want to build, we investigated two following similar applications below:
 
 ## Focusmate
     
-**Performed by:** [Bao] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [Bao] | **Reviewed by:** [An] | **Edited by:** [An]
 
-- Focusmate is a virtual coworking platform that allows you to work alongside another person in real time, helping you stay focused, motivated, and accountable while improving your productivity.
+- Focusmate is a virtual coworking platform that allows users to work alongside another person in real time, helping you stay focused, motivated, and accountable while improving your productivity.
 
 - Link web: https://www.focusmate.com/
 
@@ -57,16 +57,16 @@ To understand more about the project we want to build, we investigated two follo
 - Users can also select a specific date and time directly from the calendar.
     - **Note:** When booking through the calendar, all other session settings remain consistent with the selections made in the session booking panel.
 
-![Calendear](./image/Focusmate/calendar.png)
+![Calendar](./image/Focusmate/calendar.png)
 
 ### Joining session:
 
-- Once a session is ready, user can join it:
+- Once a session is ready, users can join it:
 
 ![Session joining](./image/Focusmate/join_session.png)
 
 - Before joining the video call, users can configure their camera, microphone, speakers, and background effects.
-    - Users can also turn off their camera or mute their microphone as needed.
+    - They can also turn off their camera or mute their microphone as needed.
 
 ![Pre-session setup](./image/Focusmate/pre_session_setup.png)
 
@@ -76,9 +76,9 @@ To understand more about the project we want to build, we investigated two follo
 
 ## Lifeat
 
-**Performed by:** [An] | **Reviewed by:** [Name] | **Edited by:** [Name]
+**Performed by:** [An] | **Reviewed by:** [Bao] | **Edited by:** [An]
 
-- Lifeat is a platform that focus on self-studying that allows user to customized their learning space, create, manage and schedule tasks and take notes. Besides, they also support learning with friends and study in large meeting with strange people
+- Lifeat is a platform that focuses on self-studying that allows user to customize their learning space, create, manage and schedule tasks as well as take notes. Besides, it also support learning with friends and study in large meeting with strangers
 
 - Link web: https://lifeat.io/
 
@@ -91,7 +91,7 @@ To understand more about the project we want to build, we investigated two follo
 
 ![Focus mode screen](./image/Lifeat/focus_mode_screen.png)
 
-In this mode, each user move to their own virtual space (as the picture above). In this space, the platform provide these features:
+In this mode, each user enters their own virtual space (as the picture above). In this space, the platform provides following features:
 
 
 - Customize the background:
@@ -102,7 +102,7 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     ![Space Window](./image/Lifeat/space_window.png)
 
-    - We have two kinds of background: Videos which have space musics while images don't 
+    - There are two kinds of background: Videos background include ambient musics while images do not 
 
     ![Search spaces](./image/Lifeat/space_search.png)
 
@@ -112,7 +112,7 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     ![Watch favorite space](./image/Lifeat/space_favorite_list.png)
 
-    - Besides, if we want to store our favorite background later, we can click the hear icon on the top of background, then it will appear in the Favorites tab 
+    - Besides, if users want to store their favorite background later, they can click the heart icon on the top of background, then it will appear in the Favorites tab 
 
 - Customize the sound:
 
@@ -124,13 +124,13 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     - Then in the sound window, we can:
 
-        - Adjust the total volume (Master volume)
+        - Adjust the total volume (master volume)
 
         - Adjust the space volume 
 
-        - Insert Youtube music video link and adjust it volume
+        - Insert Youtube music video link and adjust its volume
 
-        - Choose the available ambiance sounds and adjust their volumes 
+        - Choose from the available ambiance sounds and adjust their volumes 
 
 - Integrate media:
 
@@ -144,7 +144,7 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     - Then the media window appears
 
-    - Insert link Youtube, Spotify or Apple Music to display our video or playlist
+    - Insert link Youtube, Spotify or Apple Music to display users' video or playlist
 
 - Manage task:
 
@@ -154,12 +154,11 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     ![Task window](./image/Lifeat/task_window.png)
 
-    - Then the task window appears
+    - The task window then appears
 
     ![Create a task](./image/Lifeat/task_create.png)
 
-    - To create a task, click on add task button, the new task appears
-    and we will name it
+    - To create a task, click on add task button. A new task appears and users give it a name
 
     ![Edit a task](./image/Lifeat/task_edit.png)
 
@@ -167,8 +166,8 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     ![Provide further information for a task 2](./image/Lifeat/task_info2.png)
 
-    - To provide further information for a task, we can do following:
-        - Click right mouse to display the option 
+    - To provide additional information for a task, we can do following steps:
+        - Right-click the task to display the option 
         - Choose edit option 
         - Provide the necessary information for the task
 
@@ -176,28 +175,28 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     ![Schedule a task](./image/Lifeat/task_schedule.png)
 
-    - Beside, provide time information for the task, we can schedule a task by drag the task into the Calendar window by click calendar button
+    - Beside, setting time information for a task, users can schedule it by drag the task into the Calendar window after clicking calendar button
 
 - Countdown timer
 
     ![Timer button](./image/Lifeat/timer_button.png)
 
-    - First, click on the timer icon in the left bar in the focus screen. We have three kind of countdown: Pomodoro (20 min), Short break(5 min), Long break (15 min) and three mode: Personal, Group, Task 
+    - First, click on the timer icon in the left bar in the focus screen. users have three types of countdown timers: Pomodoro (20 min), Short break(5 min), Long break (15 min) and three mode: Personal, Group, Task 
 
     ![Personal timer](./image/Lifeat/timer_personal.png)
 
-    - The personal task is used for only the user without specific task, this suits for those want to apply Pomodoro technique
+    - The personal timer is designed for individual use without being associated with a specific task. This mode is suitable for users who want to apply the Pomodoro Technique.
 
     ![Group timer](./image/Lifeat/timer_group.png)
 
-    - This mode is used when we learn with other people. When it is created, all people in the room can see this timer
+    - This mode is used when users learn with other people. When it is created, all people in the room can see this timer
 
     ![Task timer play](./image/Lifeat/timer_task_play.png) 
 
     ![Task timer countdown](./image/Lifeat/timer_task.png)
 
-    - When we want to create a timer for a specific task, we can press player button in the task on Calendar window
-    - Then the task timer countdown will appear
+    - To start a timer for a specific task, users can click the play button on the task in the calendar window.
+    - The task-specific countdown timer then appears.
 
 - Take notes
 
@@ -207,11 +206,11 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     ![Notes window](./image/Lifeat/notes_window.png)
 
-    - Then the Notes window appear, we can note and format the note such as bold, underline, ... by the function bar on the top
+    - Then the Notes window appears, users can write note and apply formatting the note such as bold, underline, ... by the function bar on the top
 
     ![Create a new note](./image/Lifeat/notes_create.png)
 
-    - We can create a new note by click on the top left corner of the Notes window then, it will display a panel which has New Note button 
+    - Users can create a new note by clicking in the top-left corner of the Notes window then, it will display a panel which has New Note button 
 
 - Learning with friends
 
@@ -221,29 +220,29 @@ In this mode, each user move to their own virtual space (as the picture above). 
 
     ![Link to invite](./image/Lifeat/invite_friend.png)
 
-    - After that, there is a invite friends window appears, we can send this link to our friend to invite them joining the our virtual space
+    - After that, an invitation window appears, users can send this link to their friend to invite them to join their virtual space
 
     ![Video call with friends](./image/Lifeat/video_call.png)
 
-    - When our friend join the room, we can make video call by click on the camera icon on the invite bar. The platform also allow us to share the screen with other people
+    - When their friend join the room, users can make video call by click on the camera icon on the invite bar. The platform also allows users to share their screens
 
     ![Chat with friends](./image/Lifeat/chat.png)
 
-    - We can chat with other people by text in the room via clicking the chat button on the right bottom corner 
+    - Users can send text messages to other participants in the room
 
 ### Explore mode
 
 ![Explore mode screen](./image/Lifeat/explore_mode_screen.png)
 
-In this mode, instead of self-studying or with friends, we can learn with strange people
+In this mode, instead of self-studying or with friends, users can study with strangers
 
-The platform has created some communities which are similar to our virtual space in focus mode but in this case, we learn with other people
+The platform provides communities that offer shared virtual study spaces similar to those in Focus mode.
 
 ### Plan mode
 
 ![Plan mode screen](./image/Lifeat/plan_mode_screen.png)
 
-In this mode, we can create and manage task which is similar to in the focus mode. Moreover, we can create and manage task in a project.
+In this mode, users can create and manage tasks, similar to the functionality available in Focus mode. Moreover, they can create and manage task in a project.
 
 - Create a project:
 
@@ -259,8 +258,23 @@ In this mode, we can create and manage task which is similar to in the focus mod
 
     ![Project manager tab](./image/Lifeat/project_manager.png)
 
-    - To add task, edit the description, ... we click right mouse on the project then press edit to display the project manager tab
+    - To add tasks, edit the description, or perform other actions, users can right-click the project then press edit to display the project manager tab
 
-    - Then we can adjust the information, manage task similar to focus mode
+    - Then they can adjust the information, manage task similar to focus mode
 
 ## Summary
+
+Focusmate and Lifeat are productivity platforms that help users maintain focus and improve their productivity through different approaches. Focusmate emphasizes virtual coworking and personal accountability, whereas Lifeat provides a customizable study environment with task management, scheduling, and collaborative learning features.
+
+Although Focusmate and Lifeat take different approaches to productivity, they share several important characteristics:
+
+- Focus-oriented experiences: Both platforms help users concentrate on their work or study activities
+
+- Collaborative learning and working: Both support interaction with other people. Focusmate matches users for scheduled coworking sessions, while Lifeat enables users to study with friends or participate in shared study spaces
+
+- Flexible work sessions: Both support structured periods of focused work, although their implementations differ. Focusmate uses predefined session durations, while Lifeat provides configurable countdown timers and different timer modes
+
+- User-controlled experiences: Both allow users to configure aspects of their experience. Focusmate provides session preferences, while Lifeat offers customizable backgrounds, sounds, and media.
+
+- Support for productivity routines: Both provide mechanisms that help users organize their time and maintain focus, although Lifeat offers more extensive task planning and scheduling functionality.
+
