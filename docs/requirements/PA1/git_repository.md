@@ -1,0 +1,345 @@
+## Repository structure:
+```
+.
+├── docs
+│   ├── analysis-and-design: System analysis, architecture, design diagrams, UML diagrams, and UI/UX design documents.
+│   ├── management: Project plans, schedules, task assignments, meeting notes, and progress reports.
+│   ├── requirements: Software requirements specifications, user stories, functional requirements, and non-functional requirements.
+│   │   ├── PAx: Documentation and deliverables for Project Assignment x
+│   │   │   ├── features
+│   │   │   ├── screenshot
+│   │   │   │   └── AI_coding accounts
+│   │   │   ├── survey
+│   │   │   │   └── image
+│   │   │   │       ├── Focusmate
+│   │   │   │       └── Lifeat
+│   │   │   └── weekly_report
+│   │   │       └── images
+│   │   └── proposal
+│   └── test
+└── src
+    ├── backend
+    ├── database
+    └── frontend
+        ├── public
+        └── src
+            └── assets
+```
+### Repository log
+```
+*   commit 08264a45daa8db8fdefa61dd2e9efa133d2bf9bb
+|\  Merge: 28b3249 1fa4069
+| | Author: Wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Oct 16 08:52:53 2026 +0700
+| | 
+| |     WIP on feature/automation-docs: 28b3249 Merge pull request #9 from RoundFloor/PA1/survey
+| | 
+| * commit 1fa40698b70fe8a5f72b9f7973f66dce436d3397
+|/  Author: Wanderer2414 <huynguyenlequoc13@gmail.com>
+|   Date:   Fri Oct 16 08:52:53 2026 +0700
+|   
+|       index on feature/automation-docs: 28b3249 Merge pull request #9 from RoundFloor/PA1/survey
+|   
+|    .agents/skills/speckit-analyze/SKILL.md          | 259 +++++
+|    .agents/skills/speckit-checklist/SKILL.md        | 383 ++++++++
+|    .agents/skills/speckit-clarify/SKILL.md          | 291 ++++++
+|    .agents/skills/speckit-constitution/SKILL.md     | 179 ++++
+|    .agents/skills/speckit-converge/SKILL.md         | 283 ++++++
+|    .agents/skills/speckit-implement/SKILL.md        | 226 +++++
+|    .agents/skills/speckit-plan/SKILL.md             | 166 ++++
+|    .agents/skills/speckit-specify/SKILL.md          | 345 +++++++
+|    .agents/skills/speckit-tasks/SKILL.md            | 215 +++++
+|    .agents/skills/speckit-taskstoissues/SKILL.md    | 117 +++
+|    .specify/.gitignore                              |  14 +
+|    .specify/init-options.json                       |  10 +
+|    .specify/integration.json                        |  15 +
+|    .specify/integrations/agy.manifest.json          |  17 +
+|    .specify/integrations/speckit.manifest.json      |  19 +
+|    .specify/memory/.constitution-template.json      |   4 +
+|    .specify/memory/constitution.md                  |  50 +
+|    .specify/scripts/bash/check-prerequisites.sh     | 243 +++++
+|    .specify/scripts/bash/common.sh                  | 942 +++++++++++++++++++
+|    .specify/scripts/bash/create-new-feature.sh      | 504 ++++++++++
+|    .specify/scripts/bash/resolve-template.sh        |  57 ++
+|    .specify/scripts/bash/setup-plan.sh              |  85 ++
+|    .specify/scripts/bash/setup-tasks.sh             |  94 ++
+|    .specify/templates/checklist-template.md         |  45 +
+|    .specify/templates/constitution-template.md      |  50 +
+|    .specify/templates/plan-template.md              | 113 +++
+|    .specify/templates/spec-template.md              | 131 +++
+|    .specify/templates/tasks-template.md             | 252 +++++
+|    .specify/workflows/speckit/workflow.yml          |  74 ++
+|    .specify/workflows/workflow-registry.json        |  13 +
+|    node_modules/.bin/opencode                       |   1 +
+|    node_modules/.package-lock.json                  |  64 ++
+|    node_modules/opencode-ai/LICENSE                 |  21 +
+|    node_modules/opencode-ai/bin/opencode.exe        | Bin 0 -> 185993344 bytes
+|    node_modules/opencode-ai/package.json            |  34 +
+|    node_modules/opencode-ai/postinstall.mjs         | 189 ++++
+|    .../opencode-linux-x64-baseline/bin/opencode     | Bin 0 -> 185993344 bytes
+|    .../opencode-linux-x64-baseline/package.json     |  11 +
+|    node_modules/opencode-linux-x64/bin/opencode     | Bin 0 -> 185993344 bytes
+|    node_modules/opencode-linux-x64/package.json     |  11 +
+|    40 files changed, 5527 insertions(+)
+|   
+*   commit 28b3249f271b9ca8a7d0bea41cd0b6ada1e6c338
+|\  Merge: 17a0be0 54b7781
+| | Author: Nah <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Oct 16 08:43:19 2026 +0700
+| | 
+| |     Merge pull request #9 from RoundFloor/PA1/survey
+| |     
+| |     Pa1/survey
+| | 
+| * commit 54b7781989b8028759038b4e446c28c7aeb692f4
+| | Author: Wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Oct 16 07:48:21 2026 +0700
+| | 
+| |     add: document of our enhancement and UI patterns resuse
+| | 
+| |  docs/requirements/PA1/survey.md        | 312 +++++++++++++++++++++++++++++
+| |  docs/requirements/PA1/survey/survey.md |  49 +++++
+| |  2 files changed, 361 insertions(+)
+| | 
+| * commit 5175b9a7d62175db0e9aea579a69b47cbcff3149
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Thu Oct 15 20:59:30 2026 +0700
+| | 
+| |     docs(PA1-survey): Review and update survey
+| | 
+| |  docs/requirements/PA1/survey/survey.md | 88 +++++++++++++++++-------------
+| |  1 file changed, 51 insertions(+), 37 deletions(-)
+| | 
+| * commit cebd4b8577513d3873a987eb679ed7328997cb23
+| | Author: bao2434 <ncbao2434@apcs.fitus.edu.vn>
+| | Date:   Sun Oct 11 14:30:48 2026 +0700
+| | 
+| |     docs (PA1-survey): add Focusmate content to survey
+| | 
+| |  .../PA1/survey/image/Focusmate/book_session.png  | Bin 0 -> 117090 bytes
+| |  .../PA1/survey/image/Focusmate/calendar.png      | Bin 0 -> 292086 bytes
+| |  .../PA1/survey/image/Focusmate/join_session.png  | Bin 0 -> 43112 bytes
+| |  .../survey/image/Focusmate/pre_session_setup.png | Bin 0 -> 88149 bytes
+| |  .../PA1/survey/image/Focusmate/session.png       | Bin 0 -> 75615 bytes
+| |  docs/requirements/PA1/survey/survey.md           |  44 ++++++++++++++++++-
+| |  6 files changed, 42 insertions(+), 2 deletions(-)
+| | 
+| * commit 4ea84f71dfce3eb2f2877bb44d3de1db1361bc70
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Sun Oct 11 00:21:22 2026 +0700
+| | 
+| |     docs(PA1): create survey for Lifeat app
+| | 
+| |  .../PA1/survey/image/Lifeat/calendar_button.png  | Bin 0 -> 2045 bytes
+| |  .../PA1/survey/image/Lifeat/chat.png             | Bin 0 -> 55130 bytes
+| |  .../survey/image/Lifeat/explore_mode_screen.png  | Bin 0 -> 1024798 bytes
+| |  .../survey/image/Lifeat/focus_mode_screen.png    | Bin 0 -> 2685300 bytes
+| |  .../PA1/survey/image/Lifeat/invite_button.png    | Bin 0 -> 3264 bytes
+| |  .../PA1/survey/image/Lifeat/invite_friend.png    | Bin 0 -> 12648 bytes
+| |  .../PA1/survey/image/Lifeat/media_button.png     | Bin 0 -> 1637 bytes
+| |  .../PA1/survey/image/Lifeat/media_video.png      | Bin 0 -> 119130 bytes
+| |  .../PA1/survey/image/Lifeat/media_window.png     | Bin 0 -> 28615 bytes
+| |  .../PA1/survey/image/Lifeat/notes_button.png     | Bin 0 -> 1709 bytes
+| |  .../PA1/survey/image/Lifeat/notes_create.png     | Bin 0 -> 10751 bytes
+| |  .../PA1/survey/image/Lifeat/notes_window.png     | Bin 0 -> 8948 bytes
+| |  .../PA1/survey/image/Lifeat/plan_mode_screen.png | Bin 0 -> 23608 bytes
+| |  .../PA1/survey/image/Lifeat/plan_project.png     | Bin 0 -> 17901 bytes
+| |  .../PA1/survey/image/Lifeat/project_create.png   | Bin 0 -> 21159 bytes
+| |  .../PA1/survey/image/Lifeat/project_edit.png     | Bin 0 -> 10461 bytes
+| |  .../PA1/survey/image/Lifeat/project_manager.png  | Bin 0 -> 21115 bytes
+| |  .../PA1/survey/image/Lifeat/sound_button.png     | Bin 0 -> 1822 bytes
+| |  .../PA1/survey/image/Lifeat/sound_window.png     | Bin 0 -> 39190 bytes
+| |  .../PA1/survey/image/Lifeat/space_button.png     | Bin 0 -> 2361 bytes
+| |  .../PA1/survey/image/Lifeat/space_favorite.png   | Bin 0 -> 355928 bytes
+| |  .../survey/image/Lifeat/space_favorite_list.png  | Bin 0 -> 18982 bytes
+| |  .../PA1/survey/image/Lifeat/space_search.png     | Bin 0 -> 413398 bytes
+| |  .../PA1/survey/image/Lifeat/space_window.png     | Bin 0 -> 372873 bytes
+| |  .../PA1/survey/image/Lifeat/task_button.png      | Bin 0 -> 1384 bytes
+| |  .../PA1/survey/image/Lifeat/task_create.png      | Bin 0 -> 9233 bytes
+| |  .../PA1/survey/image/Lifeat/task_edit.png        | Bin 0 -> 12507 bytes
+| |  .../PA1/survey/image/Lifeat/task_info1.png       | Bin 0 -> 16981 bytes
+| |  .../PA1/survey/image/Lifeat/task_info2.png       | Bin 0 -> 17532 bytes
+| |  .../PA1/survey/image/Lifeat/task_schedule.png    | Bin 0 -> 11137 bytes
+| |  .../PA1/survey/image/Lifeat/task_window.png      | Bin 0 -> 7607 bytes
+| |  .../PA1/survey/image/Lifeat/timer_button.png     | Bin 0 -> 1706 bytes
+| |  .../PA1/survey/image/Lifeat/timer_group.png      | Bin 0 -> 10418 bytes
+| |  .../PA1/survey/image/Lifeat/timer_personal.png   | Bin 0 -> 10241 bytes
+| |  .../PA1/survey/image/Lifeat/timer_task.png       | Bin 0 -> 8268 bytes
+| |  .../PA1/survey/image/Lifeat/timer_task_play.png  | Bin 0 -> 65360 bytes
+| |  .../PA1/survey/image/Lifeat/video_call.png       | Bin 0 -> 193776 bytes
+| |  docs/requirements/PA1/survey/survey.md           | 226 +++++++++++++++++++
+| |  38 files changed, 226 insertions(+)
+| |   
+* |   commit 17a0be02a9257bfabaa5e9b43464e55f338fe98b
+|\ \  Merge: 065819c d194c51
+| | | Author: Nah <huynguyenlequoc13@gmail.com>
+| | | Date:   Fri Oct 16 07:59:34 2026 +0700
+| | | 
+| | |     Merge pull request #8 from RoundFloor/docs/PA1/screenshot
+| | |     
+| | |     docs(PA1): Add screenshot for PA1
+| | | 
+| * | commit d194c51f4acefa70b9defe3ec803c60f914a179a
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Thu Oct 15 23:29:21 2026 +0700
+| | | 
+| | |     docs(PA1): Add screenshot for PA1
+| | | 
+| | |  .../screenshot/AI_coding accounts/23125026.png   | Bin 0 -> 169067 bytes
+| | |  .../screenshot/AI_coding accounts/24125025.png   | Bin 0 -> 272385 bytes
+| | |  .../screenshot/AI_coding accounts/24125048.png   | Bin 0 -> 122823 bytes
+| | |  .../screenshot/AI_coding accounts/24125100.png   | Bin 0 -> 104635 bytes
+| | |  .../PA1/screenshot/jira_screenshot.jpeg          | Bin 0 -> 73736 bytes
+| | |  5 files changed, 0 insertions(+), 0 deletions(-)
+| | |   
+* | |   commit 065819cf69a690c8c5f99f56f6959c75c653ed5d
+|\ \ \  Merge: b3c76f9 e5e4279
+| | | | Author: Nah <huynguyenlequoc13@gmail.com>
+| | | | Date:   Fri Oct 16 07:56:33 2026 +0700
+| | | | 
+| | | |     Merge pull request #6 from RoundFloor/docs/PA1/weekly_report
+| | | |     
+| | | |     docs: Add Sprint 1 weekly report
+| | | | 
+| * | | commit e5e42795a20c6e9dfffb3ba8887a1236bf9128ca
+| |/ /  Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | |   Date:   Thu Oct 15 23:11:09 2026 +0700
+| | |   
+| | |       docs: Add Sprint 1 weekly report
+| | |   
+| | |    .../weekly_report/images/week1_jira_task.jpeg | Bin 0 -> 97267 bytes
+| | |    .../weekly_report/images/week2_jira_task.jpeg | Bin 0 -> 117716 bytes
+| | |    .../PA1/weekly_report/weekly_report1.md       | 107 ++++++++++++++++
+| | |    .../PA1/weekly_report/weekly_report2.md       | 116 ++++++++++++++++++
+| | |    4 files changed, 223 insertions(+)
+| | |   
+* | |   commit b3c76f99327c9863119a8656c36f8f04a255061b
+|\ \ \  Merge: 281cd07 8af9c3a
+| | | | Author: Nah <huynguyenlequoc13@gmail.com>
+| | | | Date:   Fri Oct 16 07:50:01 2026 +0700
+| | | | 
+| | | |     Merge pull request #5 from RoundFloor/PA1/contract
+| | | |     
+| | | |     Pa1/contract
+| | | | 
+| * | | commit 8af9c3a1c4441e6488c5504363bd6d4d791c0b33
+| | |/  Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| |/|   Date:   Thu Oct 15 21:52:00 2026 +0700
+| | |   
+| | |       docs: Review and edit Team Contract
+| | |   
+| | |    docs/requirements/PA1/contract.md | 80 ++++++++++---------------------
+| | |    1 file changed, 26 insertions(+), 54 deletions(-)
+| | | 
+| * | commit 97da91a8def3f41e9cbe80756ca68a4a492a738a
+| | | Author: Tuan <tuan06nbk@gmail.com>
+| | | Date:   Fri Oct 9 10:38:45 2026 +0700
+| | | 
+| | |     modify: Review and assign team role and some changes
+| | | 
+| | |  docs/requirements/PA1/contract.md | 13 +++++++------
+| | |  1 file changed, 7 insertions(+), 6 deletions(-)
+| | | 
+| * | commit 46b28a651fb835aae3f4ad7bb10f40885484d126
+| |/  Author: Tuan <tuan06nbk@gmail.com>
+| |   Date:   Fri Oct 9 10:12:31 2026 +0700
+| |   
+| |       add: Contract for PA1
+| |   
+| |    docs/requirements/PA1/contract.md | 259 ++++++++++++++++++++++++++++++++
+| |    1 file changed, 259 insertions(+)
+| |   
+* |   commit 281cd07341a07ab262b74d987b85abbefa36f1bf
+|\ \  Merge: be1f0c2 e6b8cf8
+| | | Author: Wanderer2414 <huynguyenlequoc13@gmail.com>
+| | | Date:   Thu Oct 15 23:29:07 2026 +0700
+| | | 
+| | |     Merge remote-tracking branch 'origin/PA1/feature-others' into dev
+| | | 
+| * | commit e6b8cf895a7f1bf75003ab68919d63bbb04af057
+| |/  Author: Wanderer2414 <huynguyenlequoc13@gmail.com>
+| |   Date:   Tue Oct 13 09:15:08 2026 +0700
+| |   
+| |       add: document of introduction, target users and ai feature
+| |   
+| |    docs/requirements/PA1/features.md               | 31 +++++++++++++++++++
+| |    docs/requirements/PA1/features/0-title.md       |  1 +
+| |    .../requirements/PA1/features/1-introduction.md | 10 ++++++
+| |    .../PA1/features/3-targetuser-platform.md       |  9 ++++++
+| |    docs/requirements/PA1/features/5-ai-feature.md  | 10 ++++++
+| |    5 files changed, 61 insertions(+)
+| |   
+* |   commit be1f0c2f7e63a3cf02f879f9856cc32e2bc2517e
+|\ \  Merge: affe9a2 0697458
+| |/  Author: Nah <huynguyenlequoc13@gmail.com>
+|/|   Date:   Thu Oct 15 23:26:33 2026 +0700
+| |   
+| |       Merge pull request #3 from RoundFloor/PA1/feature-key
+| |       
+| |       Pa1/feature key
+| | 
+| * commit 06974583dd621e8d0c482905b1f732c5d3f7c974
+| | Author: KanbeMatt <khanhbinh08062006@gmail.com>
+| | Date:   Tue Oct 13 22:18:36 2026 +0700
+| | 
+| |     add: document of key features
+| | 
+| |  docs/requirements/PA1/features.md                |  1 +
+| |  docs/requirements/PA1/features/4-key-features.md | 31 ++++++++++++++++++++
+| |  2 files changed, 32 insertions(+)
+| | 
+| * commit 56843af1899e7c27479e3ce88eb89120aeb7b49b
+|/  Author: KanbeMatt <khanhbinh08062006@gmail.com>
+|   Date:   Tue Oct 13 09:19:31 2026 +0700
+|   
+|       add: initial key features
+|   
+|    docs/requirements/PA1/features/4-key-features.md | 0
+|    1 file changed, 0 insertions(+), 0 deletions(-)
+|   
+| * commit 9fd798cdb0f5360ef300b527c333f68deb943ab0
+|/  Author: Wanderer2414 <huynguyenlequoc13@gmail.com>
+|   Date:   Tue Oct 13 23:12:59 2026 +0700
+|   
+|       add: document for selection of backend platform
+|   
+|    docs/requirements/backend-platform-selection.md  | 937 +++++++++++++++++++
+|    .../1-backend-platform-selection.md              | 461 +++++++++
+|    .../2-backend-comparision.md                     | 477 ++++++++++
+|    3 files changed, 1875 insertions(+)
+| 
+* commit affe9a2472dad57b8974aeb4c45b2b288ebf4d9b
+| Author: Wanderer2414 <nlqhuy2414@apcs.fitus.edu.vn>
+| Date:   Thu Oct 8 12:58:27 2026 +0700
+| 
+|     add: initial docs
+| 
+|  .vscode/tasks.json                                | 22 +++++++++++++++++++++
+|  docs/requirements/proposal.md                     |  4 ++++
+|  docs/requirements/proposal/1-overview.md          |  0
+|  docs/requirements/proposal/2-userstory.md         |  0
+|  .../proposal/3-functional-requirement.md          |  0
+|  .../proposal/4-nonfunctional-requirement.md       |  0
+|  6 files changed, 26 insertions(+)
+| 
+* commit 13b0b1c3e96246d7e65bcf0e23f0dadd889120ba
+| Author: Wanderer2414 <nlqhuy2414@apcs.fitus.edu.vn>
+| Date:   Tue Oct 6 18:59:53 2026 +0700
+| 
+|     add: frontend, backend, database modules
+| 
+|  .gitmodules  | 12 ++++++++++++
+|  src/backend  |  1 +
+|  src/database |  1 +
+|  src/frontend |  1 +
+|  4 files changed, 15 insertions(+)
+| 
+* commit f7268870c512fb057fdbd20ea5aa29217cdab064
+  Author: Nah <huynguyenlequoc13@gmail.com>
+  Date:   Tue Oct 6 06:30:07 2026 +0700
+  
+      Initial commit
+  
+   LICENSE | 373 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   1 file changed, 373 insertions(+)
+```
