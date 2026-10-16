@@ -278,3 +278,52 @@ Although Focusmate and Lifeat take different approaches to productivity, they sh
 
 - Support for productivity routines: Both provide mechanisms that help users organize their time and maintain focus, although Lifeat offers more extensive task planning and scheduling functionality.
 
+### Our Proposal and Enhancements
+
+Based on the available features of Focusmate and Lifeat, we observe and adapt the following features to our application:
+
+- **Quiet Mode and Communication:**
+  - Enhance Quiet Mode by allowing students to send hand-wave requests to initiate conversations without unnecessarily interrupting others.
+  - Require recipients to accept interaction requests before communication begins, giving students greater control over their focus and availability.
+
+- **Learning Room Structure:**
+  - Enhance existing virtual study spaces by supporting multiple tables within a shared room, allowing students to study independently or alongside others.
+  - Allow students to create dynamic groups with customizable sizes, each with independent voice communication, text chat, and collaboration tools.
+
+- **Friend System:**
+  - Extend the existing favorite-user and friend-invitation features into a persistent friend system that supports sending, accepting, and managing friend requests.
+  - Allow students to create messaging groups and share learning documents, supporting long-term collaboration beyond individual study sessions.
+
+- **Planning and Scheduling:**
+  - Extend existing scheduling features by integrating study plans with learning room creation and organization.
+  - Allow students to create rooms around specific subjects, tasks, or schedules, helping them coordinate collaborative learning activities more effectively.
+
+Moreover, we propose the following new features to better support our application's purpose:
+
+- **University-based Communities:**
+  - Organize students into university-specific communities, restricting public learning rooms to eligible students from participating universities.
+  - Allow students to create private rooms for their own study groups, providing greater control over room access.
+
+- **Learning Assistance:**
+  - Introduce voice-based help requests so students can seek assistance from other learners when encountering difficult concepts.
+  - Provide a discussion forum where students can post questions, share problems, and receive answers asynchronously, supporting peer-to-peer learning without requiring real-time interaction.
+
+- **Study Partner Recommendations:**
+  - Recommend potential study partners based on similar learning interests and study schedules.
+  - Allow room owners to review and approve participation requests from recommended learners, providing greater control over group composition.
+
+### UI/UX Patterns We Plan to Adopt from Focusmate and LifeAt
+
+To reduce the time required to design a new UI/UX for our application, we decided to reuse and adapt existing UI patterns from LifeAt, enhancing them to meet our application's specific requirements.
+
+First, we will adopt LifeAt's Explore mode as the foundation for our home page. Its clear sidebar navigation and content organized into separate sections with category filters make it easy for users to explore available spaces. However, because our application focuses on collaborative learning, we will adapt this layout to display available learning rooms, organizing them by university and using a hierarchical structure to help students navigate from universities to communities and individual rooms.
+
+![Explore mode screen](./image/Lifeat/explore_mode_screen.png)
+
+Second, we will adopt LifeAt's compact vertical toolbar to provide quick access to tools within a learning room. Placing tool icons in a small sidebar allows students to select features conveniently without occupying too much screen space. We will adapt this pattern to provide access to tools such as the whiteboard, notes, voice communication, and sound controls, allowing students to collaborate while keeping the main learning area visible.
+
+![Focus mode screen](./image/Lifeat/focus_mode_screen.png)
+
+Finally, we will adopt LifeAt's sound settings panel as a reference for managing room parameters. Its organized sections, volume sliders, and individual mute controls make audio settings easy to understand and adjust. We will extend this pattern to support different audio settings, including overall room volume, table or group volume, microphone volume, and the volume of other participants. Room managers and regular users will have access to the settings permitted by their roles, ensuring convenient audio control while maintaining appropriate room permissions.
+
+![Sound window](./image/Lifeat/sound_window.png)
