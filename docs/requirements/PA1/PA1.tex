@@ -9,6 +9,9 @@
 \usepackage{url}
 \usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
 
+\usepackage{fontspec}
+\usepackage[vietnamese]{babel}
+
 
 % For algorithm
 \usepackage{algorithm}
@@ -17,6 +20,20 @@
 % ============ CODE ============
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\setmonofont{DejaVu Sans Mono}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    literate=
+        {├}{{\symbol{"251C}}}1
+        {│}{{\symbol{"2502}}}1
+        {└}{{\symbol{"2514}}}1
+        {─}{{\symbol{"2500}}}1
+}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -76,7 +93,7 @@
 
 \newcommand{\studentname}{%
 Nguyễn Thanh An (24125024)\\
-Nguyễn Chi Bao (24125025)\\
+Nguyễn Chí Bảo (24125025)\\
 Trần Nguyễn Khánh Bình (24135026)\\
 Trần Cảnh Anh Tuấn (24125048)\\
 Nguyễn Lê Quốc Huy (24125100)}
@@ -883,6 +900,11 @@ Each task:
     \item Is marked complete only when the work is actually finished.
 \end{itemize}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{screenshot/jira-backlog.png}
+\end{figure}
+
 \subsubsection{Deadlines and Delays}
 
 \begin{itemize}
@@ -914,6 +936,11 @@ Each task:
     \item Significant changes should be reviewed before merging.
     \item The repository remains private.
 \end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{screenshot/git-graph.png}
+\end{figure}
 
 \subsubsection{Documentation}
 
@@ -1002,6 +1029,10 @@ Members must:
 \end{itemize}
 
 AI assistance does not transfer responsibility for the resulting work from the team member to the AI tool.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{screenshot/AI_coding_accounts/24125026.png}
+\end{figure}
 
 \subsection{9. Change and Risk Management}
 
@@ -1036,7 +1067,7 @@ The contract is reviewed:
 
 A contract change requires majority approval and must be recorded with its date and revision history. The latest approved version replaces previous versions.
 
-\subsection{12. Team Agreement}
+\subsection{12. Team Agreements}
 
 \textbf{Performed by:} [Tuan] | \textbf{Reviewed by:} [An] | \textbf{Edited by:} [An]
 
