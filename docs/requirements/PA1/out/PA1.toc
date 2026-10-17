@@ -1,0 +1,46 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {section}{\numberline {1}Project Proposal}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Target Users:}{1}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Usage Environments: Web Browser}{2}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}Key features}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}1. Authentication and User Management}{2}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}2. User Profile and Learning Preferences}{2}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}3. Room Discovery and Matching}{2}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}4. Room Creation and Participation}{2}{subsubsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.5}5. Shared Collaborative Learning Tools}{3}{subsubsection.1.3.5}%
+\contentsline {subsubsection}{\numberline {1.3.6}6. Room Communication}{3}{subsubsection.1.3.6}%
+\contentsline {subsubsection}{\numberline {1.3.7}7. Multi Channel Learning Help System}{3}{subsubsection.1.3.7}%
+\contentsline {subsubsection}{\numberline {1.3.8}8. Friends and Social Networking}{3}{subsubsection.1.3.8}%
+\contentsline {subsubsection}{\numberline {1.3.9}9. Documents, Library, and Forum}{3}{subsubsection.1.3.9}%
+\contentsline {subsubsection}{\numberline {1.3.10}10. Notifications, Moderation, and Safety}{4}{subsubsection.1.3.10}%
+\contentsline {subsection}{\numberline {1.4}AI Features: AI-Based Learner Matching and Recommendations}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Existing App Survey}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Focusmate}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Booking session}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Joining session:}{7}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Lifeat}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Focus mode}{10}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Explore mode}{28}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Plan mode}{29}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Summary}{32}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}What Our Proposed App Will Do Differently or Better}{33}{subsubsection.2.3.1}%
+\contentsline {section}{\numberline {3}Team Contract}{35}{section.3}%
+\contentsline {subsection}{\numberline {3.1}1. Team Members and Roles}{35}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}2. Communication Plan}{35}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}3. Work Schedule and Scrum Process}{36}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Task Management}{36}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Deadlines and Delays}{37}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}4. Code, Git, Documentation, and Testing Standards}{37}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Code}{37}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Git}{37}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Documentation}{38}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Testing}{38}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}5. Accountability and Performance}{38}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}6. Decision-Making}{39}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}7. Conflict Resolution}{40}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}8. AI-Assisted Development}{40}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}9. Change and Risk Management}{41}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}10. Contract Review and Updates}{41}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}12. Team Agreement}{42}{subsection.3.11}%
+\contentsline {subsubsection}{\numberline {3.11.1}Approval}{42}{subsubsection.3.11.1}%
