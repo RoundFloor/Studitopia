@@ -92,17 +92,17 @@ Constraints:
 
 ### 3.1 Organizational Structure
 
-Describe the organizational structure of the project team, including management and other review authorities.
+The project manager will create tasks in Jira and assigns to team members. There is also another member to review the work for each task. The review authorities for each tasks are also assigned by the project managers. All memebers work as full-stack developer, but each has specialist at one aspect, including front-end, tester, AI, UI design, database, and back-end. The member specialized one aspect will propose the overall structure and methods for implementing task relating to that aspect. Then, all members discuss to validate the proposed ideas.
 
 ### 3.2 Roles and Responsibilities
 
-Identify the project organizational units that will be responsible for each of the disciplines, workflow details, and supporting processes.
-
 | Person | Role |
 |--------|------|
-|  |  |
-
-Responsible for maintaining the Project web site, assisting the Project Manager role in planning/scheduling activities, and assisting the Change Control Manager role in controlling changes to artifacts. May also provide assistance to other roles as necessary.
+| Nguyễn Thanh An | Front-end Developer: Responsible for proposing methods to implement UI, designing UI components and their relations |
+| Nguyễn Chí Bảo | Tester + AI Developer: Responsible for designing tests and architecture of AI server, researching suitable AI models suitable for available hardware, designing process to effectively and concurrently process data from multiple users using AI |
+| Trần Nguyễn Khánh Bình | UI Designer: Responsible for designing the overall looking of UI including its components and pages alongside with its workflow |
+| Trần Cảnh Anh Tuấn | Database Manager: Responsible for determining EER model, then establishing the relational schema while ensuring approriate normal form and usability |
+| Nguyễn Lê Quốc Huy | Back-end Developer: Responsible for designing back-end API, communication with front-end, connection with database and AI server |
 
 ## 4. Management Process
 **Performed by:** [An] | **Reviewed by:** [Huy] | **Edited by:** []
