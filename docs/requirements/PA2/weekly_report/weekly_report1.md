@@ -92,4 +92,4 @@ No member is absent
 
 ### The tasks assigned after the meeting (screenshot)
 
-![Jira task screenshot](./images/week2_jira_task.jpeg)  
+![Jira task screenshot](./images/week1_jira_task.png)  
