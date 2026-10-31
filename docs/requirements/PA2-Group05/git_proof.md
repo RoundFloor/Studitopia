@@ -1286,6 +1286,7 @@
 ```
 # Studitopia-database:
 
+```
 * commit 52d61d4d87025d8694d7e70f955bf1a2a616d4b5
 | Author: Tuan <tuan06nbk@gmail.com>
 | Date:   Mon Oct 26 17:55:41 2026 +0700
@@ -1475,3 +1476,4 @@
    README.md | 1 +
    1 file changed, 1 insertion(+)
 
+```
