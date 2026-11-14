@@ -154,7 +154,7 @@ The project reuses existing infrastructure and open-source technologies, so the 
 
 | Item | Estimated Cost | Explanation |
 | --- | ---: | --- |
-| Server / Hosting | 0 VND | Our group owns a server for hosting. |
+| Server / Hosting | 0 VND | Our group hosts a server on our laptop. |
 | Domain | 0 VND | Domain has already been purchased. |
 | File Storage | 0 VND | Existing storage is available on the server. |
 | Database (PostgreSQL) | 0 VND | Open-source database. |
@@ -167,14 +167,14 @@ Additional costs may arise if the existing server or storage cannot handle the e
 
 #### Estimated Schedule
 
-The project is expected to take **12 weeks**, divided into five sprints. Sprint 1 and Sprint 2 are frozen. Sprint 3 is the current sprint.
+The project is expected to take **12 weeks**, divided into five sprints. Sprint 1 and Sprint 2 are done and frozen. Sprint 3 is the current sprint.
 
 | Sprint | Duration | Main Activities |
 | --- | --- | --- |
 | Sprint 1 | Week 1-3 | **Frozen:** Requirement analysis, system architecture, database design, and project setup. |
 | Sprint 2 | Week 4-5 | **Frozen:** Authentication, user profiles, and university management. |
 | Sprint 3 | Week 6-8 | **Current:** Complete authentication function groups and part of Forum Post. |
-| Sprint 4 | Week 9-10 | Complete Forum and post features, Learning Resource Library, and Friend and Group Management. |
+| Sprint 4 | Week 9-10 | Complete Forum and post features, Learning Resource Library, and Friend and Group Management and inclusion of AI-powered featured. |
 | Sprint 5 | Week 11-12 | Basic meeting rooms at middle level, notifications, integration testing, performance testing, bug fixing, and deployment. |
 
 #### Re-estimation Situation
@@ -221,6 +221,7 @@ The project is planned for **12 weeks**, divided into five sprints. Sprint 1 and
 | Learning Resource Library and File Search | | | | x | |
 | Friend and Group Management | | | | x | |
 | Basic Meeting Rooms (middle level) | | | | | x |
+| AI-powered features | | | | x | |
 | Notifications | | | | | x |
 | Integration Testing | | | | | x |
 | Performance Testing | | | | | x |
@@ -231,7 +232,7 @@ After these sprints, the project must achieve the major milestones below with th
 - **Project foundation completion:** Requirements, architecture, database design, and development environment are ready. (Sprint 1, frozen)
 - **User management completion:** Users can register, log in, manage profiles, and access university-related features. (Sprint 2, frozen)
 - **Authentication and forum foundation completion:** Authentication function groups are complete, and the basic Forum Post workflow is available. (Sprint 3)
-- **Core platform completion:** Forum posts, interactions, search, recommendations, library, and social features work correctly. (Sprint 4)
+- **Core platform completion:** Forum posts, interactions, search, recommendations, library, social features and AI-powered features work correctly. (Sprint 4)
 - **MVP completion:** Basic meeting rooms, notifications, integration testing, performance testing, bug fixing, and deployment are complete. (Sprint 5)
 
 Corresponding with each milestone, the following demos must be released:
@@ -240,7 +241,7 @@ Corresponding with each milestone, the following demos must be released:
 | --- | --- | --- |
 | User Management Demo | End of Week 5 | Demonstrate authentication, user profiles, and university management. (Frozen) |
 | Forum Foundation Demo | End of Week 8 | Demonstrate completed authentication and the basic Forum Post workflow. |
-| Core Platform Demo | End of Week 10 | Demonstrate completed forum, posts, library, search, recommendations, and social features. |
+| Core Platform Demo | End of Week 10 | Demonstrate completed forum, posts, library, search (including AI-powered search), recommendations, and social features. |
 | Final Release: MVP | End of Week 12 | Demonstrate basic meeting rooms, notifications, and the complete user workflow. |
 
 Each demo will be followed by feedback collection and backlog updates. The final release is accepted when all agreed MVP requirements are implemented, critical defects are resolved, and the application passes the required tests.
@@ -254,7 +255,7 @@ Each iteration focuses on delivering a specific set of functionalities and achie
 | **Sprint 1** | Week 1-3 | **Frozen:** Analyze and finalize project requirements. Define the system architecture and technology stack. Design the database schema and main data relationships. Set up the development environment, project structure, and version control workflow. |
 | **Sprint 2** | Week 4-5 | **Frozen:** Implement user registration, login, and authentication. Develop user profile management. Implement university management and associate users with their universities. Establish basic role-based access control. |
 | **Sprint 3** | Week 6-8 | **Current sprint:** Complete the authentication function groups. Implement part of Forum Post: forum post list, discussion post creation, material post creation, basic post detail, and university-major-course navigation. Move comments, voting, true-response marking, moderation, search, recommendations, library, social features, meeting rooms, study planning, and notifications to later sprints. |
-| **Sprint 4** | Week 9-10 | Complete Forum and post features: all post types, comments and answers, voting, true-response marking, save, report and moderation, search, recommendations, and post filters. Implement the Learning Resource Library, file upload and search, and Friend and Group Management. |
+| **Sprint 4** | Week 9-10 | Complete Forum and post features: all post types, comments and answers, voting, true-response marking, save, report and moderation, search, recommendations, and post filters. Complete AI augmentation for search and recommendation.Implement the Learning Resource Library, file upload and search, and Friend and Group Management. |
 | **Sprint 5** | Week 11-12 | Implement basic meeting rooms at middle level: room discovery, create or join room, and core collaboration tools such as shared whiteboard, shared notes, and shared timer. Implement notifications and study planning if capacity allows. Perform integration testing, performance testing, bug fixing, and deployment. |
 
 At the end of the project, the team expects to deliver a functional MVP that supports university-based communities, forum posts, social interactions, document sharing, and basic online meeting support. The application will be deployed and validated through the agreed testing activities.
@@ -267,7 +268,7 @@ The project will follow an incremental release approach. Each release introduces
 | --- | --- | --- | --- |
 | **Release 0.1** | End of Week 5 | Alpha | **Frozen:** Introduces user registration, authentication, profile management, and university management. |
 | **Release 0.2** | End of Week 8 | Alpha | Introduces completed authentication function groups and the basic Forum Post workflow. |
-| **Release 0.3** | End of Week 10 | Beta | Adds completed forum posts, comments, voting, true-response marking, moderation, search, recommendations, library, and social features. |
+| **Release 0.3** | End of Week 10 | Beta | Adds completed forum posts, comments, voting, true-response marking, moderation, search, recommendations, library, and social features, integrate AI into search and recommendation features. |
 | **Release 1.0** | End of Week 12 | Initial Production Release (MVP) | Provides basic meeting rooms at middle level, notifications, and the complete agreed MVP after integration testing, performance testing, and critical bug fixing. |
 
 Each release will be reviewed through a demonstration. Feedback and identified issues will be recorded and prioritized for subsequent iterations.
@@ -284,7 +285,7 @@ The project is scheduled to be completed within **12 weeks**, consisting of five
 | End of Week 5 | M2: User Management Completed | Functional user and university management | Milestone and Demo 2 (frozen) |
 | Week 6-8 | Complete authentication function groups and partial Forum Post | Release 0.2 - Alpha | Sprint 3 Completion (current) |
 | End of Week 8 | M3: Authentication and Forum Foundation Completed | Working authentication and basic Forum Post workflow | Milestone and Demo 3 |
-| Week 9-10 | Complete forum and post features, library, search, recommendations, and social features | Release 0.3 - Beta | Sprint 4 Completion |
+| Week 9-10 | Complete forum and post features, library, search, recommendations, social features and AI-powered features | Release 0.3 - Beta | Sprint 4 Completion |
 | End of Week 10 | M4: Core Platform Completed | Functional forum, post, library, and social features | Milestone and Demo 4 |
 | Week 11-12 | Basic meeting rooms, notifications, integration testing, performance testing, bug fixing, and deployment | Release 1.0 - MVP | Sprint 5 Completion |
 | End of Week 12 | M5: MVP Released | Tested and deployed application | Final Release and Demo 5 |
@@ -301,7 +302,7 @@ The following table describes the required roles, estimated staffing, and necess
 | Backend Developer | 1-2 | NestJS, TypeScript, REST APIs, authentication, WebSocket, and backend architecture. |
 | Frontend Developer | 1-2 | React, TypeScript, Vite, UI development, state management, and API integration. |
 | Database Engineer | 1 | PostgreSQL, relational database design, SQL, query optimization, indexing, and data management. |
-| AI Engineer | 1 | Python, machine learning fundamentals, model integration, AI APIs, and basic model evaluation. |
+| AI Engineer | 1 | Python, natural language processing, document encoding, model integration, AI APIs, and basic model evaluation. |
 | QA and Testing Engineer | 1 | Test case design, functional testing, integration testing, bug reporting, and performance testing. |
 | DevOps and Deployment Engineer | 1 | Linux server administration, environment configuration, deployment, and basic system monitoring. |
 
@@ -322,7 +323,7 @@ Team members may need additional training to ensure consistent development pract
 | Git workflow, branching strategy, and Pull Requests | All team members | Week 1 (frozen) |
 | NestJS, React, TypeScript, and project architecture | Backend and frontend developers | Week 2 (frozen) |
 | PostgreSQL, database design, indexing, and query optimization | Database and backend developers | Week 3 (frozen) |
-| Machine learning fundamentals and AI model/API integration | AI Engineer | Week 4 (frozen) |
+| Model researching, AI usage pipeline designing and AI model/API integration | AI Engineer | Week 4 (frozen) |
 | WebSocket and real-time communication | Backend and frontend developers | Week 5 (frozen) |
 | Forum post model, comments, voting, and moderation | All team members | Week 6 |
 | File upload, storage, and access control | Backend and database developers | Week 9 |
@@ -375,7 +376,7 @@ Project risks will be identified at the beginning of the project and reviewed at
 | --- | --- | --- |
 | High | **Sprint 3 capacity risk:** Authentication completion and partial Forum Post may take longer than expected. | Freeze lower-priority work, limit Sprint 3 to the defined scope, and move unfinished work to Sprint 4 or Sprint 5. |
 | High | **Forum post complexity:** Functional posts, prerequisite trees, and moderation may be more complex than estimated. | Prioritize basic discussion and material posts first; defer advanced functional tools if necessary. |
-| High | **Technical integration issues:** Backend, frontend, database, and AI components may not integrate correctly. | Define interfaces early and perform integration testing throughout development. |
+| High | **Technical integration issues:** Backend, frontend, database, and AI components may not integrate correctly. | Define interfaces early, design clear AI pipeline and perform integration testing throughout development. |
 | High | **Schedule compression:** Moving work to later sprints may overload Sprint 4 and Sprint 5. | Re-estimate at the end of Sprint 3 and defer optional features rather than core forum features. |
 | Medium | **Meeting-room scope creep:** Restored meeting rooms may expand beyond the middle-level target. | Limit meeting rooms to discovery, create or join, and core tools; defer advanced room policies and matching. |
 | Medium | **Security vulnerabilities:** Improper authentication or access control may expose user data. | Apply input validation, authentication, authorization, and security testing. |
