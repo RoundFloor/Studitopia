@@ -1,6 +1,6 @@
 # 27/10, Sprint 2 - Meeting Report
 
-## Team member represent
+## 1. Team member represent
 
 - Nguyen Thanh An
 - Nguyen Chi Bao
@@ -8,11 +8,9 @@
 - Tran Canh Anh Tuan
 - Nguyen Le Quoc Huy
 
-## Team member absent
-
 No member is absent
 
-## Status reports
+## 2. Status reports
 
 - Nguyen Thanh An
 
@@ -67,9 +65,9 @@ No member is absent
         - Learn Github Speckit training course (screenshot)
         - Write Introduction, Project Overview - Software Development Plan
  
-## Summary of the meeting
+## 3. Summary of the meeting
 
-### Evaluate completed tasks
+### 3.1 Evaluate completed tasks
 
 - Frontend: 
     - Implement shared design components but don't implement test
@@ -77,7 +75,7 @@ No member is absent
 - AI: Recommendation API model can't process many requests at a time => Need to optimize
 - Database: User and authentication-related schema need to be designed
 
-### To-do task
+### 3.2 To-do task
 
 - PA2:
     - Write Vision Document
@@ -92,6 +90,6 @@ No member is absent
     - Design user and authentication-related schema 
 
 
-### The tasks assigned after the meeting (screenshot)
+### 3.3 The tasks assigned after the meeting (screenshot)
 
 ![Jira task screenshot](./images/week2_jira_task.png)

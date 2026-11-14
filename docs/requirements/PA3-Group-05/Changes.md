@@ -13,7 +13,7 @@
 
 | Date  | Version | Description | Author |
 | ---   | --- | --- | --- |
-| 10/11 | 2.0 | Updated the development plan from Sprint 3| Nguyen Thanh An |
+| 10/11 | 2.0 | Updated the development plan from Sprint 3| Tran Canh An Tuan |
 | 11/11 | 2.0 | Restored meeting rooms from Sprint 3| Tranh Nguyen Khanh Binh |
 
 ---
