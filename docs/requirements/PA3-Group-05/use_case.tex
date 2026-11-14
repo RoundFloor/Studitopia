@@ -47,7 +47,7 @@
 \usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{booktabs}
-\graphicspath{{../../templates/}{figures/}{./}}
+\graphicspath{{../../templates/}{figures/}{prototype/}{./}}
 \setlength{\emergencystretch}{3em}
 \setlist[enumerate]{label=\arabic*.,leftmargin=*}
 \setlist[itemize]{leftmargin=*}
@@ -91,7 +91,7 @@ Tran Nguyen Khanh Binh (24125026)\\
 Tran Canh Anh Tuan (24125048)\\
 Nguyen Le Quoc Huy (24125100)
 }
-\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Ngoc Minh Thu}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
 
 % Header
 \lhead{\reporttitle}
@@ -287,6 +287,13 @@ Related Requirements & FR-01.1 to FR-01.45; FR-07.1 to FR-07.6; NFR-SEC-2, NFR-S
 \begin{enumerate}
 \item The user opens the registration page and selects \textbf{Register}.
 \item The system displays Display Name, Username, Email, Password, Confirm Password, CAPTCHA, and a \textbf{Continue with Google} option.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/register.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} User Registration Screen (Step 2)}
+\end{center}
+\par\smallskip
+
 \item The user enters the required details and completes the CAPTCHA.
 \item The frontend validates that all required fields are present, the email format is valid, the username contains only alphanumeric characters, and the password satisfies the password policy.
 \item The frontend verifies that Confirm Password matches Password.
@@ -294,10 +301,31 @@ Related Requirements & FR-01.1 to FR-01.45; FR-07.1 to FR-07.6; NFR-SEC-2, NFR-S
 \item The backend validates the submitted data, checks that the email and username are unique, and verifies that the email domain belongs to a supported university or faculty when university-email registration is used.
 \item The backend stores a pending account with a securely hashed password and generates a time-limited OTP.
 \item The email delivery service sends the OTP to the registered email address, and the system redirects the user to the OTP verification page.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/send_email.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Verification Email / OTP Sent Notification (Step 9)}
+\end{center}
+\par\smallskip
+
 \item The user enters the 6-digit OTP and submits it.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/otp.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} OTP Verification Screen (Step 10)}
+\end{center}
+\par\smallskip
+
 \item The backend verifies that the OTP is valid, unexpired, unused, and correctly formatted.
 \item The system activates the account, updates the email-verification status, and authorizes access to Preference Settings.
 \item The user completes or updates learning preferences and continues to the Home page.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/preference.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Preference Settings Screen (Step 13)}
+\end{center}
+\par\smallskip
+
 \end{enumerate}
 \par\medskip
 \hypertarget{sec:1-4-2-alternative-flows}{}
@@ -501,6 +529,13 @@ Related Requirements & FR-02.1 to FR-02.5; FR-04.1 to FR-04.4; NFR-SEC-1, NFR-SE
 \begin{enumerate}
 \item The student opens the login page.
 \item The system displays the username-or-email field, password field, CAPTCHA, \textbf{Remember Me} option where supported, \textbf{Forget Password}, \textbf{Register}, and \textbf{Continue with Google} options.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/login.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} User Login Screen (Step 2)}
+\end{center}
+\par\smallskip
+
 \item The student enters a registered username or university email address and password, then completes the CAPTCHA.
 \item The frontend performs basic input validation and submits the login request.
 \item The backend verifies the CAPTCHA, credentials, account activation status, and any account restrictions.
@@ -514,6 +549,25 @@ Related Requirements & FR-02.1 to FR-02.5; FR-04.1 to FR-04.4; NFR-SEC-1, NFR-SE
 \subsubsection*{2.4.2 Alternative Flows}
 \par\medskip
 Unless otherwise stated, an alternative flow resumes at the next step of the basic flow.
+\par\medskip
+\hypertarget{sec:password-recovery-flow}{}
+\paragraph*{Password Recovery Flow (Forget Password)}
+\par\medskip
+If the student selects \textbf{Forget Password} at basic flow step 2, the system initiates the password recovery flow, allowing the student to submit their registered email address and define a new password following OTP verification.
+\par\medskip
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/lost_password.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Password Recovery / Lost Password Screen}
+\end{center}
+\par\smallskip
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/new_password.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Set New Password Screen}
+\end{center}
+\par\smallskip
+
 \par\medskip
 \hypertarget{sec:a1-google-login}{}
 \paragraph*{A1. Google login}
@@ -694,15 +748,43 @@ Related Requirements & FR-11.1 to FR-11.4; FR-12.1 to FR-12.6; FR-13.1 to FR-13.
 \begin{enumerate}
 \item The student selects \textbf{Forum} from the main navigation.
 \item The system opens the student's default university forum and displays the Forum entry, forum hierarchy, and post list.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/forum_feed.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} University Forum Feed and Post List (Step 2)}
+\end{center}
+\par\smallskip
+
 \item The student selects a university; the system displays the majors offered by that university.
 \item The student selects a major; the system displays the courses associated with that major.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/forum_browse.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Forum Hierarchy and Major Browsing Screen (Step 4)}
+\end{center}
+\par\smallskip
+
 \item The student selects a course; the system displays the course forum and its posts.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/forum_course.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Course Forum View (Step 5)}
+\end{center}
+\par\smallskip
+
 \item The system shows each post summary with title, author, post type, timestamp, vote score, comment count, and solved status.
 \item The student optionally applies filters such as My Post, area, university, major, course, tags, and post type, and selects a sorting order such as newest, top trending, most voted, or most discussed.
 \item The student optionally enters a keyword and searches by tag, title, content, author, university, major, or course.
 \item The system ranks matching results by relevance and engagement and displays the filtered result set.
 \item The student opens a post from the list or search results.
 \item The system displays the full post content, author, post type, forum context, timestamp, vote score, tags, comments, answers, true response, attachments, and functional tools when present.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/forum_post.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Forum Post Detail View (Step 11)}
+\end{center}
+\par\smallskip
+
 \item The system displays only the actions permitted for the student, such as vote, comment, save, report, or mark true response.
 \end{enumerate}
 \par\medskip
@@ -900,12 +982,26 @@ Related Requirements & FR-14.1 to FR-14.6; FR-17.1 to FR-17.5; FR-19.1 to FR-19.
 \item The system shows the active university, major, and course context for the new post.
 \item The student enters a title, text content, optional LaTeX, optional images, and tags.
 \item The student marks the post as a question or a general discussion.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/post_discussion.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Create Discussion Post Editor (Steps 2--5)}
+\end{center}
+\par\smallskip
+
 \item The frontend validates the required content and supported image types or sizes before submission.
 \item The student submits the post.
 \item The backend verifies authentication, forum access, post permissions, content, and rate limits.
 \item The backend stores the post with its author, post type, tags, and university, major, and course associations.
 \item The system publishes the post and returns the new post result.
 \item The system displays the post in the corresponding forum post list and allows the student to open its detail page.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/post.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Published Discussion Post View (Step 11)}
+\end{center}
+\par\smallskip
+
 \end{enumerate}
 \par\medskip
 \hypertarget{sec:4-4-2-alternative-flows}{}
@@ -1095,6 +1191,13 @@ Related Requirements & FR-18.1 to FR-18.6; FR-17.3; FR-20.1 to FR-20.5; FR-38.1;
 \item The system displays the post's existing comments and answers, including the marked true response when present.
 \item The student selects the comment or answer composer.
 \item The student enters the response content.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/post_comment.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Comment and Answer Composer (Steps 3--4)}
+\end{center}
+\par\smallskip
+
 \item The system identifies whether the response is a comment on a discussion post or an answer to a question post.
 \item The student submits the response.
 \item The frontend validates that the response is not empty and submits it to the backend.
@@ -1514,6 +1617,13 @@ Related Requirements & FR-34.1 to FR-34.4; FR-35.1 to FR-35.6; FR-36.1 to FR-36.
 \item The backend adds the student to the room's participant list and establishes the room session.
 \item The system opens the room and displays the supported shared study tools.
 \item The student collaborates in the room using the available tools.
+\begin{center}
+\includegraphics[width=0.72\textwidth,height=0.42\textheight,keepaspectratio]{prototype/room_question.png}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Study Room Shared Question and Collaboration Space (Steps 6--7)}
+\end{center}
+\par\smallskip
+
 \end{enumerate}
 \par\medskip
 \hypertarget{sec:7-4-2-alternative-flows}{}

@@ -1,0 +1,25 @@
+.tick_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 2px;
+    border-width: 3px;
+    border-color: var(--color-border);
+    border-style: solid;
+}
+
+.tick_box.selected {
+    background-color: var(--color-primary);
+    outline: none
+}
+
+.tick_box.unselected {
+    background-color: var(--color-card);
+}
+
+.tick_icon {
+    width: 15px;
+    height: 15px
+}
