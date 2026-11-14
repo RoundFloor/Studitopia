@@ -1,0 +1,30 @@
+flowchart TB
+    classDef actor fill:#fff2cc,stroke:#b8860b,stroke-width:2px,color:#000
+    classDef external fill:#f5f5f5,stroke:#777,stroke-width:2px,color:#000
+    classDef usecase fill:#dae8fc,stroke:#4a6fa5,stroke-width:2px,color:#000
+    classDef included fill:#e1d5e7,stroke:#7a5b8e,stroke-width:2px,color:#000
+    classDef extending fill:#d5e8d4,stroke:#5b8a53,stroke-width:2px,color:#000
+
+    RegStudent@{ shape: person, label: "Registered University Student" }
+    Student@{ shape: person, label: "University Student" }
+    Google@{ shape: cloud, label: "Google OAuth 2.0" }
+
+    subgraph System["Studitopia System Boundary"]
+        direction TB
+        UC02(["UC-02<br/>Log In"])
+        I03(["I-03<br/>Create Authenticated Session"])
+        E02(["E-02<br/>Log In with Google"])
+    end
+
+    RegStudent --- UC02
+    RegStudent -- "generalization" --> Student
+    Google --- E02
+
+    UC02 -. "include" .-> I03
+    E02 -. "extend" .-> UC02
+
+    class RegStudent,Student actor
+    class Google external
+    class UC02 usecase
+    class I03 included
+    class E02 extending
