@@ -489,6 +489,7 @@ The following table records the priority-based distribution of work after Sprint
 | 30/10 | 1.1 | Revised stakeholder and product sections | Nguyen Le Quoc Huy |
 | 11/11 | 2.0 | Updated for PA3: Forum-first and university focus; meeting rooms restored at middle level | Nguyen Le Quoc Huy |
 | 12/11 | 2.1 | Updated for PA3: Added additional authentication-related NFRs | Tran Nguyen Khanh Binh |
+| 12/11 | 2.2 | Updated for PA3: Added some environmental constraints | Tran Nguyen Khanh Binh |
 
 # 1. Introduction
 
@@ -606,9 +607,10 @@ This section provides a profile of the stakeholders and users involved in the pr
     - **Long Cycle (1-3 hours):** In-depth collaborative problem solving, multi-topic forum discussions, and group study meetings.
 - **Environmental Constraints:**
     - **Data Synchronization and Fallback:** Forum text inputs and shared notes require automatic local buffer saves to prevent data loss during network disruptions.
-    - **Real-Time Latency Rules:** Forum notifications and basic meeting-room updates enforce short delivery latency to maintain smooth interaction.
+    - **Strict Latency & Response Standards:** Unattended sessions automatically expire after 15 minutes of inactivity. Shared files in temporary meeting rooms are permanently deleted from storage within 5 minutes of room closure.
+    - **Session & Data Lifecycle Rules**: Unattended sessions automatically expire after 15 minutes of inactivity. Shared files in temporary meeting rooms are permanently deleted from storage within 5 minutes of room closure
 - **System Platforms and Technical Ecosystem:**
-    - **Current Platforms:** Desktop browsers (Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari).
+    - **Current Platforms:** Standard Desktop browsers (Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari).
     - **Future Expected Platforms:** Native mobile applications for iOS and Android for push notifications on forum replies and help requests.
     - **Complementary Applications in Use:** Personal note-taking tools (Notion and Obsidian), external chat applications (Discord and Messenger), and university LMS portals (Canvas and Moodle).
     - **Integration Requirements:** Google OAuth 2.0 for single-click registration and login. Email delivery for OTP verification and password recovery.
