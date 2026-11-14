@@ -473,7 +473,7 @@ The following table records the priority-based distribution of work after Sprint
 
 ## Vision Document
 
-**Version:** <2.0>
+**Version:** <2.1>
 
 ---
 
@@ -485,9 +485,10 @@ The following table records the priority-based distribution of work after Sprint
 | 28/10 | 0.2 | Added "2. Positioning" | Tran Nguyen Khanh Binh |
 | 29/10 | 0.3 | Added "3. Stakeholder and User Descriptions" | Tran Nguyen Khanh Binh |
 | 29/10 | 0.4 | Added "4. Product Overview" | Nguyen Le Quoc Huy |
-| 29/10 | 0.5 | Added "5. Product Features" | Nguyen Le Quoc Huy |
-| 30/10 | 0.6 | Revised stakeholder and product sections | Nguyen Le Quoc Huy |
-| 11/11 | 2.0 | Updated for PA3: forum-first and university focus; meeting rooms restored at middle level | Nguyen Le Quoc Huy |
+| 29/10 | 1.0 | Added "5. Product Features" | Nguyen Le Quoc Huy |
+| 30/10 | 1.1 | Revised stakeholder and product sections | Nguyen Le Quoc Huy |
+| 11/11 | 2.0 | Updated for PA3: Forum-first and university focus; meeting rooms restored at middle level | Nguyen Le Quoc Huy |
+| 12/11 | 2.1 | Updated for PA3: Added additional authentication-related NFRs | Tran Nguyen Khanh Binh |
 
 # 1. Introduction
 
@@ -877,6 +878,12 @@ flowchart TD
 | NFR-023 | External Integration | The system shall support Google OAuth 2.0 for users who choose Google-based registration or authentication. | Medium | High | Medium | Medium | Medium |
 | NFR-024 | External Integration | The system shall support email delivery of one-time passwords for account verification and password recovery. | High | High | High | Medium | Medium |
 | NFR-025 | Usability | The system shall maintain consistent navigation and interaction patterns across university, major, and course forums. | High | High | High | Medium | Medium |
+| NFR-026 | Security | Passwords must enforce a minimum length of 8 characters, containing at least 1 lowercase letter, 1 uppercase letter, 1 number, and 1 special character. | High | High | High | Medium | High |
+| NFR-027 | Security | Registration and login interfaces must require successful CAPTCHA verification before processing submissions to protect against brute-force and bot attacks. | Medium | High | High | Medium | High |
+| NFR-028 | Security | Issued access and refresh tokens must use secure HMAC-SHA256 cryptographic signatures. | High | High | High | Medium | High |
+| NFR-029 | Security | Verification codes for email validation, password recovery, or account actions must be 6-digit numeric OTPs that expire exactly 5 minutes after generation. | High | High | High | Medium | High |
+| NFR-030 | Security | OTPs must be strictly single-use; verified codes cannot be reused, and requesting a new OTP must immediately invalidate all previously issued codes. | High | High | High | High | High |
+| NFR-031 | Security | Failed login attempts must display generic error messages without revealing whether the username or the password was incorrect. | High | High | High | Medium | High |
 
 ---
 
