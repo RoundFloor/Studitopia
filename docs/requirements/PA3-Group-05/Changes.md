@@ -13,7 +13,7 @@
 
 | Date  | Version | Description | Author |
 | ---   | --- | --- | --- |
-| 10/11 | 2.0 | Updated the development plan from Sprint 3| Nguyen Thanh An |
+| 10/11 | 2.0 | Updated the development plan from Sprint 3| Tran Canh An Tuan |
 | 11/11 | 2.0 | Restored meeting rooms from Sprint 3| Tranh Nguyen Khanh Binh |
 
 ---
@@ -79,6 +79,47 @@ Objectives:
 - Allow users to create and interact with discussion, material, and functional posts.
 - Restore basic meeting-room support for study groups that need live collaboration, without making meeting rooms the primary focus.
 - Offer a progress tracking system tied to each university syllabus, where users input credits and grades to view their academic standing.
+
+### 2.1.1 Platform Structure and Organization
+
+Studitopia follows a hierarchical organizational structure that reflects the academic organization of universities. Instead of organizing all content into a single general-purpose forum, the platform categorizes discussions and learning resources according to universities, academic majors, and individual courses.
+
+The platform consists of three main organizational levels:
+
+- **Major Level:** Within each university, sub-forums are organized according to academic majors. This allows students to access discussions and resources relevant to their fields of study.
+- **Course Level:** Each major contains individual course spaces where students can exchange knowledge, share learning materials, discuss assignments, and access past examination papers.
+
+This hierarchical structure helps users navigate academic content more efficiently and ensures that discussions and resources remain relevant to their educational context.
+
+
+### 2.1.2 Target Users and User Activities
+
+Studitopia primarily targets undergraduate students from multiple partner universities. Although students may belong to different institutions and academic majors, they share common needs for accessing learning resources, discussing coursework, and managing their academic progress.
+
+The main user activities include:
+
+- **Searching for academic resources:** Finding lecture materials, reference documents, and past examination papers relevant to their courses.
+- **Participating in academic discussions:** Asking questions, answering peers, discussing difficult concepts, and sharing study experiences.
+- **Contributing learning resources:** Uploading and sharing useful academic documents with other students.
+- **Managing academic information:** Maintaining an academic profile and recording course credits and grades.
+- **Monitoring academic progress:** Reviewing completed courses and identifying remaining syllabus requirements.
+- **Collaborating with peers:** Joining meeting rooms for real-time study group activities when necessary.
+
+Through these activities, Studitopia aims to connect independent learning activities with collaborative academic experiences in a single platform.
+
+
+### 2.1.3 Expected Benefits
+
+Studitopia is expected to provide benefits to students through the integration of academic communities, learning resources, and personal progress management.
+
+- **Centralized academic resources:** Students can access learning materials and past examination papers through an organized course-based structure instead of searching across unrelated platforms and scattered sources.
+- **Improved knowledge sharing:** Course-centered discussions encourage students to exchange ideas, clarify difficult topics, and learn from the experiences of their peers.
+- **Stronger academic connections:** Students from the same university or major can connect through shared academic interests and collaborate on learning activities.
+- **Better academic self-management:** Students can maintain an overview of their completed courses, accumulated credits, grades, and remaining academic requirements.
+- **Flexible learning collaboration:** Meeting rooms provide an additional way for students to collaborate synchronously when asynchronous discussions are insufficient.
+
+Ultimately, Studitopia aims to establish a connected academic environment where students can discover knowledge, contribute resources, collaborate with peers, and manage their academic journey through one integrated platform.
+
 
 ### 2.2 Assumptions and Constraints
 
@@ -154,7 +195,7 @@ The project reuses existing infrastructure and open-source technologies, so the 
 
 | Item | Estimated Cost | Explanation |
 | --- | ---: | --- |
-| Server / Hosting | 0 VND | Our group owns a server for hosting. |
+| Server / Hosting | 0 VND | Our group hosts a server on our laptop. |
 | Domain | 0 VND | Domain has already been purchased. |
 | File Storage | 0 VND | Existing storage is available on the server. |
 | Database (PostgreSQL) | 0 VND | Open-source database. |
@@ -167,14 +208,14 @@ Additional costs may arise if the existing server or storage cannot handle the e
 
 #### Estimated Schedule
 
-The project is expected to take **12 weeks**, divided into five sprints. Sprint 1 and Sprint 2 are frozen. Sprint 3 is the current sprint.
+The project is expected to take **12 weeks**, divided into five sprints. Sprint 1 and Sprint 2 are done and frozen. Sprint 3 is the current sprint.
 
 | Sprint | Duration | Main Activities |
 | --- | --- | --- |
 | Sprint 1 | Week 1-3 | **Frozen:** Requirement analysis, system architecture, database design, and project setup. |
 | Sprint 2 | Week 4-5 | **Frozen:** Authentication, user profiles, and university management. |
 | Sprint 3 | Week 6-8 | **Current:** Complete authentication function groups and part of Forum Post. |
-| Sprint 4 | Week 9-10 | Complete Forum and post features, Learning Resource Library, and Friend and Group Management. |
+| Sprint 4 | Week 9-10 | Complete Forum and post features, Learning Resource Library, and Friend and Group Management and inclusion of AI-powered featured. |
 | Sprint 5 | Week 11-12 | Basic meeting rooms at middle level, notifications, integration testing, performance testing, bug fixing, and deployment. |
 
 #### Re-estimation Situation
@@ -221,6 +262,7 @@ The project is planned for **12 weeks**, divided into five sprints. Sprint 1 and
 | Learning Resource Library and File Search | | | | x | |
 | Friend and Group Management | | | | x | |
 | Basic Meeting Rooms (middle level) | | | | | x |
+| AI-powered features | | | | x | |
 | Notifications | | | | | x |
 | Integration Testing | | | | | x |
 | Performance Testing | | | | | x |
@@ -231,7 +273,7 @@ After these sprints, the project must achieve the major milestones below with th
 - **Project foundation completion:** Requirements, architecture, database design, and development environment are ready. (Sprint 1, frozen)
 - **User management completion:** Users can register, log in, manage profiles, and access university-related features. (Sprint 2, frozen)
 - **Authentication and forum foundation completion:** Authentication function groups are complete, and the basic Forum Post workflow is available. (Sprint 3)
-- **Core platform completion:** Forum posts, interactions, search, recommendations, library, and social features work correctly. (Sprint 4)
+- **Core platform completion:** Forum posts, interactions, search, recommendations, library, social features and AI-powered features work correctly. (Sprint 4)
 - **MVP completion:** Basic meeting rooms, notifications, integration testing, performance testing, bug fixing, and deployment are complete. (Sprint 5)
 
 Corresponding with each milestone, the following demos must be released:
@@ -240,7 +282,7 @@ Corresponding with each milestone, the following demos must be released:
 | --- | --- | --- |
 | User Management Demo | End of Week 5 | Demonstrate authentication, user profiles, and university management. (Frozen) |
 | Forum Foundation Demo | End of Week 8 | Demonstrate completed authentication and the basic Forum Post workflow. |
-| Core Platform Demo | End of Week 10 | Demonstrate completed forum, posts, library, search, recommendations, and social features. |
+| Core Platform Demo | End of Week 10 | Demonstrate completed forum, posts, library, search (including AI-powered search), recommendations, and social features. |
 | Final Release: MVP | End of Week 12 | Demonstrate basic meeting rooms, notifications, and the complete user workflow. |
 
 Each demo will be followed by feedback collection and backlog updates. The final release is accepted when all agreed MVP requirements are implemented, critical defects are resolved, and the application passes the required tests.
@@ -254,7 +296,7 @@ Each iteration focuses on delivering a specific set of functionalities and achie
 | **Sprint 1** | Week 1-3 | **Frozen:** Analyze and finalize project requirements. Define the system architecture and technology stack. Design the database schema and main data relationships. Set up the development environment, project structure, and version control workflow. |
 | **Sprint 2** | Week 4-5 | **Frozen:** Implement user registration, login, and authentication. Develop user profile management. Implement university management and associate users with their universities. Establish basic role-based access control. |
 | **Sprint 3** | Week 6-8 | **Current sprint:** Complete the authentication function groups. Implement part of Forum Post: forum post list, discussion post creation, material post creation, basic post detail, and university-major-course navigation. Move comments, voting, true-response marking, moderation, search, recommendations, library, social features, meeting rooms, study planning, and notifications to later sprints. |
-| **Sprint 4** | Week 9-10 | Complete Forum and post features: all post types, comments and answers, voting, true-response marking, save, report and moderation, search, recommendations, and post filters. Implement the Learning Resource Library, file upload and search, and Friend and Group Management. |
+| **Sprint 4** | Week 9-10 | Complete Forum and post features: all post types, comments and answers, voting, true-response marking, save, report and moderation, search, recommendations, and post filters. Complete AI augmentation for search and recommendation.Implement the Learning Resource Library, file upload and search, and Friend and Group Management. |
 | **Sprint 5** | Week 11-12 | Implement basic meeting rooms at middle level: room discovery, create or join room, and core collaboration tools such as shared whiteboard, shared notes, and shared timer. Implement notifications and study planning if capacity allows. Perform integration testing, performance testing, bug fixing, and deployment. |
 
 At the end of the project, the team expects to deliver a functional MVP that supports university-based communities, forum posts, social interactions, document sharing, and basic online meeting support. The application will be deployed and validated through the agreed testing activities.
@@ -267,7 +309,7 @@ The project will follow an incremental release approach. Each release introduces
 | --- | --- | --- | --- |
 | **Release 0.1** | End of Week 5 | Alpha | **Frozen:** Introduces user registration, authentication, profile management, and university management. |
 | **Release 0.2** | End of Week 8 | Alpha | Introduces completed authentication function groups and the basic Forum Post workflow. |
-| **Release 0.3** | End of Week 10 | Beta | Adds completed forum posts, comments, voting, true-response marking, moderation, search, recommendations, library, and social features. |
+| **Release 0.3** | End of Week 10 | Beta | Adds completed forum posts, comments, voting, true-response marking, moderation, search, recommendations, library, and social features, integrate AI into search and recommendation features. |
 | **Release 1.0** | End of Week 12 | Initial Production Release (MVP) | Provides basic meeting rooms at middle level, notifications, and the complete agreed MVP after integration testing, performance testing, and critical bug fixing. |
 
 Each release will be reviewed through a demonstration. Feedback and identified issues will be recorded and prioritized for subsequent iterations.
@@ -284,7 +326,7 @@ The project is scheduled to be completed within **12 weeks**, consisting of five
 | End of Week 5 | M2: User Management Completed | Functional user and university management | Milestone and Demo 2 (frozen) |
 | Week 6-8 | Complete authentication function groups and partial Forum Post | Release 0.2 - Alpha | Sprint 3 Completion (current) |
 | End of Week 8 | M3: Authentication and Forum Foundation Completed | Working authentication and basic Forum Post workflow | Milestone and Demo 3 |
-| Week 9-10 | Complete forum and post features, library, search, recommendations, and social features | Release 0.3 - Beta | Sprint 4 Completion |
+| Week 9-10 | Complete forum and post features, library, search, recommendations, social features and AI-powered features | Release 0.3 - Beta | Sprint 4 Completion |
 | End of Week 10 | M4: Core Platform Completed | Functional forum, post, library, and social features | Milestone and Demo 4 |
 | Week 11-12 | Basic meeting rooms, notifications, integration testing, performance testing, bug fixing, and deployment | Release 1.0 - MVP | Sprint 5 Completion |
 | End of Week 12 | M5: MVP Released | Tested and deployed application | Final Release and Demo 5 |
@@ -301,7 +343,7 @@ The following table describes the required roles, estimated staffing, and necess
 | Backend Developer | 1-2 | NestJS, TypeScript, REST APIs, authentication, WebSocket, and backend architecture. |
 | Frontend Developer | 1-2 | React, TypeScript, Vite, UI development, state management, and API integration. |
 | Database Engineer | 1 | PostgreSQL, relational database design, SQL, query optimization, indexing, and data management. |
-| AI Engineer | 1 | Python, machine learning fundamentals, model integration, AI APIs, and basic model evaluation. |
+| AI Engineer | 1 | Python, natural language processing, document encoding, model integration, AI APIs, and basic model evaluation. |
 | QA and Testing Engineer | 1 | Test case design, functional testing, integration testing, bug reporting, and performance testing. |
 | DevOps and Deployment Engineer | 1 | Linux server administration, environment configuration, deployment, and basic system monitoring. |
 
@@ -322,7 +364,7 @@ Team members may need additional training to ensure consistent development pract
 | Git workflow, branching strategy, and Pull Requests | All team members | Week 1 (frozen) |
 | NestJS, React, TypeScript, and project architecture | Backend and frontend developers | Week 2 (frozen) |
 | PostgreSQL, database design, indexing, and query optimization | Database and backend developers | Week 3 (frozen) |
-| Machine learning fundamentals and AI model/API integration | AI Engineer | Week 4 (frozen) |
+| Model researching, AI usage pipeline designing and AI model/API integration | AI Engineer | Week 4 (frozen) |
 | WebSocket and real-time communication | Backend and frontend developers | Week 5 (frozen) |
 | Forum post model, comments, voting, and moderation | All team members | Week 6 |
 | File upload, storage, and access control | Backend and database developers | Week 9 |
@@ -375,7 +417,7 @@ Project risks will be identified at the beginning of the project and reviewed at
 | --- | --- | --- |
 | High | **Sprint 3 capacity risk:** Authentication completion and partial Forum Post may take longer than expected. | Freeze lower-priority work, limit Sprint 3 to the defined scope, and move unfinished work to Sprint 4 or Sprint 5. |
 | High | **Forum post complexity:** Functional posts, prerequisite trees, and moderation may be more complex than estimated. | Prioritize basic discussion and material posts first; defer advanced functional tools if necessary. |
-| High | **Technical integration issues:** Backend, frontend, database, and AI components may not integrate correctly. | Define interfaces early and perform integration testing throughout development. |
+| High | **Technical integration issues:** Backend, frontend, database, and AI components may not integrate correctly. | Define interfaces early, design clear AI pipeline and perform integration testing throughout development. |
 | High | **Schedule compression:** Moving work to later sprints may overload Sprint 4 and Sprint 5. | Re-estimate at the end of Sprint 3 and defer optional features rather than core forum features. |
 | Medium | **Meeting-room scope creep:** Restored meeting rooms may expand beyond the middle-level target. | Limit meeting rooms to discovery, create or join, and core tools; defer advanced room policies and matching. |
 | Medium | **Security vulnerabilities:** Improper authentication or access control may expose user data. | Apply input validation, authentication, authorization, and security testing. |
@@ -431,7 +473,7 @@ The following table records the priority-based distribution of work after Sprint
 
 ## Vision Document
 
-**Version:** <2.0>
+**Version:** <2.1>
 
 ---
 
@@ -443,9 +485,11 @@ The following table records the priority-based distribution of work after Sprint
 | 28/10 | 0.2 | Added "2. Positioning" | Tran Nguyen Khanh Binh |
 | 29/10 | 0.3 | Added "3. Stakeholder and User Descriptions" | Tran Nguyen Khanh Binh |
 | 29/10 | 0.4 | Added "4. Product Overview" | Nguyen Le Quoc Huy |
-| 29/10 | 0.5 | Added "5. Product Features" | Nguyen Le Quoc Huy |
-| 30/10 | 0.6 | Revised stakeholder and product sections | Nguyen Le Quoc Huy |
-| 11/11 | 2.0 | Updated for PA3: forum-first and university focus; meeting rooms restored at middle level | Nguyen Le Quoc Huy |
+| 29/10 | 1.0 | Added "5. Product Features" | Nguyen Le Quoc Huy |
+| 30/10 | 1.1 | Revised stakeholder and product sections | Nguyen Le Quoc Huy |
+| 11/11 | 2.0 | Updated for PA3: Forum-first and university focus; meeting rooms restored at middle level | Nguyen Le Quoc Huy |
+| 12/11 | 2.1 | Updated for PA3: Added additional authentication-related NFRs | Tran Nguyen Khanh Binh |
+| 12/11 | 2.2 | Updated for PA3: Added some environmental constraints | Tran Nguyen Khanh Binh |
 
 # 1. Introduction
 
@@ -563,9 +607,10 @@ This section provides a profile of the stakeholders and users involved in the pr
     - **Long Cycle (1-3 hours):** In-depth collaborative problem solving, multi-topic forum discussions, and group study meetings.
 - **Environmental Constraints:**
     - **Data Synchronization and Fallback:** Forum text inputs and shared notes require automatic local buffer saves to prevent data loss during network disruptions.
-    - **Real-Time Latency Rules:** Forum notifications and basic meeting-room updates enforce short delivery latency to maintain smooth interaction.
+    - **Strict Latency & Response Standards:** Unattended sessions automatically expire after 15 minutes of inactivity. Shared files in temporary meeting rooms are permanently deleted from storage within 5 minutes of room closure.
+    - **Session & Data Lifecycle Rules**: Unattended sessions automatically expire after 15 minutes of inactivity. Shared files in temporary meeting rooms are permanently deleted from storage within 5 minutes of room closure
 - **System Platforms and Technical Ecosystem:**
-    - **Current Platforms:** Desktop browsers (Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari).
+    - **Current Platforms:** Standard Desktop browsers (Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari).
     - **Future Expected Platforms:** Native mobile applications for iOS and Android for push notifications on forum replies and help requests.
     - **Complementary Applications in Use:** Personal note-taking tools (Notion and Obsidian), external chat applications (Discord and Messenger), and university LMS portals (Canvas and Moodle).
     - **Integration Requirements:** Google OAuth 2.0 for single-click registration and login. Email delivery for OTP verification and password recovery.
@@ -835,6 +880,12 @@ flowchart TD
 | NFR-023 | External Integration | The system shall support Google OAuth 2.0 for users who choose Google-based registration or authentication. | Medium | High | Medium | Medium | Medium |
 | NFR-024 | External Integration | The system shall support email delivery of one-time passwords for account verification and password recovery. | High | High | High | Medium | Medium |
 | NFR-025 | Usability | The system shall maintain consistent navigation and interaction patterns across university, major, and course forums. | High | High | High | Medium | Medium |
+| NFR-026 | Security | Passwords must enforce a minimum length of 8 characters, containing at least 1 lowercase letter, 1 uppercase letter, 1 number, and 1 special character. | High | High | High | Medium | High |
+| NFR-027 | Security | Registration and login interfaces must require successful CAPTCHA verification before processing submissions to protect against brute-force and bot attacks. | Medium | High | High | Medium | High |
+| NFR-028 | Security | Issued access and refresh tokens must use secure HMAC-SHA256 cryptographic signatures. | High | High | High | Medium | High |
+| NFR-029 | Security | Verification codes for email validation, password recovery, or account actions must be 6-digit numeric OTPs that expire exactly 5 minutes after generation. | High | High | High | Medium | High |
+| NFR-030 | Security | OTPs must be strictly single-use; verified codes cannot be reused, and requesting a new OTP must immediately invalidate all previously issued codes. | High | High | High | High | High |
+| NFR-031 | Security | Failed login attempts must display generic error messages without revealing whether the username or the password was incorrect. | High | High | High | Medium | High |
 
 ---
 

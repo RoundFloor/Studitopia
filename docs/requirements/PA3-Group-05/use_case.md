@@ -29,13 +29,13 @@
 
 | Use Case | Performed by | Reviewed by | Edited by |
 |---|---|---|---|
-| UC-01 Register Account and Verify University Email | [Name] | [Name] | [Name] |
-| UC-02 Log In | [Name] | [Name] | [Name] |
-| UC-03 Browse and Search the University Forum | [Name] | [Name] | [Name] |
-| UC-04 Create Discussion Post | [Name] | [Name] | [Name] |
-| UC-05 Comment and Answer | [Name] | [Name] | [Name] |
-| UC-06 Share Learning Resource | [Name] | [Name] | [Name] |
-| UC-07 Join or Create a Study Room | [Name] | [Name] | [Name] |
+| UC-01 Register Account and Verify University Email | An | Bảo | An |
+| UC-02 Log In | Huy | Tuấn | Huy |
+| UC-03 Browse and Search the University Forum | Bảo | Huy | Bảo |
+| UC-04 Create Discussion Post | Tuấn | Bình | Tuấn |
+| UC-05 Comment and Answer | Bình | An | Bình |
+| UC-06 Share Learning Resource | Bình | Bảo | Bình |
+| UC-07 Join or Create a Study Room | An | Tuấn | Tuấn |
 
 ---
 
