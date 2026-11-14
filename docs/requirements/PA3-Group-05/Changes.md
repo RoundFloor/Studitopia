@@ -80,6 +80,47 @@ Objectives:
 - Restore basic meeting-room support for study groups that need live collaboration, without making meeting rooms the primary focus.
 - Offer a progress tracking system tied to each university syllabus, where users input credits and grades to view their academic standing.
 
+### 2.1.1 Platform Structure and Organization
+
+Studitopia follows a hierarchical organizational structure that reflects the academic organization of universities. Instead of organizing all content into a single general-purpose forum, the platform categorizes discussions and learning resources according to universities, academic majors, and individual courses.
+
+The platform consists of three main organizational levels:
+
+- **Major Level:** Within each university, sub-forums are organized according to academic majors. This allows students to access discussions and resources relevant to their fields of study.
+- **Course Level:** Each major contains individual course spaces where students can exchange knowledge, share learning materials, discuss assignments, and access past examination papers.
+
+This hierarchical structure helps users navigate academic content more efficiently and ensures that discussions and resources remain relevant to their educational context.
+
+
+### 2.1.2 Target Users and User Activities
+
+Studitopia primarily targets undergraduate students from multiple partner universities. Although students may belong to different institutions and academic majors, they share common needs for accessing learning resources, discussing coursework, and managing their academic progress.
+
+The main user activities include:
+
+- **Searching for academic resources:** Finding lecture materials, reference documents, and past examination papers relevant to their courses.
+- **Participating in academic discussions:** Asking questions, answering peers, discussing difficult concepts, and sharing study experiences.
+- **Contributing learning resources:** Uploading and sharing useful academic documents with other students.
+- **Managing academic information:** Maintaining an academic profile and recording course credits and grades.
+- **Monitoring academic progress:** Reviewing completed courses and identifying remaining syllabus requirements.
+- **Collaborating with peers:** Joining meeting rooms for real-time study group activities when necessary.
+
+Through these activities, Studitopia aims to connect independent learning activities with collaborative academic experiences in a single platform.
+
+
+### 2.1.3 Expected Benefits
+
+Studitopia is expected to provide benefits to students through the integration of academic communities, learning resources, and personal progress management.
+
+- **Centralized academic resources:** Students can access learning materials and past examination papers through an organized course-based structure instead of searching across unrelated platforms and scattered sources.
+- **Improved knowledge sharing:** Course-centered discussions encourage students to exchange ideas, clarify difficult topics, and learn from the experiences of their peers.
+- **Stronger academic connections:** Students from the same university or major can connect through shared academic interests and collaborate on learning activities.
+- **Better academic self-management:** Students can maintain an overview of their completed courses, accumulated credits, grades, and remaining academic requirements.
+- **Flexible learning collaboration:** Meeting rooms provide an additional way for students to collaborate synchronously when asynchronous discussions are insufficient.
+
+Ultimately, Studitopia aims to establish a connected academic environment where students can discover knowledge, contribute resources, collaborate with peers, and manage their academic journey through one integrated platform.
+
+
 ### 2.2 Assumptions and Constraints
 
 Assumptions:
