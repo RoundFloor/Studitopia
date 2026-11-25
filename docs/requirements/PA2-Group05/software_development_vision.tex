@@ -1,0 +1,712 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+\usepackage{fontspec}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\graphicspath{{../../templates/}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+% ============ HEADER AND FOOTER ============
+% Header length
+\setlength{\headheight}{29.43912pt}
+
+% Footer page number would be on the lower-right corner
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+% Disable indentation on new paragraphs
+\setlength{\parindent}{0pt}
+
+% Line spacing 1.5
+\renewcommand{\baselinestretch}{1.5}
+
+% Optional: graphic path
+% \graphicspath{PATH_TO_GRAPHIC_FOLDER}
+
+% To use Times font family, uncomment this row
+% \usepackage{mathptmx}
+
+% To use roman section / subsection, uncomment these rows
+% \renewcommand{\thesection}{\Roman{section}}
+% \renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+
+% Define course name, report name and report title.
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Ngoc Minh Thu}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\begin{spacing}{1.0}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Project: \reportname}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{spacing}
+\end{titlepage}	
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% ============ MARKDOWN CONTENT: PA2/vision.md ============
+\hypertarget{sec:pa2-vision-document}{}
+\section*{PA2-Vision-Document}
+\par\medskip
+\hypertarget{sec:studitopia}{}
+\section*{STUDITOPIA}
+\par\medskip
+\hypertarget{sec:vision-document}{}
+\subsection*{Vision Document}
+\par\medskip
+\textbf{Version:} \textless{}1.0\textgreater{}
+\par\medskip
+\par\noindent\rule{\linewidth}{0.4pt}\par\medskip
+\hypertarget{sec:revision-history}{}
+\section*{Revision History}
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.170\textwidth}|>{\raggedright\arraybackslash}p{0.142\textwidth}|>{\raggedright\arraybackslash}p{0.356\textwidth}|>{\raggedright\arraybackslash}p{0.251\textwidth}|}
+\hline
+Date & Version & Description & Author \\ \hline
+\endhead
+27/\allowbreak{}10/\allowbreak{}2026 & 0.1 & Initial raw of document & Nguyễn Lê Quốc Huy \\ \hline
+28/\allowbreak{}10/\allowbreak{}2026 & 0.2 & Added “2. Positioning” & Trần Nguyễn Khánh Bình \\ \hline
+29/\allowbreak{}10/\allowbreak{}2026 & 0.3 & Added “3. Stakeholder and User Descriptions” & Trần Nguyễn Khánh Bình \\ \hline
+29/\allowbreak{}10/\allowbreak{}2026 & 0.4 & Add “4. Product overview” & Nguyễn Lê Quốc Huy \\ \hline
+29/\allowbreak{}10/\allowbreak{}2026 & 0.5 & Add “5 Product feature” & Nguyễn Lê Quốc Huy \\ \hline
+30/\allowbreak{}10/\allowbreak{}2026 & 0.6 &  &  \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+\par\noindent\rule{\linewidth}{0.4pt}\par\medskip
+\hypertarget{sec:table-of-contents}{}
+\section*{Table of Contents}
+\par\medskip
+\begin{enumerate}
+\item \hyperlink{sec:1-introduction}{Introduction}
+\par
+\begin{enumerate}
+\item \hyperlink{sec:11-references}{References}
+\par
+\end{enumerate}
+\item \hyperlink{sec:2-positioning}{Positioning}
+\par
+\begin{enumerate}
+\item \hyperlink{sec:21-problem-statement}{Problem Statement}
+\par
+\item \hyperlink{sec:22-product-position-statement}{Product Position Statement}
+\par
+\end{enumerate}
+\item \hyperlink{sec:3-stakeholder-and-user-descriptions}{Stakeholder and User Descriptions}
+\par
+\begin{enumerate}
+\item \hyperlink{sec:31-stakeholder-summary}{Stakeholder Summary}
+\par
+\item \hyperlink{sec:32-user-summary}{User Summary}
+\par
+\item \hyperlink{sec:33-user-environment}{User Environment}
+\par
+\item \hyperlink{sec:34-summary-of-key-stakeholder-or-user-needs}{Summary of Key Stakeholder or User Needs}
+\par
+\item \hyperlink{sec:35-alternatives-and-competition}{Alternatives and Competition}
+\par
+\end{enumerate}
+\item \hyperlink{sec:4-product-overview}{Product Overview}
+\par
+\begin{enumerate}
+\item \hyperlink{sec:41-product-perspective}{Product Perspective}
+\par
+\item \hyperlink{sec:42-assumptions-and-dependencies}{Assumptions and Dependencies}
+\par
+\end{enumerate}
+\item \hyperlink{sec:5-product-features}{Product Features}
+\par
+\item \hyperlink{sec:6-non-functional-requirements}{Non-Functional Requirements}
+\par
+\end{enumerate}
+\par\noindent\rule{\linewidth}{0.4pt}\par\medskip
+\hypertarget{sec:1-introduction}{}
+\section*{1. Introduction}
+\par\medskip
+\textbf{\textbf{Performed by:}} [Binh] \textbar{} \textbf{\textbf{Reviewed by:}} [Huy] \textbar{} \textbf{\textbf{Edited by:}} []
+\par\medskip
+The purpose of this document is to collect, analyze, and define high-level needs and features of the \textbf{Studitopia}. It focuses on the capabilities needed by the stakeholders and target users, and why these needs exist. The details of how the \textbf{Studitopia} fulfills these needs are described in the use-case and supplementary specifications.
+\par\medskip
+The introduction of the Vision document provides an overview of the entire document. It includes the purpose and references of this Vision document.
+\par\medskip
+\hypertarget{sec:11-references}{}
+\subsection*{1.1 References}
+\par\medskip
+This subsection provides a complete list of all documents referenced elsewhere in the Vision document.
+\par\medskip
+Identify each document by:
+\par\medskip
+\begin{itemize}
+\item Title
+\par
+\item Report number, if applicable
+\par
+\item Date
+\par
+\item Publishing organization
+\par
+\item Source from which the reference can be obtained
+\par
+\end{itemize}
+This information may be provided by reference to an appendix or another document.
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.230\textwidth}|>{\raggedright\arraybackslash}p{0.136\textwidth}|>{\raggedright\arraybackslash}p{0.119\textwidth}|>{\raggedright\arraybackslash}p{0.181\textwidth}|>{\raggedright\arraybackslash}p{0.236\textwidth}|}
+\hline
+Document Title & Report Number & Date & Publishing Organization & Source \\ \hline
+\endhead
+Studitopia-Overview & 1 & 17/\allowbreak{}10/\allowbreak{}2026 & Round Floor & proposals/\allowbreak{}overview.md \\ \hline
+Studitopia-Userstory & 2 & 17/\allowbreak{}10/\allowbreak{}2026 & Round Floor & proposals/\allowbreak{}userstory.md \\ \hline
+Studitopia-Functional-Requirement & 3 & 17/\allowbreak{}10/\allowbreak{}2026 & Round Floor & proposals/\allowbreak{}functional\_\allowbreak{}requirement.md \\ \hline
+Studitopia-Non-functional-requirement & 4 & 17/\allowbreak{}10/\allowbreak{}2026 & Round Floor & proposals/\allowbreak{}non\_\allowbreak{}functional\_\allowbreak{}requirement.md \\ \hline
+Studitopia-screen-flow & 5 & 17/\allowbreak{}10/\allowbreak{}2026 & Round Floor & proposals/\allowbreak{}screen\_\allowbreak{}flow.md \\ \hline
+Studitopia-feature-flow & 6 & 17/\allowbreak{}10/\allowbreak{}2026 & Round Floor & proposals/\allowbreak{}feature\_\allowbreak{}flow.md \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+\par\noindent\rule{\linewidth}{0.4pt}\par\medskip
+\hypertarget{sec:2-positioning}{}
+\section*{2. Positioning}
+\par\medskip
+\textbf{\textbf{Performed by:}} [Binh] \textbar{} \textbf{\textbf{Reviewed by:}} [Huy] \textbar{} \textbf{\textbf{Edited by:}} []
+\par\medskip
+\hypertarget{sec:21-problem-statement}{}
+\subsection*{2.1 Problem Statement}
+\par\medskip
+\textbf{The problem of:}
+\par\medskip
+Lack of an integrated, context-driven environment for collaborative learning where online academic discussions, study resource discovery, and real-time virtual study rooms are unified in a single workspace.
+\par\medskip
+\textbf{Affects:}
+\par\medskip
+High school and university students, independent learners, study groups, and academic communities who seek efficient peer collaboration, structured study materials, and focused study spaces.
+\par\medskip
+\textbf{The impact of which is:}
+\par\medskip
+Learners suffer from study isolation, scattered learning resources across disconnected tools, fragmented study context, and difficulty finding instant peer help or matching study partners, leading to reduced learning productivity and lower study consistency.
+\par\medskip
+\textbf{A successful solution would be:}
+\par\medskip
+\begin{itemize}
+\item A forum-centric knowledge ecosystem where every discussion thread can directly spawn contextual study materials and live virtual study rooms.
+\par
+\item A seamless bridge between dynamic problem-solving threads and a curated, long-term searchable library.
+\par
+\item Structured focus environments featuring spatial table seating, integrated shared tools (whiteboards, sync notes, Pomodoro timers), and instant peer-to-peer help features.
+\par
+\end{itemize}
+\hypertarget{sec:22-product-position-statement}{}
+\subsection*{2.2 Product Position Statement}
+\par\medskip
+\textbf{For:}
+\par\medskip
+Students and independent learners looking for an engaging, context-driven online study environment.
+\par\medskip
+\textbf{Who:}
+\par\medskip
+Need an all-in-one platform to solve academic problems asynchronously, access verified learning materials, and instantly jump into live study groups with similar learning preferences.
+\par\medskip
+\textbf{“Studitopia” is a:}
+\par\medskip
+Forum-centric collaborative learning and social platform.
+\par\medskip
+\textbf{That:}
+\par\medskip
+Unifies asynchronous academic discussions, curated resource repositories, and spatial virtual study rooms into a single studyspace.
+\par\medskip
+\textbf{Unlike:}
+\par\medskip
+Generic social messaging platforms like Discord, which rely on unstructured, noisy text channels and lack native academic workflows, integrated focus tools, and structured resource indexing.
+\par\medskip
+\textbf{Our product:}
+\par\medskip
+Organizes the entire learning experience around topic-based forum threads, allowing users to attach context-specific resources, instantly launch or join live study rooms tied directly to discussion topics, and build a community-curated academic library.
+\par\medskip
+\par\noindent\rule{\linewidth}{0.4pt}\par\medskip
+\hypertarget{sec:3-stakeholder-and-user-descriptions}{}
+\section*{3. Stakeholder and User Descriptions}
+\par\medskip
+\textbf{\textbf{Performed by:}} [Binh] \textbar{} \textbf{\textbf{Reviewed by:}} [Huy] \textbar{} \textbf{\textbf{Edited by:}} []
+\par\medskip
+To effectively provide products and services that meet stakeholders' and users' real needs, it is necessary to identify and involve all stakeholders as part of the Requirements Modeling process.
+\par\medskip
+You must also identify the users of the system and ensure that the stakeholder community adequately represents them.
+\par\medskip
+This section provides a profile of the stakeholders and users involved in the project, and the key problems they perceive to be addressed by the proposed solution.
+\par\medskip
+It does not describe their specific requests or requirements, as these are captured in a separate stakeholder requests artifact. Instead, it provides the background and justification for why the requirements are needed.
+\par\medskip
+\hypertarget{sec:31-stakeholder-summary}{}
+\subsection*{3.1 Stakeholder Summary}
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.173\textwidth}|>{\raggedright\arraybackslash}p{0.333\textwidth}|>{\raggedright\arraybackslash}p{0.429\textwidth}|}
+\hline
+Name & Description & Responsibilities \\ \hline
+\endhead
+\textbf{Product Owner /\allowbreak{} Product Manager} & Lead the software vision and oversees the project roadmap, scope execution and delivery milestones. & • Define the product vision and prioritizes the feature backlogs.\newline{}  • Monitor the project progress and delivery schedules.\newline{}  • Ensure the app’s market demand alignment and unique selling points. \\ \hline
+\textbf{Software Development (Dev) Team} & The technical team responsible for writing, testing and maintaining the app’s source code, databases, and APIs. & • Implement the app features, UI and backend logic.\newline{}  • Perform code reviews, unit testing and bug fixes to ensure requirements are met.\newline{}  • Ensure code maintainability and structural scalability. \\ \hline
+\textbf{Operations \& Maintenance (O\&M) Team} & The group responsible for maintaining software stability, server infrastructure, bug fixes, optimization and deployment pipelines. & • Ensure high system availability and operational performance.\newline{}• Monitors server loads, connections and database constraints. \\ \hline
+\textbf{Trust \& Safety (T\&S) Team} & Operations team tasked with enforcing community guidelines, reviewing reported content, and maintaining a safe learning space. & • Review user reports on inappropriate posts, documents or messages.\newline{}• Audit automated content filters (profanity, copyright infringement, malware)\newline{}• Issue warnings, suspensions or permanent bans to violating accounts. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+\hypertarget{sec:32-user-summary}{}
+\subsection*{3.2 User Summary}
+\par\medskip
+Present a summary list of all identified users.
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.132\textwidth}|>{\raggedright\arraybackslash}p{0.286\textwidth}|>{\raggedright\arraybackslash}p{0.379\textwidth}|>{\raggedright\arraybackslash}p{0.122\textwidth}|}
+\hline
+Name & Description & Responsibilities & Stakeholder \\ \hline
+\endhead
+\textbf{Student /\allowbreak{} Independent Learner} & Primary end user (high school/\allowbreak{}university students, self-taught learners) who uses the platform to study, ask questions, and collaborate. & • Participates in forum discussions and asks learning questions. \newline{}  • Joins or creates virtual study rooms. \newline{} • Uses shared study tools (whiteboard, notes, timers) during sessions. \newline{} • Shares, previews, and downloads verified study documents. & Product Owner \\ \hline
+\textbf{Peer Helper /\allowbreak{} Mentor} & Experienced student or subject expert who actively assists others by answering forum threads and providing live study aid. & • Answers learning problem posts on the forum. \newline{} • Responds to live help requests and joins temporary help study sessions. \newline{} • Marks accepted solutions and nominates top-quality documents for the Library. & Trust \& Safety (T\&S) Team \\ \hline
+\textbf{Study Group Leader /\allowbreak{} Tutor} & User who creates, structures, and manages custom study rooms, schedules study sessions, and coordinates group learning. & • Creates and configures custom study room policies (capacity, tools, access). \newline{} • Approves or rejects incoming room join requests. \newline{} • Manages group resources, scheduled timers, and collaborative workspaces. & Product Owner \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+\hypertarget{sec:33-user-environment}{}
+\subsection*{3.3 User Environment}
+\par\medskip
+\begin{itemize}
+\item \textbf{Primary Operating Environment \emph{(Forum)}:}
+\par
+\begin{itemize}
+\item \textbf{Home Feed:} The core user landing page and primary interface is an interactive academic forum feed where discussions, learning problems, attached resources, and live study room links are unified.
+\par
+\item \textbf{Navigation by Context:} Users initiate all primary learning activities, like asking questions, searching for past solved problems, viewing attached study documents, or jumping into live table discussions, directly from specific forum threads.
+\par
+\end{itemize}
+\item \textbf{Task Participation \& Scale:}
+\par
+\begin{itemize}
+\item \textbf{Asynchronous Forum Activity:} Individual learners create, reply to, and upvote academic discussion threads or search the community knowledge base.
+\par
+\item \textbf{Thread-Spawned Study Rooms:} Users can launch live virtual study rooms directly from forum posts, accommodating small and large study rooms (up to \textasciitilde{}40 seats).
+\par
+\item \textbf{System Capacity:} The system architecture supports at least 10,000 registered users, 100,000 forum posts, 10, 000 requests per second, and 200 concurrent users in virtual study rooms.
+\par
+\end{itemize}
+\item \textbf{Task Cycles \& Activity Durations:}
+\par
+\begin{itemize}
+\item \textbf{Short Cycle (5–15 minutes):} Browsing the forum feed, posting quick learning problems, uploading contextual problem attachments, or upvoting accepted solutions.
+\par
+\item \textbf{Medium Cycle (25–50 minutes):} Joining a live study room attached to a forum thread for study sessions using synchronized timers and shared whiteboards.
+\par
+\item \textbf{Long Cycle (1–3 hours):} In-depth collaborative problem solving, multi-topic forum discussions, and group study meetings.
+\par
+\end{itemize}
+\item \textbf{Environmental Constraints:}
+\par
+\begin{itemize}
+\item \textbf{Data Synchronization \& Fallback:} Forum text inputs and shared notes require automatic local buffer saves to prevent data loss during network disruptions.
+\par
+\item \textbf{Real-Time Latency Rules:} Forum message delivery and whiteboard updates enforce sub-second delivery latency to maintain smooth interaction.
+\par
+\end{itemize}
+\item \textbf{System Platforms \& Technical Ecosystem:}
+\par
+\begin{itemize}
+\item \textbf{Current Platforms:} Desktop browsers (Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari).
+\par
+\item \textbf{Future Expected Platforms:} Native mobile apps (iOS and Android) for real-time push notifications on forum replies and help requests.
+\par
+\item \textbf{Complementary Applications in Use:} Personal note-taking tools (Notion, Obsidian), external chat apps (Discord, Messenger), and university LMS portals (Canvas, Moodle).
+\par
+\item \textbf{Integration Requirements:} Google OAuth 2.0 for single-click registration/\allowbreak{}login; one-click export of forum thread summaries, whiteboards, and notes to standard formats (PDF, PNG).
+\par
+\end{itemize}
+\end{itemize}
+\hypertarget{sec:34-summary-of-key-stakeholder-or-user-needs}{}
+\subsection*{3.4 Summary of Key Stakeholder or User Needs}
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.116\textwidth}|>{\raggedright\arraybackslash}p{0.072\textwidth}|>{\raggedright\arraybackslash}p{0.224\textwidth}|>{\raggedright\arraybackslash}p{0.208\textwidth}|>{\raggedright\arraybackslash}p{0.282\textwidth}|}
+\hline
+Need & Priority & Concerns & Current Solution & Proposed Solutions \\ \hline
+\endhead
+\textbf{Forum Discussion \& Room Integration} & Highest (Rank 1) & General messaging platforms rely on unstructured, noisy text channels where learning discussions, problem contexts, and study links quickly get buried and lost. & Using Discord servers or social group chats alongside separate cloud drive links, resulting in notification fatigue and lost study context. & A \textbf{Forum Home Feed} where every academic discussion thread acts as an anchor, allowing users to attach contextual resources and launch live virtual study rooms directly from posts. \\ \hline
+\textbf{Resource Management \& Retention} & High (Rank 2) & Files and notes uploaded in casual chat feeds are temporary, unorganized, and often deleted or lost over time. & Manually saving files to personal storage or searching back through unstructured chat histories. & \textbf{Thread-to-Library Promotion}, allowing high-quality forum documents and solution breakdowns to be upvoted, verified, and permanently indexed in a searchable subject Library. \\ \hline
+\textbf{Instant \& Contextual Peer Assistance} & Medium (Rank 3) & Students get stuck on specific academic problems without an efficient, structured way to request instant help from qualified peers in real time. & Posting static questions in general social channels or forums and waiting hours for text replies without interactive visual tools. & \textbf{Live Help Requests \& Temporary Study Rooms}, allowing users to tag forum posts or seats with topic help badges and instantly spawn a temporary, thread-linked study room equipped with shared whiteboards, sync notes, and formula tools for live collaboration. \\ \hline
+\textbf{Silent Co-Presence \& Focus Mechanics} & Medium (Rank 4) & Standard voice calls force immediate verbal conversation, creating pressure and disrupting silent, deep-focus study (body doubling). & Turning off microphones/\allowbreak{}cameras in standard voice channels or using third-party Pomodoro website timers independently. & \textbf{Spatial Seating \& Focus Modes}, featuring visual table layouts, ambient soundscapes, synchronized Pomodoro timers, and optional blurred camera feeds. \\ \hline
+\textbf{Broadcast Messages \& Targeted Notifications} & Medium (Rank 5) & System notifications and room announcements get lost in standard chat feeds, causing users to miss study sessions or urgent help requests. & Relying on noisy @everyone mentions or separate calendar/\allowbreak{}chat apps, leading to notification spam and ignored alerts. & \textbf{Targeted In-App Notifications \& Help Alerts} filtered by user preferences, subject tags, and active thread/\allowbreak{}room context. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+\hypertarget{sec:35-alternatives-and-competition}{}
+\subsection*{3.5 Alternatives and Competition}
+\par\medskip
+Identify alternatives that stakeholders perceive as available.
+\par\medskip
+These may include:
+\par\medskip
+\begin{itemize}
+\item Buying a competitor's product.
+\par
+\item Building an in-house solution.
+\par
+\item Maintaining the status quo.
+\par
+\item Adopting another available or emerging solution.
+\par
+\end{itemize}
+List any known competitive choices that exist or may become available.
+\par\medskip
+Include the major strengths and weaknesses of each competitor as perceived by the stakeholder or end user.
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.150\textwidth}|>{\raggedright\arraybackslash}p{0.204\textwidth}|>{\raggedright\arraybackslash}p{0.257\textwidth}|>{\raggedright\arraybackslash}p{0.307\textwidth}|}
+\hline
+Alternative or Competitor & Description & Strengths & Weaknesses \\ \hline
+\endhead
+Discord & Popular real-time voice, video, and text communication platform structured around servers and channels & • High existing user adoption and familiarity among students. \newline{} • Powerful, low-latency voice/\allowbreak{}video streaming infrastructure. \newline{} • Large bot ecosystem for basic study timers and audio bots. & • Unstructured text channels lead to noisy feeds and lost study attachments. \newline{} • Lacks native academic tools (LaTeX, shared whiteboards, document repositories). \newline{} • Designed primarily for gaming/\allowbreak{}socializing, leading to high distraction potential \\ \hline
+Maintain the Status Quo (University LMS + Messenger /\allowbreak{} WhatsApp) & Using university Learning Management Systems (e.g., Canvas, Moodle) alongside standard messaging apps for group work. & • Zero adoption barrier as students already use them. \newline{} • Official institutional compliance for coursework delivery and grading. & • Highly fragmented study experience across multiple disconnected apps. \newline{} • LMS forums are static, clunky, and lack real-time peer engagement or instant room matching. \newline{} • Messaging apps lack study tools, structured forums, and privacy controls for meeting new peers. \\ \hline
+Dedicated Focus Apps (e.g., Yeolpumta /\allowbreak{} Focusmate) & Virtual study camera rooms and focus tracker applications designed for solo study and body doubling. & • Strong gamification, time-tracking, and study streak statistics. \newline{}  • High accountability for deep focus and solo study sessions. & • Strictly limited to time tracking and camera feeds without integrated problem-solving forums. \newline{} • Lacks collaborative academic tools like shared whiteboards, sync notes, or resource libraries. \\ \hline
+Building an In-House University Study Portal & Custom-built web portals developed internally by academic institutions for their student bodies. & • Tailored specifically to internal curriculum and single-sign-on (SSO) systems. \newline{} • High data privacy control and direct institutional moderation. & • High initial development and ongoing maintenance costs. \newline{} • Typically features outdated UI/\allowbreak{}UX, lacking spatial room layouts, interactive whiteboards, and cross-institutional peer networks. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+\par\noindent\rule{\linewidth}{0.4pt}\par\medskip
+\hypertarget{sec:4-product-overview}{}
+\section*{4. Product Overview}
+\par\medskip
+\textbf{\textbf{Performed by:}} [Huy] \textbar{} \textbf{\textbf{Reviewed by:}} [Binh]] \textbar{} \textbf{\textbf{Edited by:}} []
+\par\medskip
+Studitopia is a forum-centric collaborative learning and social networking platform that brings academic discussions, learning resources, study planning, virtual study environments, and social interaction into one environment.
+\par\medskip
+\hypertarget{sec:41-product-perspective}{}
+\subsection*{4.1 Product Perspective}
+\par\medskip
+Studitopia is a standalone platform with its own user accounts, profiles, academic discussions, learning resource library, study-planning functions, meeting rooms, and social networking features. It is intended to coexist with university Learning Management Systems (LMS) and communication applications that learners may already use
+\par\medskip
+The platform's main purpose is to connect activities that are often performed separately, allowing users to move between academic discussions, relevant resources, peer assistance, and collaborative study sessions while retaining the learning context.
+\par\medskip
+The product consists of the following major functional components:
+\par\medskip
+\begin{itemize}
+\item \textbf{Authentication and Account Management:} Supports account registration, email OTP verification, login, logout, password recovery, account deletion, and session management. Google OAuth 2.0 is also identified as an optional authentication method. The confirmed inactivity timeout for an authenticated session is 30 minutes.
+\par
+\item \textbf{Profile, Learning Preferences, and Privacy:} Allows users to maintain profile information such as university, major, subjects, interests, learning habits, preferred study times, and learning goals. These details support personalized discovery and room recommendations. Users can also manage visibility, online status, audio/\allowbreak{}video availability, and communication or document-access preferences.
+\par
+\item \textbf{Academic and Social Forum:} Provides a space for users to publish and discuss learning topics. It supports Normal Posts, Material Posts, and Functional Posts. Posts support comments, replies, reactions, and accepted solutions, and academic content can be classified by university, major, and course.
+\par
+\item \textbf{Search and Discovery:} Allows users to search by tags, content, and users, and to discover relevant posts, materials, rooms, and friends. Recommendations may consider trending activity, user relevance, profile preferences, interests, and courses in progress.
+\par
+\item \textbf{Learning Resource Library:} Provides a centralized collection in which users can publish, search, access, and download learning resources. Resources can include descriptive information such as titles, descriptions, and subject tags.
+\par
+\item \textbf{Study Planning and Course Management:} Supports course planning, personal course settings, credit computation, study schedules, and academic pathway planning. The proposal also identifies prerequisite trees.
+\par
+\item \textbf{Lobby and Meeting Room Management:} Provides room discovery, room details, recommendations, manual search, automatic matching, room creation, and room configuration. Studitopia has two room categories: a \textbf{Hall Room}, which is completely public, and a \textbf{Study Room}, whose creator chooses whether it is public or private. Public Study Rooms can be joined subject to availability and capacity, Private Study Rooms require the applicable invitation or approval process.
+\par
+\item \textbf{Study Sessions and Collaborative Learning Tools:} Supports room participation and the smaller collaboration contexts represented by tables in Hall Rooms and study groups in Study Rooms. Available collaborative tools include shared whiteboards, shared notes, synchronized timers, voice communication, messaging, and screen sharing. Room owners or managers can configure room policies and the tools available to participants.
+\par
+\item \textbf{Learning Help and Social Networking:} Enables learners to request help from friends, eligible learners in the same room, or learners studying or interested in the same concept. Users can find study partners, send and manage friend requests, create public or private groups, exchange messages, and share documents. These capabilities support both individual learning connections and smaller collaborative communities.
+\par
+\item \textbf{Notifications, Privacy, and Trust and Safety:} Provides notifications for activities such as messages, friend requests, room invitations, and learning help requests. Users can control communication and privacy settings, block or mute other users, and report inappropriate behavior or content. Reports are routed for moderation to help maintain a safe learning community.
+\par
+\end{itemize}
+\hypertarget{sec:external-interfaces-and-operating-environment}{}
+\paragraph*{External interfaces and operating environment}
+\par\medskip
+Studitopia is initially intended to be accessed through desktop web browsers, including Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari. Native applications for iOS and Android are identified as future platform extensions, not as confirmed requirements for the initial version.
+\par\medskip
+The main external interfaces and interactions are:
+\par\medskip
+\begin{itemize}
+\item \textbf{Google OAuth 2.0:} Provides an optional Google-based registration and authentication path.
+\par
+\item \textbf{Email delivery service:} Sends OTP codes for email verification and password recovery.
+\par
+\item \textbf{Web browsers and user devices:} Provide access to the platform's user interface, room tools, audio/\allowbreak{}video capabilities, screen sharing, and local storage used for supported buffering and synchronization behavior.
+\par
+\item \textbf{File export:} Supports exporting selected learning content, such as whiteboards and notes, to standard formats including PDF and PNG.
+\par
+\item \textbf{Existing LMS and communication applications:} Canvas, Moodle, Discord, Messenger, Notion, and Obsidian are identified as applications that users may already use. They are part of the surrounding user environment; direct integration with their APIs or institutional databases is not specified as a current requirement.
+\par
+\end{itemize}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.86\textheight,keepaspectratio]{vision_figures/diagram1.png}
+\end{center}
+\par\medskip
+\hypertarget{sec:42-assumptions-and-dependencies}{}
+\subsection*{4.2 Assumptions and Dependencies}
+\par\medskip
+The development and operation of Studitopia depend on the assumptions and external conditions listed below. These assumptions describe the environment in which the proposed features are expected to operate. If an assumption changes or a dependency becomes unavailable, the product scope, requirements, or implementation plan may need to be revised.
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.169\textwidth}|>{\raggedright\arraybackslash}p{0.416\textwidth}|>{\raggedright\arraybackslash}p{0.350\textwidth}|}
+\hline
+Assumption or Dependency & Description & Impact if Changed \\ \hline
+\endhead
+Desktop Web Browser Availability & The initial platform is expected to operate through desktop versions of Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari. & Changes in supported browsers may require compatibility testing, interface adjustments, or changes to supported features. \\ \hline
+Internet Connectivity & Users are expected to have network access for online forums, resource retrieval, room participation, and real-time communication. The proposal expects supported text and note changes to be buffered locally and synchronized after reconnection where applicable. & Unreliable connectivity may interrupt live collaboration, messaging, and resource access; synchronization behavior may need further refinement. \\ \hline
+Google OAuth 2.0 Availability & Google OAuth 2.0 is an optional external authentication service for users who choose Google-based registration or login. & Changes to Google's service or authentication policies may affect Google-based account access. The platform would still need to support its non-Google authentication path. \\ \hline
+Email Delivery Service & An operational email delivery service is required to send OTP codes for email verification and password recovery. & Email delivery failures may prevent users from completing verification or recovering their accounts. \\ \hline
+User Devices and Browser Capabilities & Collaborative activities may require compatible browser and device capabilities for audio, video, screen sharing, and local storage. & Unsupported hardware or browser capabilities may limit access to specific room tools or reduce the quality of collaboration. \\ \hline
+File Storage and Processing & The platform requires storage and processing capabilities for uploaded room documents and published learning resources. The proposal identifies PDF, DOCX, PNG, and JPG as supported examples and gives 25 MB as an example configurable file-size limit. & Storage limits, file-processing failures, or changes to permitted formats may affect document sharing, previews, downloads, and Library publishing. \\ \hline
+File Safety Scanning & Uploaded room documents are expected to undergo file validation and malware scanning before they become downloadable. & If scanning services are unavailable, the system may need to delay access to uploaded files or apply an alternative review process. \\ \hline
+Community Participation and Moderation & The platform expects students, peer helpers, mentors, and study group leaders to contribute discussions, learning resources, and assistance. Trust and Safety activities are expected to review reported content and user behavior. & Low participation may reduce the usefulness of recommendations and peer assistance; insufficient moderation may reduce community safety and content quality. \\ \hline
+System Capacity & The system architecture supports at least 10,000 registered users, 100,000 forum posts, 10, 000 requests per second, and 200 concurrent users in virtual study rooms. & Higher usage or larger room requirements may require additional infrastructure capacity and performance optimization. The capacity measures must be validated separately during testing. \\ \hline
+External LMS and Communication Applications & Canvas, Moodle, Discord, Messenger, Notion, and Obsidian are identified as complementary applications used by the target users. Direct integration with their APIs or institutional databases is not currently specified. & Adding direct integrations later may require additional interfaces, authentication arrangements, data permissions, and agreements with external providers. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+\par\noindent\rule{\linewidth}{0.4pt}\par\medskip
+\hypertarget{sec:5-product-features}{}
+\section*{5. Product Features}
+\par\medskip
+\textbf{\textbf{Performed by:}} [Huy] \textbar{} \textbf{\textbf{Reviewed by:}} [Binh] \textbar{} \textbf{\textbf{Edited by:}} []
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.068\textwidth}|>{\raggedright\arraybackslash}p{0.159\textwidth}|>{\raggedright\arraybackslash}p{0.369\textwidth}|>{\raggedright\arraybackslash}p{0.072\textwidth}|>{\raggedright\arraybackslash}p{0.233\textwidth}|}
+\hline
+Feature ID & Feature Name & Description & Priority & Related Use Cases \\ \hline
+\endhead
+F-001 & Account Registration and Verification & New users create account and complete the required identity verification before accessing platform services. It provides a clear entry point for students and independent learners who want to participate in the learning community. & High & US-01 Register Account; US-08 OTP Validation \\ \hline
+F-002 & Session Management & Registered users access their accounts and end their sessions when they finish using the platform. It manages inactive sessions so that access to personal information and learning activities is not left open indefinitely. It benefits all users by providing controlled and consistent access & High & US-02 Login; US-03 Logout; US-04 Automatic Logout; US-05 Logout Trigger \\ \hline
+F-003 & Account Recovery and Deletion & Users regain access when they forget passwords and request permanent deletion of their accounts. It provides account-related actions for users who need to recover access or discontinue using the platform. It benefits users by giving them control over the continued use of their accounts. & High & US-06 Recover Password; US-07 Delete Account \\ \hline
+F-004 & Learning Preferences & Users maintain personal and academic information, including their university, major, subjects, interests, learning habits, preferred study times, and learning goals. These details help represent each learner's background and study interests within the platform. It benefits learners by supporting relevant discovery, recommendations, and connections with other users. & High & Profile Management; Set Learning Preferences \\ \hline
+F-005 & Communication Preferences & Users control the visibility of their profile information and manage how other users may contact or interact with them. It covers privacy choices such as online status, audio and video availability, and restrictions on communication. It benefits users by helping them participate in the community while maintaining control over their personal information and interactions. & High & Manage Privacy; US-38 Control Communication \\ \hline
+F-006 & Academic Forum & System provides a shared space for users to publish and explore academic questions, learning problems, ideas, and general community discussions. It supports discussions relevant to universities, majors, courses, and broader learning interests. It benefits students, peer helpers, and university communities by making academic knowledge sharing available in one place. & High & US-36 Participate in Forum Discussions; Academic and Social Forum Management in Product Scope \\ \hline
+F-007 & Post Creation & Users contribute different kinds of content through Discussion Posts, Material Posts, and Functional Posts. These post types support discussion, sharing learning materials, and presenting interactive academic content. It benefits contributors and readers by allowing information to be shared in a form suited to its purpose. & High & US-36 Participate in Forum Discussions; US-42 Shared Learning Resources; Post Creation and Management in Product Scope \\ \hline
+F-008 & Academic Classification & Posts and learning content will be associated with relevant academic contexts, including universities, majors, courses, subjects, and tags. Tags can describe the purpose or topic of a post, with examples such as discussion, material, prerequisite tree, and quiz. It benefits users by helping them understand the context of content and find contributions relevant to their studies. & High & Academic and Social Forum Management in Product Scope; US-36 Participate in Forum Discussions; US-42 Shared Learning Resources \\ \hline
+F-009 & Discussion Management & Users participate in discussions through comments, replies, and reactions to posts and answers. It also allows a post author to identify an answer as an accepted solution when a learning problem has been resolved. It benefits learners by making useful responses easier to recognize and by preserving answers that may help others with similar questions. & High & US-28 Post a Learning Problem to the Forum; US-36 Participate in Forum Discussions \\ \hline
+F-010 & Search Engine & Users search for relevant platform content, including tags, posts, users, and learning resources. It helps users locate information across the academic and social areas without relying only on recommendations or browsing. It benefits learners and contributors by making existing discussions, materials, and community members easier to find. & High & Search and Discovery in Product Scope; US-09 Search for a Room Manually; US-29 Find a Study Partner; US-34 Find Learning Resources \\ \hline
+F-011 & Personalized Recommendations & This feature presents users with suggested rooms, posts, learning materials, and potential friends that may be relevant to their interests and learning activities. Recommendations may take account of profile preferences, subjects, courses in progress, relevance, and community activity as described in the proposal. It benefits learners by helping them discover useful content and learning opportunities that they might not find through a general search. & High & US-08 Receive Room Recommendations; US-29 Find a Study Partner; US-35 Receive Resource Recommendations \\ \hline
+F-012 & Learning Resource Library & This feature provides a central collection in which users can discover, access, and retrieve books and other learning resources. Resources can be explored using relevant information such as titles, descriptions, subjects, and tags, and users can receive suggestions related to their learning interests. It benefits students and independent learners by making educational materials easier to locate and reuse. & High & US-34 Find Learning Resources; US-35 Receive Resource Recommendations; Learning Resource Library in Product Scope \\ \hline
+F-013 & Resource Contribution and Reuse & Users contribute learning resources and make useful academic content available to other learners. It supports the product vision of retaining valuable materials and solution explanations from community learning activities for broader discovery through the Library. It benefits contributors and future learners by helping useful knowledge remain accessible beyond the original discussion, the detailed curation and promotion rules are to be defined in the use-case model. & High & US-42 Shared Learning Resources; US-43 View My Storage; US-44 Delete My Published Document; Thread-to-Library Promotion in Vision Document \\ \hline
+F-014 & Room Discovery & Learners discover available Hall Rooms and Study Rooms through browsing, search, and recommendations. It provides information that helps users understand a room's purpose, topic, capacity, participants, and available learning features before deciding to enter. It benefits learners by helping them select a suitable environment for their study interests and preferences. & High & US-08 Receive Room Recommendations; US-09 Search for a Room Manually; US-41 View Room Detail \\ \hline
+F-015 & Automatic Room Matching & Learner request assistance in finding a suitable available public room without having to compare rooms individually. The matching capability considers the learner's relevant preferences and the availability and suitability of rooms. It benefits learners who want to enter a compatible study environment quickly, while the detailed matching rules are handled in the use-case model. & Medium & US-10 Automatically Match to a Room \\ \hline
+F-016 & Hall Room Participation & This feature provides access to Hall Rooms, which are completely public environments where learners can enter and participate. Participants can choose tables within a hall and view permitted information about other tables before deciding to join them. It benefits learners who want an open study or social environment where they can encounter and interact with other members of the community. & High & US-11 Join a Public Room; US-12 Select a Public Room Table; US-13 View Other Tables; Hall Room clarification \\ \hline
+F-017 & Study Room Creation and Access & Students and tutors create Study Rooms for a particular subject, activity, or group and choose whether each room is public or private. It supports participation in public Study Rooms and controlled access to private Study Rooms. It benefits study groups, tutors, and learners who need either an open study space or a more restricted environment. & High & US-14 Request to Join a Custom Room; US-15 Manage Room Join Requests; US-16 Create a Custom Room \\ \hline
+F-018 & Room Management and Study Scheduling & Room owners or managers organize study environments and arrange when study sessions take place. It covers room policies such as capacity, duration, communication rules, and available tools, as well as the scheduling capabilities described in the proposal. It benefits study group leaders, tutors, and participants by helping them organize sessions according to their learning purposes. & Medium & US-17 Configure Room Policies; Schedule Room; Study Schedule in Product Scope \\ \hline
+F-019 & Study Group Participation & Learners participate in the smaller collaborative spaces provided within Hall Rooms and Study Rooms. It supports choosing a table or joining a study group so that learners can work with others in a more focused setting. It benefits participants by giving them a way to organize their interaction within a larger room environment. & High & US-12 Select a Public Room Table; US-13 View Other Tables; Study Group and Table Group in Product Scope \\ \hline
+F-020 & Room Document Sharing & Participants share learning documents with others in a room and access documents contributed by room members. It supports the exchange of materials needed for the current study activity. It benefits learners and study groups by keeping relevant resources available to participants in the shared learning environment. & High & US-32 Share Learning Documents in a Room; US-33 Access Shared Documents \\ \hline
+F-021 & Shared Whiteboard & Participants in a collaborative learning environment explain ideas and work through problems on a shared whiteboard. It supports visual collaboration as part of group learning and problem solving. It benefits students, peer helpers, and tutors who need to communicate concepts visually with other participants. & High & US-18 Use Shared Whiteboard \\ \hline
+F-022 & Shared Notes & Participants create and edit notes together during a study session. It supports the shared recording of explanations, important information, and outcomes from collaborative work. It benefits learners and study groups by helping them preserve the information developed during a session. & High & US-19 Use Shared Notes \\ \hline
+F-023 & Shared Timer and Focus Support & This feature provides shared time-management activities for learners participating in the same study environment. It supports coordinated study periods and breaks, including the timer modes described in the proposal, and contributes to the product vision of focused co-presence. It benefits individuals and groups by helping them maintain a shared study rhythm and manage their study time. & Medium & US-20 Use Shared Timer; Silent Co-Presence and Focus Mechanics in Vision Document \\ \hline
+F-024 & Learner Communication & Learners express interest in communicating and to communicate through private messages or voice conversations. It supports both lightweight interactions and more direct conversations between users who wish to discuss a learning topic. It benefits learners by enabling communication that can complement forum discussions and collaborative study activities. & High & US-21 Send a Hand Wave; US-22 Respond to a Hand Wave; US-23 Start Message Communication; US-24 Start Voice Communication \\ \hline
+F-025 & Contextual Learning Assistance & Learners request academic help from friends, people in the same room, or learners who share an interest in the relevant concept. It connects a learning problem with people who may be able to provide assistance and supports continuing the problem as a forum discussion. It benefits learners seeking help and peer helpers or mentors who want to contribute their knowledge. & High & US-25 Request Learning Help from a Friend; US-26 Request Help from the Same Room; US-27 Request Help from Concept Learners; US-28 Post a Learning Problem to the Forum \\ \hline
+F-026 & Study Partner Discovery & Users find other learners with similar subjects, interests, goals, or learning preferences. It presents relevant information about potential study partners so users can decide whom they may want to connect with. It benefits learners who want to build academic connections beyond their existing friends or current study rooms. & Medium & US-29 Find a Study Partner \\ \hline
+F-027 & Friend Connection Management & Users establish and manage friendships with other members. It supports sending, receiving, accepting, and declining friend requests so that users can control their personal learning network. It benefits learners who want to maintain connections for future discussions, study sessions, and resource sharing. & Medium & US-30 Send Friend Request; US-31 Manage Friend Requests \\ \hline
+F-028 & Group Collaboration & Users create, join, and manage public or private groups for ongoing collaboration. Group members can communicate, share documents, view membership, and manage participation according to their permissions. It benefits classmates, project teams, and other learning communities that need a shared space for continued coordination. & Medium & Friend and Group Management in Product Scope; Friend Group Flow \\ \hline
+F-029 & Course and Study Planning & Learners organize their academic progress through course planning, course settings, credit calculation, and study scheduling. It supports understanding academic pathways and planning learning activities in relation to a student's university and major. It benefits students who need to manage their degree-related learning and coordinate their study commitments. & Medium & Course Management; Study Planning in Product Scope \\ \hline
+F-030 & Interactive Academic Tools & This feature provides interactive academic content that helps learners explore or practice concepts rather than only read static explanations, include prerequisite trees and immediate quizzes, and the team's clarification includes interactive mathematical visualizations such as graphs whose parameters can be adjusted by learners. It benefits students and independent learners by supporting exploration, practice, and a more engaging understanding of academic topics. & Medium & Functional Posts in Product Scope; Adaptive Prerequisite Tree; Immediate Quiz; Dynamic Computation \\ \hline
+F-031 & Notifications & This feature informs users about relevant activities, including messages, friend requests, room invitations, and learning help requests. It allows users to stay aware of interactions that may require their attention and to manage their notification preferences. It benefits all platform users by helping them remain connected to important learning and community activities. & High & US-37 Receive Notifications \\ \hline
+F-032 & Trust, Safety and Moderation & This feature allows users to control unwanted interactions and report inappropriate behavior or content within the platform. It also supports the review of reports and the enforcement of community guidelines by responsible personnel. It benefits learners, mentors, group leaders, and the wider community by supporting a safe and respectful learning environment. & High & US-38 Control Communication; US-39 Report Inappropriate Behavior; Trust \& Safety responsibilities in Vision Document \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+\hypertarget{sec:representative-user-workflows}{}
+\subsubsection*{Representative User Workflows}
+\par\medskip
+\hypertarget{sec:post-browsing-workflow}{}
+\paragraph*{Post Browsing Workflow}
+\par\medskip
+\begin{center}
+\includegraphics[width=\textwidth,height=0.86\textheight,keepaspectratio]{vision_figures/diagram2.png}
+\end{center}
+\par\medskip
+\hypertarget{sec:room-workflow}{}
+\paragraph*{Room Workflow}
+\par\medskip
+\begin{center}
+\includegraphics[width=\textwidth,height=0.86\textheight,keepaspectratio]{vision_figures/diagram3.png}
+\end{center}
+\par\medskip
+\hypertarget{sec:library-workflow}{}
+\paragraph*{Library Workflow}
+\par\medskip
+\begin{center}
+\includegraphics[width=\textwidth,height=0.86\textheight,keepaspectratio]{vision_figures/diagram4.png}
+\end{center}
+\par\medskip
+\hypertarget{sec:6-non-functional-requirements}{}
+\section*{6. Non-Functional Requirements}
+\par\medskip
+\textbf{\textbf{Performed by:}} [Huy] \textbar{} \textbf{\textbf{Reviewed by:}} [Binh] \textbar{} \textbf{\textbf{Edited by:}} []
+\par\medskip
+\begingroup
+\scriptsize
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.113\textwidth}|>{\raggedright\arraybackslash}p{0.117\textwidth}|>{\raggedright\arraybackslash}p{0.261\textwidth}|>{\raggedright\arraybackslash}p{0.072\textwidth}|>{\raggedright\arraybackslash}p{0.073\textwidth}|>{\raggedright\arraybackslash}p{0.072\textwidth}|>{\raggedright\arraybackslash}p{0.072\textwidth}|>{\raggedright\arraybackslash}p{0.072\textwidth}|}
+\hline
+Requirement ID & Category & Requirement Description & Priority & Stability & Benefit & Effort & Risk \\ \hline
+\endhead
+NFR-001 & Performance & The system shall provide a response time of no more than 2 seconds for standard user actions under normal operating conditions. & High & High & High & Medium & Medium \\ \hline
+NFR-002 & Performance & The system shall support real-time messaging with a message delivery latency of no more than 1 second under normal operating conditions. & High & High & High & High & Medium \\ \hline
+NFR-003 & Performance & The system shall provide synchronization of collaborative learning tools, including shared notes and other standard updates, with a latency of no more than 1 second. & High & High & High & High & High \\ \hline
+NFR-004 & Performance & The system shall synchronize concurrent whiteboard updates across participants with a latency of no more than 1 second. & High & High & High & High & High \\ \hline
+NFR-005 & Scalability & The system architecture shall support at least 100 concurrent active rooms across Hall Rooms and Study Rooms. & High & High & High & High & High \\ \hline
+NFR-006 & Scalability & The system shall support at least 200 concurrent users participating in virtual study rooms, with individual rooms accommodating approximately 40 seats. & High & Medium & High & High & High \\ \hline
+NFR-007 & Scalability & The system architecture shall support at least 10,000 registered user accounts. & High & High & High & Medium & Medium \\ \hline
+NFR-008 & Scalability & The system architecture shall support the storage of at least 1,000,000 messages. & Medium & High & Medium & Medium & Medium \\ \hline
+NFR-009 & Scalability & The system architecture shall support at least 300 GB uploaded learning documents. & High & High & High & High & Medium \\ \hline
+NFR-010 & Scalability & The system architecture shall support at least 100,000 forum posts. & High & High & High & Medium & Medium \\ \hline
+NFR-011 & Availability & The system shall maintain at least 99.9\% monthly availability, excluding planned maintenance. & High & High & High & High & High \\ \hline
+NFR-012 & Security & The system shall require successful authentication before granting access to protected user accounts, personal information, and restricted platform resources. & High & High & High & Medium & Medium \\ \hline
+NFR-013 & Security & The system shall store user passwords using secure one-way password hashing rather than storing plaintext passwords. & High & High & High & Medium & Medium \\ \hline
+NFR-014 & Security & The system shall encrypt sensitive communications using Transport Layer Security (TLS) version 1.2 or higher. & High & High & High & Medium & Medium \\ \hline
+NFR-015 & Security & The system shall validate uploaded files according to permitted file types and file size limits before accepting them. Uploaded documents shall undergo malware and virus scanning before becoming available for download. & High & High & High & High & High \\ \hline
+NFR-016 & Security & The system shall automatically terminate authentication sessions after 30 minutes of user inactivity and require authentication before granting further access to protected resources. & High & High & High & Medium & Medium \\ \hline
+NFR-017 & Security & The system shall protect against common web application vulnerabilities, including Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF). & High & High & High & High & High \\ \hline
+NFR-019 & Privacy & The system shall provide users with configurable privacy controls, including at least two profile visibility levels: public and private. Users shall also be able to manage their online status, audio and video availability, friend requests, room participation, and shared document access. & High & High & High & Medium & Medium \\ \hline
+NFR-020 & Robustness & The system shall automatically buffer shared note changes locally when network connectivity is interrupted and synchronize the changes after reconnection without data loss. & High & High & High & High & High \\ \hline
+NFR-021 & Robustness & The system shall preserve user-entered forum text and supported inputs through local buffering mechanisms to reduce data loss during temporary network interruptions. & High & Medium & High & Medium & Medium \\ \hline
+NFR-022 & File Compatibility & The system shall support common learning document formats, including PDF, DOCX, PNG, and JPG, for room document sharing and access. The file size limit shall be configurable, with 25 MB identified as an example in the current proposal. & High & Medium & High & Medium & Medium \\ \hline
+NFR-023 & External Integration & The system shall support Google OAuth 2.0 for users who choose Google-based registration or authentication. & Medium & High & Medium & Medium & Medium \\ \hline
+NFR-024 & External Integration & The system shall support email delivery of one-time passwords (OTP) for account verification and password recovery. & High & High & High & Medium & Medium \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\end{document}
+

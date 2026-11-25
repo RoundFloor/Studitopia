@@ -1,0 +1,6 @@
+.opencode/
+.env
+.notion
+node_modules
+dist
+build

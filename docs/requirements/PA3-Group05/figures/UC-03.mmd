@@ -1,0 +1,26 @@
+flowchart TB
+    classDef actor fill:#fff2cc,stroke:#b8860b,stroke-width:2px,color:#000
+    classDef usecase fill:#dae8fc,stroke:#4a6fa5,stroke-width:2px,color:#000
+    classDef included fill:#e1d5e7,stroke:#7a5b8e,stroke-width:2px,color:#000
+    classDef extending fill:#d5e8d4,stroke:#5b8a53,stroke-width:2px,color:#000
+
+    Student@{ shape: person, label: "University Student" }
+
+    subgraph System["Studitopia System Boundary"]
+        direction TB
+        UC03(["UC-03<br/>Browse and Search the<br/>University Forum"])
+        I04(["I-04<br/>Load Forum Post List"])
+        E03(["E-03<br/>Search Forum"])
+        E04(["E-04<br/>View Post Detail"])
+    end
+
+    Student --- UC03
+
+    UC03 -. "include" .-> I04
+    E03 -. "extend" .-> UC03
+    E04 -. "extend" .-> UC03
+
+    class Student actor
+    class UC03 usecase
+    class I04 included
+    class E03,E04 extending

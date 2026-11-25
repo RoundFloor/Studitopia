@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+% ============ HEADER AND FOOTER ============
+% Header length
+\setlength{\headheight}{29.43912pt}
+
+% Footer page number would be on the lower-right corner
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+% Disable indentation on new paragraphs
+\setlength{\parindent}{0pt}
+
+% Line spacing 1.5
+\renewcommand{\baselinestretch}{1.5}
+
+% Optional: graphic path
+% \graphicspath{PATH_TO_GRAPHIC_FOLDER}
+
+% To use Times font family, uncomment this row
+% \usepackage{mathptmx}
+
+% To use roman section / subsection, uncomment these rows
+% \renewcommand{\thesection}{\Roman{section}}
+% \renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+
+% Define course name, report name and report title.
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{Nguyen Thanh An (24125024)}
+\newcommand{\studentname}{Nguyen Chi Bao (24125025)}
+\newcommand{\studentname}{Tran Nguyen Khanh Binh (24125026)}
+\newcommand{\studentname}{Tran Canh Anh Tuan (24125048)}
+\newcommand{\studentname}{Nguyen Le Quoc Huy (24125100)}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Ngoc Minh Thu}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Project: \reportname}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+% Appendix
+\appendix
+% Add \cleardoublepage to move appendices to next page.
+\input{appendix/appendix.tex}
+\end{document}
