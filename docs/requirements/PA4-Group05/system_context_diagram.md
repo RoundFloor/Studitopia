@@ -2,7 +2,7 @@
 
 **Version:** `1.1`
 
-**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** []
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Chi Bao]
 
 ## 1. Document Information
 
@@ -29,11 +29,11 @@ This document shows Studitopia as a whole, the human actors who interact with it
 
 ### 2.1 Source-Accurate Implementation Status
 
-- Implemented frontend routes are `/auth/login`, `/auth/register`, `/auth/recover_password`, `/auth/recover_otp`, `/auth/set_password`, `/auth/verify_otp`, and `/forum`.
-- Implemented backend endpoints cover authentication/OTP, account read and avatar upload, forum browse, post/tag read, file read, and SPA asset delivery.
-- Vite hosts the frontend on port `8999` only during development. In deployment, the NestJS Web package serves the compiled frontend, so there is no separate production frontend server.
-- There are no implemented frontend or backend routes for friends, meeting rooms, notifications, profile editing beyond avatar upload, or full resource-library management; these remain documented product requirements and future work.
-- `ReCaptchaService` is a stub and is not imported by `AppModule`; `WebService`/`WebBased()` are defined but not applied to routes.
+- **Implemented frontend routes:** The current frontend provides the following routes: `/auth/login`, `/auth/register`, `/auth/recover_password`, `/auth/recover_otp`, `/auth/set_password`, `/auth/verify_otp`, and `/forum`.
+- **Implemented backend functionality:** The backend currently supports authentication and OTP operations, account retrieval and avatar uploads, forum browsing, post and tag retrieval, file access, and SPA asset delivery.
+- **Frontend deployment architecture:** During development, Vite serves the frontend on port `8999`. In production, the NestJS Web package serves the compiled frontend directly, eliminating the need for a separate frontend server.
+- **Unimplemented features:** No frontend routes or backend endpoints currently exist for friend management, meeting rooms, notifications, profile editing beyond avatar uploads, or comprehensive resource-library management. These features remain part of the documented product requirements and are planned for future development.
+- **Incomplete service integration:** `ReCaptchaService` is currently a stub and is not registered in `AppModule`. Similarly, although `WebService` and `WebBased()` are defined, they have not yet been integrated into the application routes.
 
 ## 3. C4 Model - Level 1: System Context Diagram
 
@@ -64,17 +64,17 @@ C4Context
 
 ### 3.1 Explanation of the Diagram
 
-**Studitopia** is the system at the center. At Level 1 it is intentionally shown as a single box, even though internally it contains a NestJS/Express backend, a compiled React+TypeScript frontend, PostgreSQL, and local file storage. The backend, database, and file storage are hosted on the same server. During development, Vite hosts the SPA on port `8999`; in deployment, the NestJS Web package serves the compiled frontend assets to the browser, so no separate production frontend host exists.
+**Studitopia** is the central system in the architecture. At Level 1, it is represented as a single system boundary, abstracting away its internal implementation, which consists of a NestJS/Express backend, a compiled React + TypeScript frontend, PostgreSQL, and local file storage. The backend, database, and file storage are hosted on the same server. During development, Vite serves the frontend SPA on port `8999`. In production, the NestJS Web package delivers the compiled frontend assets directly to the browser, removing the need for a separate frontend host.
 
-**University Student** is the primary actor. At the requirements level, students register and verify university email, log in, manage profiles and preferences, browse and search the university forum, create posts, comment and answer, vote, save posts, share resources, manage friends and groups, join or create meeting rooms, and receive notifications. The current source implements authentication/OTP, account display and avatar upload, forum browse, and partially static feed/library views.
+**University Student** is the primary actor interacting with Studitopia. According to the product requirements, students should be able to register and verify their university email addresses, log in, manage profiles and preferences, browse and search the university forum, create posts, comment and answer, vote, save posts, share resources, manage friends and groups, create or join meeting rooms, and receive notifications. However, the current implementation only covers authentication and OTP verification, account information retrieval and avatar uploads, forum browsing, and partially static feed and library views.
 
-**Moderator / Administrator** is the secondary requirements-level actor responsible for trust and safety. No moderator-specific routes or components are implemented in the current source.
+**Moderator / Administrator** is a secondary actor defined at the requirements level, responsible for maintaining platform trust and safety. However, the current source code does not contain any dedicated moderator or administrator routes or components.
 
-**Web Browser** is the client software used by both human actors. It requests pages and API data from Studitopia. The backend returns the compiled React HTML, JavaScript, CSS, and JSON responses; the browser executes the frontend code and renders the UI. In development those assets come from Vite on port `8999`; in deployment they come from the backend Web package.
+**Web Browser** serves as the client application through which both human actors access Studitopia. It sends page requests and API calls to the system. The backend delivers the compiled React frontend assets, including HTML, JavaScript, and CSS, alongside JSON responses for data requests. The browser executes the frontend code and renders the user interface. During development, frontend assets are served by Vite on port `8999`, whereas in production they are delivered by the backend Web package.
 
-**Resend Email API** delivers OTP and recovery emails. **Discord Webhook** is the fallback OTP path. **Google Fonts** is a presentational external dependency loaded by the browser.
+**Resend Email API** is an external service used to deliver OTP and password-recovery emails. **Discord Webhook** provides an alternative delivery mechanism for OTP messages. **Google Fonts** is another external dependency, supplying typography resources directly to the browser for presentation purposes.
 
-The browser does not access the database directly. The backend is the only runtime client of PostgreSQL and exposes the `api/v1` surface consumed by the React frontend.
+The browser has no direct access to PostgreSQL. All database interactions are handled exclusively by the backend, which exposes the `api/v1` API surface consumed by the React frontend. This ensures that database access and application logic remain centralized within the backend.
 
 ### 3.2 Current External-System Boundary
 
