@@ -1,8 +1,8 @@
 # UC-02 Use Case Model: Log In
 
-## 1. Model Information
+**Version:** `2.0`
 
-| Field | Value |
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Thanh An]
 | --- | --- |
 | Use Case | UC-02 Log In |
 | Primary Actor | Registered University Student |

@@ -1,5 +1,8 @@
 # User Story
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 > The Forum is the primary product focus of Studitopia. Meeting-room user stories are supporting capabilities and are placed after the forum, library, and friend stories.
 
 ## 1. Navigation

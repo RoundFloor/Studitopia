@@ -1,8 +1,8 @@
 # Screen flow
 
-> The University Forum is the primary entry point after login. Meeting-room screens are optional and appear after the forum, library, and social screens.
+**Version:** `1.0`
 
-```mermaid
+**Performed by:** [Tran Nguyen Khanh Binh] | **Edited by:** [Tran Nguyen Khanh Binh]
 flowchart TD
     Start(("Start"))
 		IsLogin{"Is Login"}

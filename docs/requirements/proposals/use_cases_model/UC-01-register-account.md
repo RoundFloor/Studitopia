@@ -1,8 +1,8 @@
 # UC-01 Use Case Model: Register Account and Verify University Email
 
-## 1. Model Information
+**Version:** `2.0`
 
-| Field | Value |
+**Performed by:** [Nguyen Thanh An] | **Edited by:** [Nguyen Thanh An]
 | --- | --- |
 | Use Case | UC-01 Register Account and Verify University Email |
 | Primary Actor | New University Student |

@@ -1,5 +1,8 @@
 # Feature flow
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 > The Forum is the primary feature group of Studitopia. Meeting-room features are supporting capabilities and are shown last.
 
 ## Authentication Group

@@ -1,8 +1,8 @@
 # Non-functional requirement
 
-> These requirements prioritize the university forum. Meeting-room requirements are limited to the optional supporting meeting feature.
+**Version:** `1.0`
 
-## Performance
+**Performed by:** [Tran Nguyen Khanh Binh] | **Edited by:** [Tran Nguyen Khanh Binh]
 
 - NFR-PERF-1: The system shall provide responsive user interactions with a response time of ≤ 2 seconds for standard user actions.
 - NFR-PERF-2: The system shall load a forum post list within ≤ 2 seconds under normal operating conditions.

@@ -1,8 +1,8 @@
 # UC-06 Use Case Model: Share Learning Resource
 
-## 1. Model Information
+**Version:** `2.0`
 
-| Field | Value |
+**Performed by:** [Tran Nguyen Khanh Binh] | **Edited by:** [Nguyen Le Quoc Huy]
 | --- | --- |
 | Use Case | UC-06 Share Learning Resource |
 | Primary Actor | University Student |
