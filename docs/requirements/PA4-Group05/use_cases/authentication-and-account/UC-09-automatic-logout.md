@@ -75,7 +75,7 @@ flowchart TB
 ### A4. Model Notes
 
 1. UC-09 covers automatic termination after inactivity; manual logout is outside its scope and belongs to UC-08.
-2. The 15-minute value comes from FR-04.1 and AC-04.1; NFR-SEC-7 states 30 minutes, so the conflict is recorded rather than silently resolved in the model.
+2. FR-04.1 and AC-04.1 specify a 15-minute inactivity timeout that is not implemented in the current build. NFR-SEC-7 covers token and refresh session lifetimes.
 3. Activity reset, protected-access denial, and expiration messaging are internal behavior because no separate include or extend use case is named.
 4. No new I-xx, E-xx, or G-xx identifiers are introduced; the model contains only the primary actor and the selected base use case.
 
@@ -130,7 +130,7 @@ The user or frontend sends a protected API request after expiry. The system deni
 ### B7. Business Rules
 
 1. After 15 consecutive minutes with no requests, the system automatically terminates the session and logs the user out (FR-04.1, AC-04.1).
-2. NFR-SEC-7 states 30 minutes for inactive authentication sessions; this conflicts with FR-04.1 and AC-04.1 and is not silently overridden.
+2. FR-04.1 and AC-04.1 specify a 15-minute inactivity timeout that is not implemented in the current build. NFR-SEC-7 covers token and refresh session lifetimes.
 3. A protected page or API must deny access after session expiration and require login again (FR-04.2, AC-04.2).
 4. A qualifying request received before the timeout resets the inactivity timer (FR-04.3, AC-04.3).
 5. The login redirect after expiration must inform the user that the session expired (FR-04.4, AC-04.4).
@@ -142,8 +142,8 @@ The user or frontend sends a protected API request after expiry. The system deni
 | --- | --- |
 | NFR-SEC-1 | Authentication is required before accessing protected user resources. |
 | NFR-SEC-6 | Server-side authorization checks must prevent unauthorized access. |
-| NFR-SEC-7 | Inactive authentication sessions must expire automatically after 30 minutes. |
-| Design constraint | FR-04.1 and AC-04.1 require 15 minutes of inactivity; `settings.md` recommends using the stricter 15-minute value unless the product explicitly decides otherwise. |
+| NFR-SEC-7 | Access tokens expire after 30 minutes, and refresh sessions expire after 30 days. |
+| Design constraint | The specified inactivity timeout is 15 minutes (FR-04.1, AC-04.1). |
 | Design constraint | The expiration notice is required by FR-04.4 and AC-04.4, but its exact text is not specified in the proposals. |
 
 ### B9. Extension Points
@@ -162,7 +162,7 @@ The user or frontend sends a protected API request after expiry. The system deni
 - **Confirmed requirement — screen/flow path:** Automatic logout returns the user to Login; `screen_flow.md` shows `Home → Logout` and the Authentication area with `Login`.
 - **Confirmed requirement — UI behavior:** The system informs the user that the session expired and requires login again; no exact quoted message text is specified.
 - **Confirmed requirement — session data:** `settings.md` names `sessionId`, `startedAt`, `lastActivityAt`, and `expiresAt` for session summary and inactivity feedback.
-- **Confirmed requirement — policy conflict handling:** `settings.md` recommends the stricter 15-minute value unless the product explicitly decides otherwise.
+- **Inactivity policy** ? FR-04.1 specifies automatic logout after 15 minutes of inactivity.
 - **API endpoint:** Not specified in proposals; `API.md` has no dedicated automatic-logout endpoint.
 - **Statuses and error codes:** Not specified in proposals for automatic logout itself; `API.md` generally defines `UNAUTHORIZED` 401, and no inactivity-specific error code appears in `response_code.md`.
 - **Notification/privacy rules:** The only specified feedback is the session-expiration notice on redirect to Login; no email or notification-center message is specified.
@@ -170,7 +170,7 @@ The user or frontend sends a protected API request after expiry. The system deni
 
 ### B11. Source Alignment Notes
 
-- FR-04.1 and AC-04.1 require logout after 15 minutes of inactivity, while NFR-SEC-7 states 30 minutes; `settings.md` recommends the stricter 15-minute value unless the product explicitly decides otherwise.
+- FR-04.1 and AC-04.1 specify a 15-minute inactivity timeout that is not implemented in the current build. NFR-SEC-7 covers token and refresh session lifetimes.
 - UC-02 Log In already treats session expiry as a protected-access exception and lists NFR-SEC-7; UC-09 details the inactivity trigger, timer reset, denial, and notice without duplicating login credential behavior.
 - `API.md` has no dedicated automatic-logout endpoint; expired access is enforced through denial of protected pages and APIs rather than a documented route.
 - UC-01 Register Account can create an initial session, but it does not define inactivity policy; whether that session follows the same timeout is not specified in the proposals.

@@ -1,4 +1,4 @@
-# Deployment Diagram (C4 Level 4)
+# C4 Deployment Diagram
 
 **Version:** `1.1`
 
@@ -9,7 +9,7 @@
 | Field | Value |
 | --- | --- |
 | Project | Studitopia |
-| Document | Deployment Diagram - C4 Level 4 |
+| Document | C4 Deployment Diagram |
 | Version | 1.1 |
 | Date | 28/Nov/2026 |
 | Scope | Current source-accurate deployment of the containers identified in Section C |
