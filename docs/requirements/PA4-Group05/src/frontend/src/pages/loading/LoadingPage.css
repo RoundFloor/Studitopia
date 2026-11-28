@@ -1,0 +1,93 @@
+.loading_page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 20px;
+
+    .plus-grid {
+        display: grid;
+        grid-template-columns: 90px 90px 90px;
+        grid-template-rows: 90px 90px 90px;
+        gap: 0;
+        width: 212px;
+        height: 212px;
+        place-content: center;
+        border-radius: 50%;
+        background-color: var(--color-border);
+        overflow: hidden;
+
+        .cell {
+            width: 90px;
+            height: 90px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .img-top    {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            animation: spinTop 1s linear infinite;
+        }
+
+        .img-left   {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            animation: spinLeft 1s linear infinite;
+        }
+
+        .img-right  {
+            grid-column: 3/4;
+            grid-row: 2/3;
+            animation: spinRight 1s linear infinite;
+        }
+
+        .img-bottom {
+            grid-column: 2/3;
+            grid-row: 3/4;
+            animation: spinBottom 1s linear infinite;
+        }
+    }
+
+    .app_name {
+        font-family: 'Space Grotesk';
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    .message {
+        font-family: 'Space Mono';
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+
+@keyframes spinTop {
+    0%   { transform: translateY(61px) rotate(0deg); }
+    100% { transform: translateY(61px) rotate(360deg); }
+}
+
+@keyframes spinLeft {
+    0%   { transform: translateX(61px) rotate(0deg); }
+    100% { transform: translateX(61px) rotate(360deg); }
+}
+
+@keyframes spinRight {
+    0%   { transform: translateX(-61px) rotate(0deg); }
+    100% { transform: translateX(-61px) rotate(360deg); }
+}
+
+@keyframes spinBottom {
+    0%   { transform: translateY(-61px) rotate(0deg); }
+    100% { transform: translateY(-61px) rotate(360deg); }
+}

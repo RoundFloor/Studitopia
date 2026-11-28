@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+:root {
+  --pallet-surface-white: #FFFFFF;
+  --pallet-ink-black: #111111;
+  --pallet-mint: #6BCD77;
+  --pallet-coral: #FF6B6B;
+  --pallet-sky-blue: #4D96FF;
+  --pallet-lavender: #B983FF;
+
+  --color-background: #FFF8E7;
+  --color-card: var(--pallet-surface-white);
+  --color-input: var(--pallet-surface-white);
+  --color-border: var(--pallet-ink-black);
+  --color-text: var(--pallet-ink-black);
+  --color-primary: #FFD93D;
+  --color-secondary: var(--pallet-surface-white);
+  --color-tertiary: #FFF8E7;
+  --color-live: var(--pallet-mint);
+  --color-success: var(--pallet-mint);
+  --color-active: var(--pallet-mint);
+  --color-timers: var(--pallet-coral);
+  --color-errors: var(--pallet-coral);
+  --color-alerts: var(--pallet-coral);
+  --color-social: var(--pallet-sky-blue);
+  --color-links: var(--pallet-sky-blue);
+  --color-resources: var(--pallet-lavender);
+  --color-decoration: var(--pallet-lavender);
+  --color-disable: #D6D6D6;
+}
+
+h1 {
+  font-family: 'Space Grotesk';
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 52px;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-family: 'Space Grotesk';
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 40px;
+  letter-spacing: -1px;
+}
+
+h3 {
+  font-family: 'Space Grotesk';
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 34px;
+}
+
+body {
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 24px;
+  background-color: var(--color-background);
+}
+
+body.large {
+  font-family: 'Inter';
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 30px;
+}
+
+caption {
+  font-family: 'Inter';
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 20px;
+}
+
+label {
+  font-family: 'Space Mono';
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 16px;
+}
+
+a {
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--color-links)
+}
