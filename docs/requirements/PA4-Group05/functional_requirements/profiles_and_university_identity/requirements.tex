@@ -1,0 +1,323 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Profile and University Identity}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:profile-and-university-identity}{}
+\addcontentsline{toc}{section}{Profile and University Identity}
+\section*{Profile and University Identity}
+\par\medskip
+
+\textbf{Version:} \texttt{1.1}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+\texttt{Back to functional requirements index}
+\par\medskip
+
+\begin{quote}
+\textit{Status: \texttt{Complete} = source-backed implementation exists; \texttt{Partial} = supporting code exists but the full requirement is not implemented; \texttt{Not implemented} = no source-backed implementation was found.}
+\end{quote}
+\par\medskip
+
+\hypertarget{sec:us-08-manage-profile}{}
+\addcontentsline{toc}{subsubsection}{US-08: Manage Profile}
+\subsubsection*{US-08: Manage Profile}
+\par\medskip
+
+\textbf{As a} university student, \textbf{I want to} create and update my profile, \textbf{so that} other users can understand my academic background and interests.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.17\textwidth}|>{\raggedright\arraybackslash}p{0.53\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|}
+\hline
+\textbf{FR} & \textbf{Requirement} & \textbf{Category} & \textbf{Status} \\ \hline
+\endhead
+\textbf{FR-08.1 (Profile Update)} & The system shall allow a user to create and update their profile. & UI, Frontend, Backend & Partial \\ \hline
+\textbf{FR-08.2 (Profile Fields)} & The profile shall include display name, username, avatar, short bio, university, major, and academic year. & UI, Frontend & Complete \\ \hline
+\textbf{FR-08.3 (Academic Selection)} & The system shall allow users to select their university and major from the supported catalog. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-08.4 (Avatar Validation)} & The system shall validate avatar uploads for file type and size. & Frontend, Backend & Complete \\ \hline
+\textbf{FR-08.5 (Profile Persistence)} & The system shall persist profile changes and reflect them across the user's active sessions. & Backend, Database & Complete \\ \hline
+\textbf{FR-08.6 (Public Academic Info)} & The system shall display the user's university, major, and academic year on their public forum profile. & UI, Frontend & Not implemented \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:us-09-set-learning-preferences}{}
+\addcontentsline{toc}{subsubsection}{US-09: Set Learning Preferences}
+\subsubsection*{US-09: Set Learning Preferences}
+\par\medskip
+
+\textbf{As a} university student, \textbf{I want to} specify my courses, subjects, interests, and learning goals, \textbf{so that} the platform can recommend relevant content.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.16\textwidth}|>{\raggedright\arraybackslash}p{0.54\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|}
+\hline
+\textbf{FR} & \textbf{Requirement} & \textbf{Category} & \textbf{Status} \\ \hline
+\endhead
+\textbf{FR-09.1 (Course Preferences)} & The system shall allow a university student to specify their current courses. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-09.2 (Subject Preferences)} & The system shall allow a university student to specify subjects and topics of interest. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-09.3 (Goal Preferences)} & The system shall allow a university student to specify learning goals and preferred study times. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-09.4 (Recommendation Use)} & The system shall use these preferences to recommend forum posts, materials, study partners, and optional rooms. & Backend & Not implemented \\ \hline
+\textbf{FR-09.5 (Preference Updates)} & The system shall allow users to update their preferences at any time. & UI, Frontend, Backend & Not implemented \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:us-10-manage-privacy}{}
+\addcontentsline{toc}{subsubsection}{US-10: Manage Privacy}
+\subsubsection*{US-10: Manage Privacy}
+\par\medskip
+
+\textbf{As a} user, \textbf{I want to} control the visibility of my personal information, \textbf{so that} I can protect my privacy while using the platform.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.59\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|}
+\hline
+\textbf{FR} & \textbf{Requirement} & \textbf{Category} & \textbf{Status} \\ \hline
+\endhead
+\textbf{FR-10.1 (Visibility Controls)} & The system shall allow a user to control the visibility of personal information such as profile details, study history, and contact information. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-10.2 (Search Opt-Out)} & The system shall allow a user to opt out of appearing in public discovery and study-partner search results. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-10.3 (Online Status)} & The system shall allow a user to hide their online status and last-active time. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-10.4 (Privacy Enforcement)} & The system shall respect privacy settings when displaying user information in forum posts, comments, and member lists. & Backend, Database & Not implemented \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/preference_settings_desktop.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Preference settings - Desktop}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/profile_p1_own_profile_my_posts.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Profile: P1 Own profile - My Posts}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/profile_p3_public_profile_mia_chen.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Profile: P3 Public profile - Mia Chen}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/profile_p6_private_profile.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Profile: P6 Private profile}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/profile_p7_profile_states.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Profile: P7 Profile states}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_01_settings_profile.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 01 Settings - Profile}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_01a_profile_content_rejected.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 01a Profile - Content rejected}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_02_settings_preferences.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 02 Settings - Preferences}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_04_settings_privacy_and_notifications.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 04 Settings - Privacy \& notifications}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_05_settings_states.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 05 Settings - States}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_05_profile_validation_and_notification_selection.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 05 - Profile validation \& notification selection}
+\end{figure}
+\par\smallskip
+
+\end{document}

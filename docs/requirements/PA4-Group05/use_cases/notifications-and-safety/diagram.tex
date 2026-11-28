@@ -1,0 +1,1330 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Notifications and Safety --- Use Case Diagram}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:notifications-and-safety-use-case-diagram}{}
+\addcontentsline{toc}{section}{Notifications and Safety --- Use Case Diagram}
+\section*{Notifications and Safety --- Use Case Diagram}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Tran Canh Anh Tuan] | \textbf{Edited by:} [Tran Canh Anh Tuan]
+\par\medskip
+
+Merged from the focused use case diagrams in this functional group.
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/diagram_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = use case; solid line = association.
+\par\medskip
+
+\pagebreak
+\hypertarget{sec:uc-32-receive-notifications}{}
+\addcontentsline{toc}{section}{UC-32 --- Receive Notifications}
+\section*{UC-32 --- Receive Notifications}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Tran Canh Anh Tuan] | \textbf{Edited by:} [Tran Canh Anh Tuan]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.84\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-32 \\ \hline
+Name & Receive Notifications \\ \hline
+Primary Actor & User \\ \hline
+Supporting Actors & Notification Service \\ \hline
+Feature Group & Notifications and Safety \\ \hline
+Priority & Not explicitly stated \\ \hline
+Related User Stories & US-38 \\ \hline
+Related Requirements & FR-38.1, FR-38.2, FR-38.3, FR-38.4, FR-38.5, FR-38.6; AC-38.1, AC-38.2, AC-38.3, AC-38.4, AC-38.5, AC-38.6; FR-18.6, FR-20.5, FR-31.4, FR-32.5; NFR-PERF-1, NFR-PERF-6, NFR-SEC-1, NFR-SEC-6, NFR-PRIV-6, NFR-USE-4, NFR-USE-5 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} (11.1); \texttt{proposals/functional\_requirement.md} (US-38); \texttt{proposals/study\_room.md}; \texttt{proposals/hall\_room.md}; \texttt{proposals/meeting\_lobby.md}; \texttt{proposals/settings.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-32-receive-notifications_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.63\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+User & Primary human actor & A registered user who configures notification types, receives in-app alerts, and marks notifications as read. \\ \hline
+Notification Service & Supporting external system actor & Delivers forum, social, help-request, and enabled room-invitation activity to the notification center. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.16\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.52\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+User & UC-32 Receive Notifications & Primary & Configures preferences, receives toasts and tray items, and marks notifications read. \\ \hline
+Notification Service & UC-32 Receive Notifications & Supporting & Routes enabled activity notifications to the user. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & No actor or use-case generalization is named for US-38 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.60\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No included use case is named for US-38 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.17\textwidth}|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.53\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & No extending use case is named for US-38 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item Only UC-32 and its source-backed actors are shown; no new I-xx, E-xx, or G-xx identifiers are introduced.
+\item The Notification Center is treated as an in-app surface, not as an additional actor; the Notification Service is the supporting external actor.
+\item Forum, social, help-request, and room-invitation categories come from \texttt{userstory.md} section 11, \texttt{FR-38.1}--\texttt{FR-38.3}, and \texttt{AC-38.2}--\texttt{AC-38.4}.
+\item UC-32 covers receiving and managing notifications; the activities that trigger them remain defined in their own use cases.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+The user receives real-time in-app toasts and a persistent notification tray with unread indicators for relevant academic and social activity. \texttt{AC-38.1} defines the toast/tray behavior, \texttt{FR-38.4} defines the in-app notification center with unread indicators, and \texttt{AC-38.2}--\texttt{AC-38.4} define the forum, social, and room categories. The user also chooses which notification types trigger alerts and whether audio alerts are enabled, then marks notifications as read (\texttt{AC-38.5}, \texttt{AC-38.6}). \texttt{settings.md} places these controls in \texttt{NotificationSettingsForm} with forum, social, room, and audio controls plus notification-center actions.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The user is authenticated with an active session (\texttt{NFR-SEC-1}).
+\item The user can open \textbf{Settings} and reach the \textbf{Notifications} section.
+\item At least one notification type is enabled in the user's notification preferences.
+\item A relevant forum, social, help-request, or enabled room-invitation event has occurred.
+\item The notification service is available to deliver the event to the in-app center.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} The user's notification preferences are stored with the selected forum, social, room, and audio alert types.
+\item \textbf{Success:} An enabled event produces a real-time toast and a persistent notification item with an unread indicator.
+\item \textbf{Success:} The user opens the notification center and marks one or more notifications as read.
+\item \textbf{Failure:} Disabled event types do not trigger alerts; room invitations are not shown when room notifications are disabled.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The user opens \textbf{Settings} and selects \textbf{Notifications}.
+\item The system displays \texttt{NotificationSettingsForm} with \texttt{ForumNotificationToggles}, \texttt{SocialNotificationToggles}, \texttt{RoomNotificationToggle}, and \texttt{AudioAlertToggle}.
+\item The user chooses which forum, social, and room events trigger alerts and whether audio alerts are enabled.
+\item The user selects \textbf{Save Notifications}.
+\item The system stores the notification preferences.
+\item A relevant enabled event occurs, and the Notification Service routes it to the in-app notification center.
+\item The system displays a real-time toast and adds a persistent notification item with an unread indicator.
+\item The user selects \textbf{Open Notification Center}.
+\item The user reviews the notification tray and selects \textbf{Mark All as Read}, clearing the unread indicators for the marked notifications.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+Unless otherwise stated, an alternative flow resumes at the next step of the basic flow.
+\par\medskip
+
+\hypertarget{sec:a1-forum-activity-notification}{}
+\paragraph*{A1. Forum activity notification}
+\par\medskip
+
+At basic flow step 6, the event is a comment, answer, vote, true-response mark, or mention. The system creates a forum notification under \texttt{FR-38.1} / \texttt{AC-38.2}, provided that the corresponding \texttt{ForumNotificationToggles} choice permits it.
+\par\medskip
+
+\hypertarget{sec:a2-social-activity-notification}{}
+\paragraph*{A2. Social activity notification}
+\par\medskip
+
+At basic flow step 6, the event is a friend request, message, group invitation, or help request. The system creates a social notification under \texttt{FR-38.2} / \texttt{AC-38.3}, provided that the corresponding \texttt{SocialNotificationToggles} choice permits it.
+\par\medskip
+
+\hypertarget{sec:a3-room-invitation-notification}{}
+\paragraph*{A3. Room invitation notification}
+\par\medskip
+
+At basic flow step 6, the event is a room invitation. The system shows it only when \texttt{RoomNotificationToggle} is enabled, as required by \texttt{FR-38.3} / \texttt{AC-38.4}.
+\par\medskip
+
+\hypertarget{sec:a4-audio-alert-preference}{}
+\paragraph*{A4. Audio alert preference}
+\par\medskip
+
+At basic flow step 3, the user enables or disables \texttt{AudioAlertToggle}. The system applies the choice to enabled alerts only and saves it with \textbf{Save Notifications} (\texttt{FR-38.5}, \texttt{AC-38.5}).
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-room-notifications-disabled}{}
+\paragraph*{E1. Room notifications disabled}
+\par\medskip
+
+A room invitation is generated while \texttt{RoomNotificationToggle} is disabled. The system suppresses the room notification rather than showing it in the tray, toasts, or audio alerts (\texttt{FR-38.3}, \texttt{AC-38.4}).
+\par\medskip
+
+\hypertarget{sec:e2-unauthenticated-access-to-notification-settings-or-center}{}
+\paragraph*{E2. Unauthenticated access to notification settings or center}
+\par\medskip
+
+An unauthenticated request targets Settings or the notification center. The system denies access and requires login (\texttt{NFR-SEC-1}, \texttt{NFR-SEC-6}).
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item The system displays real-time toasts and a persistent notification tray with unread indicators (\texttt{AC-38.1}, \texttt{FR-38.4}).
+\item Forum notifications include comments, answers, votes, true-response marks, and mentions (\texttt{AC-38.2}, \texttt{FR-38.1}).
+\item Social notifications include friend requests, messages, group invitations, and help requests (\texttt{AC-38.3}, \texttt{FR-38.2}).
+\item Room invitations are shown only when the user enables room notifications (\texttt{AC-38.4}, \texttt{FR-38.3}).
+\item Users choose which notification types trigger alerts and whether audio alerts are enabled (\texttt{AC-38.5}, \texttt{FR-38.5}).
+\item Users can mark notifications as read (\texttt{AC-38.6}, \texttt{FR-38.6}).
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-PERF-6 & Forum notifications must be delivered with a latency of 2 seconds or less under normal operating conditions. \\ \hline
+NFR-PERF-1 & Standard user interactions must respond within 2 seconds. \\ \hline
+NFR-SEC-1 & The system must require authentication before accessing protected user resources. \\ \hline
+NFR-SEC-6 & The system must prevent unauthorized access through server-side authorization checks. \\ \hline
+NFR-PRIV-6 & Users must be able to control whether other users can send them messages or room invitations. \\ \hline
+NFR-USE-4 & Primary interface actions must use clear labels and recognizable controls. \\ \hline
+NFR-USE-5 & The user interface must be usable on screen sizes of at least 320 px in width. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.39\textwidth}|>{\raggedright\arraybackslash}p{0.54\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Forum notification preference & Basic flow steps 2-4; alternative A1 \\ \hline
+Social notification preference & Basic flow steps 2-4; alternative A2 \\ \hline
+Room notification preference & Basic flow steps 2-4; alternatives A3 and E1 \\ \hline
+Audio alert preference & Basic flow step 3; alternative A4 \\ \hline
+Notification delivery & Basic flow steps 6-7 \\ \hline
+Notification-center read actions & Basic flow steps 8-9 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Screen/flow path:} \texttt{screen\_flow.md} gives \texttt{Home -$>$ Settings}. \texttt{settings.md} places notification controls under \texttt{SettingsPage} $\rightarrow$ \texttt{NotificationSettingsPage} with suggested route \texttt{/settings/notifications}; the route is a recommendation, not a requirement.
+\item \textbf{Notification toggles:} \texttt{ForumNotificationToggles} covers comments, answers, votes, true-response marks, and mentions; \texttt{SocialNotificationToggles} covers friend requests, messages, group invitations, and help requests; \texttt{RoomNotificationToggle} covers optional room invitations; \texttt{AudioAlertToggle} controls sound alerts.
+\item \textbf{Notification-center actions:} \texttt{NotificationCenterLink} is labelled \textbf{Open Notification Center}; \texttt{MarkAllReadButton} is labelled \textbf{Mark All as Read}; \texttt{SaveNotificationSettingsButton} is labelled \textbf{Save Notifications}; \texttt{ToastPreview} shows the toast with unread indicator pattern. Individual mark-as-read is derived from \texttt{FR-38.6} / \texttt{AC-38.6}.
+\item \textbf{Exact messages:} No quoted notification message text is specified for US-38 in the proposals. The labelled actions above and "Comments, answers, votes, true-response marks, mentions", "Friend requests, messages, group invitations, help requests", and "Optional room invitations" are the source-backed UI descriptions from \texttt{settings.md}.
+\item \textbf{Data fields:} \texttt{NotificationPreference} contains \texttt{forumEvents}, \texttt{socialEvents}, \texttt{roomInvitationsEnabled}, and \texttt{audioAlertsEnabled} in \texttt{settings.md}; no notification database schema is specified.
+\item \textbf{Notification rules:} Room invitations appear only when room notifications are enabled (\texttt{FR-38.3}, \texttt{AC-38.4}); audio alerts follow \texttt{AC-38.5} / \texttt{FR-38.5}; read state follows \texttt{AC-38.6} / \texttt{FR-38.6}.
+\item \textbf{API endpoints/statuses/error codes:} Not specified in proposals. \texttt{API.md} has no notification endpoints, and \texttt{response\_code.md} has no notification error codes; forum codes must not be reused for notifications by analogy.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item UC-05 step 11 and I-06 Send Forum Notification cover the producer side for comment/answer notifications; UC-32 covers the user's receipt, preferences, and read actions and does not change UC-05's publishing flow.
+\item UC-07 and \texttt{study\_room.md} route room invitations and join-request decisions; UC-32 only adds the recipient-side rule that room invitations appear when room notifications are enabled.
+\item \texttt{userstory.md} section 11 names the Notification Center and its forum, social, help-request, and room categories; \texttt{settings.md} adds the concrete toggles, labels, and preference fields as UI recommendations derived from \texttt{US-38}.
+\item \texttt{API.md} and \texttt{response\_code.md} contain no notification contract; no endpoint, status code, or error code is inferred from the forum APIs.
+\item The source does not define retry behavior for failed notification delivery; no retry policy is invented.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_04a_settings_notifications_selected.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 04a Settings - Notifications selected}
+\end{figure}
+\par\smallskip
+
+\pagebreak
+\hypertarget{sec:uc-33-control-communication}{}
+\addcontentsline{toc}{section}{UC-33 --- Control Communication}
+\section*{UC-33 --- Control Communication}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Tran Canh Anh Tuan] | \textbf{Edited by:} [Tran Canh Anh Tuan]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.84\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-33 \\ \hline
+Name & Control Communication \\ \hline
+Primary Actor & User \\ \hline
+Supporting Actors & None \\ \hline
+Feature Group & Notifications and Safety \\ \hline
+Priority & Not explicitly stated \\ \hline
+Related User Stories & US-39 \\ \hline
+Related Requirements & AC-39.1, AC-39.2, AC-39.3; FR-39.1, FR-39.2, FR-39.3, FR-39.4, FR-39.5; NFR-SEC-1, NFR-SEC-3, NFR-SEC-6, NFR-SEC-8, NFR-SEC-9, NFR-PRIV-2, NFR-PRIV-6, NFR-PRIV-7 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} (sections 11.2-11.3); \texttt{proposals/functional\_requirement.md} (US-39); \texttt{proposals/settings.md}; \texttt{proposals/friend.md}; \texttt{proposals/friend\_profile.md}; \texttt{proposals/group\_detail.md}; \texttt{proposals/moderation\_queue.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-33-control-communication_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.74\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+User & Primary & A registered user who controls communication and privacy settings so that other users cannot interact in unpermitted ways (US-39). \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.58\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+User & UC-33 Control Communication & Primary & Opens Settings and configures permitted interactions, restrictions, muted members, and blocked members. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & The proposals do not name an actor generalization or use-case specialization for US-39. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.16\textwidth}|>{\raggedright\arraybackslash}p{0.63\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & The proposals do not name a distinct included use case for US-39. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & The proposals do not name a distinct extending use case for US-39. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item UC-33 is derived solely from US-39; no I-xx, E-xx, or G-xx identifier is introduced.
+\item The User actor is taken directly from the US-39 story wording "As a user".
+\item No supporting system actor is drawn because the proposals name no external system for communication settings.
+\item Settings is an aggregate hub in \texttt{settings.md}; Communication Settings is treated as a section of that hub, not as a separate use case.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+The user controls who may communicate with them and which interactions are permitted. US-39 requires block and mute controls for messaging, friend requests, and room invitations, restriction of direct messages to confirmed friends, and the ability to change communication and privacy settings at any time. The successful outcome is a saved preference set that the backend enforces so that disallowed interactions are prevented.
+\par\medskip
+
+\texttt{settings.md} groups these requirements into the Communication section of Settings, with dropdowns for direct messages, friend requests, and room invitations plus lists for muted and blocked members. \texttt{friend.md}, \texttt{friend\_profile.md}, and \texttt{group\_detail.md} describe the surfaces where the restrictions become visible, such as messaging, friend requests, and group member menus.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The user is authenticated with an active session (\texttt{NFR-SEC-1}).
+\item The user can reach Settings from the main navigation; \texttt{screen\_flow.md} defines \texttt{Home -$>$ Settings}.
+\item The Settings area and its Communication section are available to the user.
+\item Existing communication preferences and any muted or blocked member lists can be read by the system.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} The user's communication settings are stored with the selected direct-message, friend-request, and room-invitation values.
+\item \textbf{Success:} The muted and blocked member lists reflect the user's final Mute, Unmute, Block, and Unblock actions.
+\item \textbf{Success:} The backend prevents interactions the user does not permit (\texttt{FR-39.5}).
+\item \textbf{Failure:} No setting change is persisted, and the user receives an appropriate error message.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The user opens \textbf{Settings} from the main navigation.
+\item The system opens the Settings hub and highlights the \textbf{Communication} section.
+\item The system renders \texttt{CommunicationSettingsForm} with the current \texttt{CommunicationPreference} values.
+\item The user selects a value in \texttt{DirectMessageRestrictionSelect}: \textbf{Everyone} or \textbf{Confirmed friends only}.
+\item The user selects a value in \texttt{FriendRequestPermissionSelect}: \textbf{Allow} or \textbf{Reject incoming friend requests}.
+\item The user selects a value in \texttt{RoomInvitationPermissionSelect}: \textbf{Allow} or \textbf{Reject room invitations}.
+\item The user adds or removes members through \texttt{MutedUsersList} and \texttt{BlockedUsersList}, using \textbf{Mute}, \textbf{Unmute}, \textbf{Block}, and \textbf{Unblock} as applicable.
+\item The user selects \textbf{Save Communication}.
+\item The frontend submits the selected values and the backend stores \texttt{directMessageRestriction}, \texttt{friendRequestsEnabled}, \texttt{roomInvitationsEnabled}, \texttt{mutedUserIds}, and \texttt{blockedUserIds}.
+\item The backend applies the saved restrictions to relevant reads and interactions.
+\item The system displays a success confirmation and returns the Communication section to a saved state.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+\hypertarget{sec:a1-update-privacy-settings}{}
+\paragraph*{A1. Update privacy settings}
+\par\medskip
+
+The user opens the \textbf{Privacy} section instead of \textbf{Communication} and changes visibility, discoverability, or online-status controls under \texttt{FR-39.2}; \texttt{AC-39.3} permits communication and privacy settings to be changed at any time.
+\par\medskip
+
+\hypertarget{sec:a2-revoke-an-existing-restriction}{}
+\paragraph*{A2. Revoke an existing restriction}
+\par\medskip
+
+At basic flow step 7, the user selects \textbf{Unmute} or \textbf{Unblock}. The corresponding member is removed from \texttt{MutedUsersList} or \texttt{BlockedUsersList} before the user saves.
+\par\medskip
+
+\hypertarget{sec:a3-open-the-reporting-flow}{}
+\paragraph*{A3. Open the reporting flow}
+\par\medskip
+
+The user selects \texttt{ReportBehaviorLink}, labelled \textbf{Report inappropriate behavior}, to start reporting from Settings. This use case ends when the reporting flow opens; no moderator outcome is promised.
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-unauthenticated-access}{}
+\paragraph*{E1. Unauthenticated access}
+\par\medskip
+
+The system redirects the user to Login before showing protected Settings content (\texttt{NFR-SEC-1}).
+\par\medskip
+
+\hypertarget{sec:e2-unsupported-selection}{}
+\paragraph*{E2. Unsupported selection}
+\par\medskip
+
+The system keeps the user's input, displays an inline validation error through \texttt{SettingsErrorAlert}, and does not persist an unsupported value.
+\par\medskip
+
+\hypertarget{sec:e3-save-failure}{}
+\paragraph*{E3. Save failure}
+\par\medskip
+
+The backend rejects the save. The system preserves the edited values, explains the failure, and allows the user to retry.
+\par\medskip
+
+\hypertarget{sec:e4-disallowed-interaction-after-save}{}
+\paragraph*{E4. Disallowed interaction after save}
+\par\medskip
+
+A blocked or restricted member attempts messaging, a friend request, or a room invitation. The backend denies the interaction under \texttt{FR-39.5}; the UI may explain the restriction with \texttt{BlockedUserState} or \texttt{ConversationRestrictionNotice}.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item The system shall allow a user to control communication settings (\texttt{FR-39.1}) and privacy settings (\texttt{FR-39.2}).
+\item Users can mute or permanently block specific members from messaging, friend requests, or room invitations (\texttt{AC-39.1}, \texttt{FR-39.3}).
+\item Users can restrict direct messages to confirmed friends (\texttt{AC-39.2}, \texttt{FR-39.4}).
+\item \texttt{DirectMessageRestrictionSelect} = \textbf{Everyone / Confirmed friends only}, \texttt{FriendRequestPermissionSelect} = \textbf{Allow / Reject incoming friend requests}, \texttt{RoomInvitationPermissionSelect} = \textbf{Allow / Reject room invitations}, and mute/block lists = \texttt{MutedUsersList} / \texttt{BlockedUsersList} in \texttt{settings.md}.
+\item Communication and privacy settings shall prevent interactions the user does not permit, with backend enforcement (\texttt{FR-39.5}, \texttt{AC-39.3}).
+\item Users can change communication and privacy settings at any time (\texttt{AC-39.3}).
+\item Friend requests, messages, and room invitations must respect the user's privacy choices (\texttt{NFR-PRIV-2}, \texttt{NFR-PRIV-6}, \texttt{NFR-PRIV-7}).
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.79\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-SEC-1 & Authentication is required before protected Settings resources are accessible. \\ \hline
+NFR-SEC-3 & Sensitive communication is encrypted using TLS 1.2 or higher. \\ \hline
+NFR-SEC-6 & Unauthorized access is prevented through server-side authorization checks. \\ \hline
+NFR-SEC-8 & The interface and backend protect against SQL injection, XSS, and CSRF. \\ \hline
+NFR-PRIV-2 & Users can allow or reject incoming friend requests. \\ \hline
+NFR-PRIV-6 & Users can control whether other users can send messages or room invitations. \\ \hline
+NFR-PRIV-7 & Privacy settings apply consistently to forum posts, comments, member lists, and search results. \\ \hline
+Design constraint & Restrictions must be enforced on the backend, not only by hiding UI controls (\texttt{FR-39.5}). \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.23\textwidth}|>{\raggedright\arraybackslash}p{0.70\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Privacy section & Basic flow step 2; alternative A1 \\ \hline
+Restriction revocation & Basic flow step 7; alternative A2 \\ \hline
+Report entry & Communication section through \texttt{ReportBehaviorLink}; alternative A3 \\ \hline
+Backend enforcement & Basic flow steps 9-10; exception E4 \\ \hline
+Save failure recovery & Basic flow step 8; exception E3 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Screen and feature flow.} \texttt{screen\_flow.md} defines \texttt{Home -$>$ Settings} and \texttt{Settings -$>$ Profile} / \texttt{Settings -$>$ Preferences}. \texttt{settings.md} recommends a Settings hub with section navigation and the route \texttt{/settings/communication}; the route is a recommendation, not an endpoint.
+\item \textbf{Confirmed UI components.} \texttt{settings.md} names \texttt{CommunicationSettingsForm}, \texttt{DirectMessageRestrictionSelect}, \texttt{FriendRequestPermissionSelect}, \texttt{RoomInvitationPermissionSelect}, \texttt{MutedUsersList}, \texttt{BlockedUsersList}, \texttt{MuteUserButton}, \texttt{UnmuteUserButton}, \texttt{BlockUserButton}, \texttt{UnblockUserButton}, \texttt{ReportBehaviorLink}, and \texttt{SaveCommunicationSettingsButton}.
+\item \textbf{Exact settings values.} \texttt{DirectMessageRestrictionSelect} = \textbf{Everyone / Confirmed friends only}; \texttt{FriendRequestPermissionSelect} = \textbf{Allow / Reject incoming friend requests}; \texttt{RoomInvitationPermissionSelect} = \textbf{Allow / Reject room invitations}. \texttt{MutedUsersList} shows muted members and mute scope; \texttt{BlockedUsersList} shows permanently blocked users.
+\item \textbf{Exact actions and labels.} \texttt{Mute}, \texttt{Unmute}, \texttt{Block}, \texttt{Unblock}, \textbf{Save Communication}, and \textbf{Report inappropriate behavior} come from \texttt{settings.md}. \textbf{Save Changes}, \textbf{Discard}, and \textbf{You have unsaved changes} are recommended shell controls in \texttt{settings.md}.
+\item \textbf{Data fields.} \texttt{CommunicationPreference} contains \texttt{directMessageRestriction}, \texttt{friendRequestsEnabled}, \texttt{roomInvitationsEnabled}, \texttt{mutedUserIds}, and \texttt{blockedUserIds} (\texttt{settings.md} information model).
+\item \textbf{Enforcement surfaces.} \texttt{friend.md} defines \texttt{ConversationRestrictionNotice} with "Direct messages are limited to confirmed friends."; \texttt{friend\_profile.md} defines \texttt{BlockedUserState} with "You cannot interact with this member."; \texttt{group\_detail.md} defines \texttt{GroupAccessDeniedPanel} for private groups. These are UI feedback, while \texttt{FR-39.5} requires backend prevention.
+\item \textbf{API and recommendation boundary.} Not specified in proposals for communication settings; \texttt{API.md} defines no communication-settings endpoint, payload, status code, or error code. Do not assign forum codes such as \texttt{48010 FORBIDDEN} or database codes such as \texttt{45000 UNKNOWN ERROR} to settings actions. Routes, component names, \texttt{SettingsSuccessToast}, and \texttt{SettingsErrorAlert} are UI/UX recommendations in \texttt{settings.md}; the requirements are \texttt{AC-39.1}-\texttt{AC-39.3} and \texttt{FR-39.1}-\texttt{FR-39.5}. \texttt{NFR-PRIV-2}, \texttt{NFR-PRIV-6}, and \texttt{NFR-PRIV-7} require consistent control of friend requests, messages, room invitations, and privacy across posts, comments, member lists, and search results.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item \texttt{userstory.md} sections 11.2-11.3 and \texttt{functional\_requirement.md} US-39 agree on the three AC goals and five FR requirements; \texttt{settings.md} supplies the concrete dropdown values and mute/block lists.
+\item No communication-settings or behavioral-report API endpoints are defined for this use case: \texttt{API.md} has no communication-settings endpoint, and its only report endpoint is the forum-specific \texttt{POST /forum/reports}, which does not cover profiles, messages, or users.
+\item The \texttt{ReportBehaviorLink} labelled \textbf{Report inappropriate behavior} is an entry point only; \texttt{settings.md} is a UI/UX recommendation, and report UI must not promise a moderator outcome. Submission feedback is covered by UC-34 and \texttt{ReportSubmittedNotice}.
+\item \texttt{FR-39.5} requires backend enforcement, but no backend contract or error-code contract is defined for communication restrictions; \texttt{friend.md}, \texttt{friend\_profile.md}, and \texttt{group\_detail.md} have no friend/profile/group API contract and contribute only interaction-feedback surfaces.
+\item No distinct include, extend, or specialization use case is named for US-39, so no I-xx, E-xx, or G-xx identifier is created.
+\item Forum-specific content reporting is covered by PA4 \texttt{UC-20-report-moderate-forum-content.md}; this use case covers communication controls under US-39 and points behavioral reports to UC-34 without duplicating moderation decisions.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_04a_settings_notifications_selected.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 04a Settings - Notifications selected}
+\end{figure}
+\par\smallskip
+
+\pagebreak
+\hypertarget{sec:uc-34-report-inappropriate-behavior}{}
+\addcontentsline{toc}{section}{UC-34 --- Report Inappropriate Behavior}
+\section*{UC-34 --- Report Inappropriate Behavior}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Tran Canh Anh Tuan] | \textbf{Edited by:} [Tran Canh Anh Tuan]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.84\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-34 \\ \hline
+Name & Report Inappropriate Behavior \\ \hline
+Primary Actor & User \\ \hline
+Supporting Actors & Moderator \\ \hline
+Feature Group & Notifications and Safety \\ \hline
+Priority & Not explicitly stated \\ \hline
+Related User Stories & US-40 \\ \hline
+Related Requirements & AC-40.1, AC-40.2, AC-40.3, AC-40.4; FR-40.1, FR-40.2, FR-40.3, FR-40.4, FR-40.5; NFR-SEC-1, NFR-SEC-3, NFR-SEC-6, NFR-SEC-9, NFR-SEC-10, NFR-USE-6, NFR-PRIV-7 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} (sections 11.2-11.3); \texttt{proposals/functional\_requirement.md} (US-40); \texttt{proposals/settings.md}; \texttt{proposals/friend.md}; \texttt{proposals/friend\_profile.md}; \texttt{proposals/group\_detail.md}; \texttt{proposals/moderation\_queue.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-34-report-inappropriate-behavior_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.74\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+User & Primary & A registered user who reports inappropriate communication or behavior from profiles, posts, comments, messages, or other users (US-40). \\ \hline
+Moderator & Secondary & An authorized reviewer who can review and act on reports according to platform policy (\texttt{AC-40.4}, \texttt{NFR-SEC-10}). \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.23\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.49\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+User & UC-34 Report Inappropriate Behavior & Primary & Submits a report with category, description, and contextual information. \\ \hline
+Moderator & UC-34 Report Inappropriate Behavior & Secondary & Reviews routed reports and may act according to platform policy. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & The proposals do not name an actor generalization or use-case specialization for US-40. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.16\textwidth}|>{\raggedright\arraybackslash}p{0.63\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & The proposals do not name a distinct included use case for US-40. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & The proposals do not name a distinct extending use case for US-40. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item UC-34 is derived solely from US-40; no I-xx, E-xx, or G-xx identifier is introduced.
+\item The User actor is taken directly from the US-40 story wording "As a user".
+\item Moderator is included because \texttt{AC-40.4} explicitly names moderators as reviewers; no separate moderation UC ID is named in the proposals.
+\item The moderation queue is a UI surface in \texttt{moderation\_queue.md}, not an external system actor, so it is not drawn as a cloud.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+The user reports inappropriate communication or behavior so that the platform can maintain a safe and supportive learning environment. US-40 requires reporting from profiles, posts, comments, messages, and other users, categories such as harassment, spam, and inappropriate content, contextual capture, moderation-queue routing, and moderator review under platform policy. The reporter receives confirmation of submission only; no review outcome is promised.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The user is authenticated with an active session (\texttt{NFR-SEC-1}).
+\item The report surface is visible to the user and the target is accessible under privacy and authorization rules.
+\item A report action is reachable within at most 2 interactions from a post or comment where applicable (\texttt{NFR-USE-6}).
+\item The user can select a supported category and provide optional context.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} The report captures contextual information and is routed to the moderation queue (\texttt{FR-40.3}, \texttt{FR-40.4}, \texttt{AC-40.3}).
+\item \textbf{Success:} The reporting user sees confirmation that the report was submitted, without a promised moderator outcome.
+\item \textbf{Success:} An authorized moderator can review the report according to platform policy (\texttt{AC-40.4}).
+\item \textbf{Failure:} No report is recorded, and the user receives an appropriate error message.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The user opens a surface that supports reporting, such as a forum post, comment, profile, message, group chat, or another user.
+\item The system displays a report action according to the user's permissions.
+\item The user selects \textbf{Report}, \textbf{Report message}, or \textbf{Report inappropriate behavior} as offered on that surface.
+\item The system opens \texttt{ReportBehaviorDialog} or \texttt{ReportContentDialog} with a read-only context summary of the target.
+\item The user selects one category from \textbf{Spam}, \textbf{harassment}, \textbf{inappropriate content}, or \textbf{academic dishonesty} as listed by \texttt{ReportCategorySelect} in \texttt{moderation\_queue.md}.
+\item The user optionally enters a description and submits the report.
+\item For a post or comment, the frontend sends \texttt{POST /forum/reports} with \texttt{target\_type}, \texttt{target\_id}, \texttt{category}, and optional \texttt{description}.
+\item The backend verifies authentication, target context, category validity, duplicate-report prevention, and reporting rate limits.
+\item The backend records the report, returns \texttt{report\_id}, routes it to the moderation queue, shows \texttt{ReportSubmittedNotice} with "Report submitted for review.", and does not state a moderator action.
+\item A moderator reviews the report context in the moderation queue and may act according to platform policy.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+\hypertarget{sec:a1-report-a-forum-post-or-comment}{}
+\paragraph*{A1. Report a forum post or comment}
+\par\medskip
+
+The user selects \texttt{ReportPostButton} on a post or comment. \texttt{ReportContentDialog} collects \texttt{target\_type: 'post' | 'comment'}, \texttt{target\_id}, \texttt{category}, and optional \texttt{description}; this is the only target shape supported by \texttt{POST /forum/reports}.
+\par\medskip
+
+\hypertarget{sec:a2-report-a-profile-message-or-other-user}{}
+\paragraph*{A2. Report a profile, message, or other user}
+\par\medskip
+
+The user selects \texttt{ReportBehaviorButton} from a friend profile, conversation, or member menu. \texttt{ReportBehaviorDialog} captures category, description, and profile or message context; no API endpoint is defined for these targets.
+\par\medskip
+
+\hypertarget{sec:a3-report-group-chat-or-member-behavior}{}
+\paragraph*{A3. Report group chat or member behavior}
+\par\medskip
+
+The user selects \texttt{GroupMessageReportButton}, labelled \textbf{Report message}, from group chat or \texttt{ReportBehaviorButton} from the member list. \texttt{group\_detail.md} routes the report to moderation and shows \texttt{ReportSubmittedNotice} for submission only.
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-invalid-category}{}
+\paragraph*{E1. Invalid category}
+\par\medskip
+
+\texttt{POST /forum/reports} returns \texttt{400} with \texttt{INVALID\_REPORT\_CATEGORY} (\texttt{48009}). The system keeps the dialog open and asks the user to choose a valid category.
+\par\medskip
+
+\hypertarget{sec:e2-target-not-found}{}
+\paragraph*{E2. Target not found}
+\par\medskip
+
+\texttt{POST /forum/reports} returns \texttt{404} with \texttt{POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}). The system explains that the reported content is no longer available.
+\par\medskip
+
+\hypertarget{sec:e3-unauthenticated-report-attempt}{}
+\paragraph*{E3. Unauthenticated report attempt}
+\par\medskip
+
+The system returns \texttt{401} or redirects the user to Login (\texttt{NFR-SEC-1}) and does not submit the report.
+\par\medskip
+
+\hypertarget{sec:e4-duplicate-report-or-rate-limit}{}
+\paragraph*{E4. Duplicate report or rate limit}
+\par\medskip
+
+The backend rejects the report under duplicate-report prevention or \texttt{NFR-SEC-9}. No duplicate-report error code is specified, so the UI shows generic retry-later feedback and does not claim a specific code.
+\par\medskip
+
+\hypertarget{sec:e5-server-or-database-failure}{}
+\paragraph*{E5. Server or database failure}
+\par\medskip
+
+\texttt{POST /forum/reports} returns \texttt{500} with \texttt{DATABASE\_ERROR} or \texttt{UNKNOWN\_ERROR}. The database function also lists \texttt{UNKNOWN\_ERROR} (\texttt{45000}) and \texttt{FORBIDDEN} (\texttt{48010}); no report is confirmed as submitted.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item The system shall allow a user to report inappropriate communication or behavior (\texttt{FR-40.1}, \texttt{AC-40.1}).
+\item Reporting is available from forum posts, comments, profiles, and messages (\texttt{FR-40.2}); \texttt{AC-40.1} also names other users.
+\item Reports support categories such as harassment, spam, and inappropriate content (\texttt{AC-40.2}); \texttt{moderation\_queue.md} lists \textbf{Spam}, \textbf{harassment}, \textbf{inappropriate content}, and \textbf{academic dishonesty}.
+\item The system shall capture contextual information and route reports to the moderation queue (\texttt{FR-40.3}, \texttt{FR-40.4}, \texttt{AC-40.3}).
+\item Moderators can review and act on reports according to platform policy (\texttt{AC-40.4}), and reporting supports a safe and supportive university learning environment (\texttt{FR-40.5}).
+\item Reporting actions are subject to authentication, server-side authorization, and rate limits (\texttt{NFR-SEC-1}, \texttt{NFR-SEC-6}, \texttt{NFR-SEC-9}, \texttt{NFR-SEC-10}).
+\item Report submission feedback must not promise a moderator outcome, and privacy settings apply consistently to report context (\texttt{NFR-PRIV-7}).
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-SEC-1, NFR-SEC-3 & Authentication is required before protected report surfaces are accessible; sensitive communication is encrypted using TLS 1.2 or higher. \\ \hline
+NFR-SEC-6 & Unauthorized access is prevented through server-side authorization checks. \\ \hline
+NFR-SEC-9 & Reporting and related actions are rate-limited to reduce spam and abuse. \\ \hline
+NFR-SEC-10 & Moderation actions are restricted to authorized moderators and administrators. \\ \hline
+NFR-USE-6, NFR-PRIV-7 & Reporting actions are reachable within at most 2 interactions from a post or comment, and privacy settings apply consistently to forum posts, comments, member lists, and search results. \\ \hline
+Design constraint & Report UI confirms submission only and must not state or imply a moderator decision. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.37\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Forum post or comment entry & Basic flow steps 1-7; alternative A1 \\ \hline
+Profile, message, or user entry & Basic flow steps 1-6; alternative A2 \\ \hline
+Group chat or member entry & Basic flow steps 1-6; alternative A3 \\ \hline
+Category and target validation & Basic flow steps 5 and 7; exceptions E1 and E2 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Screen, flow, and entry points.} \texttt{screen\_flow.md} places report-capable content under Home $\rightarrow$ Forum Group and Home $\rightarrow$ Friend Group; \texttt{feature\_flow.md} gives \texttt{Post -$>$ Report / Moderate}; \texttt{userstory.md} section 11 places Notification Center activity beside forum and social activity. \texttt{settings.md} defines \texttt{ReportBehaviorLink} with label \textbf{Report inappropriate behavior}; \texttt{friend.md} and \texttt{friend\_profile.md} define \texttt{ReportBehaviorButton} with label \textbf{Report}; \texttt{group\_detail.md} defines \texttt{GroupMessageReportButton} with label \textbf{Report message} and \texttt{ReportBehaviorDialog}.
+\item \textbf{Exact categories.} \texttt{moderation\_queue.md} \texttt{ReportCategorySelect} lists \textbf{Spam}, \textbf{harassment}, \textbf{inappropriate content}, and \textbf{academic dishonesty}. \texttt{AC-40.2} names harassment, spam, and inappropriate content; \texttt{FR-22.2}/\texttt{AC-22.1} also name academic dishonesty.
+\item \textbf{Report API.} \texttt{POST /forum/reports} body is \texttt{\{target\_type: 'post' | 'comment', target\_id: string, category: string, description?: string\}}; success is \texttt{201 \{report\_id\}}. Errors are \texttt{400 INVALID\_REPORT\_CATEGORY} (\texttt{48009}), \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}), \texttt{401}, and \texttt{500 (DATABASE\_ERROR | UNKNOWN\_ERROR)}.
+\item \textbf{Database contract and data fields.} \texttt{studitopia.report\_forum\_content(preporter\_id, ptarget\_type, ptarget\_id, pcategory, pdescription)} returns \texttt{\{report\_id: uuid\}} and lists \texttt{UNKNOWN\_ERROR} (\texttt{45000}), \texttt{POST\_NOT\_FOUND} (\texttt{48001}), \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}), \texttt{INVALID\_REPORT\_CATEGORY} (\texttt{48009}), and \texttt{FORBIDDEN} (\texttt{48010}). Duplicate-report prevention is required but has no error code. \texttt{moderation\_queue.md} lists \texttt{report\_id}, \texttt{target\_type}, \texttt{target\_id}, \texttt{category}, \texttt{description}, \texttt{reporter\_id}, \texttt{created\_at}, \texttt{status}, \texttt{moderation\_action}, \texttt{action\_reason}, and \texttt{affected\_user\_notified}; \texttt{status}, queue, action, and history contracts are gaps.
+\item \textbf{Submission feedback.} \texttt{ReportSubmittedNotice} says "Report submitted for review." (\texttt{friend\_profile.md}, \texttt{group\_detail.md}). This confirms submission only; reviewer actions are outside the reporter UI.
+\item \textbf{API gaps and recommendations.} Profiles, messages, other users, and group activity have report requirements but no report endpoint in \texttt{API.md}; no queue, action, history, or status endpoint is defined. Do not invent an endpoint, status code, or error code for those surfaces. \texttt{/moderation/queue}, \texttt{ModerationQueuePage}, \texttt{ModerationQueueTable}, \texttt{ReportDetailPanel}, and \texttt{ModerationActionDialog} are recommendations in \texttt{moderation\_queue.md}. Moderation actions require \texttt{NFR-SEC-10}, server-side checks require \texttt{NFR-SEC-6}, and report context must respect \texttt{NFR-PRIV-7}.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item \texttt{userstory.md} section 11.3 and \texttt{functional\_requirement.md} US-40 agree on report surfaces, categories, context capture, routing, and moderator review; \texttt{moderation\_queue.md} adds the only defined report API contract and also cites \texttt{FR-22.1}-\texttt{FR-22.6} and \texttt{AC-22.1}-\texttt{AC-22.5}, overlapping the report API notes in existing PA4 UC-05.
+\item No communication-settings or behavioral-report API endpoints are defined for this use case: \texttt{API.md} has no communication-settings endpoint and no behavioral-report endpoint for profiles, messages, other users, or group activity; only the forum-specific \texttt{POST /forum/reports} exists for posts and comments.
+\item Report UI must not promise a moderator outcome; \texttt{ReportSubmittedNotice} gives submission confirmation only, and \texttt{AC-40.4} leaves the decision to authorized moderators under platform policy.
+\item Forum-specific content reports overlap with PA4 \texttt{UC-20-report-moderate-forum-content.md}, which was not modified; this use case covers behavioral reports from profiles, messages, groups, and other users under US-40, and \texttt{friend.md}, \texttt{friend\_profile.md}, and \texttt{group\_detail.md} are UI/UX recommendations with no friend/profile/group API or error-code contract. \texttt{moderation\_queue.md} states duplicate-report prevention without an error code, so generic failure is used here.
+\item No distinct include, extend, or specialization use case is named for US-40, so no I-xx, E-xx, or G-xx identifier is created.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/profile_p5_report_a_user.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Profile: P5 Report a user}
+\end{figure}
+\par\smallskip
+
+\end{document}

@@ -1,0 +1,569 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-05 --- Comment and Answer}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-05-comment-and-answer}{}
+\addcontentsline{toc}{section}{UC-05 --- Comment and Answer}
+\section*{UC-05 --- Comment and Answer}
+\par\medskip
+
+\textbf{Version:} \texttt{2.0}
+\par\medskip
+
+\textbf{Performed by:} [Tran Nguyen Khanh Binh] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.84\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-05 \\ \hline
+Name & Comment and Answer \\ \hline
+Primary Actor & University Student \\ \hline
+Supporting Actors & Post Author; Notification Service \\ \hline
+Feature Group & Forum (Primary) \\ \hline
+Priority & High \\ \hline
+Related User Stories & US-18 \\ \hline
+Related Requirements & US-18, US-17, US-20, US-38; FR-18.1 to FR-18.6, FR-17.3, FR-20.1 to FR-20.5, FR-38.1; NFR-PERF-4, NFR-PERF-6, NFR-SEC-9 \\ \hline
+Source Documents & \texttt{proposals/use\_cases\_model/UC-05-comment-answer.md}; \texttt{proposals/use\_cases\_description.md} (UC-05); \texttt{proposals/use\_cases\_model.md}; \texttt{proposals/use\_case\_diagrams.md}; \texttt{PA3-Group05/use\_case.md} (section 5); \texttt{proposals/overview.md}, \texttt{functional\_requirement.md}, \texttt{non\_functional\_requirement.md}, \texttt{userstory.md}, \texttt{feature\_flow.md}, \texttt{screen\_flow.md}, \texttt{API.md}, \texttt{response\_code.md}, \texttt{post\_management.md}, \texttt{moderation\_queue.md}, \texttt{list\_post.md}, \texttt{settings.md}, \texttt{friend.md}, \texttt{friend\_profile.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-05-comment-answer_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected base use case; purple = included; green = extending; solid line = association; dashed arrow = include or extend; labelled solid arrow = generalization.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.72\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & Primary & A registered undergraduate student who uses the forum, shares resources, and optionally joins study rooms; for UC-05, comments on or answers a forum post. \\ \hline
+Post Author & Secondary & A student who receives notifications when comments or answers are added to their post. \\ \hline
+Notification Service & Supporting System & Delivers in-app notifications for forum and room activity; for UC-05, delivers the forum notification to the post author. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.16\textwidth}|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.44\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & UC-05 Comment and Answer & Primary & Comments on or answers a forum post. \\ \hline
+Post Author & I-06 Send Forum Notification & Secondary & Receives notification when a comment or answer is added. \\ \hline
+Notification Service & I-06 Send Forum Notification & Supporting & Delivers the forum notification to the post author. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.59\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+Post Author & University Student & Actor generalization & Inherits the general student associations, including UC-05, and adds I-06 as notification recipient. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.21\textwidth}|>{\raggedright\arraybackslash}p{0.24\textwidth}|>{\raggedright\arraybackslash}p{0.47\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+UC-05 Comment and Answer & I-06 Send Forum Notification & Notify the post author about the new comment or answer. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.17\textwidth}|>{\raggedright\arraybackslash}p{0.38\textwidth}|>{\raggedright\arraybackslash}p{0.22\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+E-06 Nested Reply & UC-05 Comment and Answer & The student replies to an existing comment or answer. & Add a threaded nested response. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item Every new comment or answer includes I-06 because the post author must be notified.
+\item Nested reply is an optional extension of the base comment-or-answer behavior.
+\item Post Author inherits the University Student association to UC-05 and adds the secondary notification-recipient association to I-06.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A student contributes to an academic discussion by commenting on a post or answering a question, so that ideas are discussed and other students receive help. The post author is notified about each new comment or answer. UC-05 covers creation, nested replies, edit/delete of own responses, answer classification for question posts, discussion display, and notification behavior in the primary University Forum feature group.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The student is authenticated with an active session.
+\item The student can view the selected post.
+\item The post accepts comments or answers and has not been removed or locked.
+\item The student is not restricted from commenting or answering.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} The comment or answer is stored and associated with the post, its author, and its parent comment when applicable.
+\item \textbf{Success:} The comment or answer is displayed in the post's discussion in chronological or threaded order.
+\item \textbf{Success:} The post author receives a notification about the new comment or answer.
+\item \textbf{Failure:} No comment or answer is stored, and the student receives a clear error message.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+Unless otherwise stated, an alternative flow resumes at the next step of the basic flow.
+\par\medskip
+
+\begin{enumerate}
+\item The student opens a post detail page.
+\item The system displays the post's existing comments and answers, including the marked true response when present.
+\item The student selects the comment or answer composer.
+\item The student enters the response content.
+\item The system identifies whether the response is a comment on a discussion post or an answer to a question post.
+\item The student submits the response.
+\item The frontend validates that the response is not empty and submits it to the backend.
+\item The backend verifies authentication, post visibility, posting permission, content validity, and rate limits.
+\item The backend stores the comment or answer, associates it with the post and the student, and updates the discussion structure.
+\item The system updates the displayed thread and comment or answer count.
+\item The notification service notifies the post author that a new comment or answer was added.
+\item The student sees the published response in the thread.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+\hypertarget{sec:a1-nested-reply}{}
+\paragraph*{A1. Nested reply}
+\par\medskip
+
+At basic flow step 4, the student replies to an existing comment or answer. The system stores the response with its parent and displays it in the threaded structure where applicable.
+\par\medskip
+
+\hypertarget{sec:a2-edit-own-response}{}
+\paragraph*{A2. Edit own response}
+\par\medskip
+
+The student selects \textbf{Edit} on their own comment or answer, changes the content, and submits. The system validates and updates the existing response.
+\par\medskip
+
+\hypertarget{sec:a3-delete-own-response}{}
+\paragraph*{A3. Delete own response}
+\par\medskip
+
+The student selects \textbf{Delete} on their own comment or answer and confirms. The system removes or hides the response according to the platform's deletion policy and updates the thread.
+\par\medskip
+
+\hypertarget{sec:a4-answer-a-question}{}
+\paragraph*{A4. Answer a question}
+\par\medskip
+
+At basic flow step 5, the system classifies the response as an answer to the question post, making it eligible for true-response marking by the post author.
+\par\medskip
+
+\hypertarget{sec:a5-no-existing-discussion}{}
+\paragraph*{A5. No existing discussion}
+\par\medskip
+
+At basic flow step 2, the system shows an empty discussion state and still presents the composer.
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-empty-or-invalid-response}{}
+\paragraph*{E1. Empty or invalid response}
+\par\medskip
+
+The system keeps the composer open, shows validation feedback, and does not submit.
+\par\medskip
+
+\hypertarget{sec:e2-post-removed-locked-or-inaccessible}{}
+\paragraph*{E2. Post removed, locked, or inaccessible}
+\par\medskip
+
+The system rejects the response and explains that the post is no longer available for discussion.
+\par\medskip
+
+\hypertarget{sec:e3-posting-restriction}{}
+\paragraph*{E3. Posting restriction}
+\par\medskip
+
+A restricted or unauthorized student is denied commenting or answering.
+\par\medskip
+
+\hypertarget{sec:e4-rate-limit-reached}{}
+\paragraph*{E4. Rate limit reached}
+\par\medskip
+
+The system rejects the response and asks the student to retry later.
+\par\medskip
+
+\hypertarget{sec:e5-notification-delivery-failure}{}
+\paragraph*{E5. Notification delivery failure}
+\par\medskip
+
+The comment or answer remains published; the system records or retries the notification according to the notification policy.
+\par\medskip
+
+\hypertarget{sec:e6-server-or-database-failure}{}
+\paragraph*{E6. Server or database failure}
+\par\medskip
+
+No response is stored, and the student receives a retry option with the entered content preserved where supported.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item Comments are allowed on discussion posts; answers are allowed on question posts.
+\item Nested replies are supported where applicable.
+\item Students may edit or delete only their own comments and answers.
+\item Comments and answers are displayed in chronological or threaded order.
+\item The post author is notified when a new comment or answer is added.
+\item Commenting and answering are subject to authentication, permission, and rate-limit checks.
+\item Only one true response may be marked for a question post; that action is performed by the post author under US-20.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-PERF-4 & A new comment or answer must be reflected in the relevant forum view within 2 seconds. \\ \hline
+NFR-PERF-6 & Forum notifications must be delivered with a latency of 2 seconds or less under normal operating conditions. \\ \hline
+NFR-SEC-9 & Commenting and answering must be rate-limited to reduce spam and abuse. \\ \hline
+Design constraint & A notification delivery failure must not roll back an already published comment or answer; the notification may be recorded or retried. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.32\textwidth}|>{\raggedright\arraybackslash}p{0.61\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Nested reply & Basic flow step 4; alternative A1 \\ \hline
+Edit or delete own response & After the response is displayed; alternatives A2-A3 \\ \hline
+Answer classification & Basic flow step 5; alternative A4 \\ \hline
+Empty discussion & Basic flow step 2; alternative A5 \\ \hline
+Notification delivery & Basic flow step 11; exception E5 \\ \hline
+Rate-limit recovery & Basic flow step 8; exception E4 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Screen flow.} \texttt{screen\_flow.md}: Home $\rightarrow$ Forum Group $\rightarrow$ University $\rightarrow$ Major $\rightarrow$ Course $\rightarrow$ Post, with Trending $\rightarrow$ Post and Create Post $\rightarrow$ Post. \texttt{feature\_flow.md}: List Post $\rightarrow$ Post $\rightarrow$ Comment / Solved / Vote / Save / Report / Moderate; Post $\rightarrow$ Comment $\rightarrow$ True Response; Comment $\rightarrow$ Vote. \texttt{post\_management.md} recommends the UI route \texttt{/forum/posts/:postId} and the detail components \texttt{PostDetailPage}, \texttt{CommentList}, \texttt{CommentComposer}, \texttt{TrueResponsePanel}, \texttt{PostSolvedBadge}, and \texttt{PermissionBasedActionBar}; \texttt{API.md} uses \texttt{/forum/posts/:post\_id}.
+\item \textbf{Detail load.} \texttt{GET /forum/posts/:post\_id} returns \texttt{post}, \texttt{comments}, \texttt{true\_response}, \texttt{user\_vote}, and \texttt{saved} with \texttt{200}; failure states are \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}), \texttt{401}, and \texttt{500 (DATABASE\_ERROR | UNKNOWN\_ERROR)}. Backend function \texttt{studitopia.get\_forum\_post(ppost\_id: uuid)} also lists \texttt{FORBIDDEN} (\texttt{48010}).
+\item \textbf{Composer/create.} \texttt{CommentComposer} is a textarea plus submit control for comments, answers, and replies (\texttt{FR-18.1}--\texttt{FR-18.3}, \texttt{AC-18.1}--\texttt{AC-18.3}). Creation uses \texttt{POST /forum/posts/:post\_id/comments} with \texttt{\{content, parent\_comment\_id?\}}; success is \texttt{201 \{comment\_id, created\_at\}}. Errors are \texttt{400 INVALID\_POST\_CONTENT} (\texttt{48004}), \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}), \texttt{401}, and \texttt{500}. Database function \texttt{studitopia.create\_forum\_comment(pauthor\_id, ppost\_id, pcontent, pparent\_comment\_id)} additionally lists \texttt{UNKNOWN\_ERROR} (\texttt{45000}) and \texttt{FORBIDDEN} (\texttt{48010}).
+\item \textbf{Edit/delete rules.} \texttt{CommentActionMenu}, \texttt{EditCommentDialog}, and \texttt{DeleteCommentDialog} expose \textbf{Edit} and \textbf{Delete} only for the current user's own comment or answer (\texttt{FR-18.4}, \texttt{AC-18.4}, business rule 3). \texttt{post\_management.md} requires backend enforcement but states that no comment edit/delete API is specified in \texttt{API.md}; no endpoint is invented here. \texttt{UC-05} A3 removes or hides the response according to platform deletion policy.
+\item \textbf{Notification rules.} Every new response includes I-06 Send Forum Notification (\texttt{FR-18.6}, \texttt{FR-38.1}, UC-05 step 11). \texttt{settings.md} surfaces \texttt{ForumNotificationToggles} for comments, answers, votes, true-response marks, and mentions; \texttt{AudioAlertToggle}; \texttt{NotificationCenterLink}; \texttt{MarkAllReadButton}; and \texttt{SaveNotificationSettingsButton}, with \texttt{NotificationPreference} fields \texttt{forumEvents}, \texttt{socialEvents}, \texttt{roomInvitationsEnabled}, \texttt{audioAlertsEnabled}. No notification endpoint is defined in \texttt{API.md}; \texttt{E5} records or retries delivery and must not roll back the published response.
+\item \textbf{True response.} \texttt{PATCH /forum/posts/:post\_id/true-response} with \texttt{\{comment\_id: string\}} returns \texttt{200 \{solved: boolean\}}; errors are \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}), \texttt{403 NOT\_POST\_OWNER} (\texttt{48007}) or \texttt{FORBIDDEN} (\texttt{48010}), \texttt{401}, and \texttt{500}. Backend function \texttt{studitopia.mark\_true\_response(puser\_id, ppost\_id, pcomment\_id)} lists the same codes. \texttt{PostSolvedBadge} shows \texttt{Solved} / \texttt{Unsolved}; \texttt{TrueResponsePanel} shows the accepted answer or comment prominently (\texttt{FR-20.1}--\texttt{FR-20.5}).
+\item \textbf{Save.} \texttt{POST /forum/posts/:post\_id/save} returns \texttt{200 \{saved: boolean\}}; errors are \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}), \texttt{401}, and \texttt{500}. Database function \texttt{studitopia.save\_forum\_post(puser\_id, ppost\_id)} also lists \texttt{FORBIDDEN} (\texttt{48010}). \texttt{SavePostButton} shows \textbf{Save}/\textbf{Saved} state (\texttt{FR-21.1}--\texttt{FR-21.4}).
+\item \textbf{Report and moderation.} \texttt{POST /forum/reports} with \texttt{\{target\_type: 'post' | 'comment', target\_id, category, description?\}} returns \texttt{201 \{report\_id\}}; errors are \texttt{400 INVALID\_REPORT\_CATEGORY} (\texttt{48009}), \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}), \texttt{401}, and \texttt{500}. Database function \texttt{studitopia.report\_forum\_content(preporter\_id, ptarget\_type, ptarget\_id, pcategory, pdescription)} also lists \texttt{FORBIDDEN} (\texttt{48010}). Reports route to the moderation queue; duplicate-report prevention is stated in \texttt{API.md} but has no specified error code. \texttt{moderation\_queue.md} has no queue/action/history endpoints and notes that moderation actions are restricted to authorized moderators/administrators (\texttt{NFR-SEC-10}).
+\item \textbf{Vote.} \texttt{POST /forum/votes} with \texttt{\{target\_type: 'post' | 'comment', target\_id, vote: 1 | 0 | -1\}} returns \texttt{200 \{vote\_score\}}; errors are \texttt{400 INVALID\_VOTE} (\texttt{48005}), \texttt{409 DUPLICATED\_VOTE} (\texttt{48006}), \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}), \texttt{401}, and \texttt{500}. Database function \texttt{studitopia.vote\_forum\_content(puser\_id, ptarget\_type, ptarget\_id, pvote)} also lists \texttt{FORBIDDEN} (\texttt{48010}). One active vote per target may be changed or removed (\texttt{FR-19.1}--\texttt{FR-19.5}, \texttt{AC-19.3}, \texttt{AC-19.4}).
+\item \textbf{Other forum codes.} \texttt{response\_code.md} defines \texttt{48000 UNKNOWN FORUM ERROR}, \texttt{48003 INVALID\_POST\_TYPE}, \texttt{48008 ALREADY\_TRUE\_RESPONSE}, and \texttt{48010 FORBIDDEN}. \texttt{48008} is defined but is not listed in the \texttt{PATCH /forum/posts/:post\_id/true-response} response contract.
+\item \textbf{Privacy and permission rules.} \texttt{NFR-SEC-1} requires authentication for protected resources; \texttt{NFR-SEC-4} restricts private forum content to authorized users; \texttt{NFR-SEC-6} requires server-side authorization. \texttt{NFR-PRIV-7} applies privacy settings consistently to forum posts, comments, member lists, and search results. \texttt{FR-17.4}/\texttt{AC-17.4} display only permitted actions, and \texttt{FR-39.5} requires backend prevention of disallowed interactions. \texttt{NFR-SEC-9} rate-limits commenting; \texttt{NFR-USE-6} places report/moderation actions within at most 2 interactions from a post or comment. \texttt{friend.md} and \texttt{friend\_profile.md} show friend posts/comments only under privacy rules and do not define a comment API.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item The focused model file and \texttt{use\_case\_diagrams.md} contain identical UC-05 diagram code; the model index calls the Post Author link "actor inheritance" while the focused model labels it "generalization". This export uses the focused model's terminology.
+\item \texttt{use\_cases\_description.md} and \texttt{PA3-Group05/use\_case.md} agree on UC-05's goal, 12-step basic flow, A1--A5, E1--E6, business rules, related requirements, special requirements, and extension points.
+\item \texttt{API.md} exposes one comment-creation endpoint for comments, answers, and nested replies (\texttt{parent\_comment\_id?}) but no answer-specific endpoint, no comment edit/delete endpoint, and no notification endpoint; edit/delete remains an \texttt{FR-18.4} UI requirement with unspecified backend contract.
+\item \texttt{UC-05} states that answers are classified separately from comments, and \texttt{FR-18.2} requires answer creation, but \texttt{API.md} does not define a separate answer type or field for that classification.
+\item \texttt{FR-18.6}/UC-05 state that the post author is notified when a new response is added, while \texttt{FR-38.5} allows users to configure which forum events trigger alerts; no source specifies how mandatory notification behavior interacts with user opt-outs.
+\item \texttt{ALREADY\_TRUE\_RESPONSE} (\texttt{48008}) exists in \texttt{response\_code.md}, but \texttt{PATCH /forum/posts/:post\_id/true-response} lists only \texttt{NOT\_POST\_OWNER} (\texttt{48007}) and \texttt{FORBIDDEN} (\texttt{48010}) under \texttt{403}; the one-true-response rule comes from business rule 7 and \texttt{FR-20.1}/\texttt{FR-20.4}.
+\item \texttt{screen\_flow.md} and \texttt{feature\_flow.md} define navigation but not exact routes; \texttt{post\_management.md} marks \texttt{/forum/posts/:postId} as recommended, while \texttt{API.md} uses \texttt{/forum/posts/:post\_id}.
+\item \texttt{E5} and the PA3 design constraint specify that notification failure must not roll back a published response, but the \texttt{500} response contract does not describe partial notification state.
+\item \texttt{friend.md} and \texttt{friend\_profile.md} explicitly state that there is no friend/profile API contract; they contribute only privacy-scoped visibility of friend posts/comments (\texttt{NFR-PRIV-7}), not additional forum endpoints.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/dijkstra_question_desktop.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Dijkstra question - Desktop}
+\end{figure}
+\par\smallskip
+
+\end{document}

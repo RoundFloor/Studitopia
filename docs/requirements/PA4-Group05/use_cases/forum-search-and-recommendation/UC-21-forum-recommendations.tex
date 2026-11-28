@@ -1,0 +1,545 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-21 --- Receive Forum Recommendations}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-21-receive-forum-recommendations}{}
+\addcontentsline{toc}{section}{UC-21 --- Receive Forum Recommendations}
+\section*{UC-21 --- Receive Forum Recommendations}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-21 \\ \hline
+Name & Receive Forum Recommendations \\ \hline
+Primary Actor & University Student \\ \hline
+Supporting Actors & None \\ \hline
+Feature Group & Forum Search and Recommendation \\ \hline
+Priority & Not specified in proposals \\ \hline
+Related User Stories & US-24 \\ \hline
+Related Requirements & FR-24.1, FR-24.2, FR-24.3, FR-24.4, FR-24.5; AC-24.1, AC-24.2, AC-24.3, AC-24.4, AC-24.5; NFR-PERF-1, NFR-PERF-2, NFR-SEC-1, NFR-SEC-4, NFR-PRIV-7 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} §7.2; \texttt{proposals/functional\_requirement.md} US-24; \texttt{proposals/list\_post.md}; \texttt{proposals/settings.md}; \texttt{proposals/post\_management.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-21-forum-recommendations_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.71\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & Primary human actor & Receives post recommendations based on university, major, courses, interests, and forum context, and can dismiss or refresh them. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.25\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.44\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & UC-21 Receive Forum Recommendations & Primary & Views, opens, dismisses, and refreshes forum recommendations. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & No actor generalization or specialization is named in the proposal sources for this story. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.67\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No distinct included use case is named in the proposal sources for this story. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.58\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & No distinct extending use case is named in the proposal sources for this story. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item In scope: relevant posts, trending posts, unsolved questions, dismissal of irrelevant recommendations, and refresh after preference or forum-context change.
+\item Out of scope: library resource recommendations under US-26 and optional room recommendations under US-34.
+\item Recommendations are a discovery layer over forum posts; they are not a separate post type and do not replace browsing, searching, or opening posts.
+\item \texttt{API.md} defines no recommendation endpoint; \texttt{GET /forum/posts} supports academic-context filters and \texttt{sort: 'trending'}, but relevance and unsolved recommendation rules are requirement/UI-layer behavior.
+\item No new I-xx, E-xx, or G-xx identifier is created; \texttt{RecommendedPostSection} and related controls are recommendation-layer UI components in \texttt{list\_post.md}.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A university student receives forum recommendations so that discussions relevant to courses and interests are easier to discover. The system recommends relevant posts, trending posts in the academic context, and unsolved questions the student may be able to help with.
+\par\medskip
+
+The trigger is entering the forum recommendation area or changing preferences or forum context. The successful outcome is a visible recommendation section whose items can be opened, dismissed when irrelevant, or refreshed when preferences or context change.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The student is authenticated with an active session.
+\item Learning preferences such as courses, subjects, interests, learning goals, and preferred study times are available where configured.
+\item A university, major, or course forum context is selected.
+\item At least one visible forum post is available for recommendation.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} The system displays recommendations relevant to the student's university, major, courses, and interests.
+\item \textbf{Success:} Trending posts within the academic context and unsolved questions are included where available.
+\item \textbf{Success:} A dismissed recommendation is no longer shown in the current recommendation view.
+\item \textbf{Success:} Recommendations refresh when preferences or forum context change.
+\item \textbf{Failure:} The system shows no restricted content and returns the student to the normal forum-list state with an error where applicable.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The student opens the forum recommendation area.
+\item The system identifies the active university, major, or course forum context.
+\item The system uses available preferences for courses, subjects, interests, learning goals, and preferred study times.
+\item The system selects posts relevant to the student's university, major, courses, and interests.
+\item The system selects trending posts within that academic context.
+\item The system selects unsolved questions where the student may be able to help.
+\item The system displays the recommendations before or alongside the general post list.
+\item The student opens a recommended post and the system shows its detail.
+\item The student may dismiss an irrelevant recommendation or request a refresh after a preference or context change.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+\hypertarget{sec:a1-dismiss-an-irrelevant-recommendation}{}
+\paragraph*{A1. Dismiss an irrelevant recommendation}
+\par\medskip
+
+At basic flow step 9, the student selects \textbf{Not relevant}. The system hides that recommendation from the current recommendation view under AC-24.4. Persistence of dismissal beyond that view is not specified in proposals.
+\par\medskip
+
+\hypertarget{sec:a2-refresh-after-preference-change}{}
+\paragraph*{A2. Refresh after preference change}
+\par\medskip
+
+The student updates preferences in Settings, then selects \textbf{Refresh} in the recommendation area. The system refreshes recommendations under AC-24.5 using the updated preferences.
+\par\medskip
+
+\hypertarget{sec:a3-refresh-after-forum-context-change}{}
+\paragraph*{A3. Refresh after forum-context change}
+\par\medskip
+
+The student switches university, major, or course forum context. The system refreshes recommendations under AC-24.5 for the new academic context.
+\par\medskip
+
+\hypertarget{sec:a4-no-recommendations-available}{}
+\paragraph*{A4. No recommendations available}
+\par\medskip
+
+If no recommendation candidates are available, the proposal sources do not specify a dedicated recommendation empty state. The general forum-list empty-state behavior applies only where a post list is shown.
+\par\medskip
+
+\hypertarget{sec:a5-related-post-discovery}{}
+\paragraph*{A5. Related post discovery}
+\par\medskip
+
+Where a related-post section is shown after viewing a post, the system may display related posts from the same context. This is source-backed UI behavior in \texttt{list\_post.md}, not a separate FR/AC requirement.
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+No recommendation-specific exception flow is specified in the proposal sources; the following source-backed forum failures apply to the post data used by recommendations.
+\par\medskip
+
+\hypertarget{sec:e1-forum-posts-cannot-be-loaded}{}
+\paragraph*{E1. Forum posts cannot be loaded}
+\par\medskip
+
+The system shows the forum load error state with \textbf{Retry} and does not display partial or stale recommendations.
+\par\medskip
+
+\hypertarget{sec:e2-recommended-post-is-unavailable-or-restricted}{}
+\paragraph*{E2. Recommended post is unavailable or restricted}
+\par\medskip
+
+The system omits unavailable or unauthorized posts because list and detail functions return only posts visible to the requesting user.
+\par\medskip
+
+\hypertarget{sec:e3-server-or-database-failure}{}
+\paragraph*{E3. Server or database failure}
+\par\medskip
+
+\texttt{GET /forum/posts} reports \texttt{INTERNAL\_SERVER\_ERROR} under \texttt{500} with \texttt{(DATABASE\_ERROR | UNKNOWN\_ERROR)[]}; the system keeps the normal forum state and allows retry.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item The system recommends posts relevant to the user's university, major, courses, and interests under FR-24.1 and AC-24.1.
+\item The system recommends trending posts within the user's academic context under FR-24.2 and AC-24.2.
+\item The system recommends unsolved questions where the user may be able to help under FR-24.3 and AC-24.3.
+\item Users can dismiss irrelevant recommendations under FR-24.4 and AC-24.4.
+\item Recommendations refresh when the user's preferences or forum context change under FR-24.5 and AC-24.5.
+\item Preferences used for recommendations come from US-09 and FR-09.4 / AC-09.4; updates remain available under FR-09.5 / AC-09.5.
+\item Recommendations must respect private forum content and privacy settings under NFR-SEC-4 and NFR-PRIV-7.
+\item No numeric limit, ranking formula, or dismissal-retention period is specified in proposals.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.79\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-PERF-1 & Standard user actions must respond within 2 seconds. \\ \hline
+NFR-PERF-2 & A forum post list must load within 2 seconds under normal operating conditions. \\ \hline
+NFR-SEC-1 & Authentication is required before accessing protected forum resources. \\ \hline
+NFR-SEC-4 & Private forum content and private-group content must be restricted to authorized users only. \\ \hline
+NFR-PRIV-7 & Privacy settings must apply consistently to forum posts, comments, member lists, and search results. \\ \hline
+Design constraint & Dismissal persistence, recommendation count, and ranking weights are not specified in proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.49\textwidth}|>{\raggedright\arraybackslash}p{0.44\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Academic-context detection & Basic flow step 2; alternative A3 \\ \hline
+Preference retrieval & Basic flow step 3; alternative A2 \\ \hline
+Relevant, trending, and unsolved selection & Basic flow steps 4-7 \\ \hline
+Recommendation dismissal & Basic flow step 9; alternative A1 \\ \hline
+Recommendation refresh & Basic flow step 9; alternatives A2-A3 \\ \hline
+Unavailable or restricted posts & Exception E2 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Confirmed flow:} \texttt{feature\_flow.md} shows \texttt{Forum → Recommended → List Post}; \texttt{screen\_flow.md} shows \textbf{Trending $\rightarrow$ Post} and \textbf{Trending $\rightarrow$ Related $\rightarrow$ Post}.
+\item \textbf{Recommendation UI:} \texttt{list\_post.md} proposes \texttt{RecommendedPostSection} with heading \textbf{Recommended for you}, \texttt{RelevantForYouList}, \texttt{TrendingPostList}, \texttt{UnsolvedQuestionList}, \texttt{RelatedPostList}, and \texttt{RecommendationReasonText} examples "Related to CS101" and "Trending in your major."
+\item \textbf{Dismiss rule:} \texttt{DismissRecommendationButton} is labelled \textbf{Not relevant} and hides an irrelevant recommendation under AC-24.4; no persistence endpoint or retention rule is specified.
+\item \textbf{Refresh rule:} \texttt{RefreshRecommendationsButton} is labelled \textbf{Refresh} and requests updated recommendations when preferences or forum context change under AC-24.5.
+\item \textbf{Confirmed requirements:} FR-24.1 to FR-24.5 and AC-24.1 to AC-24.5 define relevant posts, trending posts, unsolved questions, dismissal, and refresh.
+\item \textbf{Preference data:} \texttt{settings.md} defines \texttt{LearningPreference} fields \texttt{courseIds}, \texttt{subjectTags}, \texttt{interestTags}, \texttt{learningGoals}, and \texttt{preferredStudyTimes}, used to recommend forum posts under FR-09.4.
+\item \textbf{API gap:} \texttt{API.md} defines no recommendation endpoint. \texttt{GET /forum/posts} supports \texttt{university\_id?}, \texttt{major\_id?}, \texttt{course\_id?}, \texttt{tag?}, \texttt{search?}, \texttt{sort?} = \texttt{'newest' | 'trending' | 'most\_voted' | 'most\_discussed'}, \texttt{limit?}, and \texttt{offset?}, but no dedicated relevance, unsolved, dismiss, or refresh endpoint.
+\item \textbf{Post data fields:} Available post summaries come from \texttt{GET /forum/posts}: \texttt{post\_id}, \texttt{title}, \texttt{post\_type}, \texttt{author}, \texttt{vote\_score}, \texttt{comment\_count}, \texttt{solved}, and \texttt{created\_at}.
+\item \textbf{Notifications and privacy:} No recommendation-specific notification rule is stated. Recommendations must respect visibility restrictions under NFR-SEC-4, NFR-PRIV-7, and the \texttt{list\_forum\_posts} requirement to return only posts visible to the requesting user.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item UC-03 mentions recommendation rules as interface/discovery notes in its source-alignment and interface sections, but recommendations are not in UC-03's basic flow and are not part of UC-03's related requirements; UC-21 keeps them as the dedicated US-24 behavior.
+\item UC-03's basic flow ends with full post detail and permitted actions; dismiss and refresh are not part of that basic flow.
+\item UC-05 has no recommendation behavior; the overlap is limited to opening a recommended post and viewing its discussion under existing post-detail behavior.
+\item \texttt{list\_post.md} labels \texttt{RecommendedPostSection}, reason text, \textbf{Not relevant}, and \textbf{Refresh} as UI recommendations; the underlying recommendation, dismiss, and refresh rules are confirmed only by FR-24.1 to FR-24.5 and AC-24.1 to AC-24.5.
+\item \texttt{settings.md} supplies preference data for recommendation relevance through US-09 but defines no recommendation API or refresh endpoint.
+\item No distinct include, extend, actor-specialization, or recommendation use-case ID is named for US-24, so the diagram contains only the selected use case and its primary actor.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/feed_algorithms_desktop.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Feed: Algorithms - Desktop}
+\end{figure}
+\par\smallskip
+
+\end{document}

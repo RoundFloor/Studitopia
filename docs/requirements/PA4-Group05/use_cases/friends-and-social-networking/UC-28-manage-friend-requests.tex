@@ -1,0 +1,568 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-28 --- Manage Friend Requests}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-28-manage-friend-requests}{}
+\addcontentsline{toc}{section}{UC-28 --- Manage Friend Requests}
+\section*{UC-28 --- Manage Friend Requests}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Chi Bao] | \textbf{Edited by:} [Nguyen Chi Bao]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.84\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-28 \\ \hline
+Name & Manage Friend Requests \\ \hline
+Primary Actor & User \\ \hline
+Supporting Actors & Friend Request Sender; Notification Service \\ \hline
+Feature Group & Friends and Social Networking \\ \hline
+Priority & Not explicitly stated (Not specified in proposals) \\ \hline
+Related User Stories & US-32 \\ \hline
+Related Requirements & \texttt{AC-32.1}, \texttt{AC-32.2}, \texttt{AC-32.3}, \texttt{FR-32.1}, \texttt{FR-32.2}, \texttt{FR-32.3}, \texttt{FR-32.4}, \texttt{FR-32.5}, \texttt{AC-31.4}, \texttt{FR-31.4}, \texttt{FR-38.2}, \texttt{AC-38.3}, \texttt{FR-39.1}, \texttt{FR-39.3}, \texttt{FR-39.5}, \texttt{AC-39.1}, \texttt{AC-39.3}, \texttt{NFR-PRIV-2}, \texttt{NFR-PRIV-7}, \texttt{NFR-SEC-1}, \texttt{NFR-SEC-3}, \texttt{NFR-SEC-6} \\ \hline
+Source Documents & \texttt{proposals/userstory.md} (section 9.3); \texttt{proposals/functional\_requirement.md} (US-32); \texttt{proposals/friend.md}; \texttt{proposals/friend\_profile.md}; \texttt{proposals/group\_detail.md}; \texttt{proposals/settings.md}; \texttt{proposals/overview.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/non\_functional\_requirement.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-28-manage-friend-requests_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.70\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+User & Primary & The US-32 actor who accepts or rejects incoming friend requests to control social connections. \\ \hline
+Friend Request Sender & Secondary & The member who sent the request, receives the outcome notification, and may be added to the friend list. \\ \hline
+Notification Service & Supporting System & Routes the acceptance or decline notification required by \texttt{FR-32.5} and \texttt{FR-31.4}; no notification endpoint is specified. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.49\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+User & UC-28 Manage Friend Requests & Primary & Reviews incoming requests and accepts, declines, or blocks future requests. \\ \hline
+Friend Request Sender & UC-28 Manage Friend Requests & Secondary & Is added to the friend list on acceptance or notified on decline. \\ \hline
+Notification Service & UC-28 Manage Friend Requests & Supporting & Delivers the accepted or declined outcome to the sender. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.57\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+Friend Request Sender & User & Actor generalization & The sender is also a user and inherits the general user association while adding the sender role. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.60\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No distinct included use case is named in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.21\textwidth}|>{\raggedright\arraybackslash}p{0.45\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & No condition is specified. & No distinct extending use case is named in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item The model contains only UC-28 and its actors because no friend/group I-xx, E-xx, or G-xx use case is named in the proposals.
+\item \texttt{screen\_flow.md} gives \texttt{Friend Group -$>$ Friend Request}; \texttt{feature\_flow.md} gives \texttt{Friend -$>$ FriendRequest -$>$ FriendItem}.
+\item \texttt{friend.md} recommends \texttt{FriendRequestCenter}, \texttt{IncomingRequestList}, \texttt{OutgoingRequestList}, \texttt{AcceptRequestButton}, \texttt{RejectRequestButton}, and \texttt{BlockFutureRequestsToggle}; these are UI recommendations.
+\item Request states are \texttt{None}, \texttt{Pending}, \texttt{Accepted}, \texttt{Declined}, and \texttt{Blocked}; UC-28 changes \texttt{Pending} to one of the three outcome states.
+\item Accepting adds the sender to the friend list (\texttt{FR-32.2}, \texttt{AC-32.2}); declining removes the pending request (\texttt{FR-32.3}, \texttt{AC-32.2}).
+\item Blocking future requests is a decline-path option (\texttt{FR-32.4}, \texttt{AC-32.3}) and is also reflected in communication settings (\texttt{settings.md}).
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A user opens a centralized request center to review incoming friend requests with profile details and notes. The user can accept a request, which adds the sender to the friend list, or decline it, which removes the pending request. When declining, the user can block future requests from that sender, and the sender is notified of the outcome.
+\par\medskip
+
+UC-28 begins after UC-27 has created a \texttt{Pending} request. It does not cover sending requests, direct messaging, or group membership.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The user is authenticated with an active session (\texttt{NFR-SEC-1}).
+\item At least one incoming request with status \texttt{Pending} is available, or the request center shows an empty state.
+\item The user can view the sender's profile details allowed by privacy settings (\texttt{FR-10.4}, \texttt{NFR-PRIV-7}).
+\item The user permits incoming friend requests or has an existing pending request to decide (\texttt{NFR-PRIV-2}).
+\item Sensitive communication uses TLS 1.2 or higher (\texttt{NFR-SEC-3}).
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} On acceptance, the sender is added to the friend list and the request status becomes \texttt{Accepted}.
+\item \textbf{Success:} On decline, the pending request is removed or shown as \texttt{Declined} and the status becomes \texttt{Declined}.
+\item \textbf{Success:} If the user selected the block option, future requests from the sender are blocked and the status is \texttt{Blocked}.
+\item \textbf{Success:} The sender is notified of the accepted or declined outcome (\texttt{FR-32.5}, \texttt{FR-31.4}).
+\item \textbf{Failure:} The request remains \texttt{Pending}, no friend connection is created, and the user receives clear feedback.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The user opens the Friend Group from Home.
+\item The user selects the \textbf{Friend Requests} tab or \texttt{FriendRequestsTab}.
+\item The system opens \texttt{FriendRequestCenter} with \texttt{IncomingRequestList} and \texttt{OutgoingRequestList}.
+\item The system displays each incoming request with sender avatar/name, academic context, note, sent time, and status \texttt{Pending}.
+\item The user reviews the request note of at most 200 characters.
+\item The user selects \textbf{Accept}.
+\item The system verifies that the request is still \texttt{Pending} and that the user is authorized to decide it (\texttt{NFR-SEC-6}).
+\item The system adds the sender to the friend list and changes the status to \texttt{Accepted} (\texttt{FR-32.2}, \texttt{AC-32.2}).
+\item The Notification Service notifies the sender of acceptance (\texttt{FR-32.5}, \texttt{FR-31.4}).
+\item The user sees confirmation feedback, and the sender's profile now offers friend actions instead of a pending request.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+\hypertarget{sec:a1-decline-a-request}{}
+\paragraph*{A1. Decline a request}
+\par\medskip
+
+At basic flow step 6, the user selects \textbf{Decline}. The system removes the pending request, sets the status to \texttt{Declined}, and notifies the sender (\texttt{FR-32.3}, \texttt{AC-32.2}, \texttt{FR-32.5}).
+\par\medskip
+
+\hypertarget{sec:a2-decline-and-block-future-requests}{}
+\paragraph*{A2. Decline and block future requests}
+\par\medskip
+
+At basic flow step 6, the user enables “Block future requests from this user.” before selecting \textbf{Decline}. The request becomes \texttt{Blocked}, and future requests from that sender are prevented (\texttt{FR-32.4}, \texttt{AC-32.3}).
+\par\medskip
+
+\hypertarget{sec:a3-manage-from-the-sender-s-profile}{}
+\paragraph*{A3. Manage from the sender's profile}
+\par\medskip
+
+At basic flow step 4, the user opens \texttt{FriendProfilePage} from the request card. \texttt{AcceptRequestButton} and \texttt{RejectRequestButton} perform the same decision with the same status and notification rules (\texttt{friend\_profile.md}).
+\par\medskip
+
+\hypertarget{sec:a4-no-incoming-requests}{}
+\paragraph*{A4. No incoming requests}
+\par\medskip
+
+At basic flow step 4, the list is empty. The system shows an appropriate empty state and keeps the request center available.
+\par\medskip
+
+\hypertarget{sec:a5-mark-request-notification-as-read}{}
+\paragraph*{A5. Mark request notification as read}
+\par\medskip
+
+After a decision, the user selects \textbf{Mark as read} on the social notification (\texttt{FR-38.6}, \texttt{settings.md}).
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+No friend/group-specific error codes are specified; the following are source-backed UI states rather than backend error contracts.
+\par\medskip
+
+\hypertarget{sec:e1-stale-or-already-decided-request}{}
+\paragraph*{E1. Stale or already decided request}
+\par\medskip
+
+The request is no longer \texttt{Pending}. The system does not add a duplicate friend connection and refreshes the request list.
+\par\medskip
+
+\hypertarget{sec:e2-unauthorized-decision-attempt}{}
+\paragraph*{E2. Unauthorized decision attempt}
+\par\medskip
+
+The backend denies the action through server-side authorization checks and does not change the request status (\texttt{NFR-SEC-6}, \texttt{FR-39.5}).
+\par\medskip
+
+\hypertarget{sec:e3-notification-delivery-failure}{}
+\paragraph*{E3. Notification delivery failure}
+\par\medskip
+
+The accepted, declined, or blocked state remains in effect; no friend error code is assigned because none is defined.
+\par\medskip
+
+\hypertarget{sec:e4-request-center-fails-to-load}{}
+\paragraph*{E4. Request center fails to load}
+\par\medskip
+
+The system shows “Unable to load friends or groups.” with Retry (\texttt{friend.md}, recommendation); no endpoint or status code is asserted.
+\par\medskip
+
+\hypertarget{sec:e5-sender-is-blocked-or-restricted}{}
+\paragraph*{E5. Sender is blocked or restricted}
+\par\medskip
+
+The system preserves the \texttt{Blocked} state and shows “You cannot interact with this member.” where interaction controls would appear (\texttt{friend\_profile.md}).
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item A centralized view must display incoming friend requests (\texttt{FR-32.1}, \texttt{AC-32.1}).
+\item Accepting adds the sender to the friend list (\texttt{FR-32.2}, \texttt{AC-32.2}).
+\item Declining removes the pending request (\texttt{FR-32.3}, \texttt{AC-32.2}).
+\item When declining, the user can block future requests from the sender (\texttt{FR-32.4}, \texttt{AC-32.3}).
+\item The sender is notified when a request is accepted or rejected (\texttt{FR-32.5}).
+\item The exact request statuses are \texttt{None}, \texttt{Pending}, \texttt{Accepted}, \texttt{Declined}, and \texttt{Blocked} (\texttt{friend\_profile.md}).
+\item Request notes are limited to 200 characters (\texttt{AC-31.3}, \texttt{friend.md}, \texttt{friend\_profile.md}).
+\item Users can allow or reject incoming friend requests (\texttt{NFR-PRIV-2}) and mute or block specific members (\texttt{FR-39.3}, \texttt{AC-39.1}).
+\item Communication and privacy settings must prevent interactions the user does not permit (\texttt{FR-39.5}, \texttt{NFR-SEC-6}).
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-SEC-1 & Authentication is required before accessing protected user resources. \\ \hline
+NFR-SEC-3 & Sensitive communication must use TLS 1.2 or higher. \\ \hline
+NFR-SEC-6 & Server-side authorization checks must prevent unauthorized access. \\ \hline
+NFR-PRIV-2 & Users must be able to allow or reject incoming friend requests. \\ \hline
+NFR-PRIV-7 & Privacy settings must apply consistently to member lists and search results. \\ \hline
+Design constraint & A decision must be applied once to a \texttt{Pending} request; duplicate acceptance, duplicate friend connections, and error-code-derived messages are not defined. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.31\textwidth}|>{\raggedright\arraybackslash}p{0.62\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Request center entry & Basic flow steps 1-3 \\ \hline
+Accept action & Basic flow step 6; alternative A3 \\ \hline
+Decline action & Alternative A1 \\ \hline
+Block future requests & Alternative A2; exception E5 \\ \hline
+Outcome notification & Basic flow step 9; alternative A1; exception E3 \\ \hline
+Notification read state & Alternative A5 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Screen/flow path (confirmed from proposals):} \texttt{screen\_flow.md} gives \texttt{Home -$>$ Friend Group -$>$ Friend Request}; \texttt{feature\_flow.md} gives \texttt{Friend -$>$ FriendRequest -$>$ FriendItem}; \texttt{friend.md} recommends \texttt{FriendRequestsTab}, \texttt{FriendRequestCenter}, \texttt{IncomingRequestList}, and \texttt{OutgoingRequestList}.
+\item \textbf{Recommended components:} \texttt{FriendRequestCard}, \texttt{RequestNoteText}, \texttt{AcceptRequestButton}, \texttt{RejectRequestButton}, \texttt{BlockFutureRequestsToggle}, \texttt{RequestStatusBadge}, \texttt{RequestNotificationBadge}, and \texttt{FriendToastHost} are UI recommendations from \texttt{friend.md} and \texttt{friend\_profile.md}.
+\item \textbf{Exact request fields and statuses:} \texttt{requestId}, \texttt{sender}, \texttt{recipient}, \texttt{note}, \texttt{status}, \texttt{sentAt}, \texttt{notificationState}; exact statuses are \texttt{None}, \texttt{Pending}, \texttt{Accepted}, \texttt{Declined}, and \texttt{Blocked}.
+\item \textbf{Exact quoted UI text:} \textbf{Friend Requests}, \textbf{Accept}, \textbf{Decline}, “Block future requests from this user.”, “Friend request accepted/declined.”, “Your friend request was accepted/declined.”, “Friend request already sent.”, \textbf{Mark as read}, and “Unable to load friends or groups.” with Retry.
+\item \textbf{Request note display:} \texttt{RequestNoteText} shows the introductory note with a maximum of 200 characters (\texttt{FR-31.3}, \texttt{AC-31.3}). Hidden profile fields must not leak into request cards (\texttt{NFR-PRIV-7}).
+\item \textbf{Settings linkage:} \texttt{FriendRequestPermissionSelect} offers \textbf{Allow / Reject incoming friend requests}; \texttt{MutedUsersList} and \texttt{BlockedUsersList} reflect communication controls (\texttt{settings.md}, \texttt{FR-39.1}, \texttt{FR-39.3}, \texttt{FR-39.5}).
+\item \textbf{API endpoints, statuses, and error codes:} Not specified in proposals. No friend-request decision route, HTTP status, or error code is asserted.
+\item \textbf{Notification/privacy rules:} Sender notification is a confirmed requirement (\texttt{FR-32.5}, \texttt{FR-31.4}, \texttt{FR-38.2}); badge, toast, and empty-state wording is recommended UI copy.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item There is no dedicated PA3 friend/group UC; UC-28 is derived from US-32 and the request-center recommendations in \texttt{friend.md} and \texttt{friend\_profile.md}.
+\item No friend/group API endpoints or error codes are defined in \texttt{API.md} or \texttt{response\_code.md}; accept, decline, and block have requirements but no specified backend contract.
+\item The source conflicts on whether the group owner or Superuser removes members: \texttt{FR-33.5}/\texttt{AC-33.4} name the group owner, while \texttt{feature\_flow.md:145} says Superuser kicks. This conflict is outside UC-28 but affects the same friend/group feature family.
+\item \texttt{AC-32.2} groups accept and decline together, while \texttt{FR-32.2} and \texttt{FR-32.3} state them separately; the flow separates them while preserving both exact requirements.
+\item \texttt{friend.md} lists \texttt{Pending}, \texttt{Accepted}, \texttt{Declined}, and \texttt{Blocked}; \texttt{friend\_profile.md} adds \texttt{None}. All five exact statuses are preserved here.
+\item \texttt{FR-32.5} requires sender notification for acceptance or rejection, but no notification endpoint or delivery guarantee is specified in \texttt{API.md}.
+\item \texttt{settings.md} adds \textbf{Allow / Reject incoming friend requests} as a communication-setting UI grouping of \texttt{FR-39.1}/\texttt{FR-39.5} and \texttt{NFR-PRIV-2}; it does not define a separate decision API.
+\item UC-28 does not cancel outgoing requests; \texttt{CancelOutgoingRequestButton} in \texttt{friend.md} is explicitly a recommendation.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/friend_03_friend_request.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Friend: 03 Friend request}
+\end{figure}
+\par\smallskip
+
+\end{document}

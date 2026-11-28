@@ -1,0 +1,357 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../templates/}{prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Component Diagram (C4 Level 3)}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:component-diagram-c4-level-3}{}
+\addcontentsline{toc}{section}{Component Diagram (C4 Level 3)}
+\section*{Component Diagram (C4 Level 3)}
+\par\medskip
+
+\textbf{Version:} \texttt{1.1}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} []
+\par\medskip
+
+\hypertarget{sec:1-document-information}{}
+\addcontentsline{toc}{subsection}{1. Document Information}
+\subsection*{1. Document Information}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.82\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Project & Studitopia \\ \hline
+Document & Component Diagram - C4 Level 3 \\ \hline
+Version & 1.1 \\ \hline
+Date & 28/Nov/2026 \\ \hline
+Scope & Frontend and backend components present in the current source tree \\ \hline
+Diagram notation & Mermaid \texttt{flowchart} with C4-style labels \\ \hline
+Companion documents & \texttt{System Context Diagram}, \texttt{Container Diagram}, \texttt{Deployment Diagram} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:revision-history}{}
+\addcontentsline{toc}{subsubsection}{Revision History}
+\subsubsection*{Revision History}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.61\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|}
+\hline
+\textbf{Date} & \textbf{Version} & \textbf{Description} & \textbf{Author} \\ \hline
+\endhead
+28/Nov/2026 & 1.0 & Combined frontend and backend C4 Level 3 component diagrams into one level-specific document & Nguyen Le Quoc Huy \\ \hline
+28/Nov/2026 & 1.1 & Clarified development-only Vite hosting and production frontend hosting by the NestJS Web package & Nguyen Le Quoc Huy \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:2-purpose-and-scope}{}
+\addcontentsline{toc}{subsection}{2. Purpose and Scope}
+\subsection*{2. Purpose and Scope}
+\par\medskip
+
+This document zooms into the frontend and backend containers identified in the Level 2 Container Diagram. It shows the major components present in the current source tree, their responsibilities, and their relationships.
+\par\medskip
+
+Vite hosts the SPA on port \texttt{8999} only during development. In deployment, the NestJS Web package (\texttt{WebModule}/\texttt{WebController}) serves the compiled frontend assets from the backend server, so there is no separate production frontend component. Planned features that are documented in requirements but not implemented in the source are intentionally excluded.
+\par\medskip
+
+\hypertarget{sec:3-frontend-container-component-diagram}{}
+\addcontentsline{toc}{subsection}{3. Frontend Container Component Diagram}
+\subsection*{3. Frontend Container Component Diagram}
+\par\medskip
+
+This diagram zooms into the Web Browser / React SPA container.
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/component_diagram_1.png"}
+\end{center}
+\par\medskip
+
+\hypertarget{sec:3-1-frontend-component-descriptions}{}
+\addcontentsline{toc}{subsubsection}{3.1 Frontend Component Descriptions}
+\subsubsection*{3.1 Frontend Component Descriptions}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.46\textwidth}|>{\raggedright\arraybackslash}p{0.36\textwidth}|}
+\hline
+\textbf{Component} & \textbf{Responsibility} & \textbf{Relationships} \\ \hline
+\endhead
+\texttt{main.tsx} / \texttt{initApiAuth()} & Browser bootstrap. Uses \texttt{createRoot} on \texttt{\#root}, configures API auth callbacks, and mounts \texttt{$<$App/$>$} in \texttt{StrictMode}. & Calls \texttt{configureApiAuth} on the API client and renders \texttt{App.tsx}. \\ \hline
+\texttt{App.tsx} & Composition root. Mounts \texttt{QueryProvider}, \texttt{AuthInitializer}, and \texttt{RouterProvider}. & Provides context/providers for all other frontend components. \\ \hline
+\texttt{QueryProvider} & Creates one stable TanStack \texttt{QueryClient} with \texttt{retry: 1}, \texttt{refetchOnWindowFocus: false}, and 60-second stale time. & Used by \texttt{useAccount}, \texttt{useArea}, and subject/tag queries. \\ \hline
+\texttt{AuthInitializer} & Runs session refresh on mount and converts the response into session status (\texttt{AUTHENTICATED} or \texttt{PENDING\_OTP}). & Calls \texttt{refreshRequest()} on the API client and writes to the Zustand session store; logs out on failure. \\ \hline
+\texttt{RouterProvider} & Defines the route table with lazy-loaded pages and guard/layout grouping. & Sends matched routes through guards, then layouts, then pages. \\ \hline
+Guards & \texttt{PublicOnly}, \texttt{AuthGuard}, and \texttt{OtpGuard} read authentication status and redirect between login, OTP verification, and forum pages. & Read the session store; render \texttt{LoadingPage}, redirect, or allow \texttt{$<$Outlet/$>$}. \\ \hline
+Layouts & \texttt{AuthLayout} provides the split auth shell; \texttt{ForumLayout} provides authenticated navigation, search/top bar, account display, and logout. & Wrap pages; \texttt{ForumLayout} calls \texttt{useAccount()} and the logout feature. \\ \hline
+Pages & Implement visible screens such as login, register, OTP, forum feed, browse, university/area/subject, and library. & Use feature hooks and shared UI; feed/area pages also contain direct raw \texttt{fetch} calls. \\ \hline
+Feature hooks & Encapsulate API operations: \texttt{useLogin}, \texttt{useRegister}, OTP create/verify, logout, \texttt{useAccount}, and \texttt{useArea}. & Call the shared API client; update session/OTP stores; navigate through the router. \\ \hline
+Session store & In-memory Zustand store containing \texttt{status}, \texttt{accessToken}, and \texttt{role}; not persisted to \texttt{localStorage}. & Read by guards/layouts; written by auth feature hooks and \texttt{AuthInitializer}. \\ \hline
+OTP store & \texttt{sessionStorage} wrapper storing only \texttt{created\_time} and \texttt{expired\_time} under \texttt{otp\_$<$type$>$}. & Written by OTP creation; read by \texttt{OtpPage} countdown and verification. \\ \hline
+Shared API client & Typed \texttt{fetch} wrapper using \texttt{VITE\_API\_BASE\_URL}, Bearer token, \texttt{credentials: "include"}, single-flight refresh, and one retry on 401. & Called by feature hooks; communicates with the backend API. \\ \hline
+Legacy raw \texttt{fetch} calls & Current source-accurate direct calls in \texttt{FeedPage} and \texttt{AreaPage} to hard-coded localhost \texttt{/api/v1/tag} and \texttt{/api/v1/forum} URLs. & Call the backend directly instead of the shared API client. \\ \hline
+Shared UI components & Presentational building blocks including \texttt{Button}, \texttt{Input}, \texttt{TickBox}, \texttt{SelectCard}, and \texttt{ToggleSwitch}. & Imported by pages/forms; do not call APIs directly. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:3-2-frontend-source-accurate-scope-notes}{}
+\addcontentsline{toc}{subsubsection}{3.2 Frontend Source-Accurate Scope Notes}
+\subsubsection*{3.2 Frontend Source-Accurate Scope Notes}
+\par\medskip
+
+\begin{itemize}
+\item Vite hosts the SPA on port \texttt{8999} only in development. In deployment, the NestJS Web package (\texttt{WebModule}/\texttt{WebController}) serves the compiled frontend assets from the backend server; there is no separate production frontend host.
+\item There are no current routes or components for friends, meeting rooms, create-post, notifications, or profile management.
+\item \texttt{LibraryPage} is static UI; \texttt{RecoverPasswordPage} only navigates to OTP, and \texttt{SetPasswordPage.resetPassword()} is empty.
+\item Successful auth flows navigate to \texttt{/}, but the router has no \texttt{/} route or catch-all route; guards redirect active users to \texttt{/forum}.
+\item The diagram intentionally excludes planned frontend features so it remains consistent with the source.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:4-backend-container-component-diagram}{}
+\addcontentsline{toc}{subsection}{4. Backend Container Component Diagram}
+\subsection*{4. Backend Container Component Diagram}
+\par\medskip
+
+This diagram zooms into the Backend API Server container. It focuses on the active request pipeline, feature modules, and infrastructure components wired by \texttt{AppModule}.
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/component_diagram_2.png"}
+\end{center}
+\par\medskip
+
+\hypertarget{sec:4-1-backend-component-descriptions}{}
+\addcontentsline{toc}{subsubsection}{4.1 Backend Component Descriptions}
+\subsubsection*{4.1 Backend Component Descriptions}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.57\textwidth}|>{\raggedright\arraybackslash}p{0.25\textwidth}|}
+\hline
+\textbf{Component} & \textbf{Responsibility} & \textbf{Relationships} \\ \hline
+\endhead
+\texttt{main.ts} bootstrap & Creates the Nest application, enables CORS for \texttt{https://localhost:8999} with credentials for the development origin, installs \texttt{cookieParser}, installs \texttt{express.raw()} only for avatar upload, installs global validation/interceptor behavior, and listens on port \texttt{8353}. & Passes requests into the global pipeline and root module. \\ \hline
+Global pipeline & \texttt{ValidationPipe} transforms and whitelists DTOs; \texttt{Response} + \texttt{HttpCodeInterceptor} set HTTP status, write cookies, and unwrap response data; numeric response codes are defined centrally. & Applied before controller handlers; used by all API controllers. \\ \hline
+\texttt{AppModule} & Root composition module. Imports \texttt{AuthModule}, \texttt{EmailSenderModule}, \texttt{ForumModule}, \texttt{PostModule}, \texttt{TagModule}, \texttt{FileModule}, \texttt{AccountModule}, and \texttt{WebModule}. & Wires controllers and services into the Nest runtime. \\ \hline
+NestJS Web package / \texttt{WebController} & Production frontend host. Serves compiled frontend assets from \texttt{./frontend}: \texttt{*.js}, \texttt{*.css}, and \texttt{index.html} SPA fallback. & Receives page/asset requests from the browser; does not call the database. \\ \hline
+Compiled frontend assets & Deployed React SPA output made available to the backend Web package, including \texttt{index.html}, JavaScript, and CSS. & Read by \texttt{WebController} and returned to the browser. \\ \hline
+API controllers & \texttt{AuthController}, \texttt{AccountController}, \texttt{ForumController}, \texttt{PostController}, \texttt{TagController}, and \texttt{FileController} map \texttt{/api/v1} routes to service calls. & Auth routes call \texttt{AuthenticationService}; other feature routes call their corresponding services. \\ \hline
+Feature services & \texttt{AccountService}, \texttt{ForumService}, \texttt{PostService}, \texttt{TagService}, and \texttt{FileService} implement current domain reads, avatar/file handling, and ID-chain decoding. & Call \texttt{PostgresService}, \texttt{SecurityGenerationService}, and \texttt{StorageService} as needed. \\ \hline
+\texttt{AuthenticationService} & Implements register, login by username/email, refresh, OTP creation/validation, and logout orchestration. & Calls \texttt{PostgresService}, \texttt{SecurityGenerationService}, and \texttt{EmailSenderService}. \\ \hline
+\texttt{SecurityGenerationService} & Creates/verifies HMAC-SHA256 access, refresh, and OTP tokens; encrypts/decrypts opaque IDs; provides \texttt{@Authenticated()} guard and \texttt{@KeySession()} decorator. & Called by controllers and services; reads secrets from \texttt{EnvironmentService}. \\ \hline
+\texttt{PostgresService} & Owns \texttt{pg.Pool}, calls \texttt{STUDITOPIA.*} SQL functions, maps SQLSTATE errors to response codes, and uses a bounded pool (\texttt{max: 20}). & Called by feature/auth services; connects to PostgreSQL. \\ \hline
+\texttt{StorageService} & Saves, reads, deletes, and checks local files under a controlled storage root. & Called by \texttt{AccountService} and \texttt{FileService}; accesses local filesystem storage. \\ \hline
+\texttt{EmailSenderService} & Sends OTP emails through Resend and falls back to a Discord webhook on failure. & Called by \texttt{AuthenticationService}; calls external Resend API and Discord webhook. \\ \hline
+\texttt{EnvironmentService} & Global configuration provider reading \texttt{env}, process environment variables, and fallback values. & Supplies DB, HMAC secret, email, webhook, storage, and runtime settings to security/database/email/storage components. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:4-2-backend-source-accurate-scope-notes}{}
+\addcontentsline{toc}{subsubsection}{4.2 Backend Source-Accurate Scope Notes}
+\subsubsection*{4.2 Backend Source-Accurate Scope Notes}
+\par\medskip
+
+\begin{itemize}
+\item No \texttt{setGlobalPrefix()} is used. Controllers declare their own \texttt{api/v1/...} paths.
+\item Current HTTP endpoints are read-oriented for forum/post/tag/file plus a complete authentication subset. There are no HTTP routes for create post, create comment, vote, or full account management, although SQL wrappers or DTOs for some of those exist.
+\item \texttt{ReCaptchaModule}/\texttt{ReCaptchaService} and the \texttt{WebService} guard are present in source but unwired, so they are omitted from the active component diagram.
+\item Vite on port \texttt{8999} is development-only; the deployed frontend is covered by the NestJS Web package on the backend server.
+\item Source caveats that must be tracked: the token guard assigns unresolved promises from async verification helpers; logout requires a refresh cookie but the refresh parser only runs for \texttt{/auth/login?type=token}; email fallback currently reports success even when Resend fails; the OTP email text says 5 minutes while \texttt{OTP\_DURATION} is 60 seconds.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:5-source-references}{}
+\addcontentsline{toc}{subsection}{5. Source References}
+\subsection*{5. Source References}
+\par\medskip
+
+\begin{itemize}
+\item Frontend: \texttt{src/frontend/package.json}, \texttt{src/frontend/vite.config.ts}, \texttt{src/frontend/index.html}, \texttt{src/frontend/src/app/main.tsx}, \texttt{src/frontend/src/app/App.tsx}
+\item Frontend composition: \texttt{src/frontend/src/app/providers/}, \texttt{src/frontend/src/app/guard/}, \texttt{src/frontend/src/app/layouts/}
+\item Frontend feature/state: \texttt{src/frontend/src/features/}, \texttt{src/frontend/src/entities/session/}, \texttt{src/frontend/src/entities/otp/}, \texttt{src/frontend/src/pages/}
+\item Frontend API: \texttt{src/frontend/src/shared/api/client.ts}, \texttt{src/frontend/src/shared/api/error.ts}
+\item Backend: \texttt{src/backend/package.json}, \texttt{src/backend/src/main.ts}, \texttt{src/backend/src/app.module.ts}
+\item Backend cross-cutting: \texttt{src/backend/src/common/}, \texttt{src/backend/src/config/app.config.ts}
+\item Backend features: \texttt{src/backend/src/packages/authentication/}, \texttt{account/}, \texttt{forum/}, \texttt{post/}, \texttt{tag/}, \texttt{file/}, \texttt{web/}
+\item Backend infrastructure: \texttt{src/backend/src/packages/postgres/}, \texttt{security-generation/}, \texttt{email-sender/}, \texttt{storage/}, \texttt{environment/}
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"prototype/studitopia_reusable_component_library.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Studitopia - Reusable component library}
+\end{figure}
+\par\smallskip
+
+\end{document}

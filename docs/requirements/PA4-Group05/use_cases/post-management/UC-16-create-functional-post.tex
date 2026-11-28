@@ -1,0 +1,585 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-16 --- Create Functional Post}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-16-create-functional-post}{}
+\addcontentsline{toc}{section}{UC-16 --- Create Functional Post}
+\section*{UC-16 --- Create Functional Post}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Thanh An] | \textbf{Edited by:} [Nguyen Thanh An]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.84\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-16 \\ \hline
+Name & Create Functional Post \\ \hline
+Primary Actor & University Student \\ \hline
+Supporting Actors & None \\ \hline
+Feature Group & Post Management \\ \hline
+Priority & Not explicitly stated \\ \hline
+Related User Stories & US-16 \\ \hline
+Related Requirements & FR-16.1 to FR-16.6; NFR-PERF-4, NFR-SEC-1, NFR-SEC-6, NFR-SEC-8, NFR-SEC-9, NFR-PRIV-7 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} (section 5.3); \texttt{proposals/functional\_requirement.md} (US-16); \texttt{proposals/create\_post.md}; \texttt{proposals/list\_post.md}; \texttt{proposals/post\_management.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-16-create-functional-post_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.72\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & Primary human actor & A university student who creates an interactive academic tool in a selected forum so that other students can practice or understand course content. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.57\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & UC-16 Create Functional Post & Primary & Configures and publishes a functional post containing a quiz, prerequisite tree, or dynamic computation. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & No actor generalization or specialization is named for US-16 in the specified proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.71\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No distinct included use case is named for US-16 in the specified proposals; no new I-xx ID is introduced. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.62\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & No distinct extending use case is named for US-16 in the specified proposals; no new E-xx ID is introduced. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item UC-16 covers only the Functional Post path; Discussion Post and Material Post are separate paths on the shared Create Post page.
+\item The three tool variants are source-backed configurations in \texttt{feature\_flow.md}, \texttt{create\_post.md}, \texttt{FR-16.3} to \texttt{FR-16.5}, and \texttt{AC-16.1} to \texttt{AC-16.3}; they are not separate use cases.
+\item \texttt{create\_post.md} recommends drag-and-drop, code, and generate-from-file modes for prerequisite trees; no new included/extending use case is created for those modes.
+\item The selected forum context is university, major, and course under \texttt{AC-16.5}; priority, exact code syntax, source-file formats, tree schema details, and numeric limits are not specified in proposals.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A university student creates a functional post in a selected forum to help others practice or understand course content. The post contains a title and one interactive academic tool: an immediate quiz, a prerequisite tree, or dynamic computation. The author configures and previews the tool before submission; after publication, other users can interact with the published functional tool from post detail.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The student is authenticated with an active session.
+\item The student has selected a valid forum context.
+\item The student is permitted to create posts in that forum.
+\item The author has chosen the interactive tool to configure.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} A functional post is stored with its title, selected tool configuration, author, and forum context.
+\item \textbf{Success:} Other users can interact with the published tool from post detail, and the post appears in the corresponding forum post list.
+\item \textbf{Failure:} No functional post is published, and the author receives validation, permission, or system feedback.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The student selects \textbf{Create Post} from the selected forum.
+\item The system shows the active university, major, and course context.
+\item The student selects \textbf{Functional Post}.
+\item The student enters a title and selects one tool: \textbf{Immediate Quiz}, \textbf{Prerequisite Tree}, or \textbf{Dynamic Computation}.
+\item The student configures the selected tool and previews it.
+\item The system validates the tool configuration and marks the draft \textbf{Ready} when it can be submitted.
+\item The student submits the post.
+\item The frontend validates required metadata and the active tool configuration.
+\item The backend verifies authentication, forum access, permissions, content, and rate limits.
+\item The system stores and publishes the functional post and returns the new post result.
+\item Other users can open the post and interact with the published tool.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+Unless otherwise stated, an alternative flow resumes at the next step of the basic flow.
+\par\medskip
+
+\hypertarget{sec:a1-immediate-quiz}{}
+\paragraph*{A1. Immediate quiz}
+\par\medskip
+
+At basic flow step 4, the student selects \textbf{Immediate Quiz}. The quiz supports multiple-choice or single-choice questions, options, correct answers, and scores under \texttt{AC-16.2} and \texttt{FR-16.3}.
+\par\medskip
+
+\hypertarget{sec:a2-prerequisite-tree}{}
+\paragraph*{A2. Prerequisite tree}
+\par\medskip
+
+At basic flow step 4, the student selects \textbf{Prerequisite Tree}. The tree can be created manually or generated from a source file under \texttt{AC-16.3} and \texttt{FR-16.4}; \texttt{create\_post.md} recommends \textbf{Drag and drop}, \textbf{Code}, and \textbf{Generate from file} modes.
+\par\medskip
+
+\hypertarget{sec:a3-dynamic-computation}{}
+\paragraph*{A3. Dynamic computation}
+\par\medskip
+
+At basic flow step 4, the student selects \textbf{Dynamic Computation}. The author configures inputs, formula/configuration, and outputs under \texttt{FR-16.5}; no computation schema is specified in proposals.
+\par\medskip
+
+\hypertarget{sec:a4-cancel-creation}{}
+\paragraph*{A4. Cancel creation}
+\par\medskip
+
+The student leaves the editor before submitting. No functional post is published; retained draft behavior is not specified in proposals.
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-invalid-or-incomplete-tool-configuration}{}
+\paragraph*{E1. Invalid or incomplete tool configuration}
+\par\medskip
+
+The system shows validation feedback and keeps the editor open. A quiz with invalid answers, a tree with no nodes, or an invalid computation configuration cannot be published.
+\par\medskip
+
+\hypertarget{sec:e2-prerequisite-tree-needs-review}{}
+\paragraph*{E2. Prerequisite tree needs review}
+\par\medskip
+
+A generated tree with uncertain nodes or edges is marked \textbf{Needs review} (\texttt{NeedsReview}) and must be confirmed by the author before publication. A draft with missing or invalid nodes/edges is \textbf{Incomplete} and blocked.
+\par\medskip
+
+\hypertarget{sec:e3-invalid-post-content-or-post-type}{}
+\paragraph*{E3. Invalid post content or post type}
+\par\medskip
+
+The system rejects the submission with \texttt{400} and \texttt{INVALID\_POST\_TYPE} (\texttt{48003}) or \texttt{INVALID\_POST\_CONTENT} (\texttt{48004}). No tool-specific error code is defined in \texttt{API.md}.
+\par\medskip
+
+\hypertarget{sec:e4-unauthorized-or-forbidden-publication}{}
+\paragraph*{E4. Unauthorized or forbidden publication}
+\par\medskip
+
+The system rejects the request with \texttt{401}, or with \texttt{403} and \texttt{FORBIDDEN} (\texttt{48010}), when authentication or forum permission is absent.
+\par\medskip
+
+\hypertarget{sec:e5-rate-limit-reached}{}
+\paragraph*{E5. Rate limit reached}
+\par\medskip
+
+The system rejects the submission and asks the student to retry later. \texttt{NFR-SEC-9} requires rate limiting, but no rate-limit status or error code is specified in proposals.
+\par\medskip
+
+\hypertarget{sec:e6-server-or-database-failure}{}
+\paragraph*{E6. Server or database failure}
+\par\medskip
+
+The system returns \texttt{500} with \texttt{DATABASE\_ERROR} or \texttt{UNKNOWN\_ERROR} (\texttt{45000}), publishes no partial tool, and offers retry where supported.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item \texttt{AC-16.1} / \texttt{FR-16.2}: The post supports a title and an interactive tool.
+\item \texttt{AC-16.1} / \texttt{FR-16.3} to \texttt{FR-16.5}: The tool may be an immediate quiz, prerequisite tree, or dynamic computation.
+\item \texttt{AC-16.2} / \texttt{FR-16.3}: Quizzes support multiple-choice or single-choice questions, options, answers, and scores.
+\item \texttt{AC-16.3} / \texttt{FR-16.4}: Prerequisite trees can be created manually or generated from a source file.
+\item \texttt{AC-16.4} / \texttt{FR-16.6}: Other users can interact with the published functional tool.
+\item \texttt{AC-16.5}: The functional post is associated with the selected forum context. A prerequisite-tree node represents a course, topic, concept, skill, or milestone; a directed edge runs from a prerequisite node to a dependent node.
+\item Tree edges must reference existing nodes, a node cannot be its own prerequisite, and cycles must be flagged before publish; these edge rules are recommendations recorded in \texttt{create\_post.md}. Drag-and-drop and code authoring must produce the same recommended \texttt{treeConfig}, and code must be applied to preview before submission.
+\item Generated trees remain editable drafts until the author reviews and confirms them; readiness states are \texttt{Incomplete}, \texttt{NeedsReview} (shown as \textbf{Needs review}), and \texttt{Ready}. No tree-specific API error code is defined; invalid tool content is mapped through generic validation feedback such as \texttt{INVALID\_POST\_CONTENT}.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-PERF-4 & A new post must be reflected in the relevant forum view within 2 seconds. \\ \hline
+NFR-SEC-1 & Authentication is required before accessing protected posting features. \\ \hline
+NFR-SEC-6 & Server-side authorization checks must prevent unauthorized posting. \\ \hline
+NFR-SEC-8 & The system must protect against SQL injection, XSS, and CSRF. \\ \hline
+NFR-SEC-9 & Post creation must be rate-limited to reduce spam and abuse. \\ \hline
+NFR-PRIV-7 & Privacy settings apply consistently to forum posts, comments, member lists, and search results. \\ \hline
+Design constraint & Exact tree schema, code syntax, source-file formats, generation rules, and numeric limits are not specified in proposals; the published tool viewer should use the same reviewed configuration as the author preview. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.44\textwidth}|>{\raggedright\arraybackslash}p{0.49\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Select interactive tool & Basic flow step 4; alternatives A1-A3 \\ \hline
+Quiz and tree configuration & Basic flow step 5; alternatives A1-A2 \\ \hline
+Generated tree review & Basic flow step 5; exception E2 \\ \hline
+Dynamic computation configuration & Basic flow step 5; alternative A3 \\ \hline
+Publication failure recovery & Basic flow step 10; exceptions E3-E6 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Screen/flow path:} \texttt{screen\_flow.md} gives \texttt{Forum -$>$ University -$>$ Major -$>$ Course -$>$ Post} and \texttt{Forum -$>$ Create Post -$>$ Post}. \texttt{feature\_flow.md} gives \texttt{Create Post -$>$ Functional Post -$>$ Title / Quiz / Prerequisite Tree / Dynamic Computation}, \texttt{Prerequisite Tree -$>$ Auto apply / Simulate by click}, and all post types converging on \textbf{Submit}.
+\item \textbf{Editor components and quiz:} \texttt{create\_post.md} recommends \texttt{FunctionalEditorForm}, \texttt{InteractiveToolSelector}, \texttt{QuizBuilder}, \texttt{PrerequisiteTreeBuilder}, \texttt{DynamicComputationConfigurator}, \texttt{TreePreviewPanel}, \texttt{TreeValidationSummary}, and \texttt{SubmitPostButton}. \texttt{QuizBuilder} covers questions, multiple-choice or single-choice type, options, correct-answer markers, and scores; \texttt{QuizPreviewPanel} tests answer submission.
+\item \textbf{Prerequisite-tree authoring and rules:} \texttt{TreeModeSelector} offers \textbf{Drag and drop}, \textbf{Code}, and \textbf{Generate from file}. Drag-and-drop uses \texttt{AddPrerequisiteNodeButton}, \texttt{ManualPrerequisiteNodeEditor}, and \texttt{PrerequisiteEdgeBuilder}; code uses \texttt{CodeTreeEditor}, \texttt{ApplyCodeToPreviewButton}, \texttt{CodeValidationPanel}, and optional \texttt{SyncCodeFromCanvasButton}; generated files use \texttt{TreeSourceFileDropzone}, \texttt{GenerateTreeFromFileButton}, and \texttt{GeneratedTreeDraftReview}. A node is a course, topic, concept, skill, or milestone; each directed edge links a prerequisite to a dependent node. Nodes with no incoming prerequisite edges are starting nodes; edges must reference existing nodes; self-dependencies are blocked; cycles are flagged for removal or reordering.
+\item \textbf{Simulation, states, and data:} \texttt{AutoApplyToggle} and \texttt{SimulateByClickButton} implement flow-derived \textbf{Auto apply} and \textbf{Simulate by click} behavior. \texttt{TreePublishReadinessBadge} shows \textbf{Ready}, \textbf{Incomplete}, or \textbf{Needs review} (\texttt{treeConfig.validationState} uses \texttt{NeedsReview}), with no numeric bounds specified. \texttt{toolType}, \texttt{quizConfig}, \texttt{treeConfig}, \texttt{computationConfig}, \texttt{treeConfig.nodes[]}, \texttt{treeConfig.edges[]}, \texttt{edges[].fromNodeId}, \texttt{edges[].toNodeId}, \texttt{treeConfig.sourceCode}, \texttt{treeConfig.generationSource}, and \texttt{treeConfig.simulation} are recommendations; \texttt{API.md} has no tree-specific payload field.
+\item \textbf{API endpoint and failures:} \texttt{POST /forum/posts} accepts \texttt{university\_id: string}, optional \texttt{major\_id?: string}, optional \texttt{course\_id?: string}, \texttt{post\_type: 'functional'}, \texttt{title: string}, \texttt{content: string}, optional \texttt{tags?: string[]}, and optional \texttt{files?: File[]}; success is \texttt{201} with \texttt{data: \{ post\_id: string, created\_at: number \}}. Failures are \texttt{400} with \texttt{(INVALID\_POST\_TYPE | INVALID\_POST\_CONTENT)[]}, \texttt{401}, \texttt{403} with \texttt{(FORBIDDEN)[]}, and \texttt{500} with \texttt{(DATABASE\_ERROR | UNKNOWN\_ERROR)[]}; database codes are \texttt{UNKNOWN\_ERROR: 45000}, \texttt{INVALID\_POST\_TYPE: 48003}, \texttt{INVALID\_POST\_CONTENT: 48004}, and \texttt{FORBIDDEN: 48010}.
+\item \textbf{Reader tools and gaps:} \texttt{list\_post.md} recommends \texttt{QuizRunner}, \texttt{PrerequisiteTreeViewer}, and \texttt{DynamicComputationRunner} in the published functional tool panel; route, accepted tree source-file formats, code syntax, detailed node/edge schema, generation algorithm, and numeric limits are not specified in proposals.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item UC-04 covers the Discussion Post path on the same Create Post page; UC-16 does not import discussion fields, LaTeX, images, or question/general category. UC-05 covers comments and answers on an existing post and does not contribute steps to functional-tool creation or publication.
+\item \texttt{userstory.md} names the story “Create Functional Post” and says “interactive academic tool,” while \texttt{functional\_requirement.md} says “practice course content”; this document uses the exact \texttt{userstory.md} title. \texttt{feature\_flow.md} names only Quiz and Prerequisite Tree under the creation branch; \texttt{create\_post.md} and \texttt{FR-16.5} preserve Dynamic Computation as an explicit tool.
+\item The drag-and-drop and code authoring modes are user-direction recommendations recorded in \texttt{create\_post.md}; manual creation and generate-from-file are the explicit \texttt{AC-16.3} / \texttt{FR-16.4} requirement. \texttt{API.md} accepts generic \texttt{content} and \texttt{files} fields and has no tree-specific payload or error contract; readiness states and \texttt{treeConfig} remain UI recommendations.
+\item No distinct included, extending, or specialized use case is named for US-16 in the specified proposals, so no new I-xx/E-xx/G-xx ID is introduced.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/create_post_functional_quiz.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Create post - Functional - Quiz}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/create_post_prerequisite_tree_code.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Create post - Prerequisite tree - Code}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/create_post_prerequisite_tree_drag_and_drop.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Create post - Prerequisite tree - Drag and drop}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/create_post_prerequisite_tree_generate_from_file.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Create post - Prerequisite tree - Generate from file}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/prerequisite_tree_validation_and_recovery_states.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Prerequisite tree - Validation and recovery states}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/published_prerequisite_tree_reader_simulation.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Published prerequisite tree - Reader simulation}
+\end{figure}
+\par\smallskip
+
+\end{document}

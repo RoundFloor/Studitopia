@@ -1,0 +1,541 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-18 --- Mark True Response}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-18-mark-true-response}{}
+\addcontentsline{toc}{section}{UC-18 --- Mark True Response}
+\section*{UC-18 --- Mark True Response}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-18 \\ \hline
+Name & Mark True Response \\ \hline
+Primary Actor & Post Author \\ \hline
+Supporting Actors & Answer Author \\ \hline
+Feature Group & Forum Interaction \\ \hline
+Priority & Not explicitly stated \\ \hline
+Related User Stories & US-20 \\ \hline
+Related Requirements & FR-13.2, FR-17.3, FR-17.4, FR-18.2, FR-20.1 to FR-20.5, FR-38.1; NFR-PERF-3, NFR-PERF-4, NFR-PERF-6, NFR-SEC-1, NFR-SEC-6, NFR-PRIV-7 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} (section 6.3); \texttt{proposals/functional\_requirement.md} (US-20); \texttt{proposals/list\_post.md}; \texttt{proposals/post\_management.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-18-mark-true-response_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.17\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+Post Author & Primary human actor & The author of a question post who marks one comment or answer as the true response. \\ \hline
+Answer Author & Secondary human actor & The author of the selected answer who is notified that the answer was accepted. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.48\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+Post Author & UC-18 Mark True Response & Primary & Selects or changes the accepted comment or answer. \\ \hline
+Answer Author & UC-18 Mark True Response & Secondary & Receives the acceptance notification after selection. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & No actor generalization or specialization is named for US-20 in the specified proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.71\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No distinct included use case is named for US-20 in the specified proposals; no new I-xx ID is introduced. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.62\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & No distinct extending use case is named for US-20 in the specified proposals; no new E-xx ID is introduced. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item UC-18 applies to a question post; the post author is the only actor allowed to select the true response.
+\item The Answer Author association models the notification recipient named by \texttt{AC-20.5} and \texttt{FR-20.5}; no separate notification service actor is introduced from unrelated sources.
+\item Marking and changing are the same use case because \texttt{AC-20.4} and \texttt{FR-20.4} describe a change to the accepted response.
+\item The marked response is a comment or answer under \texttt{FR-20.1}; \texttt{API.md} identifies the target with \texttt{comment\_id}. Priority and a dedicated true-response UI route are not specified in proposals.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A post author marks one comment or answer as the true response so that other students can quickly find the accepted solution. The post is marked as solved, and the true response is displayed prominently under the post.
+\par\medskip
+
+The author can change the true response when necessary. The author of the selected answer is notified that the answer was accepted.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The post author is authenticated with an active session.
+\item The post is a question post owned by the acting author.
+\item At least one comment or answer exists on the post.
+\item The selected comment or answer is visible and available for acceptance.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} The selected comment or answer is recorded as the post's true response.
+\item \textbf{Success:} The post is marked as solved and the true response is displayed prominently under the post.
+\item \textbf{Success:} The author of the selected answer is notified that the answer was accepted.
+\item \textbf{Failure:} The true response and solved state remain unchanged, and the post author receives a clear error.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The post author opens the question post detail page.
+\item The system displays the post, its comments and answers, and the current true response when present.
+\item The system displays \textbf{Mark as true response} only to the post author.
+\item The post author selects a comment or answer.
+\item The system sends \texttt{comment\_id} to the true-response endpoint.
+\item The backend verifies authentication, post ownership, post existence, and comment existence.
+\item The system records the selected response and marks the post solved.
+\item The system returns \texttt{solved: true}.
+\item The system displays the true response prominently under the post and updates the solved status.
+\item The system notifies the author of the selected answer that the answer was accepted.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+The story has no distinct alternative beyond source-backed variants of the same action.
+\par\medskip
+
+\hypertarget{sec:a1-change-the-true-response}{}
+\paragraph*{A1. Change the true response}
+\par\medskip
+
+The post author selects a different comment or answer. The system replaces the previous true response with the new selection, keeps the post solved, and notifies the newly selected answer author.
+\par\medskip
+
+\hypertarget{sec:a2-mark-a-comment-instead-of-an-answer}{}
+\paragraph*{A2. Mark a comment instead of an answer}
+\par\medskip
+
+At basic flow step 4, the author selects a comment rather than an answer. \texttt{FR-20.1} allows a comment or answer to be marked, and the API target remains a \texttt{comment\_id}.
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-post-or-comment-not-found}{}
+\paragraph*{E1. Post or comment not found}
+\par\medskip
+
+The system returns \texttt{404} with \texttt{POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}) and refreshes the available post discussion.
+\par\medskip
+
+\hypertarget{sec:e2-caller-is-not-the-post-owner}{}
+\paragraph*{E2. Caller is not the post owner}
+\par\medskip
+
+The system returns \texttt{403} with \texttt{NOT\_POST\_OWNER} (\texttt{48007}) or \texttt{FORBIDDEN} (\texttt{48010}) and does not change the true response.
+\par\medskip
+
+\hypertarget{sec:e3-unauthorized-request}{}
+\paragraph*{E3. Unauthorized request}
+\par\medskip
+
+The system returns \texttt{401} and requires authentication before the true response is changed.
+\par\medskip
+
+\hypertarget{sec:e4-already-true-response-conflict}{}
+\paragraph*{E4. Already true response conflict}
+\par\medskip
+
+\texttt{ALREADY\_TRUE\_RESPONSE} (\texttt{48008}) exists in \texttt{response\_code.md}, but it is not listed in the \texttt{PATCH /forum/posts/:post\_id/true-response} \texttt{403} contract. No source-defined status mapping is available for this case.
+\par\medskip
+
+\hypertarget{sec:e5-notification-delivery-failure}{}
+\paragraph*{E5. Notification delivery failure}
+\par\medskip
+
+The true response remains marked and the post remains solved. Notification retry or recording behavior is not specified in proposals.
+\par\medskip
+
+\hypertarget{sec:e6-server-or-database-failure}{}
+\paragraph*{E6. Server or database failure}
+\par\medskip
+
+The system returns \texttt{500} with \texttt{DATABASE\_ERROR} or \texttt{UNKNOWN\_ERROR} (\texttt{45000}), leaves the previous true-response state authoritative, and offers retry where supported.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item \texttt{AC-20.1} / \texttt{FR-20.1}: The post author can mark one comment or answer as the true response.
+\item \texttt{AC-20.2} / \texttt{FR-20.2}: The post is marked as solved when a true response is selected.
+\item \texttt{AC-20.3} / \texttt{FR-20.3}: The true response is displayed prominently under the post.
+\item \texttt{AC-20.4} / \texttt{FR-20.4}: The author can change the true response when necessary.
+\item \texttt{AC-20.5} / \texttt{FR-20.5}: The author of the selected answer is notified that the answer was accepted.
+\item Only the post author may perform the action; the backend enforces ownership under \texttt{FR-20.1} and the \texttt{NOT\_POST\_OWNER} (\texttt{48007}) contract.
+\item The true-response target is identified by \texttt{comment\_id: string}.
+\item Privacy settings apply consistently to the post and answer display (\texttt{NFR-PRIV-7}).
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.79\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-PERF-3, NFR-PERF-4 & Post detail and comments display within 2 seconds, and a true-response mark is reflected in the forum view within 2 seconds. \\ \hline
+NFR-PERF-6 & Forum notifications, including true-response marks, must be delivered within 2 seconds under normal conditions. \\ \hline
+NFR-SEC-1 & Authentication is required before accessing protected interactions. \\ \hline
+NFR-SEC-6 & Server-side authorization checks must prevent unauthorized true-response changes. \\ \hline
+NFR-PRIV-7 & Privacy settings apply consistently to forum posts, comments, member lists, and search results. \\ \hline
+Design constraint & The acceptance notification must not roll back a successful true-response mark when delivery fails. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.37\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Author-only control visibility & Basic flow step 3 \\ \hline
+Select response & Basic flow step 4; alternatives A1-A2 \\ \hline
+Ownership check & Basic flow step 6; exception E2 \\ \hline
+Solved-state update & Basic flow steps 7-9 \\ \hline
+Acceptance notification & Basic flow step 10; exception E5 \\ \hline
+Failure recovery & Basic flow steps 5-7; exceptions E1-E4 and E6 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Screen/flow path:} \texttt{screen\_flow.md} gives \texttt{Forum -$>$ University -$>$ Major -$>$ Course -$>$ Post}, with \texttt{Trending -$>$ Post}. \texttt{feature\_flow.md} gives \texttt{Post -$>$ Comment -$>$ True Response}, \texttt{List Post -$>$ Solved / Good -$>$ Comment / Answer}, and \texttt{List Post -$>$ Post -$>$ Comment / Solved / Vote / Save / Report / Moderate}.
+\item \textbf{UI components:} \texttt{list\_post.md} and \texttt{post\_management.md} recommend \texttt{MarkTrueResponseButton} with label \textbf{Mark as true response}, \texttt{TrueResponsePanel}, \texttt{PostSolvedBadge} with \texttt{Solved} / \texttt{Unsolved}, and \texttt{PermissionBasedActionBar}.
+\item \textbf{Detail load:} \texttt{GET /forum/posts/:post\_id} returns \texttt{post}, \texttt{comments}, \texttt{true\_response: object | null}, \texttt{user\_vote}, and \texttt{saved} with \texttt{200}; failures are \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}), \texttt{401}, and \texttt{500 (DATABASE\_ERROR | UNKNOWN\_ERROR)}. Database function \texttt{studitopia.get\_forum\_post} also lists \texttt{FORBIDDEN: 48010}.
+\item \textbf{API endpoint and failures:} \texttt{PATCH /forum/posts/:post\_id/true-response} with body \texttt{\{ comment\_id: string \}} returns \texttt{200} with \texttt{data: \{ solved: boolean \}}; failures are \texttt{404} with \texttt{(POST\_NOT\_FOUND | COMMENT\_NOT\_FOUND)[]} (\texttt{48001}, \texttt{48002}), \texttt{403} with \texttt{(NOT\_POST\_OWNER | FORBIDDEN)[]} (\texttt{48007}, \texttt{48010}), \texttt{401}, and \texttt{500} with \texttt{(DATABASE\_ERROR | UNKNOWN\_ERROR)[]}.
+\item \textbf{Database contract and response-code gap:} \texttt{studitopia.mark\_true\_response(puser\_id: uuid, ppost\_id: uuid, pcomment\_id: uuid)} returns \texttt{\{solved: boolean\}} and declares \texttt{UNKNOWN\_ERROR: 45000}, \texttt{POST\_NOT\_FOUND: 48001}, \texttt{COMMENT\_NOT\_FOUND: 48002}, \texttt{NOT\_POST\_OWNER: 48007}, and \texttt{FORBIDDEN: 48010}. \texttt{response\_code.md} defines \texttt{48008 ALREADY\_TRUE\_RESPONSE} in the forum, database, and backend registers, but \texttt{API.md} does not list it in the true-response endpoint contract.
+\item \textbf{List display and notifications:} \texttt{GET /forum/posts} returns \texttt{solved: boolean} in each post summary so solved status is visible while browsing. \texttt{FR-38.1} and \texttt{NFR-PERF-6} include true-response marks in forum notifications; no notification endpoint or payload is defined in \texttt{API.md}.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item UC-04 covers post publication and lists true-response eligibility as downstream context; UC-18 covers marking an existing response and does not repeat discussion-post creation. UC-05 covers comment and answer creation and notification of the post author; UC-18 begins after those responses exist.
+\item UC-05 already notes the same \texttt{ALREADY\_TRUE\_RESPONSE} (\texttt{48008}) gap: the code exists in \texttt{response\_code.md} but is missing from the \texttt{PATCH /forum/posts/:post\_id/true-response} \texttt{403} contract. This document preserves that gap rather than assigning a status code.
+\item \texttt{FR-20.1} allows a comment or answer to be marked, while the API identifies the target only as \texttt{comment\_id}; no separate answer identifier is specified. \texttt{AC-20.4} permits changing the true response, but no distinct change endpoint or dedicated code is defined; the same PATCH endpoint is the only source-backed contract.
+\item Notification delivery is required by \texttt{FR-20.5}, while user notification preferences are a cross-cutting concern; no source specifies how mandatory acceptance notifications interact with opt-outs. Route names and component names in \texttt{list\_post.md} and \texttt{post\_management.md} are recommendations; \texttt{API.md} defines the exact endpoint and codes used above. No distinct included, extending, or specialized use case is named for US-20, so no new I-xx/E-xx/G-xx ID is introduced.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/dijkstra_question_desktop.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Dijkstra question - Desktop}
+\end{figure}
+\par\smallskip
+
+\end{document}

@@ -1,0 +1,225 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../templates/}{prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Functional Requirements}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:functional-requirements}{}
+\addcontentsline{toc}{section}{Functional Requirements}
+\section*{Functional Requirements}
+\par\medskip
+
+\textbf{Version:} \texttt{1.1}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+\begin{quote}
+\textit{This file is the index for the split functional requirements. The full requirement tables are grouped by functional area under \texttt{\texttt{functional\_requirements/}}.}
+\end{quote}
+\par\medskip
+
+\begin{quote}
+\textit{Scope note: The requirement files describe product requirements for the Studitopia platform. The Status column reflects current implementation evidence in \texttt{src/frontend}, \texttt{src/backend}, and \texttt{src/database}; it does not remove unimplemented product scope.}
+\end{quote}
+\par\medskip
+
+\begin{quote}
+\textit{Current-code status: \texttt{Complete} means source-backed implementation exists. \texttt{Partial} means UI, DTO, SQL, or related support exists but the full end-to-end requirement is not implemented. \texttt{Not implemented} means no source-backed implementation was found.}
+\end{quote}
+\par\medskip
+
+\begin{quote}
+\textit{Current implementation baseline: authentication, OTP, account read/avatar, forum browsing, post/tag/file read, Vite development hosting on \texttt{8999}, and production SPA delivery through the backend NestJS Web package are implemented. Friends, rooms, notifications, moderation, privacy settings, full resource management, create post/comment/vote flows, backend search, CAPTCHA, and Google OAuth are not implemented.}
+\end{quote}
+\par\medskip
+
+\hypertarget{sec:revision-history}{}
+\addcontentsline{toc}{subsection}{Revision History}
+\subsection*{Revision History}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.57\textwidth}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Author} & \textbf{Description} \\ \hline
+\endhead
+1.0 & 2026-10-27 & Nguyen Le Quoc Huy & Initial functional requirements derived from the grouped use cases. \\ \hline
+1.1 & 2026-11-28 & Nguyen Le Quoc Huy & Added current-code implementation statuses. \\ \hline
+1.1 & 2026-11-28 & Nguyen Le Quoc Huy & Split the requirement tables into functional-group files. \\ \hline
+1.1 & 2026-11-28 & Nguyen Le Quoc Huy & Split the forum group into browse, feed, and post groups. \\ \hline
+1.1 & 2026-11-28 & Nguyen Le Quoc Huy & Moved suggestions and post filtering into their own group. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:functional-requirement-groups}{}
+\addcontentsline{toc}{subsection}{Functional Requirement Groups}
+\subsection*{Functional Requirement Groups}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.63\textwidth}|}
+\hline
+\textbf{Functional group} & \textbf{Use cases} & \textbf{Requirement file} \\ \hline
+\endhead
+Authentication and Account & US-01--US-07 & \texttt{\texttt{authentications/requirements.md}} \\ \hline
+Profile and University Identity & US-08--US-10 & \texttt{\texttt{profiles\_and\_university\_identity/requirements.md}} \\ \hline
+Browse & US-11, US-12, US-23 & \texttt{\texttt{browse/requirements.md}} \\ \hline
+Feed & US-13 (except FR-13.3) & \texttt{\texttt{feeds/requirements.md}} \\ \hline
+Suggestions and Filters & FR-13.3, US-24 & \texttt{\texttt{suggestions\_and\_filters/requirements.md}} \\ \hline
+Posts & US-14--US-22 & \texttt{\texttt{posts/requirements.md}} \\ \hline
+Learning Resource Library & US-25--US-29 & \texttt{\texttt{learning\_resource\_library/requirements.md}} \\ \hline
+Friends and Social Networking & US-30--US-33 & \texttt{\texttt{friends\_and\_social\_networking/requirements.md}} \\ \hline
+Supporting Meeting Rooms (Secondary) & US-34--US-37 & \texttt{\texttt{meeting\_rooms/requirements.md}} \\ \hline
+Notifications and Safety & US-38--US-40 & \texttt{\texttt{notifications\_and\_safety/requirements.md}} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\end{document}

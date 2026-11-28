@@ -1,0 +1,510 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-13 --- Set Learning Preferences}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-13-set-learning-preferences}{}
+\addcontentsline{toc}{section}{UC-13 --- Set Learning Preferences}
+\section*{UC-13 --- Set Learning Preferences}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Tran Canh Anh Tuan] | \textbf{Edited by:} [Tran Canh Anh Tuan]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-13 \\ \hline
+Name & Set Learning Preferences \\ \hline
+Primary Actor & University Student \\ \hline
+Supporting Actors & None \\ \hline
+Feature Group & Profile Management \\ \hline
+Priority & Not explicitly stated \\ \hline
+Related User Stories & US-09 \\ \hline
+Related Requirements & FR-09.1, FR-09.2, FR-09.3, FR-09.4, FR-09.5; NFR-SEC-1, NFR-SEC-3, NFR-SEC-6, NFR-USE-2, NFR-USE-4, NFR-USE-5, NFR-PERF-1 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} (§3.2); \texttt{proposals/functional\_requirement.md} (US-09); \texttt{proposals/settings.md}; \texttt{proposals/friend\_profile.md}; \texttt{proposals/overview.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md}; \texttt{proposals/API.md}; \texttt{proposals/non\_functional\_requirement.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-13-set-learning-preferences_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.73\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & Primary & A student who specifies courses, subjects, interests, learning goals, and preferred study times so recommendations can be personalized. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.58\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & UC-13 Set Learning Preferences & Primary & Opens \textbf{Preferences} in \textbf{Settings} or reaches Preference Settings after OTP verification, then saves preferences. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.61\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & No relationship & No actor generalization or specialization is named for US-09 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.60\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No included use case is named for US-09 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.21\textwidth}|>{\raggedright\arraybackslash}p{0.46\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & Not specified in proposals & No extending use case is named for US-09 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item Scope is entering and updating one's own preferences; actual recommendation display belongs to forum, library, friend, and room stories.
+\item Onboarding entry through OTP is a flow variant of this use case, not a new use case or a redefinition of UC-01.
+\item No dedicated preference API endpoint is documented in \texttt{API.md}; all route names in \texttt{settings.md} are recommendations.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A university student specifies current courses, subjects and topics of interest, learning goals, and preferred study times so that the platform can recommend relevant forum discussions and resources. Preferences are used for forum posts, materials, study partners, and optional rooms.
+\par\medskip
+
+The student can complete preferences during onboarding after OTP verification or update them at any time from \textbf{Preferences} in \textbf{Settings}. Updating preferences refreshes the relevance of recommendations.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The student is authenticated before accessing protected preference settings (NFR-SEC-1).
+\item During onboarding, OTP verification has succeeded and the student has been authorized to proceed to Preference Settings (FR-01.31).
+\item Supported course catalog and subject or topic tag data are available (FR-09.1, FR-09.2).
+\item The student has opened \textbf{Settings} and selected \textbf{Preferences}, or has followed \texttt{Register → OTP → Preference Settings}.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} Current courses, subjects or topics, interests, learning goals, and preferred study times are persisted for the student.
+\item \textbf{Success:} The saved preferences are available for recommendations of forum posts, materials, study partners, and optional rooms (FR-09.4, AC-09.4).
+\item \textbf{Failure:} Unsupported or invalid preference inputs are not persisted and the previously saved preferences remain in effect.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The student opens \textbf{Preferences} in \textbf{Settings}, or reaches Preference Settings after OTP verification.
+\item The system displays \texttt{PreferenceSettingsForm} with course, subject, interest, goal, and study-time controls.
+\item The system shows the informational note \textbf{Preferences are used for forum posts, materials, study partners, and rooms}.
+\item The student selects current courses from the supported course catalog.
+\item The student selects subjects and topics of interest as checkboxes or tags and adds learning interests.
+\item The student enters learning goals and selects preferred study times.
+\item The student selects \textbf{Update Preferences} or \textbf{Continue}.
+\item The system validates that the selections are supported, persists the preferences, and returns the student to Home during onboarding or keeps them in Settings for later edits.
+\item Recommendation surfaces use the saved preferences for relevant content and partners.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+No distinct alternative flow is stated in US-09; the following source-backed variants are recorded.
+\par\medskip
+
+\hypertarget{sec:a1-onboarding-after-otp-verification}{}
+\paragraph*{A1. Onboarding after OTP verification}
+\par\medskip
+
+At basic flow step 1, the student arrives through \texttt{Register → OTP → Preference Settings}. At step 7, \textbf{Continue} saves the preferences and proceeds to Home (FR-01.26).
+\par\medskip
+
+\hypertarget{sec:a2-update-at-any-time}{}
+\paragraph*{A2. Update at any time}
+\par\medskip
+
+At basic flow step 1, an existing student opens \textbf{Preferences} from \textbf{Settings}. After step 8, the student remains in Settings instead of being redirected to Home (FR-09.5, AC-09.5).
+\par\medskip
+
+\hypertarget{sec:a3-recommendation-refresh-after-a-change}{}
+\paragraph*{A3. Recommendation refresh after a change}
+\par\medskip
+
+After basic flow step 8, changed preferences refresh recommendations in the relevant forum context (FR-24.5).
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+No exception flow is specified in US-09 or FR-09.1 to FR-09.5. No status code or error code for unsupported course or tag values is specified in proposals.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item Users can select their current courses from the supported course catalog (FR-09.1, AC-09.1).
+\item Users can select subjects and topics of interest as checkboxes or tags (FR-09.2, AC-09.2).
+\item Users can specify learning goals and preferred study times (FR-09.3, AC-09.3).
+\item The system must use these preferences to recommend forum posts, materials, study partners, and optional rooms (FR-09.4, AC-09.4).
+\item Users can update their preferences at any time (FR-09.5, AC-09.5).
+\item The explanation shown to the user is \textbf{Preferences are used for forum posts, materials, study partners, and rooms}.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.82\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-SEC-1 & Authentication is required before accessing protected user resources. \\ \hline
+NFR-SEC-3 & Sensitive communication must be encrypted using TLS 1.2 or higher. \\ \hline
+NFR-SEC-6 & Server-side authorization checks must prevent unauthorized access. \\ \hline
+NFR-USE-2 & The interface must support responsive layouts from 320 px to 1920 px. \\ \hline
+NFR-USE-4 & Primary interface actions must use clear labels and recognizable controls. \\ \hline
+NFR-USE-5 & The interface must be usable at screen sizes of at least 320 px in width. \\ \hline
+NFR-PERF-1 & Standard user interactions must respond within 2 seconds. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.38\textwidth}|>{\raggedright\arraybackslash}p{0.55\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Onboarding entry & Basic flow step 1; alternative A1 \\ \hline
+Continue to Home & Basic flow step 7; alternative A1 \\ \hline
+Later preference update & Basic flow step 1; alternative A2 \\ \hline
+Recommendation refresh & Basic flow step 9; alternative A3 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item Screen/flow path: \texttt{Home → Settings → Preferences}; \texttt{Register → OTP → Preference Settings → Home} in \texttt{screen\_flow.md}; \texttt{Authentication → Register → OTP → Preference Settings → Home} in \texttt{feature\_flow.md}.
+\item Recommended components in \texttt{settings.md}: \texttt{PreferenceSettingsForm}, \texttt{CourseCatalogMultiSelect}, \texttt{SubjectTagSelector}, \texttt{InterestTagSelector}, \texttt{LearningGoalTextarea}, \texttt{PreferredStudyTimeSelector}, \texttt{RecommendationUseNotice}, \texttt{UpdatePreferencesButton}.
+\item Exact UI text: \textbf{Preferences}, \textbf{Update Preferences}, \textbf{Continue}, and \textbf{Preferences are used for forum posts, materials, study partners, and rooms}.
+\item Data fields listed in \texttt{settings.md}: \texttt{courseIds}, \texttt{subjectTags}, \texttt{interestTags}, \texttt{learningGoals}, \texttt{preferredStudyTimes}.
+\item Route \texttt{/settings/preferences} is a recommendation in \texttt{settings.md}; a confirmed route is Not specified in proposals.
+\item API: no dedicated learning-preference endpoint, status code, or error code is documented in \texttt{API.md}; no numeric limit on courses, tags, goals, or study times is specified in proposals.
+\item Recommendation rule: FR-09.4 confirms use of preferences, while recommendation display is owned by the forum, library, friend, and room stories.
+\item Feedback: \textbf{Profile updated}-style success toast behavior is recommended in \texttt{settings.md}; persistence of preferences is confirmed by FR-09.5.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item No dedicated learning-preference API endpoints are documented in \texttt{API.md}; all route names in \texttt{settings.md} are recommendations.
+\item FR-09.4 defines recommendation use, while FR-24.5, FR-26.4, and FR-34.2 describe downstream forum, library, and room consumers; no new use case is created for those consumers.
+\item Preference Settings after OTP follows FR-01.26 and FR-01.31, but OTP validation itself remains UC-01/UC-07 behavior.
+\item \texttt{friend\_profile.md} displays visible learning-preference context for study-partner relevance; it does not define a preference API contract or error codes.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/preference_settings_desktop.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Preference settings - Desktop}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_02_settings_preferences.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 02 Settings - Preferences}
+\end{figure}
+\par\smallskip
+
+\end{document}

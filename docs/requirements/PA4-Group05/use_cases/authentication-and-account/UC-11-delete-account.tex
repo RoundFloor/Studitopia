@@ -1,0 +1,534 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-11 --- Delete Account}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-11-delete-account}{}
+\addcontentsline{toc}{section}{UC-11 --- Delete Account}
+\section*{UC-11 --- Delete Account}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Thanh An] | \textbf{Edited by:} [Nguyen Thanh An]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-11 \\ \hline
+Name & Delete Account \\ \hline
+Primary Actor & registered user \\ \hline
+Supporting Actors & None \\ \hline
+Feature Group & Authentication Account \\ \hline
+Priority & Not explicitly stated \\ \hline
+Related User Stories & US-06 \\ \hline
+Related Requirements & FR-06.1, FR-06.2, FR-06.3, FR-06.4, FR-06.5, FR-06.6; FR-07.1, FR-07.2, FR-07.3, FR-07.4, FR-07.5, FR-07.6; AC-06.1, AC-06.2, AC-06.3, AC-06.4, AC-06.5, AC-06.6; AC-07.1, AC-07.2, AC-07.3, AC-07.4, AC-07.5, AC-07.6, AC-07.7, AC-07.8; NFR-SEC-1, NFR-SEC-2, NFR-SEC-3, NFR-SEC-6, NFR-SEC-8 \\ \hline
+Source Documents & \texttt{proposals/userstory.md}; \texttt{proposals/functional\_requirement.md}; \texttt{proposals/overview.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/settings.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-11-delete-account_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.71\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+registered user & Primary human actor & A user who requests permanent deletion of an account so personal information, posts, and data are erased from the platform. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.58\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+registered user & UC-11 Delete Account & Primary & Confirms deletion, completes email OTP re-authentication, and loses all account access. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.64\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & No actor or use-case generalization is specified in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.71\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No included use case is named in the proposals; email OTP rules are cited from US-07 without creating a new ID. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.19\textwidth}|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.49\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & No extending use case is named in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item UC-11 covers permanent account deletion only; deletion of a published resource is outside its scope.
+\item Confirmation, cancellation, email OTP re-authentication, final deletion, session invalidation, and access rejection are internal behavior of UC-11 because no separate include or extend use case is named.
+\item The OTP flow follows US-07 rules and the Settings re-authentication flow, but no new OTP use-case identifier is introduced.
+\item No new I-xx, E-xx, or G-xx identifiers are introduced; the model contains only the primary actor and the selected base use case.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A registered user permanently deletes an account so personal information, posts, and data are erased from the platform. The system first displays a confirmation dialog that explains the consequences, allows cancellation, and requires email OTP re-authentication before the destructive action can proceed.
+\par\medskip
+
+After a valid OTP and final confirmation, the account is deleted, all active sessions across all devices are logged out, and future access to the deleted account is rejected. The Settings flow names this final action \textbf{Permanently Delete}.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The user has a registered account and an active authenticated session.
+\item The user can access the registered email address for OTP re-authentication.
+\item The user opens the Account area and can reach \textbf{Delete Account}.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} The account is permanently deleted, and personal information, posts, and data are erased from the platform.
+\item \textbf{Success:} All active sessions across all devices are invalidated.
+\item \textbf{Success:} Any attempt to access the deleted account is rejected.
+\item \textbf{Success:} The user is returned to Login and can no longer authenticate with the deleted account.
+\item \textbf{Failure:} If the user cancels or provides an invalid OTP, the account remains active.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The user opens \textbf{Account} in Settings and selects \textbf{Delete Account}.
+\item The system displays \texttt{DeleteAccountConfirmDialog}, explaining the consequences of deletion.
+\item The user continues past the confirmation dialog.
+\item The system requires re-authentication through email OTP before permanently deleting the account.
+\item The system sends a 6-digit OTP to the registered email address and displays \texttt{ReauthOtpDialog} with the OTP input, resend control, and expiry hint.
+\item The user submits a valid, unexpired OTP and selects \textbf{Permanently Delete}.
+\item The system verifies that the OTP is valid, unexpired, and unused.
+\item The system permanently deletes the account and erases personal information, posts, and data from the platform.
+\item The system invalidates all active sessions across all devices and rejects future access to the deleted account.
+\item The system returns the user to Login.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+\hypertarget{sec:a1-cancel-deletion}{}
+\paragraph*{A1. Cancel deletion}
+\par\medskip
+
+At basic flow step 2 or 3, the user cancels deletion. The system closes the deletion flow and the account remains active (FR-06.3, AC-06.2).
+\par\medskip
+
+\hypertarget{sec:a2-resend-otp}{}
+\paragraph*{A2. Resend OTP}
+\par\medskip
+
+At basic flow step 6, the user requests a new OTP. The system generates and sends a new 6-digit OTP, invalidates the previous OTP, and restarts the 5-minute expiry period (FR-07.6, AC-07.7).
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-otp-invalid-expired-or-already-used}{}
+\paragraph*{E1. OTP invalid, expired, or already used}
+\par\medskip
+
+The system rejects the OTP, displays an appropriate message, and does not permanently delete the account. The user may request a new OTP (FR-07.5, AC-07.4, AC-07.5, AC-07.8).
+\par\medskip
+
+\hypertarget{sec:e2-access-to-a-deleted-account}{}
+\paragraph*{E2. Access to a deleted account}
+\par\medskip
+
+If the user or another client attempts to access the deleted account, the system rejects the request and keeps all sessions invalidated (FR-06.5, AC-06.5, FR-06.6, AC-06.6).
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item The system allows a user to request permanent deletion of the account (FR-06.1).
+\item Selecting \textbf{Delete Account} displays a confirmation dialog explaining the consequences of deletion (FR-06.2, AC-06.1).
+\item The user can cancel deletion, and the account must remain active (FR-06.3, AC-06.2).
+\item When the user confirms deletion, the system proceeds with the account deletion process (AC-06.3).
+\item The system requires re-authentication through email OTP before permanently deleting the account (FR-06.4, AC-06.4).
+\item The OTP is 6 digits, expires 5 minutes after generation, is accepted only while valid and unused, and is invalidated on resend (FR-07.1, FR-07.2, FR-07.3, FR-07.4, FR-07.6; AC-07.1, AC-07.2, AC-07.3, AC-07.6, AC-07.7, AC-07.8).
+\item Deleting an account logs out all active sessions across all devices and rejects access to the deleted account (FR-06.5, FR-06.6, AC-06.5, AC-06.6).
+\item The final destructive action is \textbf{Permanently Delete} and is available only after confirmation and a valid OTP, as specified in the Settings deletion flow.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.83\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-SEC-1 & Authentication is required before accessing protected user resources. \\ \hline
+NFR-SEC-2 & User credentials must be stored using one-way password hashing with a secure hashing algorithm. \\ \hline
+NFR-SEC-3 & Sensitive communication must be encrypted using TLS 1.2 or higher. \\ \hline
+NFR-SEC-6 & Server-side authorization checks must prevent unauthorized access. \\ \hline
+NFR-SEC-8 & The system must protect against common web security vulnerabilities, including SQL injection, XSS, and CSRF. \\ \hline
+Design constraint & OTP re-authentication is mandatory before permanent deletion; the OTP is 6 digits, expires after 5 minutes, is single-use, and is invalidated when a new OTP is generated. \\ \hline
+Design constraint & Deleted-account access must be rejected and all sessions invalidated after deletion. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.34\textwidth}|>{\raggedright\arraybackslash}p{0.59\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Account Settings deletion entry & Basic flow step 1 \\ \hline
+Confirmation and cancellation & Basic flow steps 2-3; alternative flow A1 \\ \hline
+Email OTP re-authentication & Basic flow steps 4-7; alternative flow A2; exception E1 \\ \hline
+Final permanent deletion & Basic flow steps 8-10 \\ \hline
+Deleted-account access rejection & Exception flow E2 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Confirmed requirement --- screen/flow path:} \texttt{Home → Profile → Re-auth → Delete → Login} in \texttt{userstory.md}; \texttt{settings.md} 7.5 gives \texttt{Account → Delete Account → confirmation → email OTP → Permanently Delete → session rejection}.
+\item \textbf{Confirmed requirement --- UI text:} \textbf{Delete Account}, \textbf{Permanently Delete}, \texttt{DeleteAccountButton}, \texttt{DeleteAccountConfirmDialog}, \texttt{ReauthOtpDialog}, and \texttt{DeleteAccountFinalConfirmButton} are named in \texttt{settings.md}.
+\item \textbf{Confirmed requirement --- OTP UI:} \texttt{ReauthOtpDialog} shows a 6-digit OTP input, resend control, and expiry hint; the generic OTP notice in \texttt{userstory.md} reads \textbf{Sent OTP to email ab}*\textbf{@gmail.com}.
+\item \textbf{Confirmed requirement --- confirmation:} \texttt{DeleteAccountConfirmDialog} explains the consequences of deletion and provides cancel/confirm actions; no exact consequence-paragraph text is specified.
+\item \textbf{Confirmed requirement --- account data:} \texttt{settings.md} names \texttt{userId}, \texttt{email}, \texttt{emailVerified}, \texttt{status}, and \texttt{linkedProviders}; \texttt{API.md} defines status values \texttt{0 (inactive)}, \texttt{1(preprofile)}, \texttt{2(active)}, and \texttt{3(suspend)}.
+\item \textbf{Confirmed requirement --- deletion outcome:} Personal information, posts, and data are erased from the platform; future access is rejected; all sessions are invalidated.
+\item \textbf{API endpoint:} Not specified in proposals; \texttt{API.md} has no account-deletion endpoint.
+\item \textbf{Statuses and error codes:} Not specified in proposals for deletion; \texttt{API.md} generally defines \texttt{UNAUTHORIZED} 401 and \texttt{FORBIDDEN} 403, and \texttt{response\_code.md} lists \texttt{FORBIDDEN} 48010, backend \texttt{UNKNOWN ERROR} 2002, and \texttt{UNKNOWN DATABASE ERROR} 45000, but no deletion-specific code.
+\item \textbf{Recommendation only:} \texttt{/settings/account} is a recommended route in \texttt{settings.md}; the Settings flow states personal data is deleted or anonymized according to platform policy, while the story requires erasure from the platform.
+\item \textbf{Notification/privacy rules:} OTP is delivered to the registered email; no notification to other users is specified; deleted-account access must be rejected.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item \texttt{API.md} has no account-deletion endpoint and no OTP submission or resend endpoint, while FR-06.1 to FR-06.6 and AC-06.1 to AC-06.6 require deletion, OTP re-authentication, session invalidation, and access rejection.
+\item \texttt{settings.md} 7.5 supplies the email OTP re-authentication and permanent deletion flow: select \textbf{Delete Account}, review \texttt{DeleteAccountConfirmDialog}, cancel or continue, submit a valid email OTP, select \textbf{Permanently Delete}, then invalidate sessions and reject access.
+\item UC-01 Register Account defines OTP validation for email verification; UC-11 applies the same US-07 FR/AC rules to deletion re-authentication without reusing or creating a numbered OTP use-case ID.
+\item UC-02 Log In ends by creating the sessions that UC-11 invalidates; UC-11 returns the user to Login and does not repeat credential validation, CAPTCHA, or Google login behavior.
+\item No new I-xx, E-xx, or G-xx identifiers were created; the focused model uses only UC-11 and its primary actor.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_03_settings_account.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 03 Settings - Account}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_delete_account_desktop_otp_error.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: Delete Account - Desktop OTP error}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_delete_account_desktop_otp.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: Delete Account - Desktop OTP}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_delete_account_desktop_success.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: Delete Account - Desktop success}
+\end{figure}
+\par\smallskip
+
+\end{document}

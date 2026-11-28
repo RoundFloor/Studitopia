@@ -1,0 +1,570 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-20 --- Report and Moderate Forum Content}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-20-report-and-moderate-forum-content}{}
+\addcontentsline{toc}{section}{UC-20 --- Report and Moderate Forum Content}
+\section*{UC-20 --- Report and Moderate Forum Content}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.84\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-20 \\ \hline
+Name & Report and Moderate Forum Content \\ \hline
+Primary Actor & University Student or Moderator \\ \hline
+Supporting Actors & Administrator \\ \hline
+Feature Group & Forum Interaction \\ \hline
+Priority & Not specified in proposals \\ \hline
+Related User Stories & US-22 \\ \hline
+Related Requirements & FR-22.1, FR-22.2, FR-22.3, FR-22.4, FR-22.5, FR-22.6; AC-22.1, AC-22.2, AC-22.3, AC-22.4, AC-22.5; NFR-SEC-1, NFR-SEC-6, NFR-SEC-9, NFR-SEC-10, NFR-USE-6, NFR-PRIV-7 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} §6.5; \texttt{proposals/functional\_requirement.md} US-22; \texttt{proposals/moderation\_queue.md}; \texttt{proposals/post\_management.md}; \texttt{proposals/list\_post.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/settings.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-20-report-moderate-forum-content_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & Primary human actor & Reports a post, comment, or answer under the report categories in FR-22.2. \\ \hline
+Moderator & Primary human actor & Reviews routed reports and applies permitted hide, delete, restore, or ban actions under FR-22.4. \\ \hline
+Administrator & Supporting human actor & Is also authorized for moderation actions under NFR-SEC-10. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.28\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.40\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & UC-20 Report and Moderate Forum Content & Primary & Submits a report on forum content. \\ \hline
+Moderator & UC-20 Report and Moderate Forum Content & Primary & Reviews the moderation queue and applies policy actions. \\ \hline
+Administrator & UC-20 Report and Moderate Forum Content & Supporting & Performs authorized moderation actions under NFR-SEC-10. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & No actor generalization or specialization is named in the proposal sources for this story. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.72\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No distinct included use case is named; \texttt{moderation\_queue.md} explicitly notes that there is no dedicated moderation use case. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.58\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & No distinct extending use case is named in the proposal sources for this story. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item In scope: reporting a post, comment, or answer; routing reports with context; moderator/admin review; hide, delete, restore, or ban actions; action records; notifications; and restriction enforcement.
+\item Out of scope: creating posts and comments, profile/message reporting under US-40, and modifying UC-03 or UC-05.
+\item The four exact report categories are spam, harassment, inappropriate content, and academic dishonesty.
+\item \texttt{moderation\_queue.md} states that \texttt{API.md} defines only \texttt{POST /forum/reports}; no queue, action, history, or status endpoints are defined.
+\item No new I-xx, E-xx, or G-xx identifier is created; the queue and moderation record are UI/data recommendations, not named use cases in the proposal sources.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A university student reports inappropriate forum content, and an authorized moderator or administrator reviews the report and applies policy actions so that the forum remains safe and academically useful. Reports carry target context and are routed to a moderation queue.
+\par\medskip
+
+The trigger is selecting \textbf{Report} on a post, comment, or answer, or opening the moderation queue as an authorized reviewer. The successful outcome is a recorded report with \texttt{report\_id}, a moderation decision recorded under FR-22.5, notification to the affected user when appropriate, and enforced restrictions where applicable.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The reporting student or reviewing moderator/administrator is authenticated.
+\item The reported post, comment, or answer exists and is visible to the reporter.
+\item The reporter selects one of spam, harassment, inappropriate content, or academic dishonesty.
+\item The reviewer is an authorized moderator or administrator under NFR-SEC-10.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} A report is recorded with target context and returned as \texttt{report\_id}, then routed to the moderation queue.
+\item \textbf{Success:} An authorized reviewer applies a permitted action and the action is recorded with notification to the affected user when appropriate.
+\item \textbf{Success:} Moderation restrictions cannot be bypassed through new posts or comments.
+\item \textbf{Failure:} No invalid or unauthorized moderation change is applied, and the actor receives an error.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The student opens a post detail view containing a post, comment, or answer to report.
+\item The system shows \textbf{Report} among the permitted actions.
+\item The student selects \textbf{Report} and the system opens the report dialog with target context.
+\item The student selects a category: spam, harassment, inappropriate content, or academic dishonesty.
+\item The student optionally enters a description and submits the report.
+\item The backend validates the target, category, and reporter context and records the report.
+\item The backend returns \texttt{201} with \texttt{\{report\_id\}} and routes the report to the moderation queue with contextual information.
+\item An authorized moderator or administrator reviews the report context.
+\item The reviewer selects a policy action: hide, delete, restore, or ban content or users.
+\item The system records the moderation action and notifies the affected user when appropriate.
+\item The system enforces any resulting restriction on new posts and comments.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+\hypertarget{sec:a1-report-a-comment-or-answer}{}
+\paragraph*{A1. Report a comment or answer}
+\par\medskip
+
+At basic flow steps 1-6, the reporter targets a comment or answer. The request uses \texttt{target\_type: 'comment'} and the corresponding \texttt{target\_id}; a missing target produces \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}).
+\par\medskip
+
+\hypertarget{sec:a2-review-without-description}{}
+\paragraph*{A2. Review without description}
+\par\medskip
+
+At basic flow step 5, the reporter leaves the optional description empty. The backend accepts the report when \texttt{target\_type}, \texttt{target\_id}, and a valid \texttt{category} are present.
+\par\medskip
+
+\hypertarget{sec:a3-restore-moderated-content}{}
+\paragraph*{A3. Restore moderated content}
+\par\medskip
+
+At basic flow step 9, the reviewer restores previously hidden or deleted content where supported by forum policy.
+\par\medskip
+
+\hypertarget{sec:a4-notify-affected-user}{}
+\paragraph*{A4. Notify affected user}
+\par\medskip
+
+At basic flow step 10, the moderation record indicates that an affected user should be notified. The system notifies that user when appropriate under AC-22.4.
+\par\medskip
+
+\hypertarget{sec:a5-restriction-enforcement}{}
+\paragraph*{A5. Restriction enforcement}
+\par\medskip
+
+At basic flow step 11, a moderated user attempts a new post or comment. The backend blocks the bypass attempt and the UI shows a restriction notice or action error.
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-invalid-report-category}{}
+\paragraph*{E1. Invalid report category}
+\par\medskip
+
+The backend rejects an unsupported category with \texttt{400 INVALID\_REPORT\_CATEGORY} (\texttt{48009}) and the report is not recorded.
+\par\medskip
+
+\hypertarget{sec:e2-target-is-unavailable}{}
+\paragraph*{E2. Target is unavailable}
+\par\medskip
+
+A missing post or comment produces \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}), and the report is not recorded.
+\par\medskip
+
+\hypertarget{sec:e3-unauthenticated-report}{}
+\paragraph*{E3. Unauthenticated report}
+\par\medskip
+
+An unauthenticated report request produces \texttt{UNAUTHORIZED} under \texttt{401}; the system requires login before submitting.
+\par\medskip
+
+\hypertarget{sec:e4-unauthorized-moderation-access}{}
+\paragraph*{E4. Unauthorized moderation access}
+\par\medskip
+
+A user who is not an authorized moderator or administrator is denied moderation access under NFR-SEC-10 and server-side checks under NFR-SEC-6. \texttt{moderation\_queue.md} proposes a permission-denied state; no moderation-action HTTP contract is defined in \texttt{API.md}.
+\par\medskip
+
+\hypertarget{sec:e5-duplicate-report}{}
+\paragraph*{E5. Duplicate report}
+\par\medskip
+
+\texttt{API.md} requires preventing duplicate reports from the same user for the same target within a short window, but defines no error code for that case. The UI must not claim a specific duplicate code.
+\par\medskip
+
+\hypertarget{sec:e6-server-or-database-failure}{}
+\paragraph*{E6. Server or database failure}
+\par\medskip
+
+The backend reports \texttt{INTERNAL\_SERVER\_ERROR} under \texttt{500} with \texttt{(DATABASE\_ERROR | UNKNOWN\_ERROR)[]}; the report or moderation action is not completed.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item Users can report a post, comment, or answer under FR-22.1 and AC-22.1.
+\item The exact report categories are spam, harassment, inappropriate content, and academic dishonesty under FR-22.2 and AC-22.1.
+\item Reports are routed to a moderation queue with contextual information under FR-22.3 and AC-22.2.
+\item Moderators can hide, delete, restore, or ban content and users according to forum policy under FR-22.4 and AC-22.3.
+\item Moderation actions are recorded and affected users are notified when appropriate under FR-22.5 and AC-22.4.
+\item Moderated users cannot bypass restrictions through new posts or comments under FR-22.6 and AC-22.5.
+\item Moderation actions are restricted to authorized moderators and administrators under NFR-SEC-10.
+\item Reporting and related actions are rate-limited under NFR-SEC-9; no numeric limit is specified in proposals.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.81\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-SEC-1 & Authentication is required before accessing protected report and moderation surfaces. \\ \hline
+NFR-SEC-6 & Server-side authorization checks must prevent unauthorized moderation access. \\ \hline
+NFR-SEC-9 & Reporting, posting, commenting, and voting must be rate-limited to reduce spam and abuse. \\ \hline
+NFR-SEC-10 & Moderation actions must be restricted to authorized moderators and administrators. \\ \hline
+NFR-USE-6 & Reporting and moderation actions must be reachable within at most 2 interactions from a post or comment. \\ \hline
+NFR-PRIV-7 & Privacy settings must apply consistently to forum posts, comments, member lists, and search results. \\ \hline
+Design constraint & Moderation actions must produce a moderation record; no queue, action, or history endpoint is defined in \texttt{API.md}. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.39\textwidth}|>{\raggedright\arraybackslash}p{0.54\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Report target selection & Basic flow steps 1-4; alternative A1 \\ \hline
+Category and description entry & Basic flow steps 4-5; exceptions E1 and E5 \\ \hline
+Queue review & Basic flow step 8; exception E4 \\ \hline
+Moderation action & Basic flow step 9; alternatives A3-A4 \\ \hline
+Restriction enforcement & Basic flow step 11; alternative A5 \\ \hline
+Failure recovery & Exceptions E1-E6 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Confirmed flow:} \texttt{feature\_flow.md} shows \texttt{Post → Report / Moderate}; \texttt{moderation\_queue.md} shows \texttt{Report Content → Moderation Queue → Moderator Action → Record / Notify / Enforce Restriction}.
+\item \textbf{Confirmed categories:} Report categories are spam, harassment, inappropriate content, and academic dishonesty under FR-22.2 and AC-22.1.
+\item \textbf{Recommendation UI:} \texttt{ReportPostButton} is labelled \textbf{Report}; \texttt{ReportContentDialog} / \texttt{ReportPostDialog} provides target context, category, optional description, and submit/cancel; \texttt{ReportSubmitButton} is labelled \textbf{Submit report}. These are source recommendations, not FR/AC fields.
+\item \textbf{Confirmed endpoint:} \texttt{POST /forum/reports} uses \texttt{\{target\_type: 'post' | 'comment', target\_id: string, category: string, description?: string\}} and returns \texttt{201 \{report\_id\}}.
+\item \textbf{Error codes:} \texttt{400 INVALID\_REPORT\_CATEGORY} (\texttt{48009}), \texttt{404 POST\_NOT\_FOUND} (\texttt{48001}) or \texttt{COMMENT\_NOT\_FOUND} (\texttt{48002}), \texttt{401}, and \texttt{500}. \texttt{studitopia.report\_forum\_content} also lists \texttt{FORBIDDEN} (\texttt{48010}) and duplicate-report prevention with no specified error code.
+\item \textbf{Gap:} No queue, action, history, or status endpoints are defined in \texttt{API.md}. Hide, delete, restore, and ban actions have requirement coverage in FR-22.4 but no API contract.
+\item \textbf{Authorization:} Only authorized moderators/admins may act, per NFR-SEC-10, with server-side checks under NFR-SEC-6.
+\item \textbf{Data fields:} Confirmed fields are \texttt{report\_id}, \texttt{target\_type}, \texttt{target\_id}, \texttt{category}, and optional \texttt{description}. \texttt{reporter\_id} appears in the database function; \texttt{created\_at}, \texttt{status}, \texttt{moderation\_action}, \texttt{action\_reason}, and \texttt{affected\_user\_notified} are recommendation/gap fields in \texttt{moderation\_queue.md}.
+\item \textbf{Moderation record:} FR-22.5 and AC-22.4 require recorded actions and notification to affected users when appropriate; no history API is defined.
+\item \textbf{Privacy:} NFR-PRIV-7 applies consistently to posts, comments, member lists, and search results.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item UC-03 lists \textbf{report} as a permitted action in the post-detail flow but does not define report submission, queue review, moderation actions, records, or restriction enforcement.
+\item UC-05 mentions the same \texttt{POST /forum/reports} contract and the moderation API gap as interface context; it does not cover reporting or moderation behavior.
+\item \texttt{moderation\_queue.md} explicitly states that there is no dedicated moderation use case in the cited use-case files, so UC-20 introduces no new I-xx/E-xx/G-xx relationship.
+\item \texttt{FR-40.1}--\texttt{FR-40.5} and \texttt{AC-40.1}--\texttt{AC-40.4} cover broader inappropriate-behavior reporting, but this case is scoped to US-22 forum content.
+\item \texttt{API.md} supports only \texttt{target\_type: 'post' | 'comment'}; report surfaces beyond posts and comments lack report API support.
+\item No queue, action, history, or status endpoint is defined in \texttt{API.md}, and no report-status enum is specified; do not infer one from UI recommendations.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/profile_p5_report_a_user.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Profile: P5 Report a user}
+\end{figure}
+\par\smallskip
+
+\end{document}

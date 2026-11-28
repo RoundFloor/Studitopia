@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Suggestions and Filters}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:suggestions-and-filters}{}
+\addcontentsline{toc}{section}{Suggestions and Filters}
+\section*{Suggestions and Filters}
+\par\medskip
+
+\textbf{Version:} \texttt{1.1}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+\texttt{Back to functional requirements index}
+\par\medskip
+
+\begin{quote}
+\textit{Status: \texttt{Complete} = source-backed implementation exists; \texttt{Partial} = supporting code exists but the full requirement is not implemented; \texttt{Not implemented} = no source-backed implementation was found.}
+\end{quote}
+\par\medskip
+
+\hypertarget{sec:post-filtering}{}
+\addcontentsline{toc}{subsubsection}{Post Filtering}
+\subsubsection*{Post Filtering}
+\par\medskip
+
+\textbf{As a} university student, \textbf{I want to} filter posts in the selected forum, \textbf{so that} I can narrow the feed to posts relevant to my context.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|}
+\hline
+\textbf{FR} & \textbf{Requirement} & \textbf{Category} & \textbf{Status} \\ \hline
+\endhead
+\textbf{FR-13.3 (Post Filtering)} & The system shall support filtering posts by My Post, area, university, major, course, tags, and post type. & UI, Frontend, Backend & Not implemented \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:us-24-receive-forum-recommendations}{}
+\addcontentsline{toc}{subsubsection}{US-24: Receive Forum Recommendations}
+\subsubsection*{US-24: Receive Forum Recommendations}
+\par\medskip
+
+\textbf{As a} university student, \textbf{I want to} receive forum recommendations, \textbf{so that} I can discover discussions that matter to my courses and interests.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.54\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|}
+\hline
+\textbf{FR} & \textbf{Requirement} & \textbf{Category} & \textbf{Status} \\ \hline
+\endhead
+\textbf{FR-24.1 (Relevant Recommendations)} & The system shall recommend forum posts that are relevant to the user's university, major, courses, and interests. & Backend & Not implemented \\ \hline
+\textbf{FR-24.2 (Trending Recommendations)} & The system shall recommend trending posts within the user's academic context. & Backend & Not implemented \\ \hline
+\textbf{FR-24.3 (Unsolved Recommendations)} & The system shall recommend unsolved questions where the user may be able to help. & Backend & Not implemented \\ \hline
+\textbf{FR-24.4 (Dismiss Recommendations)} & The system shall allow users to dismiss irrelevant recommendations. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-24.5 (Recommendation Refresh)} & The system shall refresh recommendations when the user's preferences or forum context change. & Frontend, Backend & Not implemented \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/feed_algorithms_desktop.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Feed: Algorithms - Desktop}
+\end{figure}
+\par\smallskip
+
+\end{document}

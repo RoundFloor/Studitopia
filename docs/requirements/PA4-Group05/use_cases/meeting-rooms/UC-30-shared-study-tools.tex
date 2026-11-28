@@ -1,0 +1,557 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{UC-30 --- Use Shared Study Tools}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:uc-30-use-shared-study-tools}{}
+\addcontentsline{toc}{section}{UC-30 --- Use Shared Study Tools}
+\section*{UC-30 --- Use Shared Study Tools}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Tran Nguyen Khanh Binh] | \textbf{Edited by:} [Tran Nguyen Khanh Binh]
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.84\textwidth}|}
+\hline
+\textbf{Field} & \textbf{Value} \\ \hline
+\endhead
+Use Case ID & UC-30 \\ \hline
+Name & Use Shared Study Tools \\ \hline
+Primary Actor & University Student \\ \hline
+Supporting Actors & Other Room Participants \\ \hline
+Feature Group & Supporting Meeting Rooms (Secondary) \\ \hline
+Priority & Not explicitly stated \\ \hline
+Related User Stories & US-36 \\ \hline
+Related Requirements & FR-36.1, FR-36.2, FR-36.3, FR-36.4, FR-36.5, FR-36.6; AC-36.1, AC-36.2, AC-36.3, AC-36.4, AC-36.5, AC-36.6; NFR-PERF-7, NFR-SCAL-6, NFR-USE-2, NFR-USE-4, NFR-USE-5 \\ \hline
+Source Documents & \texttt{proposals/userstory.md} (10.3); \texttt{proposals/functional\_requirement.md} (US-36); \texttt{proposals/study\_room.md}; \texttt{proposals/hall\_room.md}; \texttt{proposals/meeting\_lobby.md}; \texttt{proposals/settings.md}; \texttt{proposals/non\_functional\_requirement.md}; \texttt{proposals/API.md}; \texttt{proposals/response\_code.md}; \texttt{proposals/feature\_flow.md}; \texttt{proposals/screen\_flow.md} \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:part-a-use-case-model}{}
+\addcontentsline{toc}{subsection}{Part A --- Use Case Model}
+\subsection*{Part A --- Use Case Model}
+\par\medskip
+
+\hypertarget{sec:a1-focused-use-case-diagram}{}
+\addcontentsline{toc}{subsubsection}{A1. Focused Use Case Diagram}
+\subsubsection*{A1. Focused Use Case Diagram}
+\par\medskip
+
+\begin{center}
+\includegraphics[width=0.85\textwidth,height=0.75\textheight,keepaspectratio]{"figures/UC-30-shared-study-tools_1.png"}
+\end{center}
+\par\medskip
+
+\textbf{Diagram notation.} Person shape = human actor; cloud = supporting system; blue = selected use case; solid line = association; labelled solid arrow = generalization; dashed arrow = include or extend.
+\par\medskip
+
+\hypertarget{sec:a2-actor-register}{}
+\addcontentsline{toc}{subsubsection}{A2. Actor Register}
+\subsubsection*{A2. Actor Register}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.64\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & Primary human actor & A participant who uses the shared whiteboard, shared notes, and shared timer during a room session. \\ \hline
+Other Room Participants & Secondary human actor & Other students in the same room who receive synchronized tool updates and contribute to shared notes. \\ \hline
+Supporting Service & Not specified in proposals & No external system actor is named for US-36; tool synchronization is described as system behavior in \texttt{FR-36.4}. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-relationships}{}
+\addcontentsline{toc}{subsubsection}{A3. Relationships}
+\subsubsection*{A3. Relationships}
+\par\medskip
+
+\hypertarget{sec:a3-1-associations}{}
+\paragraph*{A3.1 Associations}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.15\textwidth}|>{\raggedright\arraybackslash}p{0.19\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.46\textwidth}|}
+\hline
+\textbf{Actor} & \textbf{Use Case} & \textbf{Type} & \textbf{Description} \\ \hline
+\endhead
+University Student & UC-30 Use Shared Study Tools & Primary & Uses the shared tools in an active room session. \\ \hline
+Other Room Participants & UC-30 Use Shared Study Tools & Secondary & Share and receive synchronized whiteboard, notes, and timer updates. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-2-generalization-and-specialization}{}
+\paragraph*{A3.2 Generalization and Specialization}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.65\textwidth}|}
+\hline
+\textbf{Child} & \textbf{Parent} & \textbf{Type} & \textbf{Inherited Behavior or Association} \\ \hline
+\endhead
+None & None & None & No actor or use-case generalization is named for US-36 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-3-include}{}
+\paragraph*{A3.3 Include}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.60\textwidth}|}
+\hline
+\textbf{Base Use Case} & \textbf{Included Use Case} & \textbf{Meaning} \\ \hline
+\endhead
+None & None & No included use case is named for US-36 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a3-4-extend}{}
+\paragraph*{A3.4 Extend}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.17\textwidth}|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.53\textwidth}|}
+\hline
+\textbf{Extending Use Case} & \textbf{Base Use Case} & \textbf{Condition} & \textbf{Added Behavior} \\ \hline
+\endhead
+None & None & None & No extending use case is named for US-36 in the proposals. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:a4-model-notes}{}
+\addcontentsline{toc}{subsubsection}{A4. Model Notes}
+\subsubsection*{A4. Model Notes}
+\par\medskip
+
+\begin{enumerate}
+\item Only UC-30 and its source-backed actors are shown; no new I-xx, E-xx, or G-xx identifiers are introduced.
+\item Shared tool behavior is described for room participants in both \texttt{study\_room.md} and \texttt{hall\_room.md}; no Hall-only or Study-Room-only tool variant is defined.
+\item Meeting rooms are optional supporting capabilities and do not replace the forum as the primary collaboration space.
+\item No tool-specific API endpoint, error code, or room data contract is specified in \texttt{API.md} or \texttt{response\_code.md}.
+\item The participant roster and invitations are governed by communication and privacy settings elsewhere; those rules are not repeated as UC-30 relationships.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:part-b-use-case-specification}{}
+\addcontentsline{toc}{subsection}{Part B --- Use Case Specification}
+\subsection*{Part B --- Use Case Specification}
+\par\medskip
+
+\hypertarget{sec:b1-brief-description}{}
+\addcontentsline{toc}{subsubsection}{B1. Brief Description}
+\subsubsection*{B1. Brief Description}
+\par\medskip
+
+A university student who is already in a Study Room or Hall Room uses the shared whiteboard, shared notes, and shared timer to collaborate on an academic problem with other participants. \texttt{AC-36.1}--\texttt{AC-36.3} and \texttt{FR-36.1}--\texttt{FR-36.3} define the three tools; \texttt{AC-36.4}/\texttt{FR-36.4} require updates to be synchronized for all participants.
+\par\medskip
+
+The use case also covers the two conditional capabilities in \texttt{AC-36.5} and \texttt{AC-36.6}: whiteboard export only when supported, and shared notes that survive reconnection without data loss. These are supporting room capabilities, not a replacement for forum-based collaboration.
+\par\medskip
+
+\hypertarget{sec:b2-preconditions}{}
+\addcontentsline{toc}{subsubsection}{B2. Preconditions}
+\subsubsection*{B2. Preconditions}
+\par\medskip
+
+\begin{enumerate}
+\item The student is authenticated with an active session.
+\item The student has entered a Study Room or Hall Room session.
+\item At least one other room participant is present for collaborative use of a shared tool.
+\item The room configuration supports the selected tool; whiteboard support is required for export to be relevant.
+\item The real-time collaboration service is available for synchronized updates.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b3-postconditions}{}
+\addcontentsline{toc}{subsubsection}{B3. Postconditions}
+\subsubsection*{B3. Postconditions}
+\par\medskip
+
+\begin{enumerate}
+\item \textbf{Success:} The selected shared tool is available to all room participants.
+\item \textbf{Success:} Whiteboard, notes, and timer updates are synchronized for all participants.
+\item \textbf{Success:} Shared notes are persisted during the session and restored without data loss after reconnection.
+\item \textbf{Success:} Whiteboard content is exported when export is supported.
+\item \textbf{Failure:} The tool remains unavailable or shows a clear synchronization/reconnection state without silently discarding shared notes.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b4-main-success-scenario-basic-flow}{}
+\addcontentsline{toc}{subsubsection}{B4. Main Success Scenario (Basic Flow)}
+\subsubsection*{B4. Main Success Scenario (Basic Flow)}
+\par\medskip
+
+\begin{enumerate}
+\item The student opens the room's tool area in an active session.
+\item The system presents \textbf{Whiteboard}, \textbf{Notes}, and \textbf{Timer} in \texttt{RoomToolTabs}.
+\item The student selects a tool.
+\item The system opens the shared tool to the student and the other room participants.
+\item The student edits whiteboard content, writes shared notes, or starts/pauses/resets the shared timer.
+\item The system synchronizes each update for all room participants.
+\item The system shows the current synchronization state through \texttt{ToolSyncIndicator} / \texttt{NotesSyncIndicator}.
+\item The student finishes the tool use and continues the room session.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b5-alternative-flows}{}
+\addcontentsline{toc}{subsubsection}{B5. Alternative Flows}
+\subsubsection*{B5. Alternative Flows}
+\par\medskip
+
+Unless otherwise stated, an alternative flow resumes at the next step of the basic flow.
+\par\medskip
+
+\hypertarget{sec:a1-export-whiteboard-content}{}
+\paragraph*{A1. Export whiteboard content}
+\par\medskip
+
+At basic flow step 5, when export is supported, the student selects \textbf{Export whiteboard} (\texttt{ExportWhiteboardButton}). The system exports the current whiteboard content while leaving the shared whiteboard available to participants (\texttt{FR-36.5}, \texttt{AC-36.5}).
+\par\medskip
+
+\hypertarget{sec:a2-export-not-supported}{}
+\paragraph*{A2. Export not supported}
+\par\medskip
+
+At basic flow step 5, when whiteboard export is not supported, the system does not offer the export action and shows "Export is not supported for this room." as recommended in \texttt{hall\_room.md}. No error is implied by the missing capability.
+\par\medskip
+
+\hypertarget{sec:a3-reconnect-and-restore-notes}{}
+\paragraph*{A3. Reconnect and restore notes}
+\par\medskip
+
+If the connection is interrupted during the session, the system shows "Connection interrupted. Restoring session…", attempts to restore the session, and confirms with "Shared notes restored." The shared notes must not lose data (\texttt{FR-36.6}, \texttt{AC-36.6}).
+\par\medskip
+
+\hypertarget{sec:b6-exception-flows}{}
+\addcontentsline{toc}{subsubsection}{B6. Exception Flows}
+\subsubsection*{B6. Exception Flows}
+\par\medskip
+
+\hypertarget{sec:e1-synchronization-not-established}{}
+\paragraph*{E1. Synchronization not established}
+\par\medskip
+
+The system cannot synchronize the selected tool update for all participants. It reports the failure with "The live room could not be reached." or "The live room is unavailable." and preserves notes where possible (\texttt{FR-36.4}, \texttt{FR-36.5}, \texttt{AC-36.4}).
+\par\medskip
+
+\hypertarget{sec:e2-recovery-cannot-complete}{}
+\paragraph*{E2. Recovery cannot complete}
+\par\medskip
+
+The reconnection attempt does not complete. The system keeps the preserved notes where possible and shows the live-room failure notice rather than presenting an empty editor as a fresh session.
+\par\medskip
+
+\hypertarget{sec:b7-business-rules}{}
+\addcontentsline{toc}{subsubsection}{B7. Business Rules}
+\subsubsection*{B7. Business Rules}
+\par\medskip
+
+\begin{enumerate}
+\item The room provides a shared whiteboard (\texttt{AC-36.1}, \texttt{FR-36.1}).
+\item The room provides shared notes (\texttt{AC-36.2}, \texttt{FR-36.2}).
+\item The room provides a shared timer (\texttt{AC-36.3}, \texttt{FR-36.3}).
+\item Shared tool updates are synchronized for all room participants (\texttt{AC-36.4}, \texttt{FR-36.4}).
+\item Whiteboard content can be exported only when export is supported (\texttt{AC-36.5}, \texttt{FR-36.5}).
+\item Shared notes persist during the room session and handle reconnection without data loss (\texttt{AC-36.6}, \texttt{FR-36.6}).
+\item Meeting rooms remain optional supporting features; the forum remains the primary collaboration space.
+\end{enumerate}
+\par\medskip
+
+\hypertarget{sec:b8-special-requirements}{}
+\addcontentsline{toc}{subsubsection}{B8. Special Requirements}
+\subsubsection*{B8. Special Requirements}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.11\textwidth}|>{\raggedright\arraybackslash}p{0.82\textwidth}|}
+\hline
+\textbf{ID} & \textbf{Requirement} \\ \hline
+\endhead
+NFR-PERF-7 & Optional supporting meeting-room tools must maintain an update latency of 1 second or less when a room is in use. \\ \hline
+NFR-SCAL-6 & The architecture must support at least 100 concurrent optional meeting rooms. \\ \hline
+NFR-USE-2 & The user interface must support responsive layouts for screen widths from 320 px to 1920 px. \\ \hline
+NFR-USE-4 & Primary interface actions must use clear labels and recognizable controls. \\ \hline
+NFR-USE-5 & The user interface must be usable on screen sizes of at least 320 px in width. \\ \hline
+Design constraint & Shared notes must be preserved through reconnection without data loss, and whiteboard export is conditional on tool support. \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b9-extension-points}{}
+\addcontentsline{toc}{subsubsection}{B9. Extension Points}
+\subsubsection*{B9. Extension Points}
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\textwidth}|>{\raggedright\arraybackslash}p{0.58\textwidth}|}
+\hline
+\textbf{Extension Point} & \textbf{Location in Flow of Events} \\ \hline
+\endhead
+Tool selection & Basic flow steps 2-4 \\ \hline
+Whiteboard export & Basic flow step 5; alternative A1 and A2 \\ \hline
+Synchronization status & Basic flow step 7; exception E1 \\ \hline
+Reconnection and notes recovery & During any tool use; alternative A3 and exception E2 \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:b10-interface-and-data-notes}{}
+\addcontentsline{toc}{subsubsection}{B10. Interface and Data Notes}
+\subsubsection*{B10. Interface and Data Notes}
+\par\medskip
+
+\begin{itemize}
+\item \textbf{Screen/flow path:} \texttt{screen\_flow.md} gives \texttt{Home -$>$ Meeting} and \texttt{Meeting -$>$ Hall Room} / \texttt{Meeting -$>$ Study Room}. \texttt{feature\_flow.md} gives \texttt{Lobby -$>$ Trending/For you/Detail -$>$ HallRoom} (via \texttt{Halls}) and \texttt{Lobby -$>$ Trending/For you/Detail -$>$ StudyRoom} (via \texttt{Hub}). \texttt{Halls} and \texttt{Hub} are flow-derived labels with no dedicated FR or AC.
+\item \textbf{Recommended components:} \texttt{RoomToolTabs}, \texttt{SharedWhiteboard}, \texttt{SharedNotesEditor}, \texttt{SharedTimer}, \texttt{ToolSyncIndicator} / \texttt{NotesSyncIndicator}, \texttt{ExportWhiteboardButton}, \texttt{ReconnectNotice}, and \texttt{SharedNotesRestoreState} are recommendations in \texttt{study\_room.md} and \texttt{hall\_room.md}, not mandated by an FR.
+\item \textbf{UI labels and exact messages:} \textbf{Whiteboard}, \textbf{Notes}, \textbf{Timer}, \textbf{Export whiteboard}, "Export is not supported for this room.", "Connection interrupted. Restoring session…", "Shared notes restored.", "The live room could not be reached.", and "The live room is unavailable." are quoted from the proposal recommendations.
+\item \textbf{Data fields:} \texttt{whiteboardState}, \texttt{notesContent}, \texttt{timerState}, \texttt{syncState}, \texttt{sessionState}, and \texttt{supportedTools} are recommended field names in \texttt{study\_room.md} / \texttt{hall\_room.md}; no database schema is specified for them.
+\item \textbf{Synchronization and recovery:} \texttt{FR-36.4}/\texttt{AC-36.4} require updates for all participants with the ≤ 1 second target from \texttt{NFR-PERF-7}; \texttt{FR-36.6}/\texttt{AC-36.6} require notes persistence and reconnection without data loss.
+\item \textbf{API endpoints/statuses/error codes:} Not specified in proposals. \texttt{API.md} has no tool endpoints, and \texttt{response\_code.md} has no tool error codes; forum and authentication codes must not be assigned to room tools by analogy.
+\item \textbf{Notification/privacy rules:} Room invitations appear only when room notifications are enabled (\texttt{FR-38.3}, \texttt{AC-38.4}), and participant rosters are filtered by privacy settings (\texttt{NFR-PRIV-7}); these rules are outside UC-30's tool behavior.
+\item \textbf{Excluded legacy detail:} Fixed tables, seat assignments, invite codes, and 30-minute teardown are old PA2 details and are not current requirements.
+\end{itemize}
+\par\medskip
+
+\hypertarget{sec:b11-source-alignment-notes}{}
+\addcontentsline{toc}{subsubsection}{B11. Source Alignment Notes}
+\subsubsection*{B11. Source Alignment Notes}
+\par\medskip
+
+\begin{itemize}
+\item UC-07 A5, A6, and business rules 6-7 already describe shared tool use and notes recovery at a higher level; UC-30 details only the \texttt{US-36} requirements and does not restate room join, creation, or capacity rules.
+\item UC-05 has no shared-tool content; it contributes no overlap beyond the general statement that the forum remains the primary collaboration space.
+\item The named diagram actors are taken from \texttt{FR-36.1}--\texttt{FR-36.3} and \texttt{study\_room.md} / \texttt{hall\_room.md}; no supporting system actor is named for tools specifically.
+\item \texttt{study\_room.md} and \texttt{hall\_room.md} use slightly different failure copy ("The live room could not be reached." versus "The live room is unavailable."); both are preserved as source text, not merged into a new message.
+\item Routes, component names, and status indicators are UI/UX recommendations; \texttt{API.md} and \texttt{response\_code.md} provide no room tool contract.
+\end{itemize}
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/meetings_d1_send_a_wave.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Meetings:D1 Send a wave}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/meetings_d2_receive_a_wave.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Meetings:D2 Receive a wave}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/meetings_d3_1_on_1_chat.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Meetings:D3 1-on-1 chat}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/meetings_d4_voice_call_request.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Meetings:D4 Voice call request}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/meetings_d5_in_a_call.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Meetings:D5 In a call}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/meetings_f2_timer_controls.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Meetings:F2 Timer controls}
+\end{figure}
+\par\smallskip
+
+\end{document}

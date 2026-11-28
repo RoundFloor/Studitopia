@@ -1,0 +1,261 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../../templates/}{../../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Notifications and Safety}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:notifications-and-safety}{}
+\addcontentsline{toc}{section}{Notifications and Safety}
+\section*{Notifications and Safety}
+\par\medskip
+
+\textbf{Version:} \texttt{1.1}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+\texttt{Back to functional requirements index}
+\par\medskip
+
+\begin{quote}
+\textit{Status: \texttt{Complete} = source-backed implementation exists; \texttt{Partial} = supporting code exists but the full requirement is not implemented; \texttt{Not implemented} = no source-backed implementation was found.}
+\end{quote}
+\par\medskip
+
+\hypertarget{sec:us-38-receive-notifications}{}
+\addcontentsline{toc}{subsubsection}{US-38: Receive Notifications}
+\subsubsection*{US-38: Receive Notifications}
+\par\medskip
+
+\textbf{As a} user, \textbf{I want to} receive notifications about relevant activities, \textbf{so that} I do not miss important academic interactions.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.16\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|}
+\hline
+\textbf{FR} & \textbf{Requirement} & \textbf{Category} & \textbf{Status} \\ \hline
+\endhead
+\textbf{FR-38.1 (Forum Notifications)} & The system shall notify a user about relevant forum activity, including comments, answers, votes, true-response marks, and mentions. & Backend & Not implemented \\ \hline
+\textbf{FR-38.2 (Social Notifications)} & The system shall notify a user about friend requests, messages, group invitations, and help requests. & Backend & Not implemented \\ \hline
+\textbf{FR-38.3 (Room Notifications)} & The system shall notify a user about optional room invitations when the user enables room notifications. & Backend & Not implemented \\ \hline
+\textbf{FR-38.4 (Notification Center)} & The system shall provide an in-app notification center with unread indicators. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-38.5 (Notification Preferences)} & The system shall allow users to configure which notification types they receive and whether audio alerts are enabled. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-38.6 (Mark Notifications Read)} & The system shall allow users to mark notifications as read. & UI, Frontend, Backend & Not implemented \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:us-39-control-communication}{}
+\addcontentsline{toc}{subsubsection}{US-39: Control Communication}
+\subsubsection*{US-39: Control Communication}
+\par\medskip
+
+\textbf{As a} user, \textbf{I want to} control my communication and privacy settings, \textbf{so that} other users cannot interact with me in ways I do not permit.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.53\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|}
+\hline
+\textbf{FR} & \textbf{Requirement} & \textbf{Category} & \textbf{Status} \\ \hline
+\endhead
+\textbf{FR-39.1 (Communication Settings)} & The system shall allow a user to control their communication settings. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-39.2 (Privacy Settings)} & The system shall allow a user to control their privacy settings. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-39.3 (Mute and Block)} & The system shall allow a user to mute or block specific users from messaging, friend requests, or room invitations. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-39.4 (Direct Message Restriction)} & The system shall allow a user to restrict direct messages to confirmed friends. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-39.5 (Interaction Prevention)} & Communication and privacy settings shall prevent interactions the user does not permit. & Backend & Not implemented \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\hypertarget{sec:us-40-report-inappropriate-behavior}{}
+\addcontentsline{toc}{subsubsection}{US-40: Report Inappropriate Behavior}
+\subsubsection*{US-40: Report Inappropriate Behavior}
+\par\medskip
+
+\textbf{As a} user, \textbf{I want to} report inappropriate communication or behavior, \textbf{so that} the platform can maintain a safe learning environment.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.51\textwidth}|>{\raggedright\arraybackslash}p{0.12\textwidth}|>{\raggedright\arraybackslash}p{0.10\textwidth}|}
+\hline
+\textbf{FR} & \textbf{Requirement} & \textbf{Category} & \textbf{Status} \\ \hline
+\endhead
+\textbf{FR-40.1 (Report Behavior)} & The system shall allow a user to report inappropriate communication or behavior. & UI, Frontend, Backend & Not implemented \\ \hline
+\textbf{FR-40.2 (Report Surfaces)} & The system shall allow reporting from forum posts, comments, profiles, and messages. & UI, Frontend & Not implemented \\ \hline
+\textbf{FR-40.3 (Report Context)} & The system shall capture contextual information with a report. & Backend & Not implemented \\ \hline
+\textbf{FR-40.4 (Moderation Routing)} & The system shall route reports to the moderation queue. & Backend & Not implemented \\ \hline
+\textbf{FR-40.5 (Safe Environment)} & Reporting shall support maintaining a safe and supportive university learning environment. & Backend & Not implemented \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\par\medskip
+\hypertarget{sec:ui-prototype-specimens}{}
+\addcontentsline{toc}{subsection}{UI Prototype Specimens}
+\subsection*{UI Prototype Specimens}
+\par\medskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/profile_p5_report_a_user.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Profile: P5 Report a user}
+\end{figure}
+\par\smallskip
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth,height=0.42\textheight,keepaspectratio]{"../../prototype/settings_04a_settings_notifications_selected.png"}
+\par\vspace{2pt}
+{\footnotesize \textbf{UI Prototype:} Settings: 04a Settings - Notifications selected}
+\end{figure}
+\par\smallskip
+
+\end{document}

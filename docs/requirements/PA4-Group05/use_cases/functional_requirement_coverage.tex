@@ -1,0 +1,414 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue, citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in, left=.75in, right=.75in, bottom=1in]{geometry}
+
+% For algorithm
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ============ CODE ============
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Styling for the code.
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Table packages and Unicode / Font support
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\graphicspath{{../../../templates/}{../prototype/}{figures/}{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+
+% ============ HEADER AND FOOTER ============
+\setlength{\headheight}{29.43912pt}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+
+% Header
+\lhead{\reporttitle}
+\rhead{
+University of Science - VNUHCM\\
+\coursename
+}
+
+% Footer
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+
+% ============ DOCUMENT ============
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\centering
+
+\textsc{\LARGE VNU-HCM}\\[0.5cm]
+\textsc{\Large University of Science}\\[0.5cm]
+\textsc{\large Faculty of Information Technology}\\[0.5cm]
+\textsc{Computer Science}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ 
+\huge{\bfseries{\reporttitle}}\\[0.5cm]
+\large{\bfseries{Functional Requirement Coverage}}
+}\\[0.4cm]
+\HRule \\[0.5cm]
+
+\textbf{\large Subject: \coursename}\\[0.5cm]
+
+\begin{minipage}[t]{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Students:}\\
+\studentname
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervising Teachers:} \\
+\teachername
+\end{flushright}
+\end{minipage}\\[1cm]
+
+{\large \today}\\[1cm]
+
+\includegraphics[scale=.20]{img/hcmus-logo.png}\\[1cm] 
+
+\vfill
+\end{titlepage}	
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\hypertarget{sec:functional-requirement-coverage}{}
+\addcontentsline{toc}{section}{Functional Requirement Coverage}
+\section*{Functional Requirement Coverage}
+\par\medskip
+
+\textbf{Version:} \texttt{1.0}
+\par\medskip
+
+\textbf{Performed by:} [Nguyen Le Quoc Huy] | \textbf{Edited by:} [Nguyen Le Quoc Huy]
+\par\medskip
+
+This matrix maps every functional requirement in \texttt{docs/requirements/proposals/functional\_requirement.md} to the PA4 use case(s) whose Related Requirements cite it.
+\par\medskip
+
+\textbf{Coverage check:} 241/241 FRs mapped; 0 uncovered.
+\par\medskip
+
+\begingroup
+\small
+\renewcommand{\baselinestretch}{1.0}\selectfont
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{6pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.08\textwidth}|>{\raggedright\arraybackslash}p{0.08\textwidth}|>{\raggedright\arraybackslash}p{0.60\textwidth}|>{\raggedright\arraybackslash}p{0.14\textwidth}|}
+\hline
+\textbf{FR ID} & \textbf{User Story} & \textbf{Covering Use Case(s)} & \textbf{Functional Group(s)} \\ \hline
+\endhead
+FR-01.1 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.2 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.3 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.4 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.5 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.6 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.7 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.8 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.9 & US-01 & \texttt{UC-01}$<$br$>$\texttt{UC-10} & authentication-and-account \\ \hline
+FR-01.10 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.11 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.12 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.13 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.14 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.15 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.16 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.17 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.18 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.19 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.20 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.21 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.22 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.23 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.24 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.25 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.26 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.27 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.28 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.29 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.30 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.31 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.32 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.33 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.34 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.35 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.36 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.37 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.38 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.39 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.40 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.41 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.42 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.43 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.44 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-01.45 & US-01 & \texttt{UC-01} & authentication-and-account \\ \hline
+FR-02.1 & US-02 & \texttt{UC-02} & authentication-and-account \\ \hline
+FR-02.2 & US-02 & \texttt{UC-02} & authentication-and-account \\ \hline
+FR-02.3 & US-02 & \texttt{UC-02} & authentication-and-account \\ \hline
+FR-02.4 & US-02 & \texttt{UC-02} & authentication-and-account \\ \hline
+FR-02.5 & US-02 & \texttt{UC-02} & authentication-and-account \\ \hline
+FR-03.1 & US-03 & \texttt{UC-08} & authentication-and-account \\ \hline
+FR-03.2 & US-03 & \texttt{UC-08} & authentication-and-account \\ \hline
+FR-03.3 & US-03 & \texttt{UC-08} & authentication-and-account \\ \hline
+FR-04.1 & US-04 & \texttt{UC-02}$<$br$>$\texttt{UC-09} & authentication-and-account \\ \hline
+FR-04.2 & US-04 & \texttt{UC-02}$<$br$>$\texttt{UC-09} & authentication-and-account \\ \hline
+FR-04.3 & US-04 & \texttt{UC-02}$<$br$>$\texttt{UC-09} & authentication-and-account \\ \hline
+FR-04.4 & US-04 & \texttt{UC-02}$<$br$>$\texttt{UC-09} & authentication-and-account \\ \hline
+FR-05.1 & US-05 & \texttt{UC-10} & authentication-and-account \\ \hline
+FR-05.2 & US-05 & \texttt{UC-10} & authentication-and-account \\ \hline
+FR-05.3 & US-05 & \texttt{UC-10} & authentication-and-account \\ \hline
+FR-05.4 & US-05 & \texttt{UC-10} & authentication-and-account \\ \hline
+FR-05.5 & US-05 & \texttt{UC-10} & authentication-and-account \\ \hline
+FR-06.1 & US-06 & \texttt{UC-11} & authentication-and-account \\ \hline
+FR-06.2 & US-06 & \texttt{UC-11} & authentication-and-account \\ \hline
+FR-06.3 & US-06 & \texttt{UC-11} & authentication-and-account \\ \hline
+FR-06.4 & US-06 & \texttt{UC-11} & authentication-and-account \\ \hline
+FR-06.5 & US-06 & \texttt{UC-11} & authentication-and-account \\ \hline
+FR-06.6 & US-06 & \texttt{UC-11} & authentication-and-account \\ \hline
+FR-07.1 & US-07 & \texttt{UC-01}$<$br$>$\texttt{UC-10}$<$br$>$\texttt{UC-11} & authentication-and-account \\ \hline
+FR-07.2 & US-07 & \texttt{UC-01}$<$br$>$\texttt{UC-10}$<$br$>$\texttt{UC-11} & authentication-and-account \\ \hline
+FR-07.3 & US-07 & \texttt{UC-01}$<$br$>$\texttt{UC-10}$<$br$>$\texttt{UC-11} & authentication-and-account \\ \hline
+FR-07.4 & US-07 & \texttt{UC-01}$<$br$>$\texttt{UC-10}$<$br$>$\texttt{UC-11} & authentication-and-account \\ \hline
+FR-07.5 & US-07 & \texttt{UC-01}$<$br$>$\texttt{UC-10}$<$br$>$\texttt{UC-11} & authentication-and-account \\ \hline
+FR-07.6 & US-07 & \texttt{UC-01}$<$br$>$\texttt{UC-10}$<$br$>$\texttt{UC-11} & authentication-and-account \\ \hline
+FR-08.1 & US-08 & \texttt{UC-12} & profile-management \\ \hline
+FR-08.2 & US-08 & \texttt{UC-12} & profile-management \\ \hline
+FR-08.3 & US-08 & \texttt{UC-12} & profile-management \\ \hline
+FR-08.4 & US-08 & \texttt{UC-12} & profile-management \\ \hline
+FR-08.5 & US-08 & \texttt{UC-12} & profile-management \\ \hline
+FR-08.6 & US-08 & \texttt{UC-12} & profile-management \\ \hline
+FR-09.1 & US-09 & \texttt{UC-13}$<$br$>$\texttt{UC-26} & friends-and-social-networking$<$br$>$profile-management \\ \hline
+FR-09.2 & US-09 & \texttt{UC-13}$<$br$>$\texttt{UC-26} & friends-and-social-networking$<$br$>$profile-management \\ \hline
+FR-09.3 & US-09 & \texttt{UC-13}$<$br$>$\texttt{UC-26} & friends-and-social-networking$<$br$>$profile-management \\ \hline
+FR-09.4 & US-09 & \texttt{UC-13}$<$br$>$\texttt{UC-23}$<$br$>$\texttt{UC-26} & friends-and-social-networking$<$br$>$learning-resource-library$<$br$>$profile-management \\ \hline
+FR-09.5 & US-09 & \texttt{UC-13}$<$br$>$\texttt{UC-23}$<$br$>$\texttt{UC-26} & friends-and-social-networking$<$br$>$learning-resource-library$<$br$>$profile-management \\ \hline
+FR-10.1 & US-10 & \texttt{UC-14}$<$br$>$\texttt{UC-26} & friends-and-social-networking$<$br$>$profile-management \\ \hline
+FR-10.2 & US-10 & \texttt{UC-14}$<$br$>$\texttt{UC-26} & friends-and-social-networking$<$br$>$profile-management \\ \hline
+FR-10.3 & US-10 & \texttt{UC-14}$<$br$>$\texttt{UC-26} & friends-and-social-networking$<$br$>$profile-management \\ \hline
+FR-10.4 & US-10 & \texttt{UC-14}$<$br$>$\texttt{UC-26}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$profile-management \\ \hline
+FR-11.1 & US-11 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-11.2 & US-11 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-11.3 & US-11 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-11.4 & US-11 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-12.1 & US-12 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-12.2 & US-12 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-12.3 & US-12 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-12.4 & US-12 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-12.5 & US-12 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-12.6 & US-12 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-13.1 & US-13 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-13.2 & US-13 & \texttt{UC-03}$<$br$>$\texttt{UC-17}$<$br$>$\texttt{UC-18} & forum-interaction$<$br$>$social-forum-management \\ \hline
+FR-13.3 & US-13 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-13.4 & US-13 & \texttt{UC-03}$<$br$>$\texttt{UC-17} & forum-interaction$<$br$>$social-forum-management \\ \hline
+FR-13.5 & US-13 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-14.1 & US-14 & \texttt{UC-04}$<$br$>$\texttt{UC-31} & meeting-rooms$<$br$>$post-management \\ \hline
+FR-14.2 & US-14 & \texttt{UC-04}$<$br$>$\texttt{UC-31} & meeting-rooms$<$br$>$post-management \\ \hline
+FR-14.3 & US-14 & \texttt{UC-04}$<$br$>$\texttt{UC-31} & meeting-rooms$<$br$>$post-management \\ \hline
+FR-14.4 & US-14 & \texttt{UC-04}$<$br$>$\texttt{UC-31} & meeting-rooms$<$br$>$post-management \\ \hline
+FR-14.5 & US-14 & \texttt{UC-04}$<$br$>$\texttt{UC-31} & meeting-rooms$<$br$>$post-management \\ \hline
+FR-14.6 & US-14 & \texttt{UC-04}$<$br$>$\texttt{UC-31} & meeting-rooms$<$br$>$post-management \\ \hline
+FR-15.1 & US-15 & \texttt{UC-15} & post-management \\ \hline
+FR-15.2 & US-15 & \texttt{UC-15} & post-management \\ \hline
+FR-15.3 & US-15 & \texttt{UC-15}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$post-management \\ \hline
+FR-15.4 & US-15 & \texttt{UC-15} & post-management \\ \hline
+FR-15.5 & US-15 & \texttt{UC-15}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$post-management \\ \hline
+FR-15.6 & US-15 & \texttt{UC-15}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$post-management \\ \hline
+FR-16.1 & US-16 & \texttt{UC-16} & post-management \\ \hline
+FR-16.2 & US-16 & \texttt{UC-16} & post-management \\ \hline
+FR-16.3 & US-16 & \texttt{UC-16} & post-management \\ \hline
+FR-16.4 & US-16 & \texttt{UC-16} & post-management \\ \hline
+FR-16.5 & US-16 & \texttt{UC-16} & post-management \\ \hline
+FR-16.6 & US-16 & \texttt{UC-16} & post-management \\ \hline
+FR-17.1 & US-17 & \texttt{UC-03}$<$br$>$\texttt{UC-04} & post-management$<$br$>$social-forum-management \\ \hline
+FR-17.2 & US-17 & \texttt{UC-03}$<$br$>$\texttt{UC-04} & post-management$<$br$>$social-forum-management \\ \hline
+FR-17.3 & US-17 & \texttt{UC-03}$<$br$>$\texttt{UC-04}$<$br$>$\texttt{UC-05}$<$br$>$\texttt{UC-18} & forum-interaction$<$br$>$post-management$<$br$>$social-forum-management \\ \hline
+FR-17.4 & US-17 & \texttt{UC-03}$<$br$>$\texttt{UC-04}$<$br$>$\texttt{UC-17}$<$br$>$\texttt{UC-18} & forum-interaction$<$br$>$post-management$<$br$>$social-forum-management \\ \hline
+FR-17.5 & US-17 & \texttt{UC-03}$<$br$>$\texttt{UC-04} & post-management$<$br$>$social-forum-management \\ \hline
+FR-18.1 & US-18 & \texttt{UC-05} & forum-interaction \\ \hline
+FR-18.2 & US-18 & \texttt{UC-05}$<$br$>$\texttt{UC-18} & forum-interaction \\ \hline
+FR-18.3 & US-18 & \texttt{UC-05} & forum-interaction \\ \hline
+FR-18.4 & US-18 & \texttt{UC-05} & forum-interaction \\ \hline
+FR-18.5 & US-18 & \texttt{UC-05} & forum-interaction \\ \hline
+FR-18.6 & US-18 & \texttt{UC-05}$<$br$>$\texttt{UC-32} & forum-interaction$<$br$>$notifications-and-safety \\ \hline
+FR-19.1 & US-19 & \texttt{UC-04}$<$br$>$\texttt{UC-17} & forum-interaction$<$br$>$post-management \\ \hline
+FR-19.2 & US-19 & \texttt{UC-04}$<$br$>$\texttt{UC-17} & forum-interaction$<$br$>$post-management \\ \hline
+FR-19.3 & US-19 & \texttt{UC-04}$<$br$>$\texttt{UC-17} & forum-interaction$<$br$>$post-management \\ \hline
+FR-19.4 & US-19 & \texttt{UC-04}$<$br$>$\texttt{UC-17} & forum-interaction$<$br$>$post-management \\ \hline
+FR-19.5 & US-19 & \texttt{UC-04}$<$br$>$\texttt{UC-17} & forum-interaction$<$br$>$post-management \\ \hline
+FR-20.1 & US-20 & \texttt{UC-04}$<$br$>$\texttt{UC-05}$<$br$>$\texttt{UC-18} & forum-interaction$<$br$>$post-management \\ \hline
+FR-20.2 & US-20 & \texttt{UC-04}$<$br$>$\texttt{UC-05}$<$br$>$\texttt{UC-18} & forum-interaction$<$br$>$post-management \\ \hline
+FR-20.3 & US-20 & \texttt{UC-04}$<$br$>$\texttt{UC-05}$<$br$>$\texttt{UC-18} & forum-interaction$<$br$>$post-management \\ \hline
+FR-20.4 & US-20 & \texttt{UC-04}$<$br$>$\texttt{UC-05}$<$br$>$\texttt{UC-18} & forum-interaction$<$br$>$post-management \\ \hline
+FR-20.5 & US-20 & \texttt{UC-04}$<$br$>$\texttt{UC-05}$<$br$>$\texttt{UC-18}$<$br$>$\texttt{UC-32} & forum-interaction$<$br$>$notifications-and-safety$<$br$>$post-management \\ \hline
+FR-21.1 & US-21 & \texttt{UC-19} & forum-interaction \\ \hline
+FR-21.2 & US-21 & \texttt{UC-19} & forum-interaction \\ \hline
+FR-21.3 & US-21 & \texttt{UC-19} & forum-interaction \\ \hline
+FR-21.4 & US-21 & \texttt{UC-19} & forum-interaction \\ \hline
+FR-22.1 & US-22 & \texttt{UC-20} & forum-interaction \\ \hline
+FR-22.2 & US-22 & \texttt{UC-20} & forum-interaction \\ \hline
+FR-22.3 & US-22 & \texttt{UC-20} & forum-interaction \\ \hline
+FR-22.4 & US-22 & \texttt{UC-20} & forum-interaction \\ \hline
+FR-22.5 & US-22 & \texttt{UC-20} & forum-interaction \\ \hline
+FR-22.6 & US-22 & \texttt{UC-20} & forum-interaction \\ \hline
+FR-23.1 & US-23 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-23.2 & US-23 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-23.3 & US-23 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-23.4 & US-23 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-23.5 & US-23 & \texttt{UC-03} & social-forum-management \\ \hline
+FR-24.1 & US-24 & \texttt{UC-21} & forum-search-and-recommendation \\ \hline
+FR-24.2 & US-24 & \texttt{UC-21} & forum-search-and-recommendation \\ \hline
+FR-24.3 & US-24 & \texttt{UC-21} & forum-search-and-recommendation \\ \hline
+FR-24.4 & US-24 & \texttt{UC-21} & forum-search-and-recommendation \\ \hline
+FR-24.5 & US-24 & \texttt{UC-21} & forum-search-and-recommendation \\ \hline
+FR-25.1 & US-25 & \texttt{UC-06}$<$br$>$\texttt{UC-22} & learning-resource-library \\ \hline
+FR-25.2 & US-25 & \texttt{UC-06}$<$br$>$\texttt{UC-22} & learning-resource-library \\ \hline
+FR-25.3 & US-25 & \texttt{UC-06}$<$br$>$\texttt{UC-22} & learning-resource-library \\ \hline
+FR-25.4 & US-25 & \texttt{UC-06}$<$br$>$\texttt{UC-22} & learning-resource-library \\ \hline
+FR-25.5 & US-25 & \texttt{UC-06}$<$br$>$\texttt{UC-22}$<$br$>$\texttt{UC-23} & learning-resource-library \\ \hline
+FR-26.1 & US-26 & \texttt{UC-23} & learning-resource-library \\ \hline
+FR-26.2 & US-26 & \texttt{UC-23} & learning-resource-library \\ \hline
+FR-26.3 & US-26 & \texttt{UC-23} & learning-resource-library \\ \hline
+FR-26.4 & US-26 & \texttt{UC-23} & learning-resource-library \\ \hline
+FR-27.1 & US-27 & \texttt{UC-06}$<$br$>$\texttt{UC-24}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$learning-resource-library \\ \hline
+FR-27.2 & US-27 & \texttt{UC-06}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$learning-resource-library \\ \hline
+FR-27.3 & US-27 & \texttt{UC-06}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$learning-resource-library \\ \hline
+FR-27.4 & US-27 & \texttt{UC-06}$<$br$>$\texttt{UC-23}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$learning-resource-library \\ \hline
+FR-27.5 & US-27 & \texttt{UC-06}$<$br$>$\texttt{UC-24}$<$br$>$\texttt{UC-29} & friends-and-social-networking$<$br$>$learning-resource-library \\ \hline
+FR-28.1 & US-28 & \texttt{UC-06}$<$br$>$\texttt{UC-24}$<$br$>$\texttt{UC-25} & learning-resource-library \\ \hline
+FR-28.2 & US-28 & \texttt{UC-06}$<$br$>$\texttt{UC-24} & learning-resource-library \\ \hline
+FR-28.3 & US-28 & \texttt{UC-06}$<$br$>$\texttt{UC-24}$<$br$>$\texttt{UC-25} & learning-resource-library \\ \hline
+FR-29.1 & US-29 & \texttt{UC-06}$<$br$>$\texttt{UC-25} & learning-resource-library \\ \hline
+FR-29.2 & US-29 & \texttt{UC-06}$<$br$>$\texttt{UC-25} & learning-resource-library \\ \hline
+FR-29.3 & US-29 & \texttt{UC-06}$<$br$>$\texttt{UC-25} & learning-resource-library \\ \hline
+FR-29.4 & US-29 & \texttt{UC-06}$<$br$>$\texttt{UC-25} & learning-resource-library \\ \hline
+FR-30.1 & US-30 & \texttt{UC-26} & friends-and-social-networking \\ \hline
+FR-30.2 & US-30 & \texttt{UC-26} & friends-and-social-networking \\ \hline
+FR-30.3 & US-30 & \texttt{UC-26} & friends-and-social-networking \\ \hline
+FR-30.4 & US-30 & \texttt{UC-26} & friends-and-social-networking \\ \hline
+FR-31.1 & US-31 & \texttt{UC-27} & friends-and-social-networking \\ \hline
+FR-31.2 & US-31 & \texttt{UC-27} & friends-and-social-networking \\ \hline
+FR-31.3 & US-31 & \texttt{UC-27} & friends-and-social-networking \\ \hline
+FR-31.4 & US-31 & \texttt{UC-27}$<$br$>$\texttt{UC-28}$<$br$>$\texttt{UC-32} & friends-and-social-networking$<$br$>$notifications-and-safety \\ \hline
+FR-32.1 & US-32 & \texttt{UC-28} & friends-and-social-networking \\ \hline
+FR-32.2 & US-32 & \texttt{UC-28} & friends-and-social-networking \\ \hline
+FR-32.3 & US-32 & \texttt{UC-28} & friends-and-social-networking \\ \hline
+FR-32.4 & US-32 & \texttt{UC-28} & friends-and-social-networking \\ \hline
+FR-32.5 & US-32 & \texttt{UC-28}$<$br$>$\texttt{UC-32} & friends-and-social-networking$<$br$>$notifications-and-safety \\ \hline
+FR-33.1 & US-33 & \texttt{UC-29} & friends-and-social-networking \\ \hline
+FR-33.2 & US-33 & \texttt{UC-29} & friends-and-social-networking \\ \hline
+FR-33.3 & US-33 & \texttt{UC-29} & friends-and-social-networking \\ \hline
+FR-33.4 & US-33 & \texttt{UC-29} & friends-and-social-networking \\ \hline
+FR-33.5 & US-33 & \texttt{UC-29} & friends-and-social-networking \\ \hline
+FR-33.6 & US-33 & \texttt{UC-29} & friends-and-social-networking \\ \hline
+FR-34.1 & US-34 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-34.2 & US-34 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-34.3 & US-34 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-34.4 & US-34 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-35.1 & US-35 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-35.2 & US-35 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-35.3 & US-35 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-35.4 & US-35 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-35.5 & US-35 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-35.6 & US-35 & \texttt{UC-07} & meeting-rooms \\ \hline
+FR-36.1 & US-36 & \texttt{UC-07}$<$br$>$\texttt{UC-30} & meeting-rooms \\ \hline
+FR-36.2 & US-36 & \texttt{UC-07}$<$br$>$\texttt{UC-30} & meeting-rooms \\ \hline
+FR-36.3 & US-36 & \texttt{UC-07}$<$br$>$\texttt{UC-30} & meeting-rooms \\ \hline
+FR-36.4 & US-36 & \texttt{UC-07}$<$br$>$\texttt{UC-30} & meeting-rooms \\ \hline
+FR-36.5 & US-36 & \texttt{UC-07}$<$br$>$\texttt{UC-30} & meeting-rooms \\ \hline
+FR-36.6 & US-36 & \texttt{UC-07}$<$br$>$\texttt{UC-30} & meeting-rooms \\ \hline
+FR-37.1 & US-37 & \texttt{UC-31} & meeting-rooms \\ \hline
+FR-37.2 & US-37 & \texttt{UC-31} & meeting-rooms \\ \hline
+FR-37.3 & US-37 & \texttt{UC-31} & meeting-rooms \\ \hline
+FR-37.4 & US-37 & \texttt{UC-31} & meeting-rooms \\ \hline
+FR-37.5 & US-37 & \texttt{UC-31} & meeting-rooms \\ \hline
+FR-37.6 & US-37 & \texttt{UC-31} & meeting-rooms \\ \hline
+FR-38.1 & US-38 & \texttt{UC-05}$<$br$>$\texttt{UC-17}$<$br$>$\texttt{UC-18}$<$br$>$\texttt{UC-32} & forum-interaction$<$br$>$notifications-and-safety \\ \hline
+FR-38.2 & US-38 & \texttt{UC-27}$<$br$>$\texttt{UC-28}$<$br$>$\texttt{UC-29}$<$br$>$\texttt{UC-32} & friends-and-social-networking$<$br$>$notifications-and-safety \\ \hline
+FR-38.3 & US-38 & \texttt{UC-07}$<$br$>$\texttt{UC-32} & meeting-rooms$<$br$>$notifications-and-safety \\ \hline
+FR-38.4 & US-38 & \texttt{UC-32} & notifications-and-safety \\ \hline
+FR-38.5 & US-38 & \texttt{UC-32} & notifications-and-safety \\ \hline
+FR-38.6 & US-38 & \texttt{UC-32} & notifications-and-safety \\ \hline
+FR-39.1 & US-39 & \texttt{UC-14}$<$br$>$\texttt{UC-27}$<$br$>$\texttt{UC-28}$<$br$>$\texttt{UC-29}$<$br$>$\texttt{UC-33} & friends-and-social-networking$<$br$>$notifications-and-safety$<$br$>$profile-management \\ \hline
+FR-39.2 & US-39 & \texttt{UC-14}$<$br$>$\texttt{UC-33} & notifications-and-safety$<$br$>$profile-management \\ \hline
+FR-39.3 & US-39 & \texttt{UC-07}$<$br$>$\texttt{UC-14}$<$br$>$\texttt{UC-27}$<$br$>$\texttt{UC-28}$<$br$>$\texttt{UC-29}$<$br$>$\texttt{UC-33} & friends-and-social-networking$<$br$>$meeting-rooms$<$br$>$notifications-and-safety$<$br$>$profile-management \\ \hline
+FR-39.4 & US-39 & \texttt{UC-14}$<$br$>$\texttt{UC-33} & notifications-and-safety$<$br$>$profile-management \\ \hline
+FR-39.5 & US-39 & \texttt{UC-14}$<$br$>$\texttt{UC-27}$<$br$>$\texttt{UC-28}$<$br$>$\texttt{UC-29}$<$br$>$\texttt{UC-33} & friends-and-social-networking$<$br$>$notifications-and-safety$<$br$>$profile-management \\ \hline
+FR-40.1 & US-40 & \texttt{UC-29}$<$br$>$\texttt{UC-34} & friends-and-social-networking$<$br$>$notifications-and-safety \\ \hline
+FR-40.2 & US-40 & \texttt{UC-29}$<$br$>$\texttt{UC-34} & friends-and-social-networking$<$br$>$notifications-and-safety \\ \hline
+FR-40.3 & US-40 & \texttt{UC-29}$<$br$>$\texttt{UC-34} & friends-and-social-networking$<$br$>$notifications-and-safety \\ \hline
+FR-40.4 & US-40 & \texttt{UC-29}$<$br$>$\texttt{UC-34} & friends-and-social-networking$<$br$>$notifications-and-safety \\ \hline
+FR-40.5 & US-40 & \texttt{UC-34} & notifications-and-safety \\ \hline
+\end{longtable}
+\endgroup
+\par\medskip
+
+\end{document}
