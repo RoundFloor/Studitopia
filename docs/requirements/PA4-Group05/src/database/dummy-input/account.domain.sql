@@ -1,0 +1,43 @@
+INSERT INTO STUDITOPIA.ACCOUNT(DISPLAYNAME, EMAIL, USERNAME, PASSWORD, CREATE_TIME, DOMAIN_ID, ROLE, STATUS)
+SELECT
+    v.displayname,
+    v.email,
+    v.username,
+    '$2a$06$nw0CNf2wHS5ELR6Mv2xtt.fiFOgtrEHA5nx4HkeKbYvZ77qcp.8iq',
+    v.created_at,
+    d.ID,
+    v.role,
+    v.status
+FROM (VALUES
+    ('Alice Nguyen', 'alice.nguyen@student.hcmus.edu.vn', 'alice.nguyen', TIMESTAMPTZ '2026-01-01 08:00:00+07', 'student.hcmus.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Bob Tran', 'bob.tran@clc.fitus.edu.vn', 'bob.tran', TIMESTAMPTZ '2026-01-02 08:00:00+07', 'clc.fitus.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Carol Le', 'carol.le@apcs.fitus.edu.vn', 'carol.le', TIMESTAMPTZ '2026-01-03 08:00:00+07', 'apcs.fitus.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('David Pham', 'david.pham@sdh.uel.edu.vn', 'david.pham', TIMESTAMPTZ '2026-01-04 08:00:00+07', 'sdh.uel.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Emma Vo', 'emma.vothi@st.uel.edu.vn', 'emma.vothi', TIMESTAMPTZ '2026-01-05 08:00:00+07', 'st.uel.edu.vn', 'STUDENT', 'INACTIVE'),
+    ('Frank Ho', 'frank.ho@ms.uit.edu.vn', 'frank.ho', TIMESTAMPTZ '2026-01-06 08:00:00+07', 'ms.uit.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Grace Dang', 'grace.dang@gm.uit.edu.vn', 'grace.dang', TIMESTAMPTZ '2026-01-07 08:00:00+07', 'gm.uit.edu.vn', 'STUDENT', 'PREINIT'),
+    ('Henry Bui', 'henry.bui@student.hcmiu.edu.vn', 'henry.bui', TIMESTAMPTZ '2026-01-08 08:00:00+07', 'student.hcmiu.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Ivy Doan', 'ivy.doan@hcmut.edu.vn', 'ivy.doan', TIMESTAMPTZ '2026-01-09 08:00:00+07', 'hcmut.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Jack Ngo', 'jack.ngo@ctvp.fitus.edu.vn', 'jack.ngo', TIMESTAMPTZ '2026-01-10 08:00:00+07', 'ctvp.fitus.edu.vn', 'STUDENT', 'SUSPEND'),
+    ('Kelly Tran', 'kelly.tran@hcmussh.edu.vn', 'kelly.tran', TIMESTAMPTZ '2026-01-11 08:00:00+07', 'hcmussh.edu.vn', 'STAFF', 'ACTIVE'),
+    ('Liam Phan', 'liam.phan@student.uit.edu.vn', 'liam.phan', TIMESTAMPTZ '2026-01-12 08:00:00+07', 'student.uit.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Mia Nguyen', 'mia.nguyen@student.hcmut.edu.vn', 'mia.nguyen', TIMESTAMPTZ '2026-01-13 08:00:00+07', 'student.hcmut.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Noah Levan', 'noah.levan@student.uel.edu.vn', 'noah.levan', TIMESTAMPTZ '2026-01-14 08:00:00+07', 'student.uel.edu.vn', 'STUDENT', 'INACTIVE'),
+    ('Olivia Vo', 'olivia.vo@student.hcmussh.edu.vn', 'olivia.vo', TIMESTAMPTZ '2026-01-15 08:00:00+07', 'student.hcmussh.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Peter Do', 'peter.do@student.hust.edu.vn', 'peter.do', TIMESTAMPTZ '2026-01-16 08:00:00+07', 'student.hust.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Quinn Ho', 'quinn.ho@student.vnu.edu.vn', 'quinn.ho', TIMESTAMPTZ '2026-01-17 08:00:00+07', 'student.vnu.edu.vn', 'STUDENT', 'PREINIT'),
+    ('Rose Bui', 'rose.bui@student.ftu.edu.vn', 'rose.bui', TIMESTAMPTZ '2026-01-18 08:00:00+07', 'student.ftu.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Sam Dang', 'sam.dang@student.ueh.edu.vn', 'sam.dang', TIMESTAMPTZ '2026-01-19 08:00:00+07', 'student.ueh.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Tina Pham', 'tina.pham@student.ou.edu.vn', 'tina.pham', TIMESTAMPTZ '2026-01-20 08:00:00+07', 'student.ou.edu.vn', 'STUDENT', 'SUSPEND'),
+    ('Uma Tran', 'uma.tran@student.hutech.edu.vn', 'uma.tran', TIMESTAMPTZ '2026-01-21 08:00:00+07', 'student.hutech.edu.vn', 'STAFF', 'ACTIVE'),
+    ('Victor Le', 'victor.le@student.tdtu.edu.vn', 'victor.le', TIMESTAMPTZ '2026-01-22 08:00:00+07', 'student.tdtu.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Wendy Vo', 'wendy.vo@student.vku.edu.vn', 'wendy.vo', TIMESTAMPTZ '2026-01-23 08:00:00+07', 'student.vku.edu.vn', 'STAFF', 'ACTIVE'),
+    ('Xavier Do', 'xavier.do@student.dlu.edu.vn', 'xavier.do', TIMESTAMPTZ '2026-01-24 08:00:00+07', 'student.dlu.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Yara Ngo', 'yara.ngo@student.agu.edu.vn', 'yara.ngo', TIMESTAMPTZ '2026-01-25 08:00:00+07', 'student.agu.edu.vn', 'STUDENT', 'INACTIVE'),
+    ('Zack Bui', 'zack.bui@student.tvu.edu.vn', 'zack.bui', TIMESTAMPTZ '2026-01-26 08:00:00+07', 'student.tvu.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Anna Phan', 'anna.phan@student.ntu.edu.vn', 'anna.phan', TIMESTAMPTZ '2026-01-27 08:00:00+07', 'student.ntu.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Ben Dang', 'ben.dang@student.ctu.edu.vn', 'ben.dang', TIMESTAMPTZ '2026-01-28 08:00:00+07', 'student.ctu.edu.vn', 'STUDENT', 'ACTIVE'),
+    ('Chloe Le', 'chloe.le@student.dut.udn.vn', 'chloe.le', TIMESTAMPTZ '2026-01-29 08:00:00+07', 'student.dut.udn.vn', 'STUDENT', 'PREINIT'),
+    ('Dylan Tran', 'dylan.tran@student.ptit.edu.vn', 'dylan.tran', TIMESTAMPTZ '2026-01-30 08:00:00+07', 'student.ptit.edu.vn', 'STUDENT', 'ACTIVE')
+) AS v(displayname, email, username, created_at, domain, role, status)
+JOIN STUDITOPIA.DOMAIN d ON d.DOMAIN = v.domain::citext;

@@ -1,376 +1,1121 @@
-Archive:  PA3-Group05.zip
- Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
---------  ------  ------- ---- ---------- ----- --------  ----
-      58  Stored       58   0% 2026-11-14 20:39 1ef1749b  PA3-Group05/src/backend/.prettierignore
-     206  Defl:N      139  33% 2026-11-14 20:39 764b084f  PA3-Group05/src/backend/.oxlintrc.json
-     363  Defl:N      203  44% 2026-11-14 20:39 16e7b054  PA3-Group05/src/backend/src/packages/email-sender/__tests__/email-sender.service.mock.ts
-    3964  Defl:N     1113  72% 2026-11-14 20:39 1fb14958  PA3-Group05/src/backend/src/packages/email-sender/__tests__/email-sender.service.spec.ts
-    1214  Defl:N      361  70% 2026-11-14 20:39 c74b2bea  PA3-Group05/src/backend/src/packages/email-sender/models/email-sender.model.ts
-    3394  Defl:N     1335  61% 2026-11-14 20:39 e1399eff  PA3-Group05/src/backend/src/packages/email-sender/models/email-template.model.ts
-     925  Defl:N      439  53% 2026-11-14 20:39 e6906632  PA3-Group05/src/backend/src/packages/email-sender/discord.config.ts
-    2263  Defl:N      837  63% 2026-11-14 20:39 8e0d4ce1  PA3-Group05/src/backend/src/packages/email-sender/email-sender.service.ts
-     404  Defl:N      203  50% 2026-11-14 20:39 bb5a69e0  PA3-Group05/src/backend/src/packages/email-sender/email-sender.config.ts
-     221  Defl:N      134  39% 2026-11-14 20:39 d27d1490  PA3-Group05/src/backend/src/packages/email-sender/email-sender.module.ts
-    3012  Defl:N      686  77% 2026-11-14 20:39 3be33201  PA3-Group05/src/backend/src/packages/security-generation/__test__/sg.service.spec.ts
-     231  Defl:N      150  35% 2026-11-14 20:39 ddddc7a3  PA3-Group05/src/backend/src/packages/security-generation/sg.guard.ts
-    1124  Defl:N      468  58% 2026-11-14 20:39 9edc34ec  PA3-Group05/src/backend/src/packages/security-generation/decorators/token-bearer.decorators.ts
-     366  Defl:N      207  43% 2026-11-14 20:39 faaa88b9  PA3-Group05/src/backend/src/packages/security-generation/decorators/sg.mock.ts
-     536  Defl:N      260  52% 2026-11-14 20:39 c2ef5297  PA3-Group05/src/backend/src/packages/security-generation/sg.config.ts
-    5889  Defl:N     1352  77% 2026-11-14 20:39 23f37eec  PA3-Group05/src/backend/src/packages/security-generation/sg.service.ts
-     524  Defl:N      190  64% 2026-11-14 20:39 9f1b0c20  PA3-Group05/src/backend/src/packages/security-generation/dto/key-response.dto.ts
-     248  Defl:N      133  46% 2026-11-14 20:39 8773feb1  PA3-Group05/src/backend/src/packages/security-generation/dto/secret.dto.ts
-     345  Defl:N      165  52% 2026-11-14 20:39 6bc46ab0  PA3-Group05/src/backend/src/packages/security-generation/sg.module.ts
-     168  Defl:N      137  19% 2026-11-14 20:39 59dc30ca  PA3-Group05/src/backend/src/packages/recaptcha/recaptcha.service.ts
-     267  Defl:N      189  29% 2026-11-14 20:39 5b366fea  PA3-Group05/src/backend/src/packages/recaptcha/__tests__/recaptcha.service.mock.ts
-     213  Defl:N      132  38% 2026-11-14 20:39 f4489d65  PA3-Group05/src/backend/src/packages/recaptcha/recaptcha.module.ts
-    4404  Defl:N     1125  75% 2026-11-14 20:39 f8729931  PA3-Group05/src/backend/src/packages/postgres/__tests__/pool.mock.ts
-    6620  Defl:N     1279  81% 2026-11-14 20:39 3253c6a4  PA3-Group05/src/backend/src/packages/postgres/__tests__/pg.service.mock.ts
-    2642  Defl:N      768  71% 2026-11-14 20:39 46c85d94  PA3-Group05/src/backend/src/packages/postgres/__tests__/pg.service.spec.ts
-    5330  Defl:N     1114  79% 2026-11-14 20:39 36ac8f3f  PA3-Group05/src/backend/src/packages/postgres/__tests__/pg.testcases.ts
-   20997  Defl:N     2171  90% 2026-11-14 20:39 80a7761b  PA3-Group05/src/backend/src/packages/postgres/__tests__/pg.register.testcases.ts
-     201  Defl:N      127  37% 2026-11-14 20:39 5f0dddf7  PA3-Group05/src/backend/src/packages/postgres/pg.module.ts
-    7363  Defl:N     1439  81% 2026-11-14 20:39 9fddd610  PA3-Group05/src/backend/src/packages/postgres/pg.service.ts
-     606  Defl:N      295  51% 2026-11-14 20:39 f94ddce9  PA3-Group05/src/backend/src/packages/postgres/dto/SQLSTATE.dto.ts
-     226  Defl:N       88  61% 2026-11-14 20:39 d8c59c53  PA3-Group05/src/backend/src/packages/postgres/dto/response.dto.ts
-     274  Defl:N      141  49% 2026-11-14 20:39 a5902020  PA3-Group05/src/backend/src/packages/postgres/pg.config.ts
-    4300  Defl:N     1265  71% 2026-11-14 20:39 95fb9793  PA3-Group05/src/backend/src/packages/authentication/auth.service.ts
-     592  Defl:N      231  61% 2026-11-14 20:39 9a0f7b6e  PA3-Group05/src/backend/src/packages/authentication/auth.module.ts
-    1722  Defl:N      646  63% 2026-11-14 20:39 269a8f74  PA3-Group05/src/backend/src/packages/authentication/__tests__/auth.service.spec.ts
-    3524  Defl:N     1087  69% 2026-11-14 20:39 89e26344  PA3-Group05/src/backend/src/packages/authentication/__tests__/auth.controller.spec.ts
-    6785  Defl:N     1072  84% 2026-11-14 20:39 9ce7b395  PA3-Group05/src/backend/src/packages/authentication/__tests__/auth.testcase.ts
-    2088  Defl:N      766  63% 2026-11-14 20:39 a8083ac9  PA3-Group05/src/backend/src/packages/authentication/__tests__/auth.service.mock.ts
-     251  Defl:N      145  42% 2026-11-14 20:39 81632467  PA3-Group05/src/backend/src/packages/authentication/config/auth.config.ts
-    1011  Defl:N      443  56% 2026-11-14 20:39 77ce9b77  PA3-Group05/src/backend/src/packages/authentication/decorartors/username.decorator.ts
-    1443  Defl:N      538  63% 2026-11-14 20:39 d2ea864b  PA3-Group05/src/backend/src/packages/authentication/decorartors/password.decorator.ts
-    1028  Defl:N      449  56% 2026-11-14 20:39 171e4d6e  PA3-Group05/src/backend/src/packages/authentication/decorartors/displayname.decorator.ts
-    1070  Defl:N      467  56% 2026-11-14 20:39 d8092cd3  PA3-Group05/src/backend/src/packages/authentication/decorartors/email.decorator.ts
-    4771  Defl:N     1360  72% 2026-11-14 20:39 ac4360dd  PA3-Group05/src/backend/src/packages/authentication/auth.controller.ts
-     305  Defl:N      181  41% 2026-11-14 20:39 bb667095  PA3-Group05/src/backend/src/packages/authentication/dto/logout.dto.ts
-     488  Defl:N      183  63% 2026-11-14 20:39 3736f96b  PA3-Group05/src/backend/src/packages/authentication/dto/register.dto.ts
-      59  Defl:N       55   7% 2026-11-14 20:39 d80eb007  PA3-Group05/src/backend/src/packages/authentication/dto/refresh-token.dto.ts
-     717  Defl:N      337  53% 2026-11-14 20:39 adb32434  PA3-Group05/src/backend/src/packages/authentication/dto/recover-password.dto.ts
-      97  Defl:N       83  14% 2026-11-14 20:39 d1da8547  PA3-Group05/src/backend/src/packages/authentication/dto/login.dto.ts
-     466  Defl:N      193  59% 2026-11-14 20:39 d0e9a92f  PA3-Group05/src/backend/src/packages/authentication/dto/otp-response.dto.ts
-    1031  Defl:N      384  63% 2026-11-14 20:39 29a4e2e9  PA3-Group05/src/backend/src/packages/web/web.controller.ts
-     199  Defl:N      140  30% 2026-11-14 20:39 71e6028a  PA3-Group05/src/backend/src/packages/web/web.guard.ts
-     402  Defl:N      240  40% 2026-11-14 20:39 60cbca95  PA3-Group05/src/backend/src/packages/web/web.service.ts
-     213  Defl:N      134  37% 2026-11-14 20:39 196f23fb  PA3-Group05/src/backend/src/packages/web/web.module.ts
-      46  Defl:N       45   2% 2026-11-14 20:39 48fbb185  PA3-Group05/src/backend/src/config/app.config.ts
-     749  Defl:N      327  56% 2026-11-14 20:39 5058b7e9  PA3-Group05/src/backend/src/main.ts
-     740  Defl:N      356  52% 2026-11-14 20:39 5a6bd533  PA3-Group05/src/backend/src/common/interceptor.ts
-     751  Defl:N      371  51% 2026-11-14 20:39 e0ca8f8a  PA3-Group05/src/backend/src/common/response-code/code.config.ts
-     390  Defl:N      243  38% 2026-11-14 20:39 2eccf9cc  PA3-Group05/src/backend/src/common/exception-factory.ts
-     789  Defl:N      272  66% 2026-11-14 20:39 b5580fd9  PA3-Group05/src/backend/src/common/response.dto.ts
-     385  Defl:N      183  53% 2026-11-14 20:39 60c83319  PA3-Group05/src/backend/src/app.module.ts
-      19  Stored       19   0% 2026-11-14 20:39 a7a4a6a7  PA3-Group05/src/backend/.gitattributes
-    6981  Defl:N     2596  63% 2026-11-14 20:39 d70a4691  PA3-Group05/src/backend/README.md
-  205145  Defl:N    47678  77% 2026-11-14 20:39 ad072fa7  PA3-Group05/src/backend/package-lock.json
-    1603  Defl:N      617  62% 2026-11-14 20:39 4a28b10f  PA3-Group05/src/backend/package.json
-     202  Defl:N      147  27% 2026-11-14 20:39 d085d78b  PA3-Group05/src/backend/vitest.config.e2e.ts
-     601  Defl:N      283  53% 2026-11-14 20:39 c5a902c2  PA3-Group05/src/backend/tsconfig.json
-     103  Defl:N       89  14% 2026-11-14 20:39 abd57182  PA3-Group05/src/backend/.specify/memory/.constitution-template.json
-   25566  Defl:N     8530  67% 2026-11-14 20:39 1e9300f3  PA3-Group05/src/backend/.specify/memory/constitution.md
-  180151  Defl:N    54794  70% 2026-11-14 20:39 e0b566b3  PA3-Group05/src/backend/tsconfig.build.tsbuildinfo
-   16041  Defl:N     4803  70% 2026-11-14 20:39 275cc81f  PA3-Group05/src/backend/specs/001-user-registration/tasks.md
-    1307  Defl:N      657  50% 2026-11-14 20:39 91f54a43  PA3-Group05/src/backend/specs/001-user-registration/checklists/requirements.md
-    6574  Defl:N     2344  64% 2026-11-14 20:39 899c8fc4  PA3-Group05/src/backend/specs/001-user-registration/quickstart.md
-   12055  Defl:N     3404  72% 2026-11-14 20:39 39ce11d7  PA3-Group05/src/backend/specs/001-user-registration/spec.md
-   10013  Defl:N     3615  64% 2026-11-14 20:39 cb2a24b7  PA3-Group05/src/backend/specs/001-user-registration/research.md
-    6743  Defl:N     2451  64% 2026-11-14 20:39 d46ae64d  PA3-Group05/src/backend/specs/001-user-registration/data-model.md
-    7731  Defl:N     1716  78% 2026-11-14 20:39 e91a5695  PA3-Group05/src/backend/specs/001-user-registration/contracts/auth-registration.openapi.yaml
-    8964  Defl:N     3390  62% 2026-11-14 20:39 e9d74b35  PA3-Group05/src/backend/specs/001-user-registration/plan.md
-   16430  Defl:N     5435  67% 2026-11-14 20:39 70acb355  PA3-Group05/src/backend/specs/002-user-login/tasks.md
-    1184  Defl:N      599  49% 2026-11-14 20:39 fb379835  PA3-Group05/src/backend/specs/002-user-login/checklists/requirements.md
-    6319  Defl:N     2325  63% 2026-11-14 20:39 551fee15  PA3-Group05/src/backend/specs/002-user-login/quickstart.md
-   17365  Defl:N     4950  72% 2026-11-14 20:39 f2323163  PA3-Group05/src/backend/specs/002-user-login/spec.md
-   15100  Defl:N     5615  63% 2026-11-14 20:39 c38af07a  PA3-Group05/src/backend/specs/002-user-login/research.md
-    8968  Defl:N     3081  66% 2026-11-14 20:39 455937cf  PA3-Group05/src/backend/specs/002-user-login/data-model.md
-    6127  Defl:N     1736  72% 2026-11-14 20:39 f2fc89e4  PA3-Group05/src/backend/specs/002-user-login/contracts/auth-session.openapi.yaml
-    5393  Defl:N     2182  60% 2026-11-14 20:39 f43d9f79  PA3-Group05/src/backend/specs/002-user-login/contracts/database-session.md
-   11071  Defl:N     4285  61% 2026-11-14 20:39 8db299e8  PA3-Group05/src/backend/specs/002-user-login/plan.md
-   18642  Defl:N     5812  69% 2026-11-14 20:39 ffd6d775  PA3-Group05/src/backend/specs/003-otp-register-activation/tasks.md
-    1490  Defl:N      757  49% 2026-11-14 20:39 983938ee  PA3-Group05/src/backend/specs/003-otp-register-activation/checklists/requirements.md
-    5246  Defl:N     1871  64% 2026-11-14 20:39 1a4c8cae  PA3-Group05/src/backend/specs/003-otp-register-activation/quickstart.md
-   12076  Defl:N     3873  68% 2026-11-14 20:39 d9cce848  PA3-Group05/src/backend/specs/003-otp-register-activation/spec.md
-    7911  Defl:N     3344  58% 2026-11-14 20:39 c94630b7  PA3-Group05/src/backend/specs/003-otp-register-activation/research.md
-    5136  Defl:N     2061  60% 2026-11-14 20:39 389be9a6  PA3-Group05/src/backend/specs/003-otp-register-activation/data-model.md
-    4139  Defl:N     1627  61% 2026-11-14 20:39 28267516  PA3-Group05/src/backend/specs/003-otp-register-activation/contracts/api.md
-    4839  Defl:N     1991  59% 2026-11-14 20:39 2b5c5ac3  PA3-Group05/src/backend/specs/003-otp-register-activation/plan.md
-     349  Defl:N      233  33% 2026-11-14 20:39 4d99ed54  PA3-Group05/src/backend/vitest.config.ts
-      52  Defl:N       49   6% 2026-11-14 20:39 0624bc59  PA3-Group05/src/backend/.prettierrc
-     171  Defl:N      124  28% 2026-11-14 20:39 5ef5f69c  PA3-Group05/src/backend/nest-cli.json
-    3428  Defl:N     1159  66% 2026-11-14 20:39 375c9f99  PA3-Group05/src/backend/test/auth-registration.e2e-spec.ts
-     745  Defl:N      404  46% 2026-11-14 20:39 f17ef8ef  PA3-Group05/src/backend/.gitignore
-     245  Defl:N      159  35% 2026-11-14 20:39 d042f7db  PA3-Group05/src/backend/tsconfig.build.json
-      39  Defl:N       38   3% 2026-11-14 20:39 b8ea69ce  PA3-Group05/src/backend/.git
-     224  Defl:N      150  33% 2026-11-14 20:42 8a52f3bc  PA3-Group05/src/database/src/definitions/email.init.sql
-     164  Defl:N      125  24% 2026-11-14 20:42 7f53df25  PA3-Group05/src/database/src/definitions/username.init.sql
-      41  Stored       41   0% 2026-11-14 20:42 22db8e7e  PA3-Group05/src/database/src/schemas/_init.sql
-     141  Defl:N       72  49% 2026-11-14 20:42 5c1ae4dc  PA3-Group05/src/database/src/schemas/init.sql
-     566  Defl:N      254  55% 2026-11-14 20:42 c57beadc  PA3-Group05/src/database/src/tables/domain.init.sql
-     619  Defl:N      315  49% 2026-11-14 20:42 a7809046  PA3-Group05/src/database/src/tables/session.account.sql
-     716  Defl:N      308  57% 2026-11-14 20:42 0b75fbdc  PA3-Group05/src/database/src/tables/account.email_username.sql
-     412  Defl:N      247  40% 2026-11-14 20:42 3bb49e1d  PA3-Group05/src/database/src/functions/authentication/session-check.session.sql
-     344  Defl:N      205  40% 2026-11-14 20:42 4f668da8  PA3-Group05/src/database/src/functions/authentication/activate-account.session-check.sql
-     364  Defl:N      211  42% 2026-11-14 20:42 8dc10d10  PA3-Group05/src/database/src/functions/authentication/logout.session.sql
-     277  Defl:N      167  40% 2026-11-14 20:42 202deccf  PA3-Group05/src/database/src/functions/authentication/get-email.account.sql
-     291  Defl:N      178  39% 2026-11-14 20:42 82c35ee2  PA3-Group05/src/database/src/functions/authentication/save-otp.session.sql
-     820  Defl:N      419  49% 2026-11-14 20:42 f0cdfd38  PA3-Group05/src/database/src/functions/authentication/email-validation.ev.account_domain.sql
-      69  Defl:N       55  20% 2026-11-14 20:42 5f10aca0  PA3-Group05/src/database/src/functions/authentication/_register.sql
-     288  Defl:N      179  38% 2026-11-14 20:42 bd28fc67  PA3-Group05/src/database/src/functions/authentication/remove-otp.session.sql
-     257  Defl:N      161  37% 2026-11-14 20:42 c1c0e6c3  PA3-Group05/src/database/src/functions/authentication/get-otp.session.sql
-    1047  Defl:N      326  69% 2026-11-14 20:42 4466f9b4  PA3-Group05/src/database/src/functions/authentication/login.session.sql
-     538  Defl:N      296  45% 2026-11-14 20:42 563615b9  PA3-Group05/src/database/src/functions/authentication/username-validation.uv.account.sql
-     863  Defl:N      430  50% 2026-11-14 20:42 a0721742  PA3-Group05/src/database/src/functions/authentication/register.ev_uv_session.sql
-   10452  Defl:N     3772  64% 2026-11-14 20:42 ac4f4cbf  PA3-Group05/src/database/README.md
-   54955  Defl:N    11571  79% 2026-11-14 20:42 21de6044  PA3-Group05/src/database/package-lock.json
-     650  Defl:N      313  52% 2026-11-14 20:42 b99664d2  PA3-Group05/src/database/package.json
-     456  Defl:N      232  49% 2026-11-14 20:42 34a9c3d9  PA3-Group05/src/database/config/database.config.ts
-       0  Stored        0   0% 2026-11-14 20:42 00000000  PA3-Group05/src/database/.env
-    1149  Defl:N      521  55% 2026-11-14 20:42 821f7553  PA3-Group05/src/database/tsconfig.json
-      46  Stored       46   0% 2026-11-14 20:42 773a8edb  PA3-Group05/src/database/.specify/feature.json
-    2205  Defl:N     1137  48% 2026-11-14 20:42 da77d657  PA3-Group05/src/database/.specify/memory/roadmap.md
-    1996  Defl:N      992  50% 2026-11-14 20:42 57d5f992  PA3-Group05/src/database/.specify/memory/mission.md
-     103  Defl:N       89  14% 2026-11-14 20:42 abd57182  PA3-Group05/src/database/.specify/memory/.constitution-template.json
-    1823  Defl:N      927  49% 2026-11-14 20:42 23f45549  PA3-Group05/src/database/.specify/memory/tech-stack.md
-   10991  Defl:N     4010  64% 2026-11-14 20:42 167d9d1d  PA3-Group05/src/database/.specify/memory/constitution.md
-     586  Defl:N      343  42% 2026-11-14 20:42 0b6a7f8b  PA3-Group05/src/database/.specify/.gitignore
-   16995  Defl:N     5387  68% 2026-11-14 20:42 fd358e34  PA3-Group05/src/database/specs/001-auth-schema/tasks.md
-    1216  Defl:N      615  49% 2026-11-14 20:42 ff9261b1  PA3-Group05/src/database/specs/001-auth-schema/checklists/requirements.md
-    3949  Defl:N     1761  55% 2026-11-14 20:42 c2514939  PA3-Group05/src/database/specs/001-auth-schema/quickstart.md
-   14457  Defl:N     4764  67% 2026-11-14 20:42 516801d4  PA3-Group05/src/database/specs/001-auth-schema/spec.md
-    9606  Defl:N     4193  56% 2026-11-14 20:42 f5f276d3  PA3-Group05/src/database/specs/001-auth-schema/research.md
-    6306  Defl:N     2380  62% 2026-11-14 20:42 a2523309  PA3-Group05/src/database/specs/001-auth-schema/data-model.md
-    6260  Defl:N     1816  71% 2026-11-14 20:42 beb33fdf  PA3-Group05/src/database/specs/001-auth-schema/contracts/authentication-functions.md
-    9583  Defl:N     3499  64% 2026-11-14 20:42 7944da96  PA3-Group05/src/database/specs/001-auth-schema/plan.md
-     278  Defl:N      171  39% 2026-11-14 20:42 561b2407  PA3-Group05/src/database/vitest.config.ts
-     863  Defl:N      345  60% 2026-11-14 20:42 b2724423  PA3-Group05/src/database/tests/migrations/init.spec.ts
-    2447  Defl:N      760  69% 2026-11-14 20:42 0370b38e  PA3-Group05/src/database/tests/functions/authentication/register-session.spec.ts
-    3522  Defl:N      780  78% 2026-11-14 20:42 ec7b63b6  PA3-Group05/src/database/tests/functions/authentication/remove-otp.spec.ts
-    1654  Defl:N      434  74% 2026-11-14 20:42 ebcc80eb  PA3-Group05/src/database/tests/functions/authentication/pg.username-validation.testcases.ts
-    3014  Defl:N      728  76% 2026-11-14 20:42 12e1189e  PA3-Group05/src/database/tests/functions/authentication/get-email.spec.ts
-    2986  Defl:N      723  76% 2026-11-14 20:42 c137c29f  PA3-Group05/src/database/tests/functions/authentication/save-otp.spec.ts
-    4124  Defl:N     1191  71% 2026-11-14 20:42 a1122dbe  PA3-Group05/src/database/tests/functions/authentication/login.spec.ts
-    1988  Defl:N      666  67% 2026-11-14 20:42 ca435ccc  PA3-Group05/src/database/tests/functions/authentication/email-validation.spec.ts
-    3286  Defl:N      824  75% 2026-11-14 20:42 015f3ae3  PA3-Group05/src/database/tests/functions/authentication/logout.spec.ts
-    2954  Defl:N      701  76% 2026-11-14 20:42 0d7e3753  PA3-Group05/src/database/tests/functions/authentication/session-check.spec.ts
-    4252  Defl:N      850  80% 2026-11-14 20:42 3112b10e  PA3-Group05/src/database/tests/functions/authentication/active-account.spec.ts
-    1581  Defl:N      624  61% 2026-11-14 20:42 4cb9ea6c  PA3-Group05/src/database/tests/functions/authentication/username-validation.spec.ts
-    1286  Defl:N      530  59% 2026-11-14 20:42 b6e37688  PA3-Group05/src/database/tests/functions/authentication/register.spec.ts
-    2818  Defl:N      594  79% 2026-11-14 20:42 e7ab6310  PA3-Group05/src/database/tests/functions/authentication/pg.full-flow.testcases.ts
-    7824  Defl:N     1662  79% 2026-11-14 20:42 cb60b3fa  PA3-Group05/src/database/tests/functions/authentication/full-flow.spec.ts
-    2781  Defl:N      927  67% 2026-11-14 20:42 12666f94  PA3-Group05/src/database/tests/functions/authentication/helpers.ts
-    4519  Defl:N      745  84% 2026-11-14 20:42 05b39da0  PA3-Group05/src/database/tests/functions/authentication/get-otp.spec.ts
-    1756  Defl:N      322  82% 2026-11-14 20:42 a0eaa0a3  PA3-Group05/src/database/tests/functions/authentication/pg.login.testcases.ts
-   19747  Defl:N     2175  89% 2026-11-14 20:42 3eed0226  PA3-Group05/src/database/tests/functions/authentication/pg.register.testcases.ts
-    2617  Defl:N      548  79% 2026-11-14 20:42 fd48b8b6  PA3-Group05/src/database/tests/functions/authentication/pg.email-validation.testcases.ts
-      48  Stored       48   0% 2026-11-14 20:42 8e838a40  PA3-Group05/src/database/.gitignore
-      40  Defl:N       39   3% 2026-11-14 20:42 2f04f53a  PA3-Group05/src/database/.git
-     614  Defl:N      301  51% 2026-11-14 20:58 ebb27467  PA3-Group05/src/frontend/src/pages/route_error/RouteErrorPage.tsx
-     282  Defl:N      144  49% 2026-11-14 20:58 95ab0e3a  PA3-Group05/src/frontend/src/pages/route_error/RouteErrorPage.css
-       0  Stored        0   0% 2026-11-14 20:58 00000000  PA3-Group05/src/frontend/src/pages/loading/LoadingPage.tsx
-       0  Stored        0   0% 2026-11-14 20:58 00000000  PA3-Group05/src/frontend/src/pages/loading/LoadingPage.css
-    1229  Defl:N      469  62% 2026-11-14 20:58 4cc7b63c  PA3-Group05/src/frontend/src/pages/home/HomePage.tsx
-       0  Stored        0   0% 2026-11-14 20:58 00000000  PA3-Group05/src/frontend/src/pages/auth/set_password/SetPassword.test.tsx
-    1550  Defl:N      511  67% 2026-11-14 20:58 47a07227  PA3-Group05/src/frontend/src/pages/auth/set_password/SetPassword.tsx
-    1568  Defl:N      490  69% 2026-11-14 20:58 8214d748  PA3-Group05/src/frontend/src/pages/auth/set_password/SetPassword.css
-    8128  Defl:N     2267  72% 2026-11-14 20:58 0c4430e2  PA3-Group05/src/frontend/src/pages/auth/otp/OtpPage.tsx
-    2070  Defl:N      634  69% 2026-11-14 20:58 020e3018  PA3-Group05/src/frontend/src/pages/auth/otp/OtpPage.css
-       0  Stored        0   0% 2026-11-14 20:58 00000000  PA3-Group05/src/frontend/src/pages/auth/otp/OtpPage.test.tsx
-   13942  Defl:N     2546  82% 2026-11-14 20:58 f5ed83d1  PA3-Group05/src/frontend/src/pages/auth/register/RegisterPage.tsx
-    1599  Defl:N      510  68% 2026-11-14 20:58 7b8a7974  PA3-Group05/src/frontend/src/pages/auth/register/RegisterPage.css
-       0  Stored        0   0% 2026-11-14 20:58 00000000  PA3-Group05/src/frontend/src/pages/auth/register/RegisterPage.test.tsx
-    1570  Defl:N      494  69% 2026-11-14 20:58 6cc2f978  PA3-Group05/src/frontend/src/pages/auth/recover_password/RecoverPassword.css
-    1389  Defl:N      506  64% 2026-11-14 20:58 885ef92d  PA3-Group05/src/frontend/src/pages/auth/recover_password/RecoverPasswordPage.tsx
-       0  Stored        0   0% 2026-11-14 20:58 00000000  PA3-Group05/src/frontend/src/pages/auth/recover_password/RecoverPassword.test.tsx
-       0  Stored        0   0% 2026-11-14 20:58 00000000  PA3-Group05/src/frontend/src/pages/auth/login/LoginPage.test.tsx
-    6559  Defl:N     1605  76% 2026-11-14 20:58 91c9db86  PA3-Group05/src/frontend/src/pages/auth/login/LoginPage.tsx
-    2138  Defl:N      553  74% 2026-11-14 20:58 eea1d324  PA3-Group05/src/frontend/src/pages/auth/login/LoginPage.css
-    1528  Defl:N      565  63% 2026-11-14 20:58 44ee874a  PA3-Group05/src/frontend/src/features/authentication/otp/otp.ts
-     145  Defl:N       95  35% 2026-11-14 20:58 ea0865ed  PA3-Group05/src/frontend/src/features/authentication/otp/type.ts
-     678  Defl:N      322  53% 2026-11-14 20:58 1385246d  PA3-Group05/src/frontend/src/features/authentication/logout/logout.ts
-     258  Defl:N      132  49% 2026-11-14 20:58 d3394fe2  PA3-Group05/src/frontend/src/features/authentication/register/type.ts
-     926  Defl:N      412  56% 2026-11-14 20:58 5904af83  PA3-Group05/src/frontend/src/features/authentication/register/register.ts
-     290  Defl:N      148  49% 2026-11-14 20:58 f2c1fe30  PA3-Group05/src/frontend/src/features/authentication/login/type.ts
-    1205  Defl:N      559  54% 2026-11-14 20:58 7c0c5897  PA3-Group05/src/frontend/src/features/authentication/login/login.ts
-     939  Defl:N      405  57% 2026-11-14 20:58 cb71714f  PA3-Group05/src/frontend/src/shared/api/error.ts
-    3602  Defl:N     1131  69% 2026-11-14 20:58 d64a1abe  PA3-Group05/src/frontend/src/shared/api/client.ts
-      35  Stored       35   0% 2026-11-14 20:58 32ee4af2  PA3-Group05/src/frontend/src/shared/api/index.ts
-     826  Defl:N      416  50% 2026-11-14 20:58 4a659c64  PA3-Group05/src/frontend/src/shared/assets/icon/camera.svg
-    1111  Defl:N      554  50% 2026-11-14 20:58 fd02daa2  PA3-Group05/src/frontend/src/shared/assets/icon/university.svg
-    2667  Defl:N     1164  56% 2026-11-14 20:58 b6617173  PA3-Group05/src/frontend/src/shared/assets/icon/settings.svg
-     354  Defl:N      205  42% 2026-11-14 20:58 8c1b4452  PA3-Group05/src/frontend/src/shared/assets/icon/search.svg
-     627  Defl:N      321  49% 2026-11-14 20:58 8405194a  PA3-Group05/src/frontend/src/shared/assets/icon/library.svg
-     963  Defl:N      511  47% 2026-11-14 20:58 b11c7a87  PA3-Group05/src/frontend/src/shared/assets/icon/rooms.svg
-     372  Defl:N      210  44% 2026-11-14 20:58 3cbd4a80  PA3-Group05/src/frontend/src/shared/assets/icon/error.svg
-     901  Defl:N      515  43% 2026-11-14 20:58 997a91fb  PA3-Group05/src/frontend/src/shared/assets/icon/unhide.svg
-     778  Defl:N      395  49% 2026-11-14 20:58 3c8f8c2f  PA3-Group05/src/frontend/src/shared/assets/icon/friends.svg
-     423  Defl:N      238  44% 2026-11-14 20:58 c21e4260  PA3-Group05/src/frontend/src/shared/assets/icon/timer.svg
-     398  Defl:N      241  39% 2026-11-14 20:58 50ff9507  PA3-Group05/src/frontend/src/shared/assets/icon/upload.svg
-    1633  Defl:N      886  46% 2026-11-14 20:58 5e68504c  PA3-Group05/src/frontend/src/shared/assets/icon/key.svg
-     826  Defl:N      461  44% 2026-11-14 20:58 2b7061d8  PA3-Group05/src/frontend/src/shared/assets/icon/mail-open.svg
-     887  Defl:N      513  42% 2026-11-14 20:58 25982ef1  PA3-Group05/src/frontend/src/shared/assets/icon/chat.svg
-     850  Defl:N      392  54% 2026-11-14 20:58 c861213f  PA3-Group05/src/frontend/src/shared/assets/icon/hide.svg
-     473  Defl:N      279  41% 2026-11-14 20:58 cc2a5818  PA3-Group05/src/frontend/src/shared/assets/icon/white_board.svg
-     890  Defl:N      448  50% 2026-11-14 20:58 fd49903f  PA3-Group05/src/frontend/src/shared/assets/icon/house.svg
-     374  Defl:N      218  42% 2026-11-14 20:58 01043d72  PA3-Group05/src/frontend/src/shared/assets/icon/success.svg
-     765  Defl:N      378  51% 2026-11-14 20:58 53a9115a  PA3-Group05/src/frontend/src/shared/assets/icon/lock.svg
-     579  Defl:N      325  44% 2026-11-14 20:58 b98fe0b9  PA3-Group05/src/frontend/src/shared/assets/icon/screen-share.svg
-     197  Defl:N      156  21% 2026-11-14 20:58 c1c775a4  PA3-Group05/src/frontend/src/shared/assets/icon/tick.svg
-     610  Defl:N      302  51% 2026-11-14 20:58 0f27eb32  PA3-Group05/src/frontend/src/shared/assets/icon/mic.svg
-     883  Defl:N      463  48% 2026-11-14 20:58 78a4059e  PA3-Group05/src/frontend/src/shared/assets/icon/community.svg
-     213  Defl:N      161  24% 2026-11-14 20:58 e0c3ff3b  PA3-Group05/src/frontend/src/shared/assets/icon/arrow-right.svg
-     529  Defl:N      287  46% 2026-11-14 20:58 9251453b  PA3-Group05/src/frontend/src/shared/assets/icon/profile.svg
-  189442  Defl:N   137005  28% 2026-11-14 20:58 82a8e7b4  PA3-Group05/src/frontend/src/shared/assets/image/study-poster.svg
-    7973  Defl:N     3168  60% 2026-11-14 20:58 d13ba6a2  PA3-Group05/src/frontend/src/shared/assets/image/logo.svg
-    1734  Defl:N      711  59% 2026-11-14 20:58 73c3f7c3  PA3-Group05/src/frontend/src/shared/assets/image/sparkles.svg
-     779  Defl:N      344  56% 2026-11-14 20:58 ac3d2938  PA3-Group05/src/frontend/src/shared/assets/image/star.svg
-    1014  Defl:N      363  64% 2026-11-14 20:58 8fce358c  PA3-Group05/src/frontend/src/shared/ui/button/Button.module.css
-    1468  Defl:N      453  69% 2026-11-14 20:58 b4909a52  PA3-Group05/src/frontend/src/shared/ui/button/Button.test.tsx
-     613  Defl:N      302  51% 2026-11-14 20:58 d5b6dc31  PA3-Group05/src/frontend/src/shared/ui/button/Button.tsx
-      32  Stored       32   0% 2026-11-14 20:58 7085560d  PA3-Group05/src/frontend/src/shared/ui/button/index.ts
-     757  Defl:N      261  66% 2026-11-14 20:58 9e07ec97  PA3-Group05/src/frontend/src/shared/ui/toggle_switch/ToggleSwitch.module.css
-    1061  Defl:N      409  62% 2026-11-14 20:58 7f03d751  PA3-Group05/src/frontend/src/shared/ui/toggle_switch/ToggleSwitch.test.tsx
-      38  Stored       38   0% 2026-11-14 20:58 651ea86c  PA3-Group05/src/frontend/src/shared/ui/toggle_switch/index.ts
-     770  Defl:N      361  53% 2026-11-14 20:58 775f8ac0  PA3-Group05/src/frontend/src/shared/ui/toggle_switch/ToggleSwitch.tsx
-     435  Defl:N      200  54% 2026-11-14 20:58 3e0aae02  PA3-Group05/src/frontend/src/shared/ui/tick_box/TickBox.module.css
-     950  Defl:N      374  61% 2026-11-14 20:58 a3f6f60a  PA3-Group05/src/frontend/src/shared/ui/tick_box/TickBox.test.tsx
-      33  Stored       33   0% 2026-11-14 20:58 81b90324  PA3-Group05/src/frontend/src/shared/ui/tick_box/index.ts
-     833  Defl:N      403  52% 2026-11-14 20:58 ce1a16b4  PA3-Group05/src/frontend/src/shared/ui/tick_box/TickBox.tsx
-    1969  Defl:N      522  74% 2026-11-14 20:58 b8eaa764  PA3-Group05/src/frontend/src/shared/ui/input/Input.test.tsx
-    2736  Defl:N      785  71% 2026-11-14 20:58 20df939c  PA3-Group05/src/frontend/src/shared/ui/input/Input.tsx
-      46  Defl:N       41  11% 2026-11-14 20:58 983681ff  PA3-Group05/src/frontend/src/shared/ui/input/index.ts
-    1636  Defl:N      548  67% 2026-11-14 20:58 7fc6ed61  PA3-Group05/src/frontend/src/shared/ui/input/Input.module.css
-     566  Defl:N      264  53% 2026-11-14 20:58 93bb413e  PA3-Group05/src/frontend/src/shared/ui/select_card/SelectCard.module.css
-     875  Defl:N      421  52% 2026-11-14 20:58 2271abfb  PA3-Group05/src/frontend/src/shared/ui/select_card/SelectCard.tsx
-     968  Defl:N      387  60% 2026-11-14 20:58 cd9d5062  PA3-Group05/src/frontend/src/shared/ui/select_card/SelectCard.test.tsx
-      36  Stored       36   0% 2026-11-14 20:58 3b1aae5a  PA3-Group05/src/frontend/src/shared/ui/select_card/index.ts
-     206  Defl:N      129  37% 2026-11-14 20:58 1cd4441f  PA3-Group05/src/frontend/src/entities/session/type.ts
-    2106  Defl:N      536  75% 2026-11-14 20:58 38b6ef90  PA3-Group05/src/frontend/src/entities/session/auth-store.ts
-     844  Defl:N      319  62% 2026-11-14 20:58 7fcf2c42  PA3-Group05/src/frontend/src/entities/otp/otp-store.ts
-      87  Defl:N       67  23% 2026-11-14 20:58 9009c0ed  PA3-Group05/src/frontend/src/entities/otp/type.ts
-     162  Defl:N      103  36% 2026-11-14 20:58 dccb3798  PA3-Group05/src/frontend/src/test/setup.ts
-     362  Defl:N      174  52% 2026-11-14 20:58 9548db68  PA3-Group05/src/frontend/src/app/App.tsx
-    2596  Defl:N      748  71% 2026-11-14 20:58 ab7a0c0a  PA3-Group05/src/frontend/src/app/index.css
-     587  Defl:N      294  50% 2026-11-14 20:58 fabb0f2c  PA3-Group05/src/frontend/src/app/guard/auth-guard.tsx
-     498  Defl:N      253  49% 2026-11-14 20:58 abafaa95  PA3-Group05/src/frontend/src/app/guard/otp-guard.tsx
-     591  Defl:N      292  51% 2026-11-14 20:58 f84c791b  PA3-Group05/src/frontend/src/app/guard/public-only.tsx
-    2321  Defl:N      636  73% 2026-11-14 20:58 6d79a105  PA3-Group05/src/frontend/src/app/layouts/main/MainLayout.css
-    1730  Defl:N      469  73% 2026-11-14 20:58 811003c1  PA3-Group05/src/frontend/src/app/layouts/main/MainLayout.tsx
-    1592  Defl:N      461  71% 2026-11-14 20:58 04543b43  PA3-Group05/src/frontend/src/app/layouts/auth/AuthLayout.tsx
-    2315  Defl:N      630  73% 2026-11-14 20:58 a93ec348  PA3-Group05/src/frontend/src/app/layouts/auth/AuthLayout.css
-    1353  Defl:N      547  60% 2026-11-14 20:58 c1fe89a3  PA3-Group05/src/frontend/src/app/main.test.tsx
-     326  Defl:N      195  40% 2026-11-14 20:58 c5f0b6ff  PA3-Group05/src/frontend/src/app/main.tsx
-     591  Defl:N      263  56% 2026-11-14 20:58 669bb4ab  PA3-Group05/src/frontend/src/app/providers/query/query-provider.tsx
-      43  Stored       43   0% 2026-11-14 20:58 6917c25b  PA3-Group05/src/frontend/src/app/providers/query/index.ts
-    1569  Defl:N      542  66% 2026-11-14 20:58 8f01ea87  PA3-Group05/src/frontend/src/app/providers/query/query-provider.test.tsx
-    2157  Defl:N      461  79% 2026-11-14 20:58 7b6c2ac3  PA3-Group05/src/frontend/src/app/providers/router/router-provider.tsx
-     529  Defl:N      287  46% 2026-11-14 20:58 21298e47  PA3-Group05/src/frontend/src/app/providers/router/router-provider.test.tsx
-      82  Defl:N       52  37% 2026-11-14 20:58 329fa48a  PA3-Group05/src/frontend/src/app/providers/router/index.ts
-     849  Defl:N      329  61% 2026-11-14 20:58 f108d005  PA3-Group05/src/frontend/src/app/providers/auth/auth-initializer.tsx
-     393  Defl:N      218  45% 2026-11-14 20:58 3eff1bbd  PA3-Group05/src/frontend/src/app/App.test.tsx
-     987  Defl:N      448  55% 2026-11-14 20:58 cd761d7a  PA3-Group05/src/frontend/vite.config.ts
-     591  Defl:N      269  55% 2026-11-14 20:58 a7008304  PA3-Group05/src/frontend/eslint.config.js
-    2615  Defl:N      929  65% 2026-11-14 20:58 debc8b4d  PA3-Group05/src/frontend/README.md
-  139266  Defl:N    32504  77% 2026-11-14 20:58 f7e6c000  PA3-Group05/src/frontend/package-lock.json
-    1309  Defl:N      515  61% 2026-11-14 20:58 47ed6bd4  PA3-Group05/src/frontend/package.json
-     366  Defl:N      230  37% 2026-11-14 20:58 8c3eecaa  PA3-Group05/src/frontend/index.html
-     159  Defl:N       91  43% 2026-11-14 20:58 1d65ec22  PA3-Group05/src/frontend/tsconfig.json
-     103  Defl:N       89  14% 2026-11-14 20:58 abd57182  PA3-Group05/src/frontend/.specify/memory/.constitution-template.json
-    9759  Defl:N     3606  63% 2026-11-14 20:58 0e574224  PA3-Group05/src/frontend/.specify/memory/constitution.md
-     655  Defl:N      343  48% 2026-11-14 20:58 28707464  PA3-Group05/src/frontend/tsconfig.app.json
-     558  Defl:N      305  45% 2026-11-14 20:58 4a1c9061  PA3-Group05/src/frontend/tsconfig.node.json
-   21482  Defl:N     6807  68% 2026-11-14 20:58 7837eed9  PA3-Group05/src/frontend/specs/001-authentication-user-flows/tasks.md
-    1620  Defl:N      787  51% 2026-11-14 20:58 6f88ae15  PA3-Group05/src/frontend/specs/001-authentication-user-flows/checklists/requirements.md
-    9477  Defl:N     3559  62% 2026-11-14 20:58 03747d74  PA3-Group05/src/frontend/specs/001-authentication-user-flows/quickstart.md
-   29771  Defl:N     8765  71% 2026-11-14 20:58 1ee4b2df  PA3-Group05/src/frontend/specs/001-authentication-user-flows/spec.md
-   12669  Defl:N     4995  61% 2026-11-14 20:58 f31f06ff  PA3-Group05/src/frontend/specs/001-authentication-user-flows/research.md
-    9944  Defl:N     3521  65% 2026-11-14 20:58 f7ec28a6  PA3-Group05/src/frontend/specs/001-authentication-user-flows/data-model.md
-    5466  Defl:N     1785  67% 2026-11-14 20:58 d08aba96  PA3-Group05/src/frontend/specs/001-authentication-user-flows/contracts/auth-routes.md
-    9618  Defl:N     3264  66% 2026-11-14 20:58 4a58a4e2  PA3-Group05/src/frontend/specs/001-authentication-user-flows/contracts/auth-api.md
-   17903  Defl:N     6493  64% 2026-11-14 20:58 17a0e1bd  PA3-Group05/src/frontend/specs/001-authentication-user-flows/plan.md
-     261  Defl:N      161  38% 2026-11-14 20:58 12062c3f  PA3-Group05/src/frontend/.gitignore
-     548  Defl:N      301  45% 2026-11-14 20:58 321f4a31  PA3-Group05/src/frontend/tsconfig.deploy.json
-      40  Defl:N       39   3% 2026-11-14 20:58 0a6e6582  PA3-Group05/src/frontend/.git
-   21177  Defl:N     7042  67% 2026-11-14 21:08 62d70b0a  PA3-Group05/Changes.md
-   81141  Defl:N    79534   2% 2026-11-14 20:54 39118655  PA3-Group05/prototype/forum_feed.png
-  112497  Defl:N   110266   2% 2026-11-14 20:54 a7577798  PA3-Group05/prototype/otp.png
-   96063  Defl:N    94073   2% 2026-11-14 20:54 444475be  PA3-Group05/prototype/preference.png
-  117773  Defl:N   114862   3% 2026-11-14 20:54 71e80333  PA3-Group05/prototype/send_email.png
-   58456  Defl:N    56420   4% 2026-11-14 20:54 13f7e0fc  PA3-Group05/prototype/room_question.png
-   74067  Defl:N    71794   3% 2026-11-14 20:54 f35a26cd  PA3-Group05/prototype/post_discussion.png
-   83587  Defl:N    81683   2% 2026-11-14 20:54 c2826319  PA3-Group05/prototype/forum_course.png
-   79035  Defl:N    76814   3% 2026-11-14 20:54 4fbec432  PA3-Group05/prototype/forum_post.png
-  117486  Defl:N   115302   2% 2026-11-14 20:54 62136a1f  PA3-Group05/prototype/register.png
-   67675  Defl:N    65354   3% 2026-11-14 20:54 a60c0bf1  PA3-Group05/prototype/forum_browse.png
-   98816  Defl:N    96347   3% 2026-11-14 20:54 8263e520  PA3-Group05/prototype/lost_password.png
-   77785  Defl:N    75703   3% 2026-11-14 20:54 521fc656  PA3-Group05/prototype/post.png
-   71242  Defl:N    69317   3% 2026-11-14 20:54 5ed4a043  PA3-Group05/prototype/post_comment.png
-  100963  Defl:N    98747   2% 2026-11-14 20:54 848393c1  PA3-Group05/prototype/login.png
-  100268  Defl:N    98117   2% 2026-11-14 20:54 3d21d8e3  PA3-Group05/prototype/new_password.png
-   28314  Defl:N    17282  39% 2026-11-14 20:33 1b75f561  PA3-Group05/youtelink.pdf
- 2208064  Defl:N  2107334   5% 2026-11-14 21:06 0914244c  PA3-Group05/use_case.pdf
-   35717  Defl:N    11067  69% 2026-11-14 21:08 9118a6ef  PA3-Group05/revised_software_devlopment_plan.md
-  116613  Defl:N    85879  26% 2026-11-14 20:27 054c84f7  PA3-Group05/weekly_report/images/week2_jira_task.jpeg
-  146837  Defl:N   114736  22% 2026-11-14 20:27 9902eab8  PA3-Group05/weekly_report/images/week1_jira_task.jpeg
-  245557  Defl:N   175824  28% 2026-11-14 20:32 31d411d8  PA3-Group05/weekly_report/weekly_report1.pdf
-    3840  Defl:N     1548  60% 2026-11-14 20:27 6ae234ec  PA3-Group05/weekly_report/weekly_report2.md
-    2848  Defl:N     1200  58% 2026-11-14 20:27 81748001  PA3-Group05/weekly_report/weekly_report1.md
-  222967  Defl:N   151933  32% 2026-11-14 20:32 3dc0dbba  PA3-Group05/weekly_report/weekly_report2.pdf
-  147731  Defl:N   122083  17% 2026-11-14 20:27 556984d8  PA3-Group05/ai_usage_report/images/image_2.jpeg
-  172536  Defl:N   161694   6% 2026-11-14 20:27 e24375bd  PA3-Group05/ai_usage_report/images/image_6.png
-  135171  Defl:N   110382  18% 2026-11-14 20:27 3564dd0e  PA3-Group05/ai_usage_report/images/image_4.jpeg
-  170153  Defl:N   158847   7% 2026-11-14 20:27 c19d5de9  PA3-Group05/ai_usage_report/images/image_5.png
-  172405  Defl:N   160808   7% 2026-11-14 20:27 b1006dc9  PA3-Group05/ai_usage_report/images/image_3.png
-  118977  Defl:N    91886  23% 2026-11-14 20:27 8c8c8dd0  PA3-Group05/ai_usage_report/images/image_1.jpeg
-    2863  Defl:N     1018  64% 2026-11-14 20:27 876c0042  PA3-Group05/ai_usage_report/ai_usage_report.md
- 1003194  Defl:N   832966  17% 2026-11-14 20:32 a55315a4  PA3-Group05/ai_usage_report/ai_usage_report.pdf
-   19262  Defl:N     4323  78% 2026-11-14 20:27 9a1695da  PA3-Group05/git-graph/database.md
-   28304  Defl:N     6261  78% 2026-11-14 20:27 b4f1c4b1  PA3-Group05/git-graph/frontend.md
-   42146  Defl:N     9192  78% 2026-11-14 20:27 70481828  PA3-Group05/git-graph/total.md
-   65924  Defl:N    55695  16% 2026-11-14 20:27 2fc48917  PA3-Group05/git-graph/total.pdf
-   28862  Defl:N     6003  79% 2026-11-14 20:27 1f8e7640  PA3-Group05/git-graph/backend.md
-   51370  Defl:N    44766  13% 2026-11-14 20:27 15eced3e  PA3-Group05/git-graph/backend.pdf
-   50882  Defl:N    44234  13% 2026-11-14 20:27 3035b741  PA3-Group05/git-graph/frontend.pdf
-   41092  Defl:N    36323  12% 2026-11-14 20:27 12287d9f  PA3-Group05/git-graph/database.pdf
- 1027362  Defl:N   682934  34% 2026-11-14 21:09 44b0bcb5  PA3-Group05/revised_software_development_vision.pdf
-   38904  Defl:N    12144  69% 2026-11-14 21:08 5afe3e86  PA3-Group05/revised_software_development_vision.md
-      28  Stored       28   0% 2026-11-14 20:33 aa516f06  PA3-Group05/youtelink.md
-   54082  Defl:N    13060  76% 2026-11-14 20:27 b47105e4  PA3-Group05/use_case.md
-   37842  Defl:N    10686  72% 2026-11-14 15:03 ebf24ab3  PA3-Group05/proposals/userstory.md
-    7797  Defl:N     1433  82% 2026-11-14 20:35 fb31fadc  PA3-Group05/proposals/use_case_diagrams.md
-    9389  Defl:N     3120  67% 2026-11-14 13:14 392b5181  PA3-Group05/proposals/overview.md
-    5301  Defl:N     1574  70% 2026-11-14 13:14 a7294721  PA3-Group05/proposals/feature_flow.md
-    1807  Defl:N      402  78% 2026-11-14 13:18 5b46c940  PA3-Group05/proposals/response_code.md
-    7802  Defl:N     2445  69% 2026-11-14 20:27 2b37043b  PA3-Group05/proposals/use_cases_model.md
-   38630  Defl:N    10310  73% 2026-11-14 20:27 cdda369d  PA3-Group05/proposals/use_cases_description.md
-    4501  Defl:N     1645  64% 2026-11-14 13:16 84cfa4ea  PA3-Group05/proposals/non_functional_requirement.md
-    4714  Defl:N     1574  67% 2026-11-14 20:27 2f165136  PA3-Group05/proposals/use_cases_model/UC-01-register-account.md
-    2955  Defl:N     1216  59% 2026-11-14 20:27 3904ab41  PA3-Group05/proposals/use_cases_model/UC-06-share-learning-resource.md
-    3321  Defl:N     1319  60% 2026-11-14 20:27 d12d9ac2  PA3-Group05/proposals/use_cases_model/UC-03-browse-search-forum.md
-    2927  Defl:N     1194  59% 2026-11-14 20:27 297d1963  PA3-Group05/proposals/use_cases_model/UC-04-create-discussion-post.md
-    4382  Defl:N     1554  65% 2026-11-14 20:27 cfd277b9  PA3-Group05/proposals/use_cases_model/UC-07-join-create-study-room.md
-    3329  Defl:N     1261  62% 2026-11-14 20:27 34be9087  PA3-Group05/proposals/use_cases_model/UC-02-log-in.md
-    3401  Defl:N     1272  63% 2026-11-14 20:27 34e5d941  PA3-Group05/proposals/use_cases_model/UC-05-comment-answer.md
-   47117  Defl:N    10293  78% 2026-11-14 13:32 eb02a984  PA3-Group05/proposals/functional_requirement.md
-    2044  Defl:N      767  63% 2026-11-14 13:14 00c98b7a  PA3-Group05/proposals/screen_flow.md
-   11926  Defl:N     2604  78% 2026-11-14 13:17 43ef4eba  PA3-Group05/proposals/API.md
-   94467  Defl:N    89427   5% 2026-11-14 20:34 02b8d119  PA3-Group05/figures/UC-03.png
-    1570  Defl:N      572  64% 2026-11-14 20:34 84840aea  PA3-Group05/figures/UC-01.mmd
-    1176  Defl:N      495  58% 2026-11-14 20:35 86790ddb  PA3-Group05/figures/UC-07.mmd
-     872  Defl:N      403  54% 2026-11-14 20:34 0c2608c0  PA3-Group05/figures/UC-03.mmd
-    1083  Defl:N      457  58% 2026-11-14 20:34 5db89669  PA3-Group05/figures/UC-02.mmd
-  176683  Defl:N   168741   5% 2026-11-14 20:34 0161846e  PA3-Group05/figures/UC-01.png
-   78380  Defl:N    75623   4% 2026-11-14 20:34 d70ea200  PA3-Group05/figures/UC-04.png
-     786  Defl:N      381  52% 2026-11-14 20:34 2216a67b  PA3-Group05/figures/UC-04.mmd
-  136543  Defl:N   128561   6% 2026-11-14 20:35 5e19710b  PA3-Group05/figures/UC-07.png
-  118754  Defl:N   113557   4% 2026-11-14 20:34 06bfb68e  PA3-Group05/figures/UC-02.png
-    1096  Defl:N      464  58% 2026-11-14 20:34 ae82aa8c  PA3-Group05/figures/UC-05.mmd
-     800  Defl:N      378  53% 2026-11-14 20:34 f0f66cbf  PA3-Group05/figures/UC-06.mmd
-   79594  Defl:N    76758   4% 2026-11-14 20:35 7a46ad1a  PA3-Group05/figures/UC-06.png
-  115952  Defl:N   111380   4% 2026-11-14 20:34 914ff1df  PA3-Group05/figures/UC-05.png
-   83246  Defl:N    16073  81% 2026-11-14 21:07 29cdb713  PA3-Group05/use_case.tex
-  416519  Defl:N   204558  51% 2026-11-14 21:09 28508281  PA3-Group05/revised_software_devlopment_plan.pdf
-  286557  Defl:N   170175  41% 2026-11-14 21:10 0d7b0ebe  PA3-Group05/Changes.pdf
---------          -------  ---                            -------
-11111976          8295056  25%                            371 files
+  adding: PA4-Group05/ (stored 0%)
+  adding: PA4-Group05/functional_requirement.pdf (deflated 4%)
+  adding: PA4-Group05/src/ (stored 0%)
+  adding: PA4-Group05/src/backend/ (stored 0%)
+  adding: PA4-Group05/src/backend/.prettierignore (stored 0%)
+  adding: PA4-Group05/src/backend/.oxlintrc.json (deflated 33%)
+  adding: PA4-Group05/src/backend/src/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/__tests__/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/__tests__/email-sender.service.mock.ts (deflated 44%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/__tests__/email-sender.service.spec.ts (deflated 72%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/models/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/models/email-sender.model.ts (deflated 70%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/models/email-template.model.ts (deflated 61%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/discord.config.ts (deflated 53%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/email-sender.service.ts (deflated 65%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/email-sender.config.ts (deflated 26%)
+  adding: PA4-Group05/src/backend/src/packages/email-sender/email-sender.module.ts (deflated 60%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/__test__/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/__test__/sg.service.spec.ts (deflated 80%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/sg.guard.ts (deflated 35%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/decorators/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/decorators/token-bearer.decorators.ts (deflated 58%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/decorators/sg.mock.ts (deflated 58%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/sg.config.ts (deflated 66%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/sg.service.ts (deflated 79%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/dto/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/dto/key-response.dto.ts (deflated 64%)
+  adding: PA4-Group05/src/backend/src/packages/security-generation/sg.module.ts (deflated 52%)
+  adding: PA4-Group05/src/backend/src/packages/storage/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/storage/storage.module.ts (deflated 37%)
+  adding: PA4-Group05/src/backend/src/packages/storage/storage.service.ts (deflated 60%)
+  adding: PA4-Group05/src/backend/src/packages/storage/storage.config.ts (deflated 27%)
+  adding: PA4-Group05/src/backend/src/packages/recaptcha/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/recaptcha/recaptcha.service.ts (deflated 18%)
+  adding: PA4-Group05/src/backend/src/packages/recaptcha/__tests__/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/recaptcha/__tests__/recaptcha.service.mock.ts (deflated 29%)
+  adding: PA4-Group05/src/backend/src/packages/recaptcha/recaptcha.module.ts (deflated 38%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/__tests__/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/__tests__/pool.mock.ts (deflated 74%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/__tests__/pg.service.mock.ts (deflated 80%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/__tests__/pg.service.spec.ts (deflated 69%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/__tests__/pg.database-api.spec.ts (deflated 83%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/__tests__/pg.testcases.ts (deflated 79%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/__tests__/pg.register.testcases.ts (deflated 90%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/pg.module.ts (deflated 57%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/pg.service.ts (deflated 79%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/dto/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/dto/SQLSTATE.dto.ts (deflated 51%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/dto/response.dto.ts (deflated 77%)
+  adding: PA4-Group05/src/backend/src/packages/postgres/pg.config.ts (deflated 41%)
+  adding: PA4-Group05/src/backend/src/packages/forum/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/forum/forum.service.ts (deflated 77%)
+  adding: PA4-Group05/src/backend/src/packages/forum/forum.module.ts (deflated 58%)
+  adding: PA4-Group05/src/backend/src/packages/forum/forum.controller.ts (deflated 71%)
+  adding: PA4-Group05/src/backend/src/packages/account/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/account/account.module.ts (deflated 61%)
+  adding: PA4-Group05/src/backend/src/packages/account/account.service.ts (deflated 70%)
+  adding: PA4-Group05/src/backend/src/packages/account/dto/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/account/account.controller.ts (deflated 65%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/auth.service.ts (deflated 71%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/auth.module.ts (deflated 61%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/__tests__/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/__tests__/auth.service.spec.ts (deflated 62%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/__tests__/auth.controller.spec.ts (deflated 69%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/__tests__/auth.testcase.ts (deflated 84%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/__tests__/auth.service.mock.ts (deflated 66%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/config/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/config/auth.config.ts (deflated 42%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/decorartors/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/decorartors/username.decorator.ts (deflated 56%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/decorartors/password.decorator.ts (deflated 63%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/decorartors/displayname.decorator.ts (deflated 56%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/decorartors/email.decorator.ts (deflated 56%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/auth.controller.ts (deflated 71%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/dto/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/dto/logout.dto.ts (deflated 41%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/dto/register.dto.ts (deflated 63%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/dto/refresh-token.dto.ts (deflated 7%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/dto/recover-password.dto.ts (deflated 53%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/dto/login.dto.ts (deflated 14%)
+  adding: PA4-Group05/src/backend/src/packages/authentication/dto/otp-response.dto.ts (deflated 59%)
+  adding: PA4-Group05/src/backend/src/packages/environment/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/environment/environment.service.ts (deflated 66%)
+  adding: PA4-Group05/src/backend/src/packages/environment/__tests__/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/environment/__tests__/environment.spec.ts (deflated 70%)
+  adding: PA4-Group05/src/backend/src/packages/environment/environment.module.ts (deflated 40%)
+  adding: PA4-Group05/src/backend/src/packages/tag/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/tag/tag.controller.ts (deflated 74%)
+  adding: PA4-Group05/src/backend/src/packages/tag/dto/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/tag/dto/tag.dto.ts (deflated 78%)
+  adding: PA4-Group05/src/backend/src/packages/tag/tag.service.ts (deflated 74%)
+  adding: PA4-Group05/src/backend/src/packages/tag/tag.module.ts (deflated 56%)
+  adding: PA4-Group05/src/backend/src/packages/post/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/post/post.service.ts (deflated 69%)
+  adding: PA4-Group05/src/backend/src/packages/post/post.module.ts (deflated 58%)
+  adding: PA4-Group05/src/backend/src/packages/post/post.mapper.ts (deflated 58%)
+  adding: PA4-Group05/src/backend/src/packages/post/dto/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/post/dto/vote.dto.ts (deflated 26%)
+  adding: PA4-Group05/src/backend/src/packages/post/dto/create-post.dto.ts (deflated 51%)
+  adding: PA4-Group05/src/backend/src/packages/post/dto/create-comment.dto.ts (deflated 39%)
+  adding: PA4-Group05/src/backend/src/packages/post/dto/post.dto.ts (deflated 67%)
+  adding: PA4-Group05/src/backend/src/packages/post/post.controller.ts (deflated 66%)
+  adding: PA4-Group05/src/backend/src/packages/web/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/web/web.controller.ts (deflated 63%)
+  adding: PA4-Group05/src/backend/src/packages/web/web.guard.ts (deflated 30%)
+  adding: PA4-Group05/src/backend/src/packages/web/web.service.ts (deflated 40%)
+  adding: PA4-Group05/src/backend/src/packages/web/web.module.ts (deflated 37%)
+  adding: PA4-Group05/src/backend/src/packages/file/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/packages/file/file.controller.ts (deflated 54%)
+  adding: PA4-Group05/src/backend/src/packages/file/file.service.ts (deflated 62%)
+  adding: PA4-Group05/src/backend/src/packages/file/file.module.ts (deflated 60%)
+  adding: PA4-Group05/src/backend/src/config/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/config/app.config.ts (stored 0%)
+  adding: PA4-Group05/src/backend/src/main.ts (deflated 54%)
+  adding: PA4-Group05/src/backend/src/common/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/common/interceptor.ts (deflated 52%)
+  adding: PA4-Group05/src/backend/src/common/decorators/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/common/decorators/content-type.decorators.ts (deflated 37%)
+  adding: PA4-Group05/src/backend/src/common/response-code/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/common/response-code/code.config.ts (deflated 53%)
+  adding: PA4-Group05/src/backend/src/common/exception-factory.ts (deflated 38%)
+  adding: PA4-Group05/src/backend/src/common/dto/ (stored 0%)
+  adding: PA4-Group05/src/backend/src/common/dto/id.dto.ts (deflated 56%)
+  adding: PA4-Group05/src/backend/src/common/response.dto.ts (deflated 66%)
+  adding: PA4-Group05/src/backend/src/app.module.ts (deflated 67%)
+  adding: PA4-Group05/src/backend/.gitattributes (stored 0%)
+  adding: PA4-Group05/src/backend/README.md (deflated 63%)
+  adding: PA4-Group05/src/backend/package-lock.json (deflated 77%)
+  adding: PA4-Group05/src/backend/package.json (deflated 62%)
+  adding: PA4-Group05/src/backend/vitest.config.e2e.ts (deflated 27%)
+  adding: PA4-Group05/src/backend/tsconfig.json (deflated 53%)
+  adding: PA4-Group05/src/backend/.specify/ (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/integrations/ (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/integrations/opencode.manifest.json (deflated 52%)
+  adding: PA4-Group05/src/backend/.specify/integrations/speckit.manifest.json (deflated 50%)
+  adding: PA4-Group05/src/backend/.specify/integrations/agy.manifest.json (deflated 52%)
+  adding: PA4-Group05/src/backend/.specify/feature.json (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/workflows/ (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/workflows/speckit/ (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/workflows/speckit/workflow.yml (deflated 61%)
+  adding: PA4-Group05/src/backend/.specify/workflows/workflow-registry.json (deflated 41%)
+  adding: PA4-Group05/src/backend/.specify/templates/ (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/templates/tasks-template.md (deflated 67%)
+  adding: PA4-Group05/src/backend/.specify/templates/constitution-template.md (deflated 53%)
+  adding: PA4-Group05/src/backend/.specify/templates/spec-template.md (deflated 62%)
+  adding: PA4-Group05/src/backend/.specify/templates/plan-template.md (deflated 56%)
+  adding: PA4-Group05/src/backend/.specify/templates/checklist-template.md (deflated 56%)
+  adding: PA4-Group05/src/backend/.specify/init-options.json (deflated 34%)
+  adding: PA4-Group05/src/backend/.specify/memory/ (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/memory/.constitution-template.json (deflated 14%)
+  adding: PA4-Group05/src/backend/.specify/memory/constitution.md (deflated 67%)
+  adding: PA4-Group05/src/backend/.specify/scripts/ (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/scripts/bash/ (stored 0%)
+  adding: PA4-Group05/src/backend/.specify/scripts/bash/create-new-feature.sh (deflated 69%)
+  adding: PA4-Group05/src/backend/.specify/scripts/bash/setup-plan.sh (deflated 64%)
+  adding: PA4-Group05/src/backend/.specify/scripts/bash/check-prerequisites.sh (deflated 71%)
+  adding: PA4-Group05/src/backend/.specify/scripts/bash/setup-tasks.sh (deflated 63%)
+  adding: PA4-Group05/src/backend/.specify/scripts/bash/common.sh (deflated 74%)
+  adding: PA4-Group05/src/backend/.specify/scripts/bash/resolve-template.sh (deflated 60%)
+  adding: PA4-Group05/src/backend/.specify/.gitignore (deflated 41%)
+  adding: PA4-Group05/src/backend/.specify/integration.json (deflated 45%)
+  adding: PA4-Group05/src/backend/.agents/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-analyze/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-analyze/SKILL.md (deflated 63%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-clarify/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-clarify/SKILL.md (deflated 62%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-implement/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-implement/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-tasks/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-tasks/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-taskstoissues/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-taskstoissues/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-checklist/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-checklist/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-converge/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-converge/SKILL.md (deflated 63%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-plan/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-plan/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-constitution/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-constitution/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-specify/ (stored 0%)
+  adding: PA4-Group05/src/backend/.agents/skills/speckit-specify/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/backend/tsconfig.build.tsbuildinfo (deflated 69%)
+  adding: PA4-Group05/src/backend/specs/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/tasks.md (deflated 68%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/checklists/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/checklists/requirements.md (deflated 48%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/quickstart.md (deflated 57%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/spec.md (deflated 70%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/research.md (deflated 60%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/data-model.md (deflated 59%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/contracts/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/contracts/api.md (deflated 61%)
+  adding: PA4-Group05/src/backend/specs/004-trending-page/plan.md (deflated 58%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/tasks.md (deflated 68%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/checklists/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/checklists/requirements.md (deflated 48%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/quickstart.md (deflated 51%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/spec.md (deflated 71%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/research.md (deflated 60%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/data-model.md (deflated 60%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/contracts/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/contracts/api.md (deflated 61%)
+  adding: PA4-Group05/src/backend/specs/005-browsing-page/plan.md (deflated 59%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/tasks.md (deflated 70%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/checklists/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/checklists/requirements.md (deflated 50%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/quickstart.md (deflated 64%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/spec.md (deflated 72%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/research.md (deflated 64%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/data-model.md (deflated 64%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/contracts/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/contracts/auth-registration.openapi.yaml (deflated 78%)
+  adding: PA4-Group05/src/backend/specs/001-user-registration/plan.md (deflated 62%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/tasks.md (deflated 67%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/checklists/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/checklists/requirements.md (deflated 49%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/quickstart.md (deflated 63%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/spec.md (deflated 71%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/research.md (deflated 63%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/data-model.md (deflated 66%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/contracts/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/contracts/auth-session.openapi.yaml (deflated 72%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/contracts/database-session.md (deflated 60%)
+  adding: PA4-Group05/src/backend/specs/002-user-login/plan.md (deflated 61%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/tasks.md (deflated 69%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/checklists/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/checklists/requirements.md (deflated 49%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/quickstart.md (deflated 64%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/spec.md (deflated 68%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/research.md (deflated 58%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/data-model.md (deflated 60%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/contracts/ (stored 0%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/contracts/api.md (deflated 61%)
+  adding: PA4-Group05/src/backend/specs/003-otp-register-activation/plan.md (deflated 59%)
+  adding: PA4-Group05/src/backend/vitest.config.ts (deflated 33%)
+  adding: PA4-Group05/src/backend/.prettierrc (deflated 6%)
+  adding: PA4-Group05/src/backend/nest-cli.json (deflated 27%)
+  adding: PA4-Group05/src/backend/test/ (stored 0%)
+  adding: PA4-Group05/src/backend/test/auth-registration.e2e-spec.ts (deflated 66%)
+  adding: PA4-Group05/src/backend/.gitignore (deflated 47%)
+  adding: PA4-Group05/src/backend/tsconfig.build.json (deflated 35%)
+  adding: PA4-Group05/src/backend/.git (deflated 3%)
+  adding: PA4-Group05/src/database/ (stored 0%)
+  adding: PA4-Group05/src/database/src/ (stored 0%)
+  adding: PA4-Group05/src/database/src/definitions/ (stored 0%)
+  adding: PA4-Group05/src/database/src/definitions/email.init.sql (deflated 33%)
+  adding: PA4-Group05/src/database/src/definitions/username.init.sql (deflated 24%)
+  adding: PA4-Group05/src/database/src/exceptions/ (stored 0%)
+  adding: PA4-Group05/src/database/src/schemas/ (stored 0%)
+  adding: PA4-Group05/src/database/src/schemas/_init.sql (stored 0%)
+  adding: PA4-Group05/src/database/src/schemas/init.sql (deflated 49%)
+  adding: PA4-Group05/src/database/src/extensions/ (stored 0%)
+  adding: PA4-Group05/src/database/src/tables/ (stored 0%)
+  adding: PA4-Group05/src/database/src/tables/authentication/ (stored 0%)
+  adding: PA4-Group05/src/database/src/tables/authentication/session.account.sql (deflated 49%)
+  adding: PA4-Group05/src/database/src/tables/authentication/account.domain_email_username.sql (deflated 58%)
+  adding: PA4-Group05/src/database/src/tables/tag/ (stored 0%)
+  adding: PA4-Group05/src/database/src/tables/tag/related-email-tag.domain_tag.sql (deflated 46%)
+  adding: PA4-Group05/src/database/src/tables/tag/tag-contain.tag.sql (deflated 52%)
+  adding: PA4-Group05/src/database/src/tables/tag/category.init.sql (deflated 21%)
+  adding: PA4-Group05/src/database/src/tables/tag/domain.init.sql (deflated 38%)
+  adding: PA4-Group05/src/database/src/tables/tag/tag.category.sql (deflated 52%)
+  adding: PA4-Group05/src/database/src/tables/post/ (stored 0%)
+  adding: PA4-Group05/src/database/src/tables/post/post.comment.sql (deflated 54%)
+  adding: PA4-Group05/src/database/src/tables/post/include-post-tag.tag_post.sql (deflated 46%)
+  adding: PA4-Group05/src/database/src/tables/post/comment.account.sql (deflated 56%)
+  adding: PA4-Group05/src/database/src/tables/post/vote.comment.sql (deflated 51%)
+  adding: PA4-Group05/src/database/src/tables/file/ (stored 0%)
+  adding: PA4-Group05/src/database/src/tables/file/file.account.sql (deflated 50%)
+  adding: PA4-Group05/src/database/src/triggers/ (stored 0%)
+  adding: PA4-Group05/src/database/src/triggers/tag/ (stored 0%)
+  adding: PA4-Group05/src/database/src/triggers/tag/trigger-num-post.tag-contain.sql (deflated 79%)
+  adding: PA4-Group05/src/database/src/triggers/tag/unique-email-category.related-email-tag_tag_category.sql (deflated 75%)
+  adding: PA4-Group05/src/database/src/triggers/tag/trigger-num-tag.include-post-tag.sql (deflated 79%)
+  adding: PA4-Group05/src/database/src/triggers/post/ (stored 0%)
+  adding: PA4-Group05/src/database/src/triggers/post/trigger-num-comment.comment.sql (deflated 80%)
+  adding: PA4-Group05/src/database/src/triggers/post/trigger-hot.comment_post_tag_include-post-tag.sql (deflated 84%)
+  adding: PA4-Group05/src/database/src/triggers/post/trigger-num-vote.comment_vote.sql (deflated 83%)
+  adding: PA4-Group05/src/database/src/functions/ (stored 0%)
+  adding: PA4-Group05/src/database/src/functions/authentication/ (stored 0%)
+  adding: PA4-Group05/src/database/src/functions/authentication/session-check.session.sql (deflated 40%)
+  adding: PA4-Group05/src/database/src/functions/authentication/activate-account.session-check.sql (deflated 40%)
+  adding: PA4-Group05/src/database/src/functions/authentication/email-validation.ev.account.sql (deflated 49%)
+  adding: PA4-Group05/src/database/src/functions/authentication/logout.session.sql (deflated 42%)
+  adding: PA4-Group05/src/database/src/functions/authentication/get-email.account.sql (deflated 40%)
+  adding: PA4-Group05/src/database/src/functions/authentication/get-account-by-id.account_file.sql (deflated 82%)
+  adding: PA4-Group05/src/database/src/functions/authentication/set-account-avatar.account_file.sql (deflated 46%)
+  adding: PA4-Group05/src/database/src/functions/authentication/save-otp.session.sql (deflated 39%)
+  adding: PA4-Group05/src/database/src/functions/authentication/_register.sql (deflated 20%)
+  adding: PA4-Group05/src/database/src/functions/authentication/remove-otp.session.sql (deflated 38%)
+  adding: PA4-Group05/src/database/src/functions/authentication/get-otp.session.sql (deflated 37%)
+  adding: PA4-Group05/src/database/src/functions/authentication/login.session.sql (deflated 69%)
+  adding: PA4-Group05/src/database/src/functions/authentication/username-validation.uv.account.sql (deflated 45%)
+  adding: PA4-Group05/src/database/src/functions/authentication/register.ev_uv_session.sql (deflated 51%)
+  adding: PA4-Group05/src/database/src/functions/tag/ (stored 0%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-tag-by-id.tag.sql (deflated 49%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-post.get-post-by-id.sql (deflated 65%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-subject.get-tag_tag-contain.sql (deflated 48%)
+  adding: PA4-Group05/src/database/src/functions/tag/remove-vote.vote.sql (deflated 37%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-relevant-tag.tag_include-post-tag.sql (deflated 47%)
+  adding: PA4-Group05/src/database/src/functions/tag/vote-comment.vote.sql (deflated 46%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-tag.tag.sql (deflated 70%)
+  adding: PA4-Group05/src/database/src/functions/tag/create-post.include-post-tag.sql (deflated 59%)
+  adding: PA4-Group05/src/database/src/functions/tag/create-comment.comment.sql (deflated 51%)
+  adding: PA4-Group05/src/database/src/functions/tag/set-tag-icon.tag_file.sql (deflated 42%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-area.get-tag_tag-contain.sql (deflated 48%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-comment.post.sql (deflated 71%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-tags-by-id.tag.sql (deflated 42%)
+  adding: PA4-Group05/src/database/src/functions/tag/create-tag.tag.sql (deflated 53%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-post-by-id.account_include-post-tag.sql (deflated 59%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-tag-by-name.tag.sql (deflated 49%)
+  adding: PA4-Group05/src/database/src/functions/tag/get-tag-by-email.email_related-email-tag.sql (deflated 52%)
+  adding: PA4-Group05/src/database/src/functions/file/ (stored 0%)
+  adding: PA4-Group05/src/database/src/functions/file/update-file.file.sql (deflated 43%)
+  adding: PA4-Group05/src/database/src/functions/file/get-file-by-account.file.sql (deflated 48%)
+  adding: PA4-Group05/src/database/src/functions/file/create-file.file.sql (deflated 41%)
+  adding: PA4-Group05/src/database/src/functions/file/delete-file.file.sql (deflated 35%)
+  adding: PA4-Group05/src/database/src/functions/file/get-file-by-id.file.sql (deflated 43%)
+  adding: PA4-Group05/src/database/README.md (deflated 61%)
+  adding: PA4-Group05/src/database/package-lock.json (deflated 79%)
+  adding: PA4-Group05/src/database/package.json (deflated 52%)
+  adding: PA4-Group05/src/database/dummy-input/ (stored 0%)
+  adding: PA4-Group05/src/database/dummy-input/related-email-tag.domain_tag.sql (deflated 76%)
+  adding: PA4-Group05/src/database/dummy-input/vote.account_comment.sql (deflated 84%)
+  adding: PA4-Group05/src/database/dummy-input/tag-contain.tag.sql (deflated 77%)
+  adding: PA4-Group05/src/database/dummy-input/category.init.sql (deflated 32%)
+  adding: PA4-Group05/src/database/dummy-input/domain.init.sql (deflated 76%)
+  adding: PA4-Group05/src/database/dummy-input/tag.category.sql (deflated 69%)
+  adding: PA4-Group05/src/database/dummy-input/session.account.sql (deflated 80%)
+  adding: PA4-Group05/src/database/dummy-input/account.domain.sql (deflated 74%)
+  adding: PA4-Group05/src/database/dummy-input/post.account_comment.sql (deflated 69%)
+  adding: PA4-Group05/src/database/dummy-input/comment.account.sql (deflated 67%)
+  adding: PA4-Group05/src/database/dummy-input/include-post-tag.post_tag.sql (deflated 68%)
+  adding: PA4-Group05/src/database/dummy-input/init.sql (deflated 60%)
+  adding: PA4-Group05/src/database/extensions/ (stored 0%)
+  adding: PA4-Group05/src/database/tsconfig.json (deflated 55%)
+  adding: PA4-Group05/src/database/.specify/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/integrations/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/integrations/opencode.manifest.json (deflated 52%)
+  adding: PA4-Group05/src/database/.specify/integrations/speckit.manifest.json (deflated 58%)
+  adding: PA4-Group05/src/database/.specify/integrations/agy.manifest.json (deflated 52%)
+  adding: PA4-Group05/src/database/.specify/feature.json (stored 0%)
+  adding: PA4-Group05/src/database/.specify/workflows/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/workflows/speckit/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/workflows/speckit/workflow.yml (deflated 61%)
+  adding: PA4-Group05/src/database/.specify/workflows/workflow-registry.json (deflated 41%)
+  adding: PA4-Group05/src/database/.specify/templates/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/templates/tasks-template.md (deflated 67%)
+  adding: PA4-Group05/src/database/.specify/templates/constitution-template.md (deflated 53%)
+  adding: PA4-Group05/src/database/.specify/templates/spec-template.md (deflated 62%)
+  adding: PA4-Group05/src/database/.specify/templates/plan-template.md (deflated 56%)
+  adding: PA4-Group05/src/database/.specify/templates/checklist-template.md (deflated 56%)
+  adding: PA4-Group05/src/database/.specify/init-options.json (deflated 34%)
+  adding: PA4-Group05/src/database/.specify/memory/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/memory/roadmap.md (deflated 48%)
+  adding: PA4-Group05/src/database/.specify/memory/mission.md (deflated 50%)
+  adding: PA4-Group05/src/database/.specify/memory/.constitution-template.json (deflated 14%)
+  adding: PA4-Group05/src/database/.specify/memory/tech-stack.md (deflated 49%)
+  adding: PA4-Group05/src/database/.specify/memory/constitution.md (deflated 64%)
+  adding: PA4-Group05/src/database/.specify/scripts/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/scripts/powershell/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/scripts/powershell/setup-tasks.ps1 (deflated 63%)
+  adding: PA4-Group05/src/database/.specify/scripts/powershell/common.ps1 (deflated 77%)
+  adding: PA4-Group05/src/database/.specify/scripts/powershell/resolve-template.ps1 (deflated 50%)
+  adding: PA4-Group05/src/database/.specify/scripts/powershell/create-new-feature.ps1 (deflated 68%)
+  adding: PA4-Group05/src/database/.specify/scripts/powershell/check-prerequisites.ps1 (deflated 70%)
+  adding: PA4-Group05/src/database/.specify/scripts/powershell/setup-plan.ps1 (deflated 61%)
+  adding: PA4-Group05/src/database/.specify/scripts/bash/ (stored 0%)
+  adding: PA4-Group05/src/database/.specify/scripts/bash/create-new-feature.sh (deflated 69%)
+  adding: PA4-Group05/src/database/.specify/scripts/bash/setup-plan.sh (deflated 64%)
+  adding: PA4-Group05/src/database/.specify/scripts/bash/check-prerequisites.sh (deflated 71%)
+  adding: PA4-Group05/src/database/.specify/scripts/bash/setup-tasks.sh (deflated 63%)
+  adding: PA4-Group05/src/database/.specify/scripts/bash/common.sh (deflated 74%)
+  adding: PA4-Group05/src/database/.specify/scripts/bash/resolve-template.sh (deflated 60%)
+  adding: PA4-Group05/src/database/.specify/.gitignore (deflated 41%)
+  adding: PA4-Group05/src/database/.specify/integration.json (deflated 55%)
+  adding: PA4-Group05/src/database/.agents/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-analyze/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-analyze/SKILL.md (deflated 63%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-clarify/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-clarify/SKILL.md (deflated 62%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-implement/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-implement/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-tasks/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-tasks/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-taskstoissues/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-taskstoissues/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-checklist/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-checklist/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-converge/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-converge/SKILL.md (deflated 63%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-plan/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-plan/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-constitution/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-constitution/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-specify/ (stored 0%)
+  adding: PA4-Group05/src/database/.agents/skills/speckit-specify/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/database/uploads/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/tasks.md (deflated 68%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/checklists/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/checklists/requirements.md (deflated 50%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/quickstart.md (deflated 52%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/spec.md (deflated 70%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/research.md (deflated 60%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/data-model.md (deflated 61%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/contracts/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/contracts/post-feed.md (deflated 48%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/contracts/post-detail.md (deflated 56%)
+  adding: PA4-Group05/src/database/specs/003-post-feed/plan.md (deflated 59%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/tasks.md (deflated 68%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/checklists/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/checklists/requirements.md (deflated 49%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/quickstart.md (deflated 55%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/spec.md (deflated 67%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/research.md (deflated 56%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/data-model.md (deflated 62%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/figures/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/contracts/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/contracts/authentication-functions.md (deflated 71%)
+  adding: PA4-Group05/src/database/specs/001-auth-schema/plan.md (deflated 63%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/tasks.md (deflated 73%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/checklists/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/checklists/requirements.md (deflated 49%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/quickstart.md (deflated 55%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/spec.md (deflated 70%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/research.md (deflated 60%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/data-model.md (deflated 60%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/contracts/ (stored 0%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/contracts/forum-browse.md (deflated 61%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/contracts/forum-materials.md (deflated 48%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/contracts/forum-context.md (deflated 61%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/contracts/forum-search.md (deflated 54%)
+  adding: PA4-Group05/src/database/specs/002-forum-browse-search/plan.md (deflated 63%)
+  adding: PA4-Group05/src/database/vitest.config.ts (deflated 38%)
+  adding: PA4-Group05/src/database/scripts/ (stored 0%)
+  adding: PA4-Group05/src/database/scripts/compile.ts (deflated 47%)
+  adding: PA4-Group05/src/database/scripts/sql.ts (deflated 67%)
+  adding: PA4-Group05/src/database/scripts/node.ts (deflated 71%)
+  adding: PA4-Group05/src/database/scripts/env.ts (deflated 54%)
+  adding: PA4-Group05/src/database/scripts/restore.ts (deflated 47%)
+  adding: PA4-Group05/src/database/scripts/run_all.ts (deflated 59%)
+  adding: PA4-Group05/src/database/scripts/files.ts (deflated 56%)
+  adding: PA4-Group05/src/database/tests/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/triggers/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/procedures/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/migrations/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/migrations/init.spec.ts (deflated 60%)
+  adding: PA4-Group05/src/database/tests/functions/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/functions/hot/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/functions/hot/hot.spec.ts (deflated 79%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/register-session.spec.ts (deflated 69%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/remove-otp.spec.ts (deflated 78%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/pg.username-validation.testcases.ts (deflated 74%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/get-email.spec.ts (deflated 76%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/save-otp.spec.ts (deflated 76%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/login.spec.ts (deflated 71%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/email-validation.spec.ts (deflated 66%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/logout.spec.ts (deflated 75%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/avatar.spec.ts (deflated 78%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/session-check.spec.ts (deflated 76%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/active-account.spec.ts (deflated 80%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/username-validation.spec.ts (deflated 61%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/register.spec.ts (deflated 59%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/pg.full-flow.testcases.ts (deflated 79%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/full-flow.spec.ts (deflated 79%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/helpers.ts (deflated 69%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/get-otp.spec.ts (deflated 84%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/pg.login.testcases.ts (deflated 82%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/pg.register.testcases.ts (deflated 89%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/get-account-by-id.spec.ts (deflated 70%)
+  adding: PA4-Group05/src/database/tests/functions/authentication/pg.email-validation.testcases.ts (deflated 79%)
+  adding: PA4-Group05/src/database/tests/functions/tag/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/functions/tag/tag.spec.ts (deflated 80%)
+  adding: PA4-Group05/src/database/tests/functions/tag/get-relevant-tag.spec.ts (deflated 71%)
+  adding: PA4-Group05/src/database/tests/functions/tag/helpers.ts (deflated 72%)
+  adding: PA4-Group05/src/database/tests/functions/post/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/functions/post/post.spec.ts (deflated 83%)
+  adding: PA4-Group05/src/database/tests/functions/file/ (stored 0%)
+  adding: PA4-Group05/src/database/tests/functions/file/file.spec.ts (deflated 80%)
+  adding: PA4-Group05/src/database/.gitignore (stored 0%)
+  adding: PA4-Group05/src/database/figures/ (stored 0%)
+  adding: PA4-Group05/src/database/.git (deflated 3%)
+  adding: PA4-Group05/src/frontend/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/LoginPage.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/feed/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/feed/FeedPage.css (deflated 83%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/feed/FeedPage.tsx (deflated 72%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/subject/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/subject/SubjectPage.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/subject/SubjectPage.css (deflated 83%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/subject/SubjectPage.tsx (deflated 72%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/area/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/area/AreaPage.css (deflated 87%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/area/AreaPage.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/area/AreaPage.tsx (deflated 73%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/BrowsePage.tsx (deflated 60%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/university/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/university/UniversityPage.css (deflated 86%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/university/UniversityPage.tsx (deflated 75%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/browse/BrowsePage.css (deflated 34%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/ForumPage.css (deflated 18%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/library/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/library/LibraryPage.css (deflated 83%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/library/LibraryPage.tsx (deflated 73%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/create/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/create/createPostPage.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/create/createPostPage.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/create/createPostPage.css (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/view/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/view/ViewPostPage.tsx (deflated 69%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/view/ViewPostPage.css (deflated 87%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/post/view/ViewPostPage.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/forums/ForumPage.tsx (deflated 54%)
+  adding: PA4-Group05/src/frontend/src/pages/route_error/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/route_error/RouteErrorPage.tsx (deflated 51%)
+  adding: PA4-Group05/src/frontend/src/pages/route_error/RouteErrorPage.css (deflated 50%)
+  adding: PA4-Group05/src/frontend/src/pages/loading/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/loading/LoadingPage.tsx (deflated 68%)
+  adding: PA4-Group05/src/frontend/src/pages/loading/LoadingPage.css (deflated 73%)
+  adding: PA4-Group05/src/frontend/src/pages/home/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/home/HomePage.tsx (deflated 61%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/set_password/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/set_password/SetPassword.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/set_password/SetPassword.tsx (deflated 76%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/set_password/SetPassword.css (deflated 74%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/otp/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/otp/OtpPage.tsx (deflated 73%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/otp/OtpPage.css (deflated 76%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/otp/OtpPage.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/register/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/register/RegisterPage.tsx (deflated 82%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/register/RegisterPage.css (deflated 78%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/register/RegisterPage.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/recover_password/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/recover_password/RecoverPassword.css (deflated 74%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/recover_password/RecoverPasswordPage.tsx (deflated 70%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/recover_password/RecoverPassword.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/login/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/login/LoginPage.test.tsx (stored 0%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/login/LoginPage.tsx (deflated 76%)
+  adding: PA4-Group05/src/frontend/src/pages/auth/login/LoginPage.css (deflated 79%)
+  adding: PA4-Group05/src/frontend/src/features/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/forum/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/forum/tag/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/forum/tag/tag.ts (deflated 47%)
+  adding: PA4-Group05/src/frontend/src/features/forum/tag/type.ts (deflated 48%)
+  adding: PA4-Group05/src/frontend/src/features/forum/post/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/forum/post/type.ts (deflated 45%)
+  adding: PA4-Group05/src/frontend/src/features/forum/post/post.ts (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/account/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/account/me/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/account/me/account.ts (deflated 48%)
+  adding: PA4-Group05/src/frontend/src/features/account/me/type.ts (deflated 60%)
+  adding: PA4-Group05/src/frontend/src/features/auth/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/auth/otp/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/auth/otp/otp.ts (deflated 63%)
+  adding: PA4-Group05/src/frontend/src/features/auth/otp/type.ts (deflated 34%)
+  adding: PA4-Group05/src/frontend/src/features/auth/logout/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/auth/logout/logout.ts (deflated 54%)
+  adding: PA4-Group05/src/frontend/src/features/auth/register/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/auth/register/type.ts (deflated 49%)
+  adding: PA4-Group05/src/frontend/src/features/auth/register/register.ts (deflated 56%)
+  adding: PA4-Group05/src/frontend/src/features/auth/login/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/features/auth/login/type.ts (deflated 49%)
+  adding: PA4-Group05/src/frontend/src/features/auth/login/login.ts (deflated 53%)
+  adding: PA4-Group05/src/frontend/src/shared/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/api/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/api/error.ts (deflated 57%)
+  adding: PA4-Group05/src/frontend/src/shared/api/client.ts (deflated 71%)
+  adding: PA4-Group05/src/frontend/src/shared/api/index.ts (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/camera.svg (deflated 50%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/university.svg (deflated 50%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/bell.svg (deflated 49%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/school.svg (deflated 57%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/settings.svg (deflated 56%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/pin.svg (deflated 54%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/search.svg (deflated 42%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/library.svg (deflated 49%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/rooms.svg (deflated 47%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/friend.svg (deflated 49%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/error.svg (deflated 44%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/unhide.svg (deflated 43%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/post.svg (deflated 44%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/arrow-down.svg (deflated 22%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/attach.svg (deflated 47%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/arrow-up-right.svg (deflated 31%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/save.svg (deflated 48%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/trending.svg (deflated 47%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/x.svg (deflated 29%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/timer.svg (deflated 44%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/upload.svg (deflated 39%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/add_friends.svg (deflated 49%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/key.svg (deflated 46%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/mail-open.svg (deflated 44%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/chat.svg (deflated 42%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/hide.svg (deflated 54%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/white_board.svg (deflated 41%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/arrow-up.svg (deflated 25%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/house.svg (deflated 50%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/success.svg (deflated 42%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/lock.svg (deflated 51%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/screen-share.svg (deflated 44%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/tick.svg (deflated 21%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/mic.svg (deflated 50%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/browse.svg (deflated 49%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/log-out.svg (deflated 41%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/community.svg (deflated 48%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/arrow-right.svg (deflated 24%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/icon/profile.svg (deflated 46%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/study-poster.svg (deflated 28%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/top_logo.svg (deflated 55%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/left_logo.svg (deflated 54%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/logo.svg (deflated 60%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/right_logo.svg (deflated 55%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/sparkles.svg (deflated 59%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/star.svg (deflated 56%)
+  adding: PA4-Group05/src/frontend/src/shared/assets/image/bottom_logo.svg (deflated 55%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/button/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/button/Button.module.css (deflated 64%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/button/Button.test.tsx (deflated 69%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/button/Button.tsx (deflated 51%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/button/index.ts (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/toggle_switch/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/toggle_switch/ToggleSwitch.module.css (deflated 66%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/toggle_switch/ToggleSwitch.test.tsx (deflated 61%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/toggle_switch/index.ts (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/toggle_switch/ToggleSwitch.tsx (deflated 53%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/tick_box/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/tick_box/TickBox.module.css (deflated 54%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/tick_box/TickBox.test.tsx (deflated 61%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/tick_box/index.ts (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/tick_box/TickBox.tsx (deflated 52%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/input/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/input/Input.test.tsx (deflated 73%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/input/Input.tsx (deflated 71%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/input/index.ts (deflated 11%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/input/Input.module.css (deflated 67%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/select_card/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/select_card/SelectCard.module.css (deflated 53%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/select_card/SelectCard.tsx (deflated 52%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/select_card/SelectCard.test.tsx (deflated 60%)
+  adding: PA4-Group05/src/frontend/src/shared/ui/select_card/index.ts (stored 0%)
+  adding: PA4-Group05/src/frontend/src/entities/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/entities/session/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/entities/session/type.ts (deflated 35%)
+  adding: PA4-Group05/src/frontend/src/entities/session/auth-store.ts (deflated 68%)
+  adding: PA4-Group05/src/frontend/src/entities/otp/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/entities/otp/otp-store.ts (deflated 63%)
+  adding: PA4-Group05/src/frontend/src/entities/otp/type.ts (deflated 23%)
+  adding: PA4-Group05/src/frontend/src/test/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/test/setup.ts (deflated 36%)
+  adding: PA4-Group05/src/frontend/src/app/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/App.tsx (deflated 52%)
+  adding: PA4-Group05/src/frontend/src/app/index.css (deflated 71%)
+  adding: PA4-Group05/src/frontend/src/app/guard/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/guard/auth-guard.tsx (deflated 53%)
+  adding: PA4-Group05/src/frontend/src/app/guard/otp-guard.tsx (deflated 57%)
+  adding: PA4-Group05/src/frontend/src/app/guard/public-only.tsx (deflated 52%)
+  adding: PA4-Group05/src/frontend/src/app/layouts/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/layouts/forum/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/layouts/forum/ForumLayout.css (deflated 83%)
+  adding: PA4-Group05/src/frontend/src/app/layouts/forum/ForumLayout.tsx (deflated 69%)
+  adding: PA4-Group05/src/frontend/src/app/layouts/auth/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/layouts/auth/AuthLayout.tsx (deflated 71%)
+  adding: PA4-Group05/src/frontend/src/app/layouts/auth/AuthLayout.css (deflated 77%)
+  adding: PA4-Group05/src/frontend/src/app/main.test.tsx (deflated 60%)
+  adding: PA4-Group05/src/frontend/src/app/main.tsx (deflated 43%)
+  adding: PA4-Group05/src/frontend/src/app/providers/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/providers/query/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/providers/query/query-provider.tsx (deflated 56%)
+  adding: PA4-Group05/src/frontend/src/app/providers/query/index.ts (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/providers/query/query-provider.test.tsx (deflated 65%)
+  adding: PA4-Group05/src/frontend/src/app/providers/router/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/providers/router/router-provider.tsx (deflated 82%)
+  adding: PA4-Group05/src/frontend/src/app/providers/router/router-provider.test.tsx (deflated 46%)
+  adding: PA4-Group05/src/frontend/src/app/providers/router/index.ts (deflated 37%)
+  adding: PA4-Group05/src/frontend/src/app/providers/auth/ (stored 0%)
+  adding: PA4-Group05/src/frontend/src/app/providers/auth/auth-initializer.tsx (deflated 61%)
+  adding: PA4-Group05/src/frontend/src/app/App.test.tsx (deflated 45%)
+  adding: PA4-Group05/src/frontend/vite.config.ts (deflated 57%)
+  adding: PA4-Group05/src/frontend/eslint.config.js (deflated 54%)
+  adding: PA4-Group05/src/frontend/README.md (deflated 64%)
+  adding: PA4-Group05/src/frontend/package-lock.json (deflated 77%)
+  adding: PA4-Group05/src/frontend/package.json (deflated 61%)
+  adding: PA4-Group05/src/frontend/index.html (deflated 37%)
+  adding: PA4-Group05/src/frontend/tsconfig.json (deflated 43%)
+  adding: PA4-Group05/src/frontend/.specify/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.specify/integrations/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.specify/integrations/opencode.manifest.json (deflated 52%)
+  adding: PA4-Group05/src/frontend/.specify/integrations/speckit.manifest.json (deflated 50%)
+  adding: PA4-Group05/src/frontend/.specify/integrations/agy.manifest.json (deflated 52%)
+  adding: PA4-Group05/src/frontend/.specify/workflows/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.specify/workflows/speckit/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.specify/workflows/speckit/workflow.yml (deflated 61%)
+  adding: PA4-Group05/src/frontend/.specify/workflows/workflow-registry.json (deflated 41%)
+  adding: PA4-Group05/src/frontend/.specify/templates/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.specify/templates/tasks-template.md (deflated 67%)
+  adding: PA4-Group05/src/frontend/.specify/templates/constitution-template.md (deflated 53%)
+  adding: PA4-Group05/src/frontend/.specify/templates/spec-template.md (deflated 62%)
+  adding: PA4-Group05/src/frontend/.specify/templates/plan-template.md (deflated 56%)
+  adding: PA4-Group05/src/frontend/.specify/templates/checklist-template.md (deflated 56%)
+  adding: PA4-Group05/src/frontend/.specify/init-options.json (deflated 34%)
+  adding: PA4-Group05/src/frontend/.specify/memory/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.specify/memory/.constitution-template.json (deflated 14%)
+  adding: PA4-Group05/src/frontend/.specify/memory/constitution.md (deflated 63%)
+  adding: PA4-Group05/src/frontend/.specify/scripts/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.specify/scripts/bash/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.specify/scripts/bash/create-new-feature.sh (deflated 69%)
+  adding: PA4-Group05/src/frontend/.specify/scripts/bash/setup-plan.sh (deflated 64%)
+  adding: PA4-Group05/src/frontend/.specify/scripts/bash/check-prerequisites.sh (deflated 71%)
+  adding: PA4-Group05/src/frontend/.specify/scripts/bash/setup-tasks.sh (deflated 63%)
+  adding: PA4-Group05/src/frontend/.specify/scripts/bash/common.sh (deflated 74%)
+  adding: PA4-Group05/src/frontend/.specify/scripts/bash/resolve-template.sh (deflated 60%)
+  adding: PA4-Group05/src/frontend/.specify/.gitignore (deflated 41%)
+  adding: PA4-Group05/src/frontend/.specify/integration.json (deflated 55%)
+  adding: PA4-Group05/src/frontend/tsconfig.app.json (deflated 49%)
+  adding: PA4-Group05/src/frontend/.agents/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-analyze/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-analyze/SKILL.md (deflated 63%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-clarify/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-clarify/SKILL.md (deflated 62%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-implement/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-implement/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-tasks/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-tasks/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-taskstoissues/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-taskstoissues/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-checklist/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-checklist/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-converge/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-converge/SKILL.md (deflated 63%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-plan/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-plan/SKILL.md (deflated 66%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-constitution/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-constitution/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-specify/ (stored 0%)
+  adding: PA4-Group05/src/frontend/.agents/skills/speckit-specify/SKILL.md (deflated 64%)
+  adding: PA4-Group05/src/frontend/tsconfig.node.json (deflated 45%)
+  adding: PA4-Group05/src/frontend/specs/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/tasks.md (deflated 68%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/checklists/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/checklists/requirements.md (deflated 53%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/quickstart.md (deflated 58%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/spec.md (deflated 69%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/research.md (deflated 61%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/data-model.md (deflated 64%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/contracts/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/contracts/forum-search-api.md (deflated 56%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/contracts/forum-context-storage.md (deflated 51%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/contracts/forum-browse-api.md (deflated 57%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/contracts/forum-routes.md (deflated 58%)
+  adding: PA4-Group05/src/frontend/specs/002-browse-university-forums/plan.md (deflated 66%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/tasks.md (deflated 67%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/checklists/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/checklists/requirements.md (deflated 51%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/quickstart.md (deflated 55%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/spec.md (deflated 68%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/research.md (deflated 59%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/data-model.md (deflated 64%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/contracts/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/contracts/forum-feed-api.md (deflated 58%)
+  adding: PA4-Group05/src/frontend/specs/003-forum-post-list/plan.md (deflated 64%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/tasks.md (deflated 68%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/checklists/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/checklists/requirements.md (deflated 51%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/quickstart.md (deflated 62%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/spec.md (deflated 71%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/research.md (deflated 61%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/data-model.md (deflated 65%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/contracts/ (stored 0%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/contracts/auth-routes.md (deflated 67%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/contracts/auth-api.md (deflated 66%)
+  adding: PA4-Group05/src/frontend/specs/001-authentication-user-flows/plan.md (deflated 64%)
+  adding: PA4-Group05/src/frontend/.gitignore (deflated 38%)
+  adding: PA4-Group05/src/frontend/tsconfig.deploy.json (deflated 45%)
+  adding: PA4-Group05/src/frontend/.git (deflated 3%)
+  adding: PA4-Group05/Changes.md (deflated 70%)
+  adding: PA4-Group05/prototype/ (stored 0%)
+  adding: PA4-Group05/prototype/meetings_a3_request_outcome.png (deflated 19%)
+  adding: PA4-Group05/prototype/friend_04_discovery_find_friend_2.png (deflated 6%)
+  adding: PA4-Group05/prototype/friend_01_chat_noah_williams.png (deflated 4%)
+  adding: PA4-Group05/prototype/meetings_a4_owner_join_requests.png (deflated 4%)
+  adding: PA4-Group05/prototype/meetings_d5_in_a_call.png (deflated 5%)
+  adding: PA4-Group05/prototype/meetings_04_in_the_room.png (deflated 6%)
+  adding: PA4-Group05/prototype/friend_04_physics_lab_document.png (deflated 8%)
+  adding: PA4-Group05/prototype/studitopia_reusable_component_library.png (deflated 14%)
+  adding: PA4-Group05/prototype/meetings_b1_matching.png (deflated 5%)
+  adding: PA4-Group05/prototype/create_post_material.png (deflated 5%)
+  adding: PA4-Group05/prototype/settings_delete_account_desktop_success.png (deflated 12%)
+  adding: PA4-Group05/prototype/dijkstra_question_desktop.png (deflated 5%)
+  adding: PA4-Group05/prototype/friend_01_new_friend_ravi_shah.png (deflated 4%)
+  adding: PA4-Group05/prototype/create_post_validation_and_publication_states.png (deflated 5%)
+  adding: PA4-Group05/prototype/loading_desktop.png (deflated 32%)
+  adding: PA4-Group05/prototype/create_post_functional_quiz.png (deflated 6%)
+  adding: PA4-Group05/prototype/meetings_d4_voice_call_request.png (deflated 4%)
+  adding: PA4-Group05/prototype/friend_01_chat_mia_chen.png (deflated 4%)
+  adding: PA4-Group05/prototype/forum_feed_interaction_states_desktop.png (deflated 4%)
+  adding: PA4-Group05/prototype/friend_05_states.png (deflated 7%)
+  adding: PA4-Group05/prototype/meetings_07_left_the_room.png (deflated 20%)
+  adding: PA4-Group05/prototype/meetings_c1_confirm_leave.png (deflated 6%)
+  adding: PA4-Group05/prototype/browse_home_desktop.png (deflated 5%)
+  adding: PA4-Group05/prototype/profile_p5_report_a_user.png (deflated 5%)
+  adding: PA4-Group05/prototype/message_document_members.png (deflated 13%)
+  adding: PA4-Group05/prototype/friend_04b_calculus_crew_document.png (deflated 9%)
+  adding: PA4-Group05/prototype/logo.png (deflated 16%)
+  adding: PA4-Group05/prototype/settings_02_settings_preferences.png (deflated 7%)
+  adding: PA4-Group05/prototype/meetings_01_meeting_lobby.png (deflated 6%)
+  adding: PA4-Group05/prototype/set_new_password_desktop.png (deflated 3%)
+  adding: PA4-Group05/prototype/friend_01_friend_hub.png (deflated 4%)
+  adding: PA4-Group05/prototype/meetings_g1_schedule_step.png (deflated 5%)
+  adding: PA4-Group05/prototype/meetings_e1_request_help.png (deflated 5%)
+  adding: PA4-Group05/prototype/studitopia_editable_wordmark.png (deflated 32%)
+  adding: PA4-Group05/prototype/meetings_f1_room_policies.png (deflated 5%)
+  adding: PA4-Group05/prototype/login_desktop.png (deflated 3%)
+  adding: PA4-Group05/prototype/create_post_prerequisite_tree_generate_from_file.png (deflated 6%)
+  adding: PA4-Group05/prototype/meetings_b2_match_found.png (deflated 5%)
+  adding: PA4-Group05/prototype/friend_04a_calculus_crew_message.png (deflated 8%)
+  adding: PA4-Group05/prototype/create_post_prerequisite_tree_code.png (deflated 6%)
+  adding: PA4-Group05/prototype/meetings_f2_timer_controls.png (deflated 6%)
+  adding: PA4-Group05/prototype/published_prerequisite_tree_reader_simulation.png (deflated 6%)
+  adding: PA4-Group05/prototype/meetings_d1_send_a_wave.png (deflated 5%)
+  adding: PA4-Group05/prototype/friend_04_physics_lab_list_member.png (deflated 7%)
+  adding: PA4-Group05/prototype/create_post_prerequisite_tree_drag_and_drop.png (deflated 7%)
+  adding: PA4-Group05/prototype/meetings_c3_room_closed.png (deflated 22%)
+  adding: PA4-Group05/prototype/settings_delete_account_desktop_otp.png (deflated 11%)
+  adding: PA4-Group05/prototype/profile_p6_private_profile.png (deflated 10%)
+  adding: PA4-Group05/prototype/meetings_c4_connection_lost.png (deflated 6%)
+  adding: PA4-Group05/prototype/friend_04_physics_lab_message.png (deflated 8%)
+  adding: PA4-Group05/prototype/friend_01_chat_aisha_patel.png (deflated 4%)
+  adding: PA4-Group05/prototype/friend_01b_no_conversation_selected.png (deflated 5%)
+  adding: PA4-Group05/prototype/profile_p7_profile_states.png (deflated 14%)
+  adding: PA4-Group05/prototype/meetings_c2_removed_from_room.png (deflated 21%)
+  adding: PA4-Group05/prototype/welcome_desktop_preview.png (deflated 44%)
+  adding: PA4-Group05/prototype/settings_login_desktop_destination.png (deflated 3%)
+  adding: PA4-Group05/prototype/friend_01_new_friend_daniel_park.png (deflated 5%)
+  adding: PA4-Group05/prototype/recovery_confirmation_desktop.png (deflated 3%)
+  adding: PA4-Group05/prototype/friend_01_new_friend_isabella_rossi.png (deflated 5%)
+  adding: PA4-Group05/prototype/friend_02_find_friend_and_recommended.png (deflated 5%)
+  adding: PA4-Group05/prototype/friend_04_study_circle_list_member.png (deflated 9%)
+  adding: PA4-Group05/prototype/settings_05_settings_states.png (deflated 7%)
+  adding: PA4-Group05/prototype/meetings_e3_helper_view.png (deflated 5%)
+  adding: PA4-Group05/prototype/meetings_f3_policy_applied.png (deflated 5%)
+  adding: PA4-Group05/prototype/browse_computer_science_desktop.png (deflated 4%)
+  adding: PA4-Group05/prototype/meetings_g2_scheduled_room_page.png (deflated 11%)
+  adding: PA4-Group05/prototype/meetings_05_in_the_room_chat_panel.png (deflated 5%)
+  adding: PA4-Group05/prototype/settings_04_settings_privacy_and_notifications.png (deflated 9%)
+  adding: PA4-Group05/prototype/friend_01_chat_oliver_reed.png (deflated 4%)
+  adding: PA4-Group05/prototype/friend_04_study_circle_document.png (deflated 11%)
+  adding: PA4-Group05/prototype/settings_01_settings_profile.png (deflated 5%)
+  adding: PA4-Group05/prototype/meetings_06_hall_room_table_map.png (deflated 6%)
+  adding: PA4-Group05/prototype/studitopia_visual_identity_guide.png (deflated 4%)
+  adding: PA4-Group05/prototype/meetings_a1_request_to_join.png (deflated 12%)
+  adding: PA4-Group05/prototype/meetings_d2_receive_a_wave.png (deflated 6%)
+  adding: PA4-Group05/prototype/studitopia_validation_and_interaction_state_specimens.png (deflated 9%)
+  adding: PA4-Group05/prototype/meetings_b4_waiting_queue.png (deflated 5%)
+  adding: PA4-Group05/prototype/friend_04c_calculus_crew_list_member.png (deflated 7%)
+  adding: PA4-Group05/prototype/profile_p3_public_profile_mia_chen.png (deflated 4%)
+  adding: PA4-Group05/prototype/create_post_desktop.png (deflated 4%)
+  adding: PA4-Group05/prototype/settings_03_settings_account.png (deflated 9%)
+  adding: PA4-Group05/prototype/profile_p1_own_profile_my_posts.png (deflated 4%)
+  adding: PA4-Group05/prototype/register_desktop.png (deflated 2%)
+  adding: PA4-Group05/prototype/create_post_discussion.png (deflated 5%)
+  adding: PA4-Group05/prototype/prerequisite_tree_validation_and_recovery_states.png (deflated 6%)
+  adding: PA4-Group05/prototype/meetings_c5_microphone_blocked.png (deflated 8%)
+  adding: PA4-Group05/prototype/friend_04_study_circle_message.png (deflated 10%)
+  adding: PA4-Group05/prototype/preference_settings_desktop.png (deflated 3%)
+  adding: PA4-Group05/prototype/friend_03_friend_request.png (deflated 6%)
+  adding: PA4-Group05/prototype/otp_desktop.png (deflated 3%)
+  adding: PA4-Group05/prototype/settings_05_profile_validation_and_notification_selection.png (deflated 8%)
+  adding: PA4-Group05/prototype/forum_feed_default_desktop.png (deflated 4%)
+  adding: PA4-Group05/prototype/settings_01a_profile_content_rejected.png (deflated 4%)
+  adding: PA4-Group05/prototype/feed_algorithms_desktop.png (deflated 4%)
+  adding: PA4-Group05/prototype/meetings_e2_request_status.png (deflated 6%)
+  adding: PA4-Group05/prototype/meetings_08_states.png (deflated 9%)
+  adding: PA4-Group05/prototype/meetings_b3_no_match_in_15_seconds.png (deflated 5%)
+  adding: PA4-Group05/prototype/meetings_03_pre_join.png (deflated 5%)
+  adding: PA4-Group05/prototype/settings_04a_settings_notifications_selected.png (deflated 9%)
+  adding: PA4-Group05/prototype/meetings_d3_1_on_1_chat.png (deflated 5%)
+  adding: PA4-Group05/prototype/recover_desktop.png (deflated 3%)
+  adding: PA4-Group05/prototype/settings_delete_account_desktop_otp_error.png (deflated 10%)
+  adding: PA4-Group05/prototype/meetings_a2_pending_approval.png (deflated 17%)
+  adding: PA4-Group05/prototype/friend_04_my_group.png (deflated 7%)
+  adding: PA4-Group05/prototype/meetings_02_create_room.png (deflated 4%)
+  adding: PA4-Group05/prototype/meetings_g3_starting_soon.png (deflated 4%)
+  adding: PA4-Group05/use_cases/ (stored 0%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/ (stored 0%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/UC-29-manage-friend-groups.md (deflated 68%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/UC-26-find-study-partner.pdf (deflated 7%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/UC-27-send-friend-request.md (deflated 67%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/diagram.pdf (deflated 11%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/UC-28-manage-friend-requests.md (deflated 67%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/UC-29-manage-friend-groups.pdf (deflated 12%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/diagram.md (deflated 63%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/UC-28-manage-friend-requests.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/UC-27-send-friend-request.pdf (deflated 6%)
+  adding: PA4-Group05/use_cases/friends-and-social-networking/UC-26-find-study-partner.md (deflated 66%)
+  adding: PA4-Group05/use_cases/meeting-rooms/ (stored 0%)
+  adding: PA4-Group05/use_cases/meeting-rooms/UC-07-join-create-study-room.pdf (deflated 9%)
+  adding: PA4-Group05/use_cases/meeting-rooms/UC-31-request-learning-help.md (deflated 66%)
+  adding: PA4-Group05/use_cases/meeting-rooms/diagram.pdf (deflated 9%)
+  adding: PA4-Group05/use_cases/meeting-rooms/UC-30-shared-study-tools.md (deflated 65%)
+  adding: PA4-Group05/use_cases/meeting-rooms/UC-30-shared-study-tools.pdf (deflated 7%)
+  adding: PA4-Group05/use_cases/meeting-rooms/diagram.md (deflated 60%)
+  adding: PA4-Group05/use_cases/meeting-rooms/UC-07-join-create-study-room.md (deflated 67%)
+  adding: PA4-Group05/use_cases/meeting-rooms/UC-31-request-learning-help.pdf (deflated 6%)
+  adding: PA4-Group05/use_cases/functional_requirement_coverage.md (deflated 94%)
+  adding: PA4-Group05/use_cases/post-management/ (stored 0%)
+  adding: PA4-Group05/use_cases/post-management/UC-04-create-discussion-post.pdf (deflated 6%)
+  adding: PA4-Group05/use_cases/post-management/diagram.pdf (deflated 9%)
+  adding: PA4-Group05/use_cases/post-management/UC-16-create-functional-post.md (deflated 65%)
+  adding: PA4-Group05/use_cases/post-management/diagram.md (deflated 54%)
+  adding: PA4-Group05/use_cases/post-management/UC-16-create-functional-post.pdf (deflated 9%)
+  adding: PA4-Group05/use_cases/post-management/UC-15-create-material-post.md (deflated 66%)
+  adding: PA4-Group05/use_cases/post-management/UC-04-create-discussion-post.md (deflated 65%)
+  adding: PA4-Group05/use_cases/post-management/UC-15-create-material-post.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/profile-management/ (stored 0%)
+  adding: PA4-Group05/use_cases/profile-management/diagram.pdf (deflated 8%)
+  adding: PA4-Group05/use_cases/profile-management/UC-12-manage-profile.pdf (deflated 7%)
+  adding: PA4-Group05/use_cases/profile-management/UC-14-manage-privacy.pdf (deflated 9%)
+  adding: PA4-Group05/use_cases/profile-management/UC-13-set-learning-preferences.md (deflated 66%)
+  adding: PA4-Group05/use_cases/profile-management/UC-14-manage-privacy.md (deflated 67%)
+  adding: PA4-Group05/use_cases/profile-management/diagram.md (deflated 54%)
+  adding: PA4-Group05/use_cases/profile-management/UC-13-set-learning-preferences.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/profile-management/UC-12-manage-profile.md (deflated 65%)
+  adding: PA4-Group05/use_cases/functional_requirement_coverage.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/social-forum-management/ (stored 0%)
+  adding: PA4-Group05/use_cases/social-forum-management/diagram.pdf (deflated 6%)
+  adding: PA4-Group05/use_cases/social-forum-management/UC-03-browse-search-forum.md (deflated 67%)
+  adding: PA4-Group05/use_cases/social-forum-management/diagram.md (deflated 53%)
+  adding: PA4-Group05/use_cases/social-forum-management/UC-03-browse-search-forum.pdf (deflated 6%)
+  adding: PA4-Group05/use_cases/learning-resource-library/ (stored 0%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-24-view-my-storage.md (deflated 67%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-22-find-learning-resources.md (deflated 66%)
+  adding: PA4-Group05/use_cases/learning-resource-library/diagram.pdf (deflated 6%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-25-delete-published-resource.md (deflated 67%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-24-view-my-storage.pdf (deflated 4%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-06-share-learning-resource.md (deflated 66%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-22-find-learning-resources.pdf (deflated 6%)
+  adding: PA4-Group05/use_cases/learning-resource-library/diagram.md (deflated 56%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-25-delete-published-resource.pdf (deflated 4%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-23-resource-recommendations.md (deflated 67%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-23-resource-recommendations.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/learning-resource-library/UC-06-share-learning-resource.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/authentication-and-account/ (stored 0%)
+  adding: PA4-Group05/use_cases/authentication-and-account/diagram.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-11-delete-account.md (deflated 66%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-01-register-account.md (deflated 67%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-08-logout.pdf (deflated 4%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-01-register-account.pdf (deflated 4%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-10-recover-password.pdf (deflated 4%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-08-logout.md (deflated 64%)
+  adding: PA4-Group05/use_cases/authentication-and-account/diagram.md (deflated 64%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-09-automatic-logout.pdf (deflated 4%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-11-delete-account.pdf (deflated 8%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-10-recover-password.md (deflated 66%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-09-automatic-logout.md (deflated 67%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-02-log-in.md (deflated 64%)
+  adding: PA4-Group05/use_cases/authentication-and-account/UC-02-log-in.pdf (deflated 4%)
+  adding: PA4-Group05/use_cases/forum-search-and-recommendation/ (stored 0%)
+  adding: PA4-Group05/use_cases/forum-search-and-recommendation/diagram.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/forum-search-and-recommendation/UC-21-forum-recommendations.md (deflated 66%)
+  adding: PA4-Group05/use_cases/forum-search-and-recommendation/diagram.md (deflated 51%)
+  adding: PA4-Group05/use_cases/forum-search-and-recommendation/UC-21-forum-recommendations.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/forum-interaction/ (stored 0%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-05-comment-answer.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-20-report-moderate-forum-content.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/forum-interaction/diagram.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-18-mark-true-response.md (deflated 66%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-18-mark-true-response.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-17-vote-posts-comments.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/forum-interaction/diagram.md (deflated 60%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-17-vote-posts-comments.md (deflated 64%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-19-save-post.pdf (deflated 4%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-20-report-moderate-forum-content.md (deflated 67%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-05-comment-answer.md (deflated 66%)
+  adding: PA4-Group05/use_cases/forum-interaction/UC-19-save-post.md (deflated 63%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/ (stored 0%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/UC-33-control-communication.md (deflated 66%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/diagram.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/UC-32-receive-notifications.md (deflated 67%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/UC-33-control-communication.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/UC-32-receive-notifications.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/diagram.md (deflated 55%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/UC-34-report-inappropriate-behavior.pdf (deflated 5%)
+  adding: PA4-Group05/use_cases/notifications-and-safety/UC-34-report-inappropriate-behavior.md (deflated 67%)
+  adding: PA4-Group05/system_context_diagram.pdf (deflated 7%)
+  adding: PA4-Group05/deployment_diagram.md (deflated 66%)
+  adding: PA4-Group05/weekly_report/ (stored 0%)
+  adding: PA4-Group05/weekly_report/images/ (stored 0%)
+  adding: PA4-Group05/weekly_report/images/jira_task_screen2.png (deflated 5%)
+  adding: PA4-Group05/weekly_report/images/jira_task_screen1.png (deflated 6%)
+  adding: PA4-Group05/weekly_report/git_log_backend.pdf (deflated 3%)
+  adding: PA4-Group05/weekly_report/weekly_report1.pdf (deflated 6%)
+  adding: PA4-Group05/weekly_report/sprint_review.pdf (deflated 2%)
+  adding: PA4-Group05/weekly_report/git_log_frontend.tex (deflated 80%)
+  adding: PA4-Group05/weekly_report/git_log_database.pdf (deflated 3%)
+  adding: PA4-Group05/weekly_report/git_log_studitopia.md (deflated 84%)
+  adding: PA4-Group05/weekly_report/weekly_report2.md (deflated 65%)
+  adding: PA4-Group05/weekly_report/git_log_frontend.pdf (deflated 3%)
+  adding: PA4-Group05/weekly_report/git_log_database.md (deflated 79%)
+  adding: PA4-Group05/weekly_report/sprint_review.md (deflated 59%)
+  adding: PA4-Group05/weekly_report/git_log_database.tex (deflated 77%)
+  adding: PA4-Group05/weekly_report/git_log_backend.tex (deflated 79%)
+  adding: PA4-Group05/weekly_report/sprint_review.tex (deflated 62%)
+  adding: PA4-Group05/weekly_report/git_log_studitopia.tex (deflated 83%)
+  adding: PA4-Group05/weekly_report/weekly_report1.tex (deflated 63%)
+  adding: PA4-Group05/weekly_report/weekly_report2.tex (deflated 65%)
+  adding: PA4-Group05/weekly_report/git_log_backend.md (deflated 80%)
+  adding: PA4-Group05/weekly_report/weekly_report1.md (deflated 62%)
+  adding: PA4-Group05/weekly_report/weekly_report2.pdf (deflated 5%)
+  adding: PA4-Group05/weekly_report/git_log_frontend.md (deflated 81%)
+  adding: PA4-Group05/weekly_report/git_log_studitopia.pdf (deflated 5%)
+  adding: PA4-Group05/ai_usage_report/ (stored 0%)
+  adding: PA4-Group05/ai_usage_report/images/ (stored 0%)
+  adding: PA4-Group05/ai_usage_report/images/image_6.png (deflated 3%)
+  adding: PA4-Group05/ai_usage_report/images/image_2.png (deflated 4%)
+  adding: PA4-Group05/ai_usage_report/images/image_5.png (deflated 3%)
+  adding: PA4-Group05/ai_usage_report/images/image_3.png (deflated 3%)
+  adding: PA4-Group05/ai_usage_report/images/image_4.png (deflated 5%)
+  adding: PA4-Group05/ai_usage_report/images/image_1.png (deflated 4%)
+  adding: PA4-Group05/ai_usage_report/ai_usage_report.md (deflated 66%)
+  adding: PA4-Group05/ai_usage_report/ai_usage_report.pdf (deflated 9%)
+  adding: PA4-Group05/component_diagram.md (deflated 63%)
+  adding: PA4-Group05/container_diagram.md (deflated 64%)
+  adding: PA4-Group05/non_functional_requirements/ (stored 0%)
+  adding: PA4-Group05/non_functional_requirements/usability/ (stored 0%)
+  adding: PA4-Group05/non_functional_requirements/usability/requirements.pdf (deflated 9%)
+  adding: PA4-Group05/non_functional_requirements/usability/requirements.md (deflated 52%)
+  adding: PA4-Group05/non_functional_requirements/security/ (stored 0%)
+  adding: PA4-Group05/non_functional_requirements/security/requirements.pdf (deflated 4%)
+  adding: PA4-Group05/non_functional_requirements/security/requirements.md (deflated 54%)
+  adding: PA4-Group05/non_functional_requirements/performance/ (stored 0%)
+  adding: PA4-Group05/non_functional_requirements/performance/requirements.pdf (deflated 6%)
+  adding: PA4-Group05/non_functional_requirements/performance/requirements.md (deflated 64%)
+  adding: PA4-Group05/non_functional_requirements/scalability/ (stored 0%)
+  adding: PA4-Group05/non_functional_requirements/scalability/requirements.pdf (deflated 4%)
+  adding: PA4-Group05/non_functional_requirements/scalability/requirements.md (deflated 56%)
+  adding: PA4-Group05/non_functional_requirements/privacy/ (stored 0%)
+  adding: PA4-Group05/non_functional_requirements/privacy/requirements.pdf (deflated 4%)
+  adding: PA4-Group05/non_functional_requirements/privacy/requirements.md (deflated 55%)
+  adding: PA4-Group05/non_functional_requirements/availability/ (stored 0%)
+  adding: PA4-Group05/non_functional_requirements/availability/requirements.pdf (deflated 4%)
+  adding: PA4-Group05/non_functional_requirements/availability/requirements.md (deflated 45%)
+  adding: PA4-Group05/system_context_diagram.md (deflated 62%)
+  adding: PA4-Group05/non_functional_requirement.pdf (deflated 4%)
+  adding: PA4-Group05/functional_requirements/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/learning_resource_library/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/learning_resource_library/requirements.pdf (deflated 7%)
+  adding: PA4-Group05/functional_requirements/learning_resource_library/requirements.md (deflated 73%)
+  adding: PA4-Group05/functional_requirements/suggestions_and_filters/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/suggestions_and_filters/requirements.pdf (deflated 5%)
+  adding: PA4-Group05/functional_requirements/suggestions_and_filters/requirements.md (deflated 62%)
+  adding: PA4-Group05/functional_requirements/friends_and_social_networking/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/friends_and_social_networking/requirements.pdf (deflated 12%)
+  adding: PA4-Group05/functional_requirements/friends_and_social_networking/requirements.md (deflated 71%)
+  adding: PA4-Group05/functional_requirements/browse/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/browse/requirements.pdf (deflated 6%)
+  adding: PA4-Group05/functional_requirements/browse/requirements.md (deflated 68%)
+  adding: PA4-Group05/functional_requirements/notifications_and_safety/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/notifications_and_safety/requirements.pdf (deflated 6%)
+  adding: PA4-Group05/functional_requirements/notifications_and_safety/requirements.md (deflated 69%)
+  adding: PA4-Group05/functional_requirements/authentications/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/authentications/requirements.pdf (deflated 5%)
+  adding: PA4-Group05/functional_requirements/authentications/requirements.md (deflated 75%)
+  adding: PA4-Group05/functional_requirements/posts/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/posts/requirements.pdf (deflated 9%)
+  adding: PA4-Group05/functional_requirements/posts/requirements.md (deflated 75%)
+  adding: PA4-Group05/functional_requirements/meeting_rooms/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/meeting_rooms/requirements.pdf (deflated 9%)
+  adding: PA4-Group05/functional_requirements/meeting_rooms/requirements.md (deflated 72%)
+  adding: PA4-Group05/functional_requirements/feeds/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/feeds/requirements.pdf (deflated 6%)
+  adding: PA4-Group05/functional_requirements/feeds/requirements.md (deflated 53%)
+  adding: PA4-Group05/functional_requirements/profiles_and_university_identity/ (stored 0%)
+  adding: PA4-Group05/functional_requirements/profiles_and_university_identity/requirements.pdf (deflated 9%)
+  adding: PA4-Group05/functional_requirements/profiles_and_university_identity/requirements.md (deflated 67%)
+  adding: PA4-Group05/non_functional_requirement.md (deflated 65%)
+  adding: PA4-Group05/container_diagram.pdf (deflated 4%)
+  adding: PA4-Group05/.zip (stored 0%)
+  adding: PA4-Group05/deployment_diagram.pdf (deflated 4%)
+  adding: PA4-Group05/functional_requirement.md (deflated 65%)
+  adding: PA4-Group05/figures/ (stored 0%)
+  adding: PA4-Group05/figures/deployment_diagram_1.png (deflated 6%)
+  adding: PA4-Group05/figures/system_context_diagram_1.png (deflated 4%)
+  adding: PA4-Group05/figures/component_diagram_2.png (deflated 2%)
+  adding: PA4-Group05/figures/container_diagram_1.png (deflated 4%)
+  adding: PA4-Group05/figures/component_diagram_1.png (deflated 9%)
+  adding: PA4-Group05/component_diagram.pdf (deflated 7%)
+  adding: PA4-Group05/Changes.pdf (deflated 4%)
