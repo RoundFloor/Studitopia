@@ -27,7 +27,7 @@
 
 This document maps the containers described in the Level 2 Container Diagram to the infrastructure that runs them. The current repository contains local-run scripts and service configuration, but no Dockerfile, Docker Compose file, or cloud deployment manifest. The deployment therefore describes a local-machine deployment with separate logical nodes, plus the external cloud services that the backend and browser call.
 
-The backend and PostgreSQL are configured for the same local host by default, but they are drawn as separate logical nodes because they are separate runtime containers. Vite hosts the frontend on port `8999` only during development. In deployment, there is no separate frontend server: the NestJS Web package (`WebModule`/`WebController`) serves the compiled frontend assets from the backend API process on port `8353`.
+The backend and PostgreSQL are configured for the same local host by default, but they are drawn as separate logical nodes because they are separate runtime containers. Vite hosts the frontend on port `8999` only during development. In deployment, there is no separate frontend server: the NestJS Web package (`WebModule`/`WebController`) serves the compiled frontend assets from the backend API process on port `8353`. In production, the reverse proxy terminates TLS and forwards requests to the backend on port `8353` (NFR-SEC-3).
 
 ## 3. Deployment Diagram
 
@@ -63,10 +63,10 @@ flowchart TB
     browser -.->|"dev only :8999<br/>HTML / JS / CSS"| vite
     vite -.->|"dev only: app bundle"| dev_spa
     vite -.->|"dev only: rendered SPA"| browser
-    browser -->|"deployment :8353<br/>HTML / JS / CSS"| webpkg
+    browser -->|"local runtime :8353<br/>HTML / JS / CSS"| webpkg
     webpkg -->|"read compiled assets"| bundle
     bundle -->|"SPA + fallback index.html"| browser
-    browser -->|"JSON over HTTP/HTTPS :8353<br/>VITE_API_BASE_URL<br/>Bearer token + cookie"| api
+    browser -->|"Local API :8353<br/>VITE_API_BASE_URL<br/>Bearer token + cookie"| api
     browser -->|"HTTPS"| gfonts
     api -->|"pg protocol over TCP :5432"| postgres
     api -->|"local filesystem I/O"| file_storage
