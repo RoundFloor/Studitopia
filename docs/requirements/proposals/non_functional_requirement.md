@@ -1,59 +1,53 @@
 # Non-functional requirement
 
-**Version:** `1.0`
+**Version:** `1.3`
 
 **Performed by:** [Tran Nguyen Khanh Binh] | **Edited by:** [Tran Nguyen Khanh Binh]
 
-- NFR-PERF-1: The system shall provide responsive user interactions with a response time of ≤ 2 seconds for standard user actions.
-- NFR-PERF-2: The system shall load a forum post list within ≤ 2 seconds under normal operating conditions.
-- NFR-PERF-3: The system shall display a post detail page and its comments within ≤ 2 seconds.
-- NFR-PERF-4: The system shall reflect a new post, comment, vote, or true-response mark in the relevant forum view within ≤ 2 seconds.
-- NFR-PERF-5: The system shall return forum search results within ≤ 2 seconds for common queries.
-- NFR-PERF-6: The system shall deliver forum notifications with a latency of ≤ 2 seconds under normal operating conditions.
-- NFR-PERF-7: Optional supporting meeting-room tools shall maintain an update latency of ≤ 1 second when a meeting room is in use.
+> This file is the index for the split non-functional requirements. The full NFR tables are grouped by category under [`non_functional_requirements/`](non_functional_requirements/).
 
-## Scalability
+## Revision History
 
-- NFR-SCAL-1: The system architecture shall support at least 10,000 registered university users.
-- NFR-SCAL-2: The system architecture shall support at least 100,000 forum posts.
-- NFR-SCAL-3: The system architecture shall support at least 1,000,000 comments, answers, and votes.
-- NFR-SCAL-4: The system architecture shall support at least 100,000 uploaded documents and learning resources.
-- NFR-SCAL-5: The system architecture shall support at least 500 concurrent active forum users without degradation of standard interactions.
-- NFR-SCAL-6: The system architecture shall support at least 100 concurrent optional meeting rooms.
+| Date | Version | Description | Author |
+| --- | --- | --- | --- |
+| 20/Nov/2026 | 1.0 | Defined the PA4 non-functional requirements | Tran Nguyen Khanh Binh |
+| 21/Nov/2026 | 1.1 | Adapted every NFR to the current source: implemented, partial, planned/not implemented, or target/unverified | Tran Nguyen Khanh Binh |
+| 25/Nov/2026 | 1.2 | Update all time-measurement NFRs complete based on user-performed testing | Nguyen Le Quoc Huy |
+| 26/Nov/2026 | 1.3 | Update TLS protection complete because it is ensured by the server proxy | Nguyen Le Quoc Huy |
+| 28/Nov/2026 | 1.3 | Split the requirement tables into NFR category files | Nguyen Le Quoc Huy |
 
-## Availability
+## Current Code Basis
 
-- NFR-AVAIL-1: The system shall provide at least 99.9% monthly availability, excluding planned maintenance.
-- NFR-AVAIL-2: The forum shall remain available for read access during non-critical maintenance whenever possible.
+- Vite hosts the frontend on port `8999` only during development. In deployment, the NestJS Web package serves the compiled frontend from the backend process.
+- The backend listens on port `8353` behind a server proxy that ensures TLS protection; database configuration defaults to `localhost:5432`.
+- Current implemented flows cover authentication/OTP, account read and avatar upload, forum/post/tag read APIs, file read, and SPA asset delivery.
+- Post/comment/vote writes, forum search endpoints, notifications, meeting rooms, privacy settings, moderation, and rate limiting are not implemented in the current source.
+- Time-related NFRs are marked complete based on user-performed testing; the source itself does not contain the measurement artifacts, and scalability targets remain unverified.
 
-## Security
+Status labels used below:
 
-- NFR-SEC-1: The system shall require authentication before accessing protected user resources.
-- NFR-SEC-2: The system shall store user credentials using one-way password hashing with a secure hashing algorithm.
-- NFR-SEC-3: The system shall encrypt sensitive communication using TLS 1.2 or higher.
-- NFR-SEC-4: The system shall restrict private forum content and private-group content to authorized users only.
-- NFR-SEC-5: The system shall validate uploaded files for file type and file size before accepting them.
-- NFR-SEC-6: The system shall prevent unauthorized access through server-side authorization checks.
-- NFR-SEC-7: The system shall automatically expire inactive authentication sessions after 30 minutes.
-- NFR-SEC-8: The system shall protect against common web security vulnerabilities, including SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).
-- NFR-SEC-9: The system shall rate-limit post creation, commenting, voting, reporting, and help requests to reduce spam and abuse.
-- NFR-SEC-10: The system shall restrict moderation actions to authorized moderators and administrators.
+- **Implemented** - supported by current source code.
+- **Complete (user-tested)** - a time-related NFR accepted by the user after testing.
+- **Complete (server proxy)** - satisfied by deployment infrastructure rather than application code.
+- **Partial** - some supporting code exists, but the full requirement is not satisfied.
+- **Planned (not implemented)** - documented product intent without current runtime support.
+- **Target (unverified)** - a design target that has not been measured.
 
-## Privacy
+## Non-functional Requirement Categories
 
-- NFR-PRIV-1: Users shall be able to configure profile visibility using at least 2 visibility levels: public and private.
-- NFR-PRIV-2: Users shall be able to allow or reject incoming friend requests.
-- NFR-PRIV-3: Users shall be able to control whether their university, major, and academic year are visible on their profile.
-- NFR-PRIV-4: Users shall be able to show or hide their online status.
-- NFR-PRIV-5: Users shall be able to control access to documents and learning resources they share.
-- NFR-PRIV-6: Users shall be able to control whether other users can send them messages or room invitations.
-- NFR-PRIV-7: Privacy settings shall apply consistently to forum posts, comments, member lists, and search results.
+| Category | IDs | Requirement file |
+| --- | --- | --- |
+| Performance | NFR-PERF-1–NFR-PERF-7 | [`performance/requirements.md`](non_functional_requirements/performance/requirements.md) |
+| Scalability | NFR-SCAL-1–NFR-SCAL-6 | [`scalability/requirements.md`](non_functional_requirements/scalability/requirements.md) |
+| Availability | NFR-AVAIL-1–NFR-AVAIL-2 | [`availability/requirements.md`](non_functional_requirements/availability/requirements.md) |
+| Security | NFR-SEC-1–NFR-SEC-10 | [`security/requirements.md`](non_functional_requirements/security/requirements.md) |
+| Privacy | NFR-PRIV-1–NFR-PRIV-7 | [`privacy/requirements.md`](non_functional_requirements/privacy/requirements.md) |
+| Usability | NFR-USE-1–NFR-USE-6 | [`usability/requirements.md`](non_functional_requirements/usability/requirements.md) |
 
-## Usability
+## Source References
 
-- NFR-USE-1: A new university student shall be able to complete the account registration process within 5 minutes without external assistance.
-- NFR-USE-2: The user interface shall support responsive layouts for screen widths from 320 px to 1920 px.
-- NFR-USE-3: The user interface shall maintain consistent navigation and interaction patterns across university, major, and course forums.
-- NFR-USE-4: Primary interface actions shall use clear labels and recognizable controls.
-- NFR-USE-5: The user interface shall be usable on screen sizes of at least 320 px in width.
-- NFR-USE-6: Forum moderation and reporting actions shall be reachable within at most 2 interactions from a post or comment.
+- Hosting and runtime: `src/frontend/vite.config.ts`, `src/backend/src/main.ts`, `src/backend/src/config/app.config.ts`, `src/backend/src/packages/web/web.controller.ts`, `src/database/config/database.config.ts`
+- Current modules and routes: `src/backend/src/app.module.ts`, `src/frontend/src/app/providers/router/router-provider.tsx`, `src/backend/src/packages/post/post.controller.ts`, `src/backend/src/packages/account/account.controller.ts`, `src/backend/src/packages/file/file.controller.ts`
+- Database and performance basis: `src/backend/src/packages/postgres/pg.config.ts`, `src/backend/src/packages/postgres/pg.service.ts`, `src/database/src/tables/`, `src/database/src/functions/`, `src/database/src/triggers/`
+- Security basis: `src/backend/src/packages/security-generation/`, `src/backend/src/packages/authentication/`, `src/backend/src/packages/recaptcha/`, `src/backend/src/packages/storage/storage.config.ts`, `src/backend/src/packages/storage/storage.service.ts`, `src/backend/package.json`
+- Privacy/usability basis: `src/backend/src/packages/account/`, `src/backend/src/packages/file/`, `src/frontend/src/app/layouts/forum/`, `src/frontend/src/pages/forums/`, `src/frontend/src/shared/ui/`, `src/frontend/src/app/index.css`
