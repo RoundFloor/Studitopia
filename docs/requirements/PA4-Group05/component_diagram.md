@@ -97,11 +97,11 @@ flowchart TB
 
 ### 3.2 Frontend Source-Accurate Scope Notes
 
-- Vite hosts the SPA on port `8999` only in development. In deployment, the NestJS Web package (`WebModule`/`WebController`) serves the compiled frontend assets from the backend server; there is no separate production frontend host.
-- There are no current routes or components for friends, meeting rooms, create-post, notifications, or profile management.
-- `LibraryPage` is static UI; `RecoverPasswordPage` only navigates to OTP, and `SetPasswordPage.resetPassword()` is empty.
-- Successful auth flows navigate to `/`, but the router has no `/` route or catch-all route; guards redirect active users to `/forum`.
-- The diagram intentionally excludes planned frontend features so it remains consistent with the source.
+- **Frontend hosting and deployment:** Vite serves the SPA on port `8999` exclusively during development. In production, the NestJS Web package, through `WebModule` and `WebController`, serves the compiled frontend assets directly from the backend server. Therefore, no separate frontend host is required in the deployed architecture.
+- **Missing frontend functionality:** The current implementation does not include routes or components for friend management, meeting rooms, post creation, notifications, or profile management.
+- **Incomplete page implementations:** `LibraryPage` currently provides only a static user interface. `RecoverPasswordPage` only redirects users to the OTP verification page, while the `resetPassword()` method in `SetPasswordPage` has no implementation.
+- **Authentication navigation issues:** Successful authentication flows redirect users to `/`, but the router does not define a corresponding root route or a catch-all route. Meanwhile, route guards redirect authenticated users to `/forum`.
+- **Diagram scope:** The architecture diagram deliberately omits planned but unimplemented frontend features to ensure that it accurately reflects the current source code rather than the intended future functionality.
 
 ## 4. Backend Container Component Diagram
 
