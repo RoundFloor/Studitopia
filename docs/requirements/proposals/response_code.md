@@ -1,5 +1,8 @@
 # Response Code
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 ## Forum error code (primary):
 
 | Error code (number) | Name |

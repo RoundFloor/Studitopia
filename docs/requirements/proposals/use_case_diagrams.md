@@ -1,5 +1,8 @@
 # Studitopia Core Use Cases - Mermaid Diagrams
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 ## UC-01 Register Account and Verify University Email
 
 ```mermaid

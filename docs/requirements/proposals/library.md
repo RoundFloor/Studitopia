@@ -1,5 +1,8 @@
 # Library Group Page Specification
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 > **Status:** UI/UX recommendation derived from the proposal documents in `requirements/proposals/`.
 >
 > **Scope:** This document describes the **Library Group** page, also called the **Learning Resource Library**, and recommends UI component names, displayed information, and the user action supported by each component.

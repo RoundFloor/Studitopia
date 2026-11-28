@@ -1,8 +1,8 @@
 # Create Room Page Specification
 
-> **Status:** UI/UX recommendation derived from the proposal documents in `requirements/proposals/`.
->
-> **Scope:** This document describes the **Create Room** flow and recommends UI component names, displayed information, and the user action supported by each component. Meeting rooms are **optional supporting features**; the **University Forum is the primary collaboration space**.
+**Version:** `1.0`
+
+**Performed by:** [Tran Nguyen Khanh Binh] | **Edited by:** [Tran Nguyen Khanh Binh]
 >
 > **Main sources:** [`screen_flow.md`](screen_flow.md), [`feature_flow.md`](feature_flow.md), [`overview.md`](overview.md), [`functional_requirement.md`](functional_requirement.md), [`userstory.md`](userstory.md), [`use_cases_description.md`](use_cases_description.md), [`use_cases_model/UC-07-join-create-study-room.md`](use_cases_model/UC-07-join-create-study-room.md), [`non_functional_requirement.md`](non_functional_requirement.md).
 >

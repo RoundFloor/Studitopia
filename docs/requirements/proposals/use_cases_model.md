@@ -1,5 +1,8 @@
 # Use Cases Model
 
+**Version:** `2.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 > This is the index for the split use case model. Each selected use case has its own focused model file under `use_cases_model/`. Supporting included, extending, and specialized use cases appear in the focused model of the selected use case they support.
 
 ## 1. Document Information

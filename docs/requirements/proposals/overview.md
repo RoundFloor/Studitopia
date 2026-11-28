@@ -1,5 +1,8 @@
 # Overview
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 ## **1 Project Name**
 
 Studitopia: representing an ideal world of learning. It describes a place where studying is inspiring, enjoyable, and meaningful, encouraging people to explore knowledge, grow their potential, and achieve their dreams.

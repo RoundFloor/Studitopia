@@ -1,5 +1,9 @@
 # UC-04 Use Case Model: Create Discussion Post
 
+**Version:** `2.0`
+
+**Performed by:** [Tran Canh Anh Tuan] | **Edited by:** [Nguyen Thanh An]
+
 ## 1. Model Information
 
 | Field | Value |

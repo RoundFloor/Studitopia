@@ -1,5 +1,8 @@
 # Use Cases Description
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 > This document describes the seven most significant use cases of Studitopia for PA3. The selection follows the PA3 priority order: authentication, university forum and posts, learning resource library, then optional meeting rooms. The university forum remains the primary product focus, and meeting rooms remain a supporting feature.
 
 ## 1. Document Information

@@ -1,8 +1,8 @@
 # Post Management Specification
 
-> **Status:** UI/UX recommendation derived from the proposal documents in `requirements/proposals/`.
->
-> **Scope:** This document describes the **Post Management** flow/surface for managing a user's posts and post interactions, including **My Posts**, **Saved Posts**, owner/content actions, voting, saving, true-response marking, comment/answer management, permission-based actions, and empty/error states.
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Thanh An] | **Edited by:** [Nguyen Thanh An]
 >
 > **Main sources:** [`screen_flow.md`](screen_flow.md), [`feature_flow.md`](feature_flow.md), [`overview.md`](overview.md), [`functional_requirement.md`](functional_requirement.md), [`userstory.md`](userstory.md), [`use_cases_description.md`](use_cases_description.md), [`use_cases_model/UC-03-browse-search-forum.md`](use_cases_model/UC-03-browse-search-forum.md), [`use_cases_model/UC-05-comment-answer.md`](use_cases_model/UC-05-comment-answer.md), [`API.md`](API.md), [`response_code.md`](response_code.md).
 >

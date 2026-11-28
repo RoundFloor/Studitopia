@@ -1,8 +1,8 @@
 # UC-05 Use Case Model: Comment and Answer
 
-## 1. Model Information
+**Version:** `2.0`
 
-| Field | Value |
+**Performed by:** [Tran Nguyen Khanh Binh] | **Edited by:** [Nguyen Le Quoc Huy]
 | --- | --- |
 | Use Case | UC-05 Comment and Answer |
 | Primary Actor | University Student |

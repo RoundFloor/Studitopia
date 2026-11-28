@@ -1,5 +1,8 @@
 # Friend Profile Page Specification
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Chi Bao] | **Edited by:** [Nguyen Chi Bao]
 > **Status:** UI/UX recommendation derived from the proposal documents in `docs/requirements/proposals/`.
 >
 > **Scope:** This document describes the **Friend Profile** view of another member, reached from the Friend Group area. It recommends UI component names, displayed information, and the user action supported by each component. It is a UI specification, not a backend design.

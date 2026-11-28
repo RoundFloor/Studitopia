@@ -1,5 +1,8 @@
 # Settings Page Specification
 
+**Version:** `1.0`
+
+**Performed by:** [Tran Canh Anh Tuan] | **Edited by:** [Tran Canh Anh Tuan]
 > **Status:** UI/UX recommendation derived from the proposal documents in `docs/requirements/proposals/`.
 >
 > **Scope:** This document describes the **Settings** area, also called **Settings Group**, and recommends UI component names, displayed information, and user actions. The requested **reference settings** are interpreted as the proposal's **Preference Settings** flow. This specification includes Preference Settings, Profile Settings, Account Settings, Appearance Settings, Privacy Settings, Notification Settings, and Communication Settings.

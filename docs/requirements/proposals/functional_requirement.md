@@ -1,5 +1,8 @@
 # Functional Requirements
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 > Studitopia is now forum-first and university-student-focused. The Forum requirements below are the primary requirements of the product. Meeting-room requirements are retained only as supporting capabilities.
 
 > **US-01 (Register Account)** is split into US-01.1 to US-01.6 so that registration requirements are grouped by user goal and by layer. All remaining user stories use the same table format and categorize each FR as UI, Frontend, Backend, or Database.

@@ -1,8 +1,8 @@
 # UC-07 Use Case Model: Join or Create a Study Room
 
-## 1. Model Information
+**Version:** `2.0`
 
-| Field | Value |
+**Performed by:** [Nguyen Thanh An] | **Edited by:** [Tran Nguyen Khanh Binh]
 | --- | --- |
 | Use Case | UC-07 Join or Create a Study Room |
 | Primary Actor | University Student |

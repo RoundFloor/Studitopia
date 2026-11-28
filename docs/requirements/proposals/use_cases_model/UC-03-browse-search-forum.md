@@ -1,8 +1,8 @@
 # UC-03 Use Case Model: Browse and Search the University Forum
 
-## 1. Model Information
+**Version:** `2.0`
 
-| Field | Value |
+**Performed by:** [Nguyen Chi Bao] | **Edited by:** [Nguyen Le Quoc Huy]
 | --- | --- |
 | Use Case | UC-03 Browse and Search the University Forum |
 | Primary Actor | University Student |

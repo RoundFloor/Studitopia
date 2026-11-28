@@ -1,5 +1,8 @@
 # Group Detail Page Specification
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Chi Bao] | **Edited by:** [Nguyen Chi Bao]
 > **Status:** UI/UX recommendation derived from the proposal documents in `docs/requirements/proposals/`.
 >
 > **Scope:** This document describes the **Group Detail** page for one friend group: header and privacy badge, chat, shared documents, member list, invitation, removal, leave, and the recommended flow-derived join and overview-derived delete entry points. It recommends UI component names, displayed information, and user actions; it does not define backend implementation.

@@ -1,5 +1,8 @@
 # Moderation Queue Specification
 
+**Version:** `1.0`
+
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Le Quoc Huy]
 > **Status:** UI/UX recommendation derived from the proposal documents in `requirements/proposals/`.
 >
 > **Scope:** This document describes the **Moderation Queue** and related reporting/moderation surfaces for forum content. It covers report creation, report context, queue review, moderator actions (hide/delete/restore/ban), action records/notifications, restriction enforcement, rate limits, and permission controls.
