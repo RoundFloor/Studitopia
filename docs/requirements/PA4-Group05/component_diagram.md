@@ -2,7 +2,7 @@
 
 **Version:** `1.1`
 
-**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** []
+**Performed by:** [Nguyen Le Quoc Huy] | **Edited by:** [Nguyen Chi Bao]
 
 ## 1. Document Information
 
