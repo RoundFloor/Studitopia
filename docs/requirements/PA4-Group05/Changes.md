@@ -46,7 +46,7 @@
 
 | Date | Version | Description | Author |
 | --- | --- | --- | --- |
-| 28/11/2026 | 1.0 | Added C4 Level 1, Level 2, Level 3, and Level 4 documentation in both `docs/analysis-and-design/` and `docs/requirements/PA4-Group05/`. | Nguyen Le Quoc Huy |
+| 28/11/2026 | 1.0 | Added C4 Level 1?3 and deployment documentation in both `docs/analysis-and-design/` and `docs/requirements/PA4-Group05/`. | Nguyen Le Quoc Huy |
 | 28/11/2026 | 1.1 | Corrected deployment wording: Vite on port `8999` is development-only; NestJS Web serves the compiled frontend in deployment. | Nguyen Le Quoc Huy |
 
 ## Proposal and Page Specification Documents
@@ -227,7 +227,7 @@
 - Added C4 Level 1 System Context documentation.
 - Added C4 Level 2 Container documentation.
 - Added C4 Level 3 Component documentation with separate frontend and backend component views.
-- Added C4 Level 4 Deployment documentation.
+- Added C4 deployment documentation.
 - Each diagram document was placed in both:
   - `docs/analysis-and-design/`.
   - `docs/requirements/PA4-Group05/`.

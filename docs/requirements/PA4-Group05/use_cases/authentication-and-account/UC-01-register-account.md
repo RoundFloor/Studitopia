@@ -228,7 +228,7 @@ The backend denies access to protected features until email verification succeed
 
 ### B11. Source Alignment Notes
 
-- API coverage is partial: no endpoint is documented for OTP submission, OTP resend, Google OAuth registration, or the Preference Settings transition; only `POST /auth/register` and the temporarily disabled `GET /auth/validate` are present.
+- The backend exposes `GET /api/v1/auth/otp?type=active` to request a code and `POST /api/v1/auth/activate` to verify it. Both require the registration access session. Activation accepts `key`, `type=active`, `created_time`, and `expired_time` and returns 202 on success, 409 for an invalid OTP, or 401 for an invalid session. Google OAuth registration and the Preference Settings transition remain unspecified in the API proposal.
 - `POST /auth/register` returns an `access_token`, while the API also requires the registered account to be inactive and UC-01 postconditions forbid protected access before email verification; the intended token scope is not specified.
 - CAPTCHA verification is required by `FR-01.17` and business rules, but no dedicated CAPTCHA error code is listed in `response_code.md`.
 - Error-name spelling differs across sources: `API.md` uses `DUPPLICATED_EMAIL`, while `response_code.md` uses `DUPLICATED_EMAIL`; the unusual `UNREGISTED_EMAIL_DOMAIN` spelling is preserved from both.

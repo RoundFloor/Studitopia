@@ -92,7 +92,7 @@ flowchart TB
 1. The model contains only UC-29 and its actors because no friend/group I-xx, E-xx, or G-xx use case is named in the proposals.
 2. `screen_flow.md` gives `Friend Group -> Create Group`; `feature_flow.md` gives `Friend -> Create Group -> Privacy / Beginning member / Name`.
 3. `group_detail.md` recommends `/friends/groups/:groupId`, `GroupDetailPage`, `GroupMessagePanel`, `SharedDocumentPanel`, and `GroupMemberPanel`; these are UI recommendations, not API contracts.
-4. Exact roles are `Owner`, `Superuser`, and `Member`. The source conflict between owner removal and Superuser kick is recorded in B11 and is not silently resolved.
+4. Group roles are `Owner`, `Superuser`, and `Member`.
 5. Privacy values are only `Private` and `Public`; no additional privacy level, capacity limit, invite expiry, or approval rule is specified.
 6. Meeting-room rules are not copied into groups; the forum remains the primary collaboration space.
 
@@ -118,7 +118,7 @@ Group deletion is overview-derived from `overview.md` and owner-scoped as a reco
 1. **Success:** A group exists with a name, `Private` or `Public` privacy, an owner, and initial members (`FR-33.1`, `FR-33.2`, `AC-33.1`).
 2. **Success:** Members can send messages and share documents within the group (`FR-33.3`, `AC-33.2`).
 3. **Success:** Members can view the member list and invite new members (`FR-33.4`, `AC-33.3`).
-4. **Success:** An authorized role can remove a member, and any member can leave (`FR-33.5`, `FR-33.6`, `AC-33.4`, `AC-33.5`).
+4. **Success:** The group owner can remove a member, and any member can leave (`FR-33.5`, `FR-33.6`, `AC-33.4`, `AC-33.5`).
 5. **Failure:** The group is not created or changed, private content is not exposed, and the user receives clear feedback without an invented error code.
 
 ### B4. Main Success Scenario (Basic Flow)
@@ -144,7 +144,7 @@ At basic flow step 11, a member selects **Invite member**, chooses users in `Inv
 
 #### A2. Remove a member
 
-At basic flow step 11, the authorized role selects **Remove from group**. `RemoveMemberConfirmDialog` asks “Remove `<name>` from `<group>`?” with Cancel/Remove (`FR-33.5`, `AC-33.4`).
+At basic flow step 11, the group owner selects **Remove from group**. `RemoveMemberConfirmDialog` asks “Remove `<name>` from `<group>`?” with Cancel/Remove (`FR-33.5`, `AC-33.4`).
 
 #### A3. Leave a group
 
@@ -174,9 +174,9 @@ An unauthorized user opens a private group and sees “This group is private or 
 
 The system shows “Unsupported file type” or “File does not meet size policy.” and does not accept the file (`FR-27.3`, `FR-15.3`, `NFR-SEC-5`). No numeric limit is asserted.
 
-#### E3. Removal-right conflict
+#### E3. Removal denied
 
-The system uses `GroupMemberRoleBadge` to expose `Owner`, `Superuser`, and `Member`, does not silently merge the owner and Superuser rules, and flags the conflict for a product decision (`FR-33.5`, `AC-33.4`, `feature_flow.md:145`).
+If a user without the `Owner` role attempts removal, the system denies the request and keeps the member in the group.
 
 #### E4. Invite approval or expiry expected
 
@@ -192,7 +192,7 @@ The system shows “Unable to load this group.” with Retry (`group_detail.md`,
 2. Group setup includes a name, privacy setting, and initial members (`FR-33.2`, `AC-33.1`, `feature_flow.md`).
 3. Members can send messages and share documents within the group (`FR-33.3`, `AC-33.2`).
 4. Members can view the member list and invite new members (`FR-33.4`, `AC-33.3`).
-5. The written requirement assigns member removal to the group owner (`FR-33.5`, `AC-33.4`); the flow separately names a Superuser kick, and the conflict is not resolved here.
+5. Only the group owner can remove members (FR-33.5, AC-33.4).
 6. Members can leave the group (`FR-33.6`, `AC-33.5`).
 7. Uploaded files must pass type and size validation before acceptance (`FR-27.3`, `FR-15.3`, `NFR-SEC-5`).
 8. Shared-resource access follows the sharer's privacy setting (`FR-27.5`, `FR-15.5`, `NFR-PRIV-5`, `NFR-PRIV-7`).
@@ -245,8 +245,8 @@ The system shows “Unable to load this group.” with Retry (`group_detail.md`,
 
 - There is no dedicated PA3 friend/group UC; UC-29 is derived from US-33, the friend/group flows, and UI recommendations in `friend.md`, `friend_profile.md`, and `group_detail.md`.
 - No friend/group API endpoints or error codes are defined in `API.md` or `response_code.md`; group creation, messaging, documents, invitations, removal, leave, and delete have no specified backend contract.
-- The source conflicts on whether the group owner or Superuser removes members: `FR-33.5`/`AC-33.4` name the group owner, while `feature_flow.md:145` says Superuser kicks. `GroupMemberRoleBadge` exposes `Owner`, `Superuser`, and `Member`, but no source defines how `Superuser` is assigned.
-- `AC-33.4` says “Owner Controls”, but `friend.md` and `group_detail.md` recommend showing removal only to the owner/superuser; this document keeps the written requirement and flags the conflict rather than merging roles.
+- PA4 follows the owner-only removal rule in FR-33.5 and AC-33.4.
+- Show the removal action to the group owner.
 - Group deletion is overview-derived from `overview.md`, not defined in `FR-33.1`–`FR-33.6`; owner scope and warning text are recommendations only.
 - `FR-33.3`/`AC-33.2` cover sending messages only; no group message edit, delete, reaction, or read-receipt rule is defined.
 - `FR-33.4`/`AC-33.3` cover invitations only; no invite approval step, expiration period, or automatic acceptance is asserted.

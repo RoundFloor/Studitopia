@@ -184,7 +184,7 @@ The system denies access, informs the student that the session expired, and requ
 | NFR-SEC-1 | Authentication is required before accessing protected user resources. |
 | NFR-SEC-3 | Sensitive communication must be encrypted using TLS 1.2 or higher. |
 | NFR-SEC-6 | Server-side authorization checks must prevent unauthorized access. |
-| NFR-SEC-7 | Inactive authentication sessions must expire automatically after 30 minutes. |
+| NFR-SEC-7 | Access tokens expire after 30 minutes, and refresh sessions expire after 30 days. |
 | NFR-SEC-8 | The system must protect against SQL injection, XSS, CSRF, and other common web vulnerabilities. |
 
 ### B9. Extension Points
@@ -210,7 +210,7 @@ The system denies access, informs the student that the session expired, and requ
 
 ### B11. Source Alignment Notes
 
-- Inactivity timeout conflicts: FR-04.1 and US-04/AC-04.1 state 15 minutes, while NFR-SEC-7 states 30 minutes; `settings.md` recommends the stricter 15-minute value unless the product explicitly decides otherwise.
+- FR-04.1 and AC-04.1 specify a 15-minute inactivity timeout that is not implemented in the current build. NFR-SEC-7 covers token and refresh session lifetimes.
 - `API.md` defines `POST /auth/login` but no logout endpoint, although US-03 and FR-03.1 to FR-03.3 require logout, client cleanup, and backend session invalidation.
 - CAPTCHA is required by AC-02.4 and the use-case flow, but the documented `POST /auth/login` request body lists only `identifier` and `password` for username/email login.
 - Google login is required by FR-02.4 and AC-02.5 and modeled as E-02, but `API.md` does not define a dedicated Google OAuth login endpoint.
