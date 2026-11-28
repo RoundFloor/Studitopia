@@ -1,0 +1,894 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in,left=.75in,right=.75in,bottom=1in]{geometry}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\else
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\fi
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+\lstset{style=mystyle}
+\graphicspath{{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+\setlength{\headheight}{29.43912pt}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+\lhead{\reporttitle}
+\rhead{University of Science - VNUHCM\\
+\coursename}
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+\begin{document}
+\pagenumbering{arabic}
+
+\section{Sprint 4 Git Log - Backend}
+
+Repository: \texttt{\detokenize{src/backend}} Command: \texttt{\detokenize{git log --graph --all --stat}}
+
+\begin{lstlisting}[numbers=none,breaklines=true]
+* commit 95a1b656106e73e29f9d7c4c754bf886984badc3
+| Author: KanbeMatt <khanhbinh08062006@gmail.com>
+| Date:   Sat Nov 28 18:01:46 2026 +0700
+|
+|     feat: update post and tag api
+|
+|  src/packages/forum/forum.service.ts       |  3 +++
+|  src/packages/post/dto/post.dto.ts         | 10 ++++++++--
+|  src/packages/post/post.mapper.ts          |  6 ++++++
+|  src/packages/postgres/dto/response.dto.ts |  7 +++++++
+|  src/packages/postgres/pg.service.ts       | 13 +++++++++++--
+|  src/packages/tag/dto/tag.dto.ts           |  9 +++++----
+|  src/packages/tag/tag.controller.ts        | 13 +++++++++++++
+|  src/packages/tag/tag.service.ts           |  4 +++-
+|  8 files changed, 56 insertions(+), 9 deletions(-)
+|
+* commit f2939379cb1c8f027d1be79e0e0d9af00439d715
+| Author: KanbeMatt <khanhbinh08062006@gmail.com>
+| Date:   Sat Nov 28 13:13:19 2026 +0700
+|
+|     feat: update post and tags api
+|
+|  docs/backend/API.md                               | 643 ++++++++++----------
+|  docs/database/API.md                              |  35 +-
+|  src/app.module.ts                                 |   6 +
+|  src/{packages/forum => common}/dto/id.dto.ts      |   8 +-
+|  src/packages/account/account.controller.ts        |  10 +-
+|  src/packages/account/account.service.ts           | 121 ++--
+|  .../authentication/__tests__/auth.service.mock.ts |  48 +-
+|  .../authentication/__tests__/auth.service.spec.ts |   9 +-
+|  src/packages/authentication/auth.controller.ts    |  81 +--
+|  src/packages/authentication/auth.service.ts       | 133 ++--
+|  src/packages/file/file.controller.ts              |  31 +
+|  src/packages/file/file.module.ts                  |  14 +
+|  src/packages/file/file.service.ts                 |  68 +++
+|  src/packages/forum/dto/forum.dto.ts               |  34 --
+|  src/packages/forum/forum.controller.ts            |  42 +-
+|  src/packages/forum/forum.service.ts               | 177 ++----
+|  src/packages/forum/post.controller.ts             |  96 ---
+|  src/packages/forum/post.service.ts                |  49 --
+|  .../{forum => post}/dto/create-comment.dto.ts     |   0
+|  .../{forum => post}/dto/create-post.dto.ts        |   0
+|  src/packages/post/dto/post.dto.ts                 |  13 +
+|  src/packages/{forum => post}/dto/vote.dto.ts      |   0
+|  src/packages/post/post.controller.ts              |  48 ++
+|  src/packages/post/post.mapper.ts                  |  25 +
+|  src/packages/post/post.module.ts                  |  13 +
+|  src/packages/post/post.service.ts                 |  64 ++
+|  .../postgres/__tests__/pg.database-api.spec.ts    |  92 +--
+|  .../postgres/__tests__/pg.service.mock.ts         |  76 ++-
+|  .../postgres/__tests__/pg.service.spec.ts         |  50 +-
+|  src/packages/postgres/__tests__/pool.mock.ts      |   8 +-
+|  src/packages/postgres/dto/response.dto.ts         |  28 +-
+|  src/packages/postgres/pg.service.ts               | 540 +++++++---------
+|  src/packages/tag/dto/tag.dto.ts                   |  51 ++
+|  src/packages/tag/tag.controller.ts                |  57 ++
+|  src/packages/tag/tag.module.ts                    |  13 +
+|  src/packages/tag/tag.service.ts                   |  88 +++
+|  36 files changed, 1450 insertions(+), 1321 deletions(-)
+|
+* commit 412f9977681abf1c09d87183927fe9f274a890e0
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Sun Nov 22 00:13:21 2026 +0700
+|
+|     fix: log logout function
+|
+|  src/packages/postgres/pg.service.ts | 1 +
+|  1 file changed, 1 insertion(+)
+|
+* commit 4eae5616c5788cd779e708c0fae79b8e5a925166
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Sun Nov 22 00:06:07 2026 +0700
+|
+|     hotfix: log account data and handle invalid refresh token
+|
+|  src/packages/authentication/auth.service.ts | 3 ++-
+|  1 file changed, 2 insertions(+), 1 deletion(-)
+|
+* commit 2e6d59468699c3aa102ac8f0f5d1e96096024236
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Sat Nov 21 23:58:32 2026 +0700
+|
+|     hotfix: lack return of resove/reject in Promise statement
+|
+|  docs/backend/API.md                         | 487 ++++++++++++++++++++++++++
+|  src/packages/authentication/auth.service.ts |   4 +-
+|  2 files changed, 489 insertions(+), 2 deletions(-)
+|
+* commit 5b7d28a223465b3d7159faa18fddf2597331a930
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Sat Nov 21 16:51:54 2026 +0700
+|
+|     feature: description of tag and category
+|
+|  docs/database/API.md                              | 33 ++++++++------
+|  src/packages/account/account.service.ts           |  5 ++-
+|  src/packages/forum/dto/forum.dto.ts               |  9 ++--
+|  src/packages/forum/forum.service.ts               | 15 ++++---
+|  .../postgres/__tests__/pg.database-api.spec.ts    | 48 +++++++++++++--------
+|  src/packages/postgres/dto/response.dto.ts         |  2 +
+|  src/packages/postgres/pg.service.ts               |  7 ++-
+|  7 files changed, 75 insertions(+), 44 deletions(-)
+|
+* commit 9fbe34621d214b05ed4992e5b1292b6312308cb1
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Sat Nov 21 16:29:24 2026 +0700
+|
+|     hotfix: update base64 to base64url since conflict format
+|
+|  src/packages/security-generation/sg.service.ts | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+|
+* commit 2626468896f2e44673ca8e7772a82dec89e9d081
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Fri Nov 20 13:22:16 2026 +0700
+|
+|     hotfix: miss format login api
+|
+|  src/packages/authentication/auth.controller.ts | 2 +-
+|  src/packages/authentication/auth.service.ts    | 4 ++--
+|  2 files changed, 3 insertions(+), 3 deletions(-)
+|
+* commit 32df5a158bdd19ef62b13cf9234de9c1ce78c452
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Fri Nov 20 13:18:20 2026 +0700
+|
+|     hotfix: supple miss return in reject and resolve of promise statement
+|
+|  src/packages/security-generation/sg.service.ts | 16 ++++++----------
+|  1 file changed, 6 insertions(+), 10 deletions(-)
+|
+* commit 7535a1cfe518f7d59af58973f0733fe4e1ba5632
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Fri Nov 20 13:13:47 2026 +0700
+|
+|     hotfix: log length of token comparision
+|
+|  src/packages/security-generation/sg.service.ts | 4 ++++
+|  1 file changed, 4 insertions(+)
+|
+* commit a05dddc55ae631caedc459edb3700fc461f4ba4a
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Fri Nov 20 10:23:04 2026 +0700
+|
+|     feat: add environment service
+|
+|  .gitignore                                        |   4 +
+|  docs/database/API.md                              | 250 +++++++++
+|  docs/database/authentication.md                   | 562 -------------------
+|  env                                               |  16 +
+|  proposal_api.md                                   | 356 ++++++++++++
+|  src/app.module.ts                                 |  10 +-
+|  src/common/decorators/content-type.decorators.ts  |  14 +
+|  src/common/response-code/code.config.ts           |  14 +-
+|  src/config/app.config.ts                          |   2 +-
+|  src/main.ts                                       |  42 +-
+|  src/packages/account/account.controller.ts        |  96 ++++
+|  src/packages/account/account.module.ts            |  14 +
+|  src/packages/account/account.service.ts           |  98 ++++
+|  .../authentication/__tests__/auth.service.mock.ts |  17 +-
+|  src/packages/authentication/auth.controller.ts    |  12 +-
+|  src/packages/authentication/auth.service.ts       |  31 +-
+|  src/packages/email-sender/email-sender.config.ts  |   8 -
+|  src/packages/email-sender/email-sender.module.ts  |   3 +
+|  src/packages/email-sender/email-sender.service.ts |  47 +-
+|  .../environment/__tests__/environment.spec.ts     | 118 ++++
+|  src/packages/environment/environment.module.ts    |   9 +
+|  src/packages/environment/environment.service.ts   |  98 ++++
+|  src/packages/forum/dto/create-comment.dto.ts      |  14 +
+|  src/packages/forum/dto/create-post.dto.ts         |  25 +
+|  src/packages/forum/dto/forum.dto.ts               |  33 ++
+|  src/packages/forum/dto/id.dto.ts                  |  16 +
+|  src/packages/forum/dto/vote.dto.ts                |  10 +
+|  src/packages/forum/forum.controller.ts            |  84 +++
+|  src/packages/forum/forum.module.ts                |  13 +
+|  src/packages/forum/forum.service.ts               | 156 ++++++
+|  src/packages/forum/post.controller.ts             |  96 ++++
+|  src/packages/forum/post.service.ts                |  49 ++
+|  .../postgres/__tests__/pg.database-api.spec.ts    | 437 +++++++++++++++
+|  src/packages/postgres/dto/SQLSTATE.dto.ts         |  39 +-
+|  src/packages/postgres/dto/response.dto.ts         |  73 ++-
+|  src/packages/postgres/pg.config.ts                |   6 -
+|  src/packages/postgres/pg.module.ts                |   3 +
+|  src/packages/postgres/pg.service.ts               | 570 +++++++++++++++++---
+|  .../__test__/sg.service.spec.ts                   |  54 +-
+|  .../security-generation/decorators/sg.mock.ts     |  23 +-
+|  .../security-generation/dto/key-response.dto.ts   |   6 +-
+|  .../security-generation/dto/secret.dto.ts         |  10 -
+|  src/packages/security-generation/sg.config.ts     |  43 +-
+|  src/packages/security-generation/sg.module.ts     |   6 +-
+|  src/packages/security-generation/sg.service.ts    | 131 +++--
+|  src/packages/storage/storage.config.ts            |   2 +
+|  src/packages/storage/storage.module.ts            |   8 +
+|  src/packages/storage/storage.service.ts           |  47 ++
+|  48 files changed, 2892 insertions(+), 883 deletions(-)
+|
+* commit deb8fe6ed458730b5a035aaea6d4acd43e2cad70
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Tue Nov 17 19:06:46 2026 +0700
+|
+|     add: allow headers
+|
+|  src/main.ts | 1 +
+|  1 file changed, 1 insertion(+)
+|
+* commit 4622f6eba656cd7155dfc212617f502cadf90d73
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Tue Nov 17 19:02:03 2026 +0700
+|
+|     add: https
+|
+|  src/main.ts | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|
+*   commit f8afd7edd8ee3f78fde3d59f1a853c0bc31212d6
+|\  Merge: a731700 a6ae930
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Tue Nov 17 18:00:18 2026 +0700
+| |
+| |     Merge remote-tracking branch 'origin/feature/temporary-discord' into dev
+| |
+| * commit a6ae9304efa5917555ff56c9e709545998486763
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Sat Nov 14 19:09:25 2026 +0700
+| |
+| |     add: commit speckit for authentication groups
+| |
+| |  .specify/init-options.json                       |   7 +-
+| |  .specify/integration.json                        |  10 +-
+| |  .specify/integrations/agy.manifest.json          |  17 ++
+| |  .specify/integrations/opencode.manifest.json     |   2 +-
+| |  .specify/memory/constitution.md                  | 235 ++++++++++++-----
+| |  .specify/scripts/bash/check-prerequisites.sh     |   0
+| |  .specify/scripts/bash/common.sh                  |   0
+| |  .specify/scripts/bash/create-new-feature.sh      |   0
+| |  .specify/scripts/bash/resolve-template.sh        |   0
+| |  .specify/scripts/bash/setup-plan.sh              |   0
+| |  .specify/scripts/bash/setup-tasks.sh             |   0
+| |  specs/002-user-login/checklists/requirements.md  |  36 +++
+| |  .../contracts/auth-session.openapi.yaml          | 177 +++++++++++++
+| |  .../002-user-login/contracts/database-session.md | 143 +++++++++++
+| |  specs/002-user-login/data-model.md               | 204 +++++++++++++++
+| |  specs/002-user-login/plan.md                     | 192 ++++++++++++++
+| |  specs/002-user-login/quickstart.md               | 179 +++++++++++++
+| |  specs/002-user-login/research.md                 | 223 ++++++++++++++++
+| |  specs/002-user-login/spec.md                     | 161 ++++++++++++
+| |  specs/002-user-login/tasks.md                    | 255 +++++++++++++++++++
+| |  .../checklists/requirements.md                   |  36 +++
+| |  .../003-otp-register-activation/contracts/api.md | 154 +++++++++++
+| |  specs/003-otp-register-activation/data-model.md  | 118 +++++++++
+| |  specs/003-otp-register-activation/plan.md        |  95 +++++++
+| |  specs/003-otp-register-activation/quickstart.md  | 159 ++++++++++++
+| |  specs/003-otp-register-activation/research.md    | 156 ++++++++++++
+| |  specs/003-otp-register-activation/spec.md        | 123 +++++++++
+| |  specs/003-otp-register-activation/tasks.md       | 227 +++++++++++++++++
+| |  28 files changed, 2834 insertions(+), 75 deletions(-)
+| |
+| * commit dc5e7c569cc1bb8209896e63c0a3cefbbf7cdcd7
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Nov 13 18:54:43 2026 +0700
+| |
+| |     fix: console log
+| |
+| |  src/packages/authentication/auth.controller.ts | 3 ++-
+| |  1 file changed, 2 insertions(+), 1 deletion(-)
+| |
+| * commit bdc199b56a778c218fa2e3a5ee2be0453b558d86
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Nov 13 18:47:58 2026 +0700
+| |
+| |     feat: deploy frontend
+| |
+| |  frontend/assets/HomePage-DqqsemmF.css            |  1 +
+| |  frontend/assets/HomePage-r4YawCfK.js             |  1 +
+| |  frontend/assets/LoginPage-DeBkTfxY.js            |  1 +
+| |  frontend/assets/LoginPage-ho1jsJQo.css           |  1 +
+| |  frontend/assets/OtpPage-BUFXYlct.css             |  1 +
+| |  frontend/assets/OtpPage-CHfI4-SH.js              |  1 +
+| |  frontend/assets/RecoverPasswordPage-BpKxp4sw.js  |  1 +
+| |  frontend/assets/RecoverPasswordPage-ZBEWFM_T.css |  1 +
+| |  frontend/assets/RegisterPage-CrlXddRr.css        |  1 +
+| |  frontend/assets/RegisterPage-DPwFSVV-.js         |  1 +
+| |  frontend/assets/SetPassword-1t73yYyK.js          |  1 +
+| |  frontend/assets/SetPassword-cMBBJQ1u.css         |  1 +
+| |  frontend/assets/api-CRwxzRRp.js                  |  1 +
+| |  frontend/assets/arrow-right-HmgDqBBM.js          |  1 +
+| |  frontend/assets/button-DFlgVi_Q.css              |  1 +
+| |  frontend/assets/button-n9Ak4xuu.js               |  1 +
+| |  frontend/assets/components-BoaS9JGX.js           |  1 +
+| |  frontend/assets/index-Bajka5Sr.css               |  1 +
+| |  frontend/assets/index-X-nC4q06.js                | 10 +++++++
+| |  frontend/assets/jsx-runtime-DwqyJFAo.js          |  1 +
+| |  frontend/assets/logo-DuqjOP8l.svg                | 18 ++++++++++++
+| |  frontend/assets/study-poster-BKh_SRVk.svg        | 21 ++++++++++++++
+| |  frontend/assets/tick_box-BhxFDtgc.css            |  1 +
+| |  frontend/assets/tick_box-CUQZGkgZ.js             |  1 +
+| |  frontend/index.html                              | 16 +++++++++++
+| |  src/app.module.ts                                |  3 +-
+| |  src/common/interceptor.ts                        |  6 ++--
+| |  src/config/app.config.ts                         |  1 -
+| |  src/main.ts                                      |  3 +-
+| |  src/packages/authentication/auth.controller.ts   | 10 +++----
+| |  src/packages/web/web.controller.ts               | 29 ++++++++++++++++++++
+| |  src/packages/web/web.guard.ts                    | 10 +++++++
+| |  src/packages/web/web.module.ts                   | 10 +++++++
+| |  src/packages/web/web.service.ts                  | 13 +++++++++
+| |  34 files changed, 159 insertions(+), 12 deletions(-)
+| |
+| * commit 7f28ec1e535f6197f07f981f7e4c4cf84cbced77
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Thu Nov 12 18:28:38 2026 +0700
+| |
+| |     add: update and fix otp key extract
+| |
+| |  src/packages/authentication/auth.controller.ts   | 59 ++++++++++----------
+| |  src/packages/authentication/auth.service.ts      |  1 -
+| |  .../authentication/dto/otp-response.dto.ts       | 15 ++---
+| |  .../security-generation/dto/key-response.dto.ts  |  4 +-
+| |  src/packages/security-generation/sg.service.ts   | 19 ++-----
+| |  5 files changed, 46 insertions(+), 52 deletions(-)
+| |
+| * commit 476e91a74e94047b210fd4a2c5e36fe292b60621
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Wed Nov 11 20:25:28 2026 +0700
+| |
+| |     hotfix: console log
+| |
+| |  src/packages/security-generation/sg.service.ts | 1 +
+| |  1 file changed, 1 insertion(+)
+| |
+| * commit fb1e031a620e3e95efaeabb252f27fc68b29c945
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Wed Nov 11 20:21:58 2026 +0700
+| |
+| |     fix: error otp format and comparison
+| |
+| |  src/packages/authentication/auth.controller.ts | 7 ++++---
+| |  src/packages/authentication/auth.service.ts    | 1 +
+| |  2 files changed, 5 insertions(+), 3 deletions(-)
+| |
+* | commit a731700cb4c86909a37a418b4c41773d12cb5938
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Tue Nov 17 17:56:45 2026 +0700
+| |
+| |     temporary dev: allow localhost 8999
+| |
+| |  src/main.ts | 6 ++++++
+| |  1 file changed, 6 insertions(+)
+| |
+* | commit ef45deedc50b6ca5e5ba8ae179bdc3de7055277f
+|\| Merge: 1b39e56 196145e
+| | Author: Nah <huynguyenlequoc13@gmail.com>
+| | Date:   Mon Nov 9 14:01:50 2026 +0700
+| |
+| |     Merge pull request #5 from RoundFloor/feature/temporary-discord
+| |
+| |     Feature/temporary discord
+| |
+| * commit 196145e90b30f356c377ca2cc841f6104692b409
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Mon Nov 9 14:00:00 2026 +0700
+| |
+| |     feat: discord director
+| |
+| |  src/packages/email-sender/discord.config.ts      | 41 ++++++++++++++++++++
+| |  .../email-sender/email-sender.service.ts         | 41 +++++++++++---------
+| |  src/packages/postgres/pg.service.ts              |  5 +--
+| |  src/packages/security-generation/sg.config.ts    |  2 +-
+| |  src/packages/security-generation/sg.service.ts   |  2 +-
+| |  5 files changed, 68 insertions(+), 23 deletions(-)
+| |
+| * commit 243f3468a5753851bcc01f0b451ba01c173c5779
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Mon Nov 9 10:41:49 2026 +0700
+| |
+| |     fix: update account register api
+| |
+| |  docs/API.md                                      | 41 +++++++++++++-------
+| |  docs/backend/authentication.md                   | 13 +++++--
+| |  docs/database/authentication.md                  | 28 ++++++++-----
+| |  .../__tests__/auth.service.mock.ts               | 24 +++++++++++-
+| |  .../__tests__/auth.service.spec.ts               | 12 +++++-
+| |  src/packages/authentication/auth.controller.ts   | 25 ++++++++----
+| |  src/packages/authentication/auth.service.ts      | 31 +++++++++++----
+| |  .../postgres/__tests__/pg.service.mock.ts        |  2 +-
+| |  src/packages/postgres/__tests__/pg.testcases.ts  |  4 +-
+| |  src/packages/postgres/__tests__/pool.mock.ts     |  2 +-
+| |  src/packages/postgres/dto/response.dto.ts        |  2 +
+| |  src/packages/postgres/pg.service.ts              |  2 +
+| |  test/auth-registration.e2e-spec.ts               | 12 +++++-
+| |  13 files changed, 147 insertions(+), 51 deletions(-)
+| |
+| * commit 6210579ddac39705f84fff7b5efcfe1502f78faa
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Mon Nov 9 09:11:57 2026 +0700
+| |
+| |     add: log password
+| |
+| |  src/packages/postgres/pg.service.ts | 1 +
+| |  1 file changed, 1 insertion(+)
+| |
+| * commit b4d5a1bd1272dd5f7b01a199d3acf3f1a7c69023
+|/  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+|   Date:   Mon Nov 9 09:05:35 2026 +0700
+|
+|       add: system error detect
+|
+|    src/packages/postgres/pg.service.ts | 1 +
+|    1 file changed, 1 insertion(+)
+|
+*   commit 1b39e56c4987750590efd1ed48bf2f0adc8b12ed
+|\  Merge: 006f163 85f9a32
+| | Author: Nah <huynguyenlequoc13@gmail.com>
+| | Date:   Mon Nov 9 09:00:10 2026 +0700
+| |
+| |     Merge pull request #4 from RoundFloor/feature/api/login
+| |
+| |     Feature/api/login
+| |
+| * commit 85f9a32c3fbf5e43119f1ea8205c53a99ca21f10
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Sat Nov 7 15:28:32 2026 +0700
+| |
+| |     feat: authentication full api
+| |
+| |  docs/API.md                                      | 1049 ++++++++++++++++++
+| |  docs/backend/authentication.md                   |  478 ++++++++
+| |  docs/database/authentication.md                  |  554 +++++++++
+| |  package-lock.json                                |    1 -
+| |  package.json                                     |    1 -
+| |  src/common/interceptor.ts                        |    6 +-
+| |  .../__tests__/auth.service.spec.ts               |   95 +-
+| |  src/packages/authentication/auth.controller.ts   |   86 +-
+| |  src/packages/authentication/auth.service.ts      |   58 +-
+| |  .../decorartors/email.decorator.ts               |    1 +
+| |  .../decorartors/password.decorator.ts            |    2 +-
+| |  .../__tests__/email-sender.service.mock.ts       |   10 +-
+| |  src/packages/email-sender/email-sender.config.ts |   14 +-
+| |  .../email-sender/email-sender.service.ts         |   90 +-
+| |  .../postgres/__tests__/pg.service.mock.ts        |   56 +
+| |  src/packages/postgres/__tests__/pg.testcases.ts  |   15 +
+| |  src/packages/postgres/__tests__/pool.mock.ts     |    4 +-
+| |  src/packages/postgres/dto/response.dto.ts        |   14 +-
+| |  src/packages/postgres/pg.config.ts               |    2 +-
+| |  src/packages/postgres/pg.service.ts              |  326 +++---
+| |  .../decorators/token-bearer.decorators.ts        |    5 +-
+| |  src/packages/security-generation/sg.service.ts   |   20 +-
+| |  test/auth-registration.e2e-spec.ts               |   95 +-
+| |  23 files changed, 2577 insertions(+), 405 deletions(-)
+| |
+| * commit 8ca3f79f17024223aa7a12efb3522258b51a823d
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Sat Oct 31 14:56:25 2026 +0700
+| |
+| |     refactor: update params decorator and response interceptors
+| |
+| |  package-lock.json                                |  3 +-
+| |  package.json                                     |  3 +-
+| |  src/common/exception-factory.ts                  |  1 -
+| |  src/common/interceptor.ts                        | 29 ++++++++++
+| |  src/common/response-code/code.config.ts          |  4 ++
+| |  src/common/response.dto.ts                       | 30 ++++++++++
+| |  src/main.ts                                      |  4 ++
+| |  .../__tests__/auth.controller.spec.ts            | 11 +++-
+| |  src/packages/authentication/auth.controller.ts   | 59 +++++++++++++++++---
+| |  src/packages/authentication/auth.service.ts      | 23 +++++++-
+| |  .../decorartors/displayname.decorator.ts         |  3 +-
+| |  .../decorartors/email.decorator.ts               |  3 +-
+| |  .../decorartors/password.decorator.ts            |  3 +-
+| |  .../decorartors/username.decorator.ts            |  3 +-
+| |  src/packages/authentication/dto/login.dto.ts     | 17 +-----
+| |  src/packages/postgres/pg.service.ts              | 39 +++++++------
+| |  .../security-generation/decorators/sg.mock.ts    | 12 ++++
+| |  .../decorators/token-bearer.decorators.ts        | 30 ++++++++--
+| |  src/packages/security-generation/sg.config.ts    |  6 ++
+| |  src/packages/security-generation/sg.module.ts    |  9 +--
+| |  src/packages/security-generation/sg.service.ts   | 26 ++++-----
+| |  21 files changed, 245 insertions(+), 73 deletions(-)
+| |
+| * commit 4f5c3216dd04f7eee27acc28bc9eca4251c601e1
+|/  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+|   Date:   Fri Oct 30 18:47:17 2026 +0700
+|
+|       feat: embed otp into authentication controller, base email sender
+|
+|    src/common/response-code/code.config.ts          |   5 +-
+|    src/packages/authentication/auth.controller.ts   |  29 +++-
+|    src/packages/authentication/auth.module.ts       |   3 +-
+|    src/packages/authentication/auth.service.ts      |  19 +++
+|    .../authentication/dto/otp-response.dto.ts       |  14 ++
+|    .../email-sender/config/email-sender.config.ts   |  11 --
+|    src/packages/email-sender/email-sender.config.ts |   1 +
+|    .../email-sender/email-sender.service.ts         | 137 +++++--------------
+|    src/packages/postgres/pg.service.ts              |  59 ++------
+|    .../__test__/sg.service.spec.ts                  |  11 +-
+|    .../decorators/token-bearer.decorators.ts        |  11 ++
+|    .../security-generation/dto/key-response.dto.ts  |  10 +-
+|    src/packages/security-generation/sg.guard.ts     |   8 ++
+|    src/packages/security-generation/sg.service.ts   |  56 +++++---
+|    14 files changed, 176 insertions(+), 198 deletions(-)
+|
+*   commit 006f1633698adae22e02037112d2e4a7cbe1bc0a
+|\  Merge: 11872d1 1d7b210
+| | Author: Nah <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Oct 30 11:12:00 2026 +0700
+| |
+| |     Merge pull request #3 from RoundFloor/feature/otp
+| |
+| |     feature: otp, refresh token and access token generation
+| |
+| *   commit 1d7b2104568d2497cf0caff053bdd5076ca3046d
+| |\  Merge: e7ce6fb 11872d1
+| |/  Author: Nah <huynguyenlequoc13@gmail.com>
+|/|   Date:   Fri Oct 30 11:11:24 2026 +0700
+| |
+| |       Merge branch 'dev' into feature/otp
+| |
+* |   commit 11872d1ba1b37f1c073c65d7ba086d9ca049c523
+|\ \  Merge: 3b82091 8cc5bfb
+| | | Author: Nah <huynguyenlequoc13@gmail.com>
+| | | Date:   Fri Oct 30 11:06:33 2026 +0700
+| | |
+| | |     Merge pull request #2 from RoundFloor/feature/api/register
+| | |
+| | |     Feature/api/register
+| | |
+| * | commit 8cc5bfb0ddce6f6e2203667b4b6ba0a6af73a005
+| | | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | | Date:   Fri Oct 30 10:50:40 2026 +0700
+| | |
+| | |     refactor: temporarily remove validation api and use decorator
+| | |
+| | |  package-lock.json                               |  40 +++++
+| | |  package.json                                    |   2 +
+| | |  src/common/dto/response.dto.ts                  |  26 ---
+| | |  src/common/exception-factory.ts                 |  10 ++
+| | |  .../interceptors/transform.interceptor.ts       |  17 --
+| | |  src/main.ts                                     |  10 +-
+| | |  .../__tests__/auth.controller.spec.ts           | 163 +++---------------
+| | |  .../__tests__/auth.service.mock.ts              |  19 --
+| | |  src/packages/authentication/auth.controller.ts  |  66 ++-----
+| | |  src/packages/authentication/auth.service.ts     |  58 ++-----
+| | |  .../decorartors/displayname.decorator.ts        |  25 +++
+| | |  .../decorartors/email.decorator.ts              |  25 +++
+| | |  .../decorartors/password.decorator.ts           |  31 ++++
+| | |  .../decorartors/username.decorator.ts           |  25 +++
+| | |  .../authentication/dto/refresh-token.dto.ts     |  13 +-
+| | |  src/packages/authentication/dto/register.dto.ts |  22 ++-
+| | |  src/packages/postgres/__tests__/pg.testcases.ts |   1 +
+| | |  tsconfig.build.json                             |   7 +-
+| | |  18 files changed, 241 insertions(+), 319 deletions(-)
+| | |
+| * | commit 5b977ae2784b28994629236ac52fe382074bcb5d
+|/ /  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| |   Date:   Thu Oct 29 12:50:21 2026 +0700
+| |
+| |       upadte: change validate api, merge all field of errorcode
+| |
+| |    .../authentication/__tests__/auth.controller.spec.ts  | 12 ++++++------
+| |    src/packages/authentication/auth.controller.ts        | 13 ++++++-------
+| |    src/packages/authentication/dto/validate.dto.ts       |  8 --------
+| |    3 files changed, 12 insertions(+), 21 deletions(-)
+| |
+| * commit e7ce6fbe3105fe5bdf875f9f1f42b835d7834016
+|/  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+|   Date:   Thu Oct 29 19:33:44 2026 +0700
+|
+|       feature: otp, refresh token and access token generation
+|
+|    package-lock.json                                | 128 +++++++++++++++++++
+|    package.json                                     |   2 +
+|    src/common/response-code/code.config.ts          |   6 +-
+|    .../postgres/__tests__/pg.register.testcases.ts  |  40 +++---
+|    .../postgres/__tests__/pg.service.mock.ts        |   4 +-
+|    src/packages/postgres/__tests__/pg.testcases.ts  |  28 ++--
+|    src/packages/postgres/__tests__/pool.mock.ts     |   2 +-
+|    src/packages/postgres/dto/SQLSTATE.dto.ts        |   2 +-
+|    src/packages/postgres/pg.model.ts                |  40 ------
+|    src/packages/postgres/pg.service.ts              |  10 +-
+|    .../__test__/sg.service.spec.ts                  |  55 ++++++++
+|    .../security-generation/dto/key-response.dto.ts  |  16 +++
+|    .../security-generation/dto/secret.dto.ts        |  10 ++
+|    src/packages/security-generation/sg.config.ts    |  12 ++
+|    src/packages/security-generation/sg.module.ts    |  15 +++
+|    src/packages/security-generation/sg.service.ts   |  87 +++++++++++++
+|    test/auth-registration.e2e-spec.ts               |   4 +-
+|    17 files changed, 373 insertions(+), 88 deletions(-)
+|
+*   commit 3b82091e036af17418d1cb4b9ce0f6f03ed118f8
+|\  Merge: e563101 921305c
+| | Author: Nah <huynguyenlequoc13@gmail.com>
+| | Date:   Thu Oct 29 12:34:05 2026 +0700
+| |
+| |     Merge pull request #1 from RoundFloor/feature/api/register
+| |
+| |     feat: register api (validate & register), register unit test and raw ...
+| |
+| * commit 921305c155ab2d44d7ea4278246e4cf056e0e1ec
+|/  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+|   Date:   Thu Oct 29 12:19:59 2026 +0700
+|
+|       feat: register api (validate & register), register unit test and raw function service of others authentication f
+|
+|    .agents/skills/speckit-analyze/SKILL.md          |  259 ----
+|    .agents/skills/speckit-checklist/SKILL.md        |  383 ------
+|    .agents/skills/speckit-clarify/SKILL.md          |  291 ----
+|    .agents/skills/speckit-constitution/SKILL.md     |  179 ---
+|    .agents/skills/speckit-converge/SKILL.md         |  283 ----
+|    .agents/skills/speckit-implement/SKILL.md        |  226 ----
+|    .agents/skills/speckit-plan/SKILL.md             |  166 ---
+|    .agents/skills/speckit-specify/SKILL.md          |  345 -----
+|    .agents/skills/speckit-tasks/SKILL.md            |  215 ---
+|    .agents/skills/speckit-taskstoissues/SKILL.md    |  117 --
+|    .gitignore                                       |    3 +-
+|    .prettierignore                                  |    5 +
+|    .specify/init-options.json                       |    5 +-
+|    .specify/integration.json                        |   10 +-
+|    .specify/integrations/agy.manifest.json          |   17 -
+|    .specify/integrations/opencode.manifest.json     |   17 +
+|    .specify/integrations/speckit.manifest.json      |   10 +-
+|    .specify/scripts/bash/check-prerequisites.sh     |    8 +-
+|    .specify/scripts/bash/common.sh                  |    0
+|    .specify/scripts/bash/create-new-feature.sh      |    0
+|    .specify/scripts/bash/resolve-template.sh        |    0
+|    .specify/scripts/bash/setup-plan.sh              |    0
+|    .specify/scripts/bash/setup-tasks.sh             |    4 +-
+|    .specify/templates/checklist-template.md         |    8 +-
+|    .specify/templates/plan-template.md              |   14 +-
+|    .specify/templates/tasks-template.md             |    2 +-
+|    package-lock.json                                | 1241 ++++++++++--------
+|    package.json                                     |    6 +-
+|    .../checklists/requirements.md                   |   35 +
+|    .../contracts/auth-registration.openapi.yaml     |  284 ++++
+|    specs/001-user-registration/data-model.md        |  158 +++
+|    specs/001-user-registration/plan.md              |  125 ++
+|    specs/001-user-registration/quickstart.md        |  185 +++
+|    specs/001-user-registration/research.md          |  121 ++
+|    specs/001-user-registration/spec.md              |  131 ++
+|    specs/001-user-registration/tasks.md             |  234 ++++
+|    src/app.controller.spec.ts                       |   22 -
+|    src/app.controller.ts                            |   12 -
+|    src/app.module.ts                                |   10 +-
+|    src/app.service.ts                               |    8 -
+|    src/common/dto/response.dto.ts                   |   26 +
+|    src/common/interceptors/transform.interceptor.ts |   17 +
+|    src/common/response-code/code.config.ts          |   26 +
+|    src/config/app.config.ts                         |    2 +
+|    src/main.ts                                      |   16 +-
+|    .../__tests__/auth.controller.spec.ts            |  196 +++
+|    .../__tests__/auth.service.mock.ts               |   41 +
+|    .../__tests__/auth.service.spec.ts               |  128 ++
+|    .../authentication/__tests__/auth.testcase.ts    |  148 +++
+|    src/packages/authentication/auth.controller.ts   |   63 +
+|    src/packages/authentication/auth.module.ts       |   13 +
+|    src/packages/authentication/auth.service.ts      |   61 +
+|    .../authentication/config/auth.config.ts         |    7 +
+|    src/packages/authentication/dto/login.dto.ts     |   16 +
+|    src/packages/authentication/dto/logout.dto.ts    |   10 +
+|    .../authentication/dto/recover-password.dto.ts   |   22 +
+|    .../authentication/dto/refresh-token.dto.ts      |   10 +
+|    src/packages/authentication/dto/register.dto.ts  |    6 +
+|    src/packages/authentication/dto/validate.dto.ts  |    8 +
+|    .../__tests__/email-sender.service.mock.ts       |    5 +
+|    .../__tests__/email-sender.service.spec.ts       |  135 ++
+|    .../email-sender/config/email-sender.config.ts   |   11 +
+|    src/packages/email-sender/email-sender.module.ts |    8 +
+|    .../email-sender/email-sender.service.ts         |  110 ++
+|    .../email-sender/models/email-sender.model.ts    |   47 +
+|    .../email-sender/models/email-template.model.ts  |   76 ++
+|    .../postgres/__tests__/pg.register.testcases.ts  |  741 +++++++++++
+|    .../postgres/__tests__/pg.service.mock.ts        |   65 +
+|    .../postgres/__tests__/pg.service.spec.ts        |   84 ++
+|    src/packages/postgres/__tests__/pg.testcases.ts  |   82 ++
+|    src/packages/postgres/__tests__/pool.mock.ts     |  107 ++
+|    src/packages/postgres/dto/SQLSTATE.dto.ts        |   24 +
+|    src/packages/postgres/dto/response.dto.ts        |    5 +
+|    src/packages/postgres/pg.config.ts               |    9 +
+|    src/packages/postgres/pg.model.ts                |   40 +
+|    src/packages/postgres/pg.module.ts               |    8 +
+|    src/packages/postgres/pg.service.ts              |  243 ++++
+|    .../__tests__/recaptcha.service.mock.ts          |   11 +
+|    src/packages/recaptcha/recaptcha.module.ts       |    8 +
+|    src/packages/recaptcha/recaptcha.service.ts      |    8 +
+|    test/app.e2e-spec.ts                             |   29 -
+|    test/auth-registration.e2e-spec.ts               |  149 +++
+|    82 files changed, 4803 insertions(+), 3157 deletions(-)
+|
+* commit e56310163b9436fff82963758d59f14287608212
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Thu Oct 29 10:35:03 2026 +0700
+|
+|     update: more general consititution
+|
+|  .specify/memory/constitution.md | 328 +++++++++++++++++++++++++++-----------
+|  1 file changed, 236 insertions(+), 92 deletions(-)
+|
+* commit 648a6ede9a8b5e271c2dc1d9e32b703f004744e4
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Mon Oct 26 00:17:52 2026 +0700
+|
+|     update: change base url of backend because of change of proxy structure
+|
+|  src/main.ts | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+|
+* commit 7a4c7dcc1e54e49abe000c869772df398ec0b7f0
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Thu Oct 22 17:51:50 2026 +0700
+|
+|     update: remove redundant folder structure in constitution
+|
+|  .specify/memory/constitution.md | 102 ++++++++++++++++----------------------
+|  1 file changed, 44 insertions(+), 58 deletions(-)
+|
+* commit 81335ed568356dec8488a433106377d4bf637c4f
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Tue Oct 20 19:48:13 2026 +0700
+|
+|     fix: add prefix of backend url
+|
+|  src/main.ts | 1 +
+|  1 file changed, 1 insertion(+)
+|
+* commit d96ac90009ebd277cc9e407cd97d260551f5c5b1
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Tue Oct 20 07:48:26 2026 +0700
+|
+|     update: adapt https
+|
+|  src/main.ts | 7 ++++++-
+|  1 file changed, 6 insertions(+), 1 deletion(-)
+|
+* commit 71dc2aae8b9b67d1797906e7872cc90d310cf12a
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Mon Oct 19 11:49:13 2026 +0700
+|
+|     add: constitution for backend proj
+|
+|  .specify/memory/constitution.md | 172 ++++++++++++++++++++++++++++++--------
+|  1 file changed, 137 insertions(+), 35 deletions(-)
+|
+* commit 7c6ef4f53ec6b5b50076c3c360df87b80a66c9cb
+| Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| Date:   Tue Oct 13 23:57:48 2026 +0700
+|
+|     add: initial nestjs structure and speckit
+|
+|  .agents/skills/speckit-analyze/SKILL.md       |  259 +
+|  .agents/skills/speckit-checklist/SKILL.md     |  383 ++
+|  .agents/skills/speckit-clarify/SKILL.md       |  291 ++
+|  .agents/skills/speckit-constitution/SKILL.md  |  179 +
+|  .agents/skills/speckit-converge/SKILL.md      |  283 ++
+|  .agents/skills/speckit-implement/SKILL.md     |  226 +
+|  .agents/skills/speckit-plan/SKILL.md          |  166 +
+|  .agents/skills/speckit-specify/SKILL.md       |  345 ++
+|  .agents/skills/speckit-tasks/SKILL.md         |  215 +
+|  .agents/skills/speckit-taskstoissues/SKILL.md |  117 +
+|  .gitattributes                                |    1 +
+|  .gitignore                                    |   59 +
+|  .oxlintrc.json                                |   10 +
+|  .prettierrc                                   |    4 +
+|  .specify/.gitignore                           |   14 +
+|  .specify/init-options.json                    |   10 +
+|  .specify/integration.json                     |   15 +
+|  .specify/integrations/agy.manifest.json       |   17 +
+|  .specify/integrations/speckit.manifest.json   |   19 +
+|  .specify/memory/.constitution-template.json   |    4 +
+|  .specify/memory/constitution.md               |   50 +
+|  .specify/scripts/bash/check-prerequisites.sh  |  243 +
+|  .specify/scripts/bash/common.sh               |  942 ++++
+|  .specify/scripts/bash/create-new-feature.sh   |  504 ++
+|  .specify/scripts/bash/resolve-template.sh     |   57 +
+|  .specify/scripts/bash/setup-plan.sh           |   85 +
+|  .specify/scripts/bash/setup-tasks.sh          |   94 +
+|  .specify/templates/checklist-template.md      |   45 +
+|  .specify/templates/constitution-template.md   |   50 +
+|  .specify/templates/plan-template.md           |  113 +
+|  .specify/templates/spec-template.md           |  131 +
+|  .specify/templates/tasks-template.md          |  252 +
+|  .specify/workflows/speckit/workflow.yml       |   74 +
+|  .specify/workflows/workflow-registry.json     |   13 +
+|  README.md                                     |  124 +
+|  nest-cli.json                                 |    8 +
+|  package-lock.json                             | 5708 +++++++++++++++++++++++
+|  package.json                                  |   49 +
+|  src/app.controller.spec.ts                    |   22 +
+|  src/app.controller.ts                         |   12 +
+|  src/app.module.ts                             |   10 +
+|  src/app.service.ts                            |    8 +
+|  src/main.ts                                   |    8 +
+|  test/app.e2e-spec.ts                          |   29 +
+|  tsconfig.build.json                           |    8 +
+|  tsconfig.json                                 |   23 +
+|  vitest.config.e2e.ts                          |   10 +
+|  vitest.config.ts                              |   12 +
+|  48 files changed, 11301 insertions(+)
+|
+* commit f3be4d9e827523ad7cad5b9dcdbb8e77093f0089
+  Author: Wanderer2414 <huynguyenlequoc13@gmail.com>
+  Date:   Tue Oct 6 09:10:24 2026 +0700
+
+      Initial commit
+
+   README.md | 0
+   1 file changed, 0 insertions(+), 0 deletions(-)
+\end{lstlisting}
+
+\end{document}

@@ -1,0 +1,1199 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in,left=.75in,right=.75in,bottom=1in]{geometry}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\else
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\fi
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+\lstset{style=mystyle}
+\graphicspath{{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+\setlength{\headheight}{29.43912pt}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+\lhead{\reporttitle}
+\rhead{University of Science - VNUHCM\\
+\coursename}
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+\begin{document}
+\pagenumbering{arabic}
+
+\section{Sprint 4 Git Log - Frontend}
+
+Repository: \texttt{\detokenize{src/frontend}} Command: \texttt{\detokenize{git log --graph --all --stat}}
+
+\begin{lstlisting}[numbers=none,breaklines=true]
+* commit 6660e5ef328898408fa286ed1905ed545b8c04d0
+| Author: bao2434 <ncbao2434@apcs.fitus.edu.vn>
+| Date:   Sat Nov 28 18:03:38 2026 +0700
+|
+|     feat: apply post retrieve api
+|
+|  src/features/forum/tag/type.ts                  |   2 +
+|  src/pages/forums/browse/area/AreaPage.tsx       |  25 +-
+|  src/pages/forums/browse/subject/SubjectPage.css |   7 +
+|  src/pages/forums/browse/subject/SubjectPage.tsx | 222 ++++-----
+|  src/pages/forums/feed/FeedPage.css              | 413 +++++++++-------
+|  src/pages/forums/feed/FeedPage.tsx              | 578 +++++++++++-----------
+|  6 files changed, 624 insertions(+), 623 deletions(-)
+|
+*   commit b7af1a3d6958b38ef70fad6578c9bac680193122
+|\  Merge: 0321f8e 504378a
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Sat Nov 28 15:22:20 2026 +0700
+| |
+| |     add: refactor code after merge
+| |
+| * commit 504378a06e732bf5a564760e65627163dc42427a
+| | Author: bao2434 <ncbao2434@apcs.fitus.edu.vn>
+| | Date:   Sat Nov 28 10:15:44 2026 +0700
+| |
+| |     update: new constitution, add library page and update some page and api
+| |
+| |  .specify/memory/constitution.md                  | 439 ++++++++------
+| |  src/app/layouts/forum/ForumLayout.css            |  20 +
+| |  src/app/layouts/forum/ForumLayout.tsx            |  61 +-
+| |  src/features/account/me/type.ts                  |   9 +-
+| |  src/features/forum/type.ts                       |   4 +
+| |  src/pages/forums/ForumPage.tsx                   |   5 +-
+| |  src/pages/forums/browse/area/AreaPage.tsx        |  15 +-
+| |  src/pages/forums/browse/subject/SubjectPage.css  | 327 ++++++++---
+| |  src/pages/forums/browse/subject/SubjectPage.tsx  | 586 +++++++++++--------
+| |  .../forums/browse/university/UniversityPage.tsx  |   5 +-
+| |  src/pages/forums/feed/FeedPage.css               | 406 ++++++++++---
+| |  src/pages/forums/feed/FeedPage.tsx               | 389 ++++++++++--
+| |  src/pages/forums/feed/TrendingThread.css         | 110 ----
+| |  src/pages/forums/feed/TrendingThread.tsx         |  60 --
+| |  src/pages/forums/library/LibraryPage.css         | 396 +++++++++++++
+| |  src/pages/forums/library/LibraryPage.tsx         | 193 ++++++
+| |  16 files changed, 2196 insertions(+), 829 deletions(-)
+| |
+| * commit eb6ecd0c00d78e00038be743a08e1cc6b450e0b0
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Mon Nov 23 11:25:43 2026 +0700
+| |
+| |     temp
+| |
+| |  src/app/layouts/forum/ForumLayout.css | 179 ++++++++++++++++--------------
+| |  src/pages/forums/ForumPage.tsx        |   2 +-
+| |  src/shared/assets/icon/x.svg          |   4 +
+| |  3 files changed, 103 insertions(+), 82 deletions(-)
+| |
+* | commit 0321f8e1312c720f6ba21f8b4e59d0c5544f9bd9
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Thu Nov 26 18:24:13 2026 +0700
+| |
+| |     add: create ViewPage
+| |
+| |  src/app/layouts/forum/ForumLayout.tsx            |   2 +-
+| |  src/pages/forums/ForumPage.tsx                   |   1 +
+| |  src/pages/forums/browse/area/AreaPage.tsx        |   6 +-
+| |  src/pages/forums/browse/subject/SubjectPage.tsx  |  13 +-
+| |  src/pages/forums/post/create/createPostPage.css  |   0
+| |  .../forums/post/create/createPostPage.test.tsx   |   0
+| |  src/pages/forums/post/create/createPostPage.tsx  |   0
+| |  src/pages/forums/post/view/viewPostPage.css      | 449 +++++++++++++++++++
+| |  src/pages/forums/post/view/viewPostPage.test.tsx |   0
+| |  src/pages/forums/post/view/viewPostPage.tsx      | 320 +++++++++++++
+| |  src/shared/assets/icon/attach.svg                |   3 +
+| |  11 files changed, 785 insertions(+), 9 deletions(-)
+| |
+* | commit 76989906494286f7f8279482c8f8c256141d2461
+|/  Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+|   Date:   Sun Nov 22 16:01:21 2026 +0700
+|
+|       add: implement navigation in area and subject page
+|
+|    src/app/layouts/forum/ForumLayout.tsx            |   2 -
+|    .../providers/router/router-provider.test.tsx    |   2 +-
+|    src/features/auth/login/login.ts                 |   2 +-
+|    src/features/forum/area/area.ts                  |  23 ----
+|    src/features/forum/tag/tag.ts                    |  23 ++++
+|    src/features/forum/{ => tag}/type.ts             |   2 +-
+|    src/pages/forums/browse/area/AreaPage.css        |  32 +++++
+|    src/pages/forums/browse/area/AreaPage.tsx        |  63 ++++------
+|    src/pages/forums/browse/subject/SubjectPage.css  |  24 +++-
+|    src/pages/forums/browse/subject/SubjectPage.tsx  |   5 -
+|    .../forums/browse/university/UniversityPage.css  |  22 ++++
+|    .../forums/browse/university/UniversityPage.tsx  |   4 +-
+|    src/pages/route_error/RouteErrorPage.tsx         |   2 +-
+|    src/shared/api/client.ts                         | 118 ++++++++++---------
+|    14 files changed, 193 insertions(+), 131 deletions(-)
+|
+*   commit 39645784eb2b022374acf7257bed56feb004ec2e
+|\  Merge: 21e68d6 0c4440e
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Sat Nov 21 16:59:25 2026 +0700
+| |
+| |     Merge remote-tracking branch 'origin/dev' into feature/forum/major-selection
+| |
+| * commit 0c4440e0593f7aa8eefa3dac54b08909af2cba70
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Sat Nov 21 15:58:02 2026 +0700
+| |
+| |     fix: Fix OTP page don't stop loading
+| |
+| |  src/app/layouts/forum/ForumLayout.css | 3 +++
+| |  src/pages/auth/otp/OtpPage.tsx        | 4 +---
+| |  2 files changed, 4 insertions(+), 3 deletions(-)
+| |
+* | commit 21e68d6aa246739f5e6d3d2b3d75b14872448678
+|/  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+|   Date:   Sat Nov 21 15:55:13 2026 +0700
+|
+|       hotfix: merge css style error when refactor
+|
+|    src/pages/forums/browse/area/AreaPage.tsx        |  6 ++++--
+|    .../forums/browse/university/UniversityPage.tsx  | 20 ++++----------------
+|    2 files changed, 8 insertions(+), 18 deletions(-)
+|
+*   commit 04d102968e7d7b61e9e338d2fc3fc37c4619b70f
+|\  Merge: 40a319b a105869
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Sat Nov 21 15:36:54 2026 +0700
+| |
+| |     Merge forum/subject-post
+| |
+| * commit a105869b8a5419d58042000961485ec2b2cc2c95
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Sat Nov 21 15:23:07 2026 +0700
+| |
+| |     add: add account and area API
+| |
+| |  src/app/layouts/forum/ForumLayout.tsx            | 15 +++--
+| |  src/app/providers/auth/auth-initializer.tsx      |  2 +-
+| |  src/app/providers/query/query-provider.tsx       |  3 +-
+| |  src/features/account/me/account.ts               | 24 ++++++++
+| |  src/features/account/me/type.ts                  | 12 ++++
+| |  .../{authentication => auth}/login/login.ts      |  0
+| |  .../{authentication => auth}/login/type.ts       |  0
+| |  .../{authentication => auth}/logout/logout.ts    |  0
+| |  src/features/{authentication => auth}/otp/otp.ts |  0
+| |  .../{authentication => auth}/otp/type.ts         |  0
+| |  .../register/register.ts                         |  0
+| |  .../{authentication => auth}/register/type.ts    |  0
+| |  src/features/forum/area/area.ts                  | 23 +++++++
+| |  src/features/forum/type.ts                       |  9 +++
+| |  src/pages/auth/login/LoginPage.tsx               |  2 +-
+| |  src/pages/auth/otp/OtpPage.tsx                   |  2 +-
+| |  src/pages/auth/register/RegisterPage.tsx         |  2 +-
+| |  src/pages/forums/ForumPage.tsx                   |  2 +-
+| |  src/pages/forums/browse/BrowsePage.css           |  1 -
+| |  src/pages/forums/browse/BrowsePage.tsx           | 65 ++++++--------------
+| |  src/shared/api/client.ts                         |  2 +-
+| |  21 files changed, 105 insertions(+), 59 deletions(-)
+| |
+| *   commit 58e62eeb17f16443c44d6f4a853e094006f4995d
+| |\  Merge: b739b2b c2a927a
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Sat Nov 21 10:16:44 2026 +0700
+| | |
+| | |     Merge branch 'feature/forum/major-selection' into dev
+| | |
+| * | commit b739b2bdaeb71981e9d0bf21b656fffecd673398
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Fri Nov 20 13:27:40 2026 +0700
+| | |
+| | |     add: fix double verify OTP call, logout when refresh
+| | |
+| | |  src/app/guard/public-only.tsx                |  2 +-
+| | |  src/app/providers/auth/auth-initializer.tsx  | 10 ++++-----
+| | |  src/entities/session/auth-store.ts           | 10 +--------
+| | |  src/entities/session/type.ts                 |  5 +----
+| | |  src/features/authentication/logout/logout.ts |  2 --
+| | |  src/features/authentication/otp/otp.ts       |  1 -
+| | |  src/pages/auth/otp/OtpPage.tsx               | 13 +++++++----
+| | |  src/pages/loading/LoadingPage.css            |  2 ++
+| | |  src/shared/api/client.ts                     | 25 +++++++++-------------
+| | |  9 files changed, 28 insertions(+), 42 deletions(-)
+| | |
+* | | commit 40a319bcf4243d8198b7f375cb48c109b631b8e7
+| |/  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+|/|   Date:   Sat Nov 21 15:23:00 2026 +0700
+| |
+| |       refactor: change tree structure of Browse Page and Smoother animation
+| |
+| |    src/app/layouts/forum/ForumLayout.css           |   1 +
+| |    src/pages/forums/ForumPage.css                  |   5 +
+| |    src/pages/forums/area/AreaPage.tsx              | 410 ------------------
+| |    src/pages/forums/browse/BrowsePage.css          | 355 +--------------
+| |    src/pages/forums/browse/BrowsePage.tsx          | 184 +-------
+| |    src/pages/forums/{ => browse}/area/AreaPage.css |  34 +-
+| |    .../forums/{ => browse}/area/AreaPage.test.tsx  |   0
+| |    src/pages/forums/browse/area/AreaPage.tsx       | 333 ++++++++++++++
+| |    .../forums/{ => browse}/subject/SubjectPage.css |   0
+| |    .../{ => browse}/subject/SubjectPage.test.tsx   |   0
+| |    .../forums/{ => browse}/subject/SubjectPage.tsx |  20 +-
+| |    .../forums/browse/university/UniversityPage.css | 323 ++++++++++++++
+| |    .../forums/browse/university/UniversityPage.tsx | 174 ++++++++
+| |    tsconfig.app.json                               |   6 +-
+| |    vite.config.ts                                  |   7 +
+| |    15 files changed, 908 insertions(+), 944 deletions(-)
+| |
+* | commit c2a927a69783fcbe4207ae7f9ebe8ba8b475faf6
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Nov 20 15:04:59 2026 +0700
+| |
+| |     fix: avoid overlapse by nested style configure
+| |
+| |  src/app/layouts/auth/AuthLayout.css              | 170 ++--
+| |  src/app/layouts/forum/ForumLayout.css            | 572 +++++++------
+| |  src/pages/auth/login/LoginPage.css               | 209 +++--
+| |  src/pages/auth/otp/OtpPage.css                   | 185 +++--
+| |  .../auth/recover_password/RecoverPassword.css    | 139 ++--
+| |  src/pages/auth/register/RegisterPage.css         | 169 ++--
+| |  src/pages/auth/set_password/SetPassword.css      | 139 ++--
+| |  src/pages/forums/area/AreaPage.css               | 800 ++++++++++---------
+| |  src/pages/forums/subject/SubjectPage.css         | 352 ++++----
+| |  src/pages/loading/LoadingPage.css                | 135 ++--
+| |  src/pages/route_error/RouteErrorPage.css         |  16 +-
+| |  11 files changed, 1447 insertions(+), 1439 deletions(-)
+| |
+* | commit c02cf9fe35dcddeeb39be0ca60d8b029ec1c7ae0
+|\| Merge: 0d08f0e 09c8ad3
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Nov 20 14:19:30 2026 +0700
+| |
+| |     feat: smoother forum layout animation
+| |
+| *   commit 09c8ad3f6c0261a95e87f620a5d29bb2ae681f91
+| |\  Merge: dc5352e 0e7456c
+| | | Author: Unauthorized user <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Fri Nov 20 00:25:39 2026 +0700
+| | |
+| | |     Merge pull request #6 from RoundFloor/feature/forum/subject-post
+| | |
+| | |     add: Render SubjectPage
+| | |
+| | * commit 0e7456c502ad2f5608545e1ebab7098a76ca53a1
+| |/  Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| |   Date:   Fri Nov 20 00:24:36 2026 +0700
+| |
+| |       add: Render SubjectPage
+| |
+| |    src/app/layouts/forum/ForumLayout.css           |  60 +++-
+| |    src/app/layouts/forum/ForumLayout.tsx           |  50 ++-
+| |    src/app/providers/router/router-provider.tsx    |   2 +-
+| |    src/features/authentication/logout/logout.ts    |   1 +
+| |    src/pages/{forum => forums}/area/AreaPage.css   |  64 ++--
+| |    .../{forum => forums}/area/AreaPage.test.tsx    |   0
+| |    src/pages/{forum => forums}/area/AreaPage.tsx   | 195 ++++++-----
+| |    src/pages/forums/subject/SubjectPage.css        | 216 ++++++++++++
+| |    src/pages/forums/subject/SubjectPage.test.tsx   |   0
+| |    src/pages/forums/subject/SubjectPage.tsx        | 320 ++++++++++++++++++
+| |    src/shared/assets/icon/arrow-up.svg             |   3 +
+| |    src/shared/assets/icon/pin.svg                  |   3 +
+| |    12 files changed, 775 insertions(+), 139 deletions(-)
+| |
+* | commit 0d08f0e067df892266e4ec253c9f7eadcee43bac
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Fri Nov 20 00:30:54 2026 +0700
+| |
+| |     update: remove navigation button on main screen, use side panel instead
+| |
+| |  src/app/layouts/forum/ForumLayout.css            | 18 +++---
+| |  src/app/layouts/forum/ForumLayout.tsx            | 61 +++++---------------
+| |  src/app/providers/router/router-provider.tsx     |  4 +-
+| |  .../{forum/LoginPage.test.tsx => ForumPage.css}  |  0
+| |  src/pages/forums/ForumPage.tsx                   | 21 +++++++
+| |  src/pages/forums/LoginPage.test.tsx              |  0
+| |  .../forums/{forum => }/browse/BrowsePage.css     |  0
+| |  .../forums/{forum => }/browse/BrowsePage.tsx     |  8 +--
+| |  src/pages/forums/{forum => }/feed/FeedPage.css   |  0
+| |  src/pages/forums/{forum => }/feed/FeedPage.tsx   |  8 +--
+| |  .../forums/{forum => }/feed/TrendingThread.css   |  0
+| |  .../forums/{forum => }/feed/TrendingThread.tsx   |  2 +-
+| |  src/pages/forums/forum/ForumPage.css             | 30 ----------
+| |  src/pages/forums/forum/ForumPage.tsx             | 23 --------
+| |  14 files changed, 56 insertions(+), 119 deletions(-)
+| |
+* | commit fbe388ac723cf41268df3505ebb79ee3cdb8f3b7
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Thu Nov 19 23:43:47 2026 +0700
+| |
+| |     feat: load areas on page
+| |
+| |  src/app/providers/router/router-provider.tsx     |  4 +-
+| |  src/pages/{forum => forums}/area/AreaPage.css    |  0
+| |  .../{forum => forums}/area/AreaPage.test.tsx     |  0
+| |  src/pages/{forum => forums}/area/AreaPage.tsx    |  0
+| |  src/pages/forums/forum/ForumPage.tsx             |  2 +-
+| |  src/pages/forums/forum/browse/BrowsePage.css     | 10 +--
+| |  src/pages/forums/forum/browse/BrowsePage.tsx     | 67 ++++++++++++++------
+| |  7 files changed, 55 insertions(+), 28 deletions(-)
+| |
+* | commit c6491986fa1c7934eaae4128ab3af940f46ae169
+|\| Merge: 811cd71 dc5352e
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Thu Nov 19 18:38:49 2026 +0700
+| |
+| |     Merge forum/subject-post
+| |
+| *   commit dc5352e45d128a3502031bc7ae294a9c0b3ed52f
+| |\  Merge: b762d49 c4c8e7c
+| | | Author: Unauthorized user <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Wed Nov 18 18:26:00 2026 +0700
+| | |
+| | |     Merge pull request #5 from RoundFloor/feature/forum/course-selection
+| | |
+| | * commit c4c8e7caf79b0ece52b800344983a658d6ed15c3
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Wed Nov 18 18:23:27 2026 +0700
+| | |
+| | |     add: Render AreaPage
+| | |
+| | |  src/app/guard/auth-guard.tsx                 |   4 +-
+| | |  src/app/guard/otp-guard.tsx                  |   3 +-
+| | |  src/app/guard/public-only.tsx                |   7 +-
+| | |  src/app/layouts/forum/ForumLayout.css        |  18 +-
+| | |  src/app/layouts/forum/ForumLayout.tsx        |  28 +-
+| | |  src/app/providers/auth/auth-initializer.tsx  |  10 +-
+| | |  src/app/providers/router/router-provider.tsx |  32 +-
+| | |  src/features/authentication/logout/logout.ts |  11 +-
+| | |  src/pages/auth/otp/OtpPage.tsx               |  38 +-
+| | |  src/pages/forum/area/AreaPage.css            | 375 +++++++++++++++++++
+| | |  src/pages/forum/area/AreaPage.test.tsx       |   0
+| | |  src/pages/forum/area/AreaPage.tsx            | 415 +++++++++++++++++++++
+| | |  src/shared/api/client.ts                     |   7 +-
+| | |  src/shared/assets/icon/arrow-up-right.svg    |   3 +
+| | |  14 files changed, 880 insertions(+), 71 deletions(-)
+| | |
+| | * commit 6f70f512fc335edff5b425cafb403cf990093bd0
+| |/  Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| |   Date:   Tue Nov 17 16:20:39 2026 +0700
+| |
+| |       add: complete forum layout
+| |
+| |    src/app/guard/auth-guard.tsx                    |   1 +
+| |    src/app/guard/otp-guard.tsx                     |   1 +
+| |    src/app/guard/public-only.tsx                   |   1 +
+| |    src/app/layouts/forum/ForumLayout.css           | 249 ++++++++++++++++++
+| |    src/app/layouts/forum/ForumLayout.tsx           | 139 ++++++++++
+| |    src/app/layouts/main/MainLayout.css             | 116 --------
+| |    src/app/layouts/main/MainLayout.tsx             |  48 ----
+| |    src/app/providers/router/router-provider.tsx    |  13 +-
+| |    .../icon/{friends.svg => add_friends.svg}       |   0
+| |    src/shared/assets/icon/arrow-down.svg           |   3 +
+| |    src/shared/assets/icon/bell.svg                 |   3 +
+| |    src/shared/assets/icon/forum.svg                |   3 +
+| |    src/shared/assets/icon/log-out.svg              |   3 +
+| |    src/shared/assets/icon/trending.svg             |   3 +
+| |    14 files changed, 416 insertions(+), 167 deletions(-)
+| |
+| * commit b762d49f7f7cee2c720ae715b08ad349d6a928f9
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Mon Nov 16 20:42:27 2026 +0700
+| |
+| |     refactor: fix merge pull request bug
+| |
+| |  src/app/guard/auth-guard.tsx                     |  2 +-
+| |  src/app/guard/public-only.tsx                    |  2 +-
+| |  src/app/providers/router/router-provider.tsx     | 20 ++++++++++----------
+| |  src/features/authentication/login/login.ts       |  2 +-
+| |  src/features/authentication/register/register.ts |  2 +-
+| |  5 files changed, 14 insertions(+), 14 deletions(-)
+| |
+| *   commit 922de34d98a84bf2396353f73d1efc4f5d9f24ef
+| |\  Merge: a7f2c4c 5040866
+| | | Author: Unauthorized user <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Mon Nov 16 20:20:12 2026 +0700
+| | |
+| | |     Merge pull request #4 from RoundFloor/feature/auth-ui
+| | |
+| | |     auth: refactor and fix some bugs
+| | |
+| | *   commit 504086685a4d4844af65e2ad3a02def803881219
+| | |\  Merge: be738fb a7f2c4c
+| | |/  Author: Unauthorized user <ntan2006personal@gmail.com>
+| |/|   Date:   Mon Nov 16 20:19:50 2026 +0700
+| | |
+| | |       Merge branch 'dev' into feature/auth-ui
+| | |
+| * | commit a7f2c4cbedc447965d0f03741f71d2a06a26f2a7
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Sat Nov 14 20:52:19 2026 +0700
+| | |
+| | |     add: generate artifacts for the project
+| | |
+| | |  .opencode/commands/speckit.analyze.md           | 251 +++++++
+| | |  .opencode/commands/speckit.checklist.md         | 375 +++++++++++
+| | |  .opencode/commands/speckit.clarify.md           | 287 ++++++++
+| | |  .opencode/commands/speckit.constitution.md      | 175 +++++
+| | |  .opencode/commands/speckit.converge.md          | 275 ++++++++
+| | |  .opencode/commands/speckit.implement.md         | 218 ++++++
+| | |  .opencode/commands/speckit.plan.md              | 166 +++++
+| | |  .opencode/commands/speckit.specify.md           | 345 ++++++++++
+| | |  .opencode/commands/speckit.tasks.md             | 216 ++++++
+| | |  .opencode/commands/speckit.taskstoissues.md     | 110 +++
+| | |  .specify/integration.json                       |   7 +-
+| | |  .specify/integrations/opencode.manifest.json    |  17 +
+| | |  docs/architecture/api-catalog.md                | 481 +++++++++++++
+| | |  docs/architecture/component-catalog.md          | 413 ++++++++++++
+| | |  docs/architecture/frontend-architecture.md      | 632 ++++++++++++++++++
+| | |  .../checklists/requirements.md                  |  41 ++
+| | |  .../contracts/auth-api.md                       | 306 +++++++++
+| | |  .../contracts/auth-routes.md                    | 121 ++++
+| | |  .../001-authentication-user-flows/data-model.md | 263 ++++++++
+| | |  specs/001-authentication-user-flows/plan.md     | 290 ++++++++
+| | |  .../001-authentication-user-flows/quickstart.md | 210 ++++++
+| | |  specs/001-authentication-user-flows/research.md | 242 +++++++
+| | |  specs/001-authentication-user-flows/spec.md     | 546 +++++++++++++++
+| | |  specs/001-authentication-user-flows/tasks.md    | 348 ++++++++++
+| | |  24 files changed, 6334 insertions(+), 1 deletion(-)
+| | |
+| * | commit 2fca5b8979c5c25f8acb2d4022331379275ed2c8
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Fri Nov 13 09:01:46 2026 +0700
+| | |
+| | |     add: Avoid reset access token when refresh and fix OTP error
+| | |
+| | |  .gitignore                                      |   1 +
+| | |  src/app/guard/auth-guard.tsx                    |  12 +-
+| | |  src/app/guard/otp-guard.tsx                     |  12 +-
+| | |  src/app/guard/public-only.tsx                   |   6 +-
+| | |  src/app/layouts/main/MainLayout.css             | 116 +++++++++++++++++
+| | |  src/app/layouts/main/MainLayout.tsx             |  48 +++++++
+| | |  src/app/providers/auth/auth-initializer.tsx     |  44 +++----
+| | |  src/app/providers/router/router-provider.tsx    |   2 +-
+| | |  src/entities/session/auth-store.ts              | 123 +++++++++++-------
+| | |  src/entities/session/type.ts                    |  10 ++
+| | |  src/features/authentication/login/login.ts      |  11 +-
+| | |  src/features/authentication/logout/logout.ts    |  28 ++++
+| | |  src/features/authentication/otp/otp.ts          |   6 +-
+| | |  .../authentication/register/register.ts         |  11 +-
+| | |  src/pages/auth/otp/OtpPage.tsx                  |  16 ++-
+| | |  src/pages/auth/register/RegisterPage.tsx        |  13 +-
+| | |  src/pages/loading/LoadingPage.css               |   0
+| | |  src/pages/loading/LoadingPage.tsx               |   0
+| | |  src/shared/api/client.ts                        |  42 +++---
+| | |  19 files changed, 364 insertions(+), 137 deletions(-)
+| | |
+| * | commit f303fd83a38b14c6f72678cfa9611040c5d32e5f
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Thu Nov 12 20:18:47 2026 +0700
+| | |
+| | |     add: verify otp functionality
+| | |
+| | |  src/app/guard/auth-guard.tsx                 |   6 +-
+| | |  src/app/guard/otp-guard.tsx                  |   2 -
+| | |  src/app/guard/public-only.tsx                |   8 +-
+| | |  src/app/providers/router/router-provider.tsx |  15 +-
+| | |  src/entities/otp/otp-store.ts                |  11 +-
+| | |  src/entities/otp/type.ts                     |   1 -
+| | |  src/entities/session/auth-store.ts           |   4 +
+| | |  src/features/authentication/login/login.ts   |   1 -
+| | |  src/features/authentication/logout/logout.ts |   0
+| | |  src/features/authentication/otp/otp.ts       |  49 +++++-
+| | |  src/features/authentication/otp/type.ts      |  10 +-
+| | |  src/pages/auth/login/LoginPage.tsx           |   6 +-
+| | |  src/pages/auth/otp/OtpPage.css               |  18 ++
+| | |  src/pages/auth/otp/OtpPage.tsx               | 189 +++++++++++++++++++--
+| | |  src/pages/route_error/RouteErrorPage.tsx     |   2 -
+| | |  src/shared/api/client.ts                     |  25 ++-
+| | |  src/shared/api/error.ts                      |   5 +-
+| | |  src/shared/ui/input/Input.tsx                | 117 ++++++-------
+| | |  18 files changed, 349 insertions(+), 120 deletions(-)
+| | |
+| | * commit be738fb19fd2cb92d6ac0792e386527576cc4def
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Mon Nov 16 20:10:22 2026 +0700
+| | |
+| | |     refactor: fix bug and adjust some features
+| | |
+| | |  .gitignore                                      |   1 +
+| | |  src/app/guard/auth-guard.tsx                    |   7 +-
+| | |  src/app/guard/otp-guard.tsx                     |  13 +-
+| | |  src/app/guard/public-only.tsx                   |  15 +-
+| | |  src/app/main.tsx                                |   3 +
+| | |  src/app/providers/auth/auth-initializer.tsx     |  33 ++--
+| | |  src/app/providers/router/router-provider.tsx    |  23 ++-
+| | |  src/entities/otp/otp-store.ts                   |   4 +-
+| | |  src/entities/session/auth-store.ts              | 123 +++++-------
+| | |  src/entities/session/type.ts                    |  10 -
+| | |  src/features/authentication/login/login.ts      |   7 +-
+| | |  src/features/authentication/logout/logout.ts    |   6 +-
+| | |  src/features/authentication/otp/otp.ts          |  11 +-
+| | |  .../authentication/register/register.ts         |   7 +-
+| | |  src/pages/auth/login/LoginPage.tsx              | 106 ++++++++---
+| | |  src/pages/auth/otp/OtpPage.tsx                  | 178 ++++++++++++------
+| | |  .../recover_password/RecoverPasswordPage.tsx    | 111 ++++++++++-
+| | |  src/pages/auth/register/RegisterPage.tsx        |   2 +-
+| | |  src/pages/auth/set_password/SetPassword.tsx     | 142 +++++++++++++-
+| | |  src/pages/loading/LoadingPage.css               |  92 +++++++++
+| | |  src/pages/loading/LoadingPage.tsx               |  29 +++
+| | |  src/shared/api/client.ts                        |  53 ++++--
+| | |  src/shared/api/error.ts                         |   2 +-
+| | |  src/shared/assets/image/bottom_logo.svg         |   6 +
+| | |  src/shared/assets/image/left_logo.svg           |   6 +
+| | |  src/shared/assets/image/right_logo.svg          |   6 +
+| | |  src/shared/assets/image/top_logo.svg            |   6 +
+| | |  27 files changed, 751 insertions(+), 251 deletions(-)
+| | |
+| | * commit f7ff28ea456cb4bf03b5f4cc855fd030482a2ab6
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Sat Nov 14 20:52:19 2026 +0700
+| | |
+| | |     add: generate artifacts for the project
+| | |
+| | |  .opencode/commands/speckit.analyze.md           | 251 +++++++
+| | |  .opencode/commands/speckit.checklist.md         | 375 +++++++++++
+| | |  .opencode/commands/speckit.clarify.md           | 287 ++++++++
+| | |  .opencode/commands/speckit.constitution.md      | 175 +++++
+| | |  .opencode/commands/speckit.converge.md          | 275 ++++++++
+| | |  .opencode/commands/speckit.implement.md         | 218 ++++++
+| | |  .opencode/commands/speckit.plan.md              | 166 +++++
+| | |  .opencode/commands/speckit.specify.md           | 345 ++++++++++
+| | |  .opencode/commands/speckit.tasks.md             | 216 ++++++
+| | |  .opencode/commands/speckit.taskstoissues.md     | 110 +++
+| | |  .specify/integration.json                       |   7 +-
+| | |  .specify/integrations/opencode.manifest.json    |  17 +
+| | |  docs/architecture/api-catalog.md                | 481 +++++++++++++
+| | |  docs/architecture/component-catalog.md          | 413 ++++++++++++
+| | |  docs/architecture/frontend-architecture.md      | 632 ++++++++++++++++++
+| | |  .../checklists/requirements.md                  |  41 ++
+| | |  .../contracts/auth-api.md                       | 306 +++++++++
+| | |  .../contracts/auth-routes.md                    | 121 ++++
+| | |  .../001-authentication-user-flows/data-model.md | 263 ++++++++
+| | |  specs/001-authentication-user-flows/plan.md     | 290 ++++++++
+| | |  .../001-authentication-user-flows/quickstart.md | 210 ++++++
+| | |  specs/001-authentication-user-flows/research.md | 242 +++++++
+| | |  specs/001-authentication-user-flows/spec.md     | 546 +++++++++++++++
+| | |  specs/001-authentication-user-flows/tasks.md    | 348 ++++++++++
+| | |  24 files changed, 6334 insertions(+), 1 deletion(-)
+| | |
+| | * commit 3e1b617abd189cde5b5087e4a7270f81a716d7d5
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Fri Nov 13 09:01:46 2026 +0700
+| | |
+| | |     add: Avoid reset access token when refresh and fix OTP error
+| | |
+| | |  .gitignore                                      |   1 +
+| | |  src/app/guard/auth-guard.tsx                    |  12 +-
+| | |  src/app/guard/otp-guard.tsx                     |  12 +-
+| | |  src/app/guard/public-only.tsx                   |   6 +-
+| | |  src/app/layouts/main/MainLayout.css             | 116 +++++++++++++++++
+| | |  src/app/layouts/main/MainLayout.tsx             |  48 +++++++
+| | |  src/app/providers/auth/auth-initializer.tsx     |  44 +++----
+| | |  src/app/providers/router/router-provider.tsx    |   2 +-
+| | |  src/entities/session/auth-store.ts              | 123 +++++++++++-------
+| | |  src/entities/session/type.ts                    |  10 ++
+| | |  src/features/authentication/login/login.ts      |  11 +-
+| | |  src/features/authentication/logout/logout.ts    |  28 ++++
+| | |  src/features/authentication/otp/otp.ts          |   6 +-
+| | |  .../authentication/register/register.ts         |  11 +-
+| | |  src/pages/auth/otp/OtpPage.tsx                  |  16 ++-
+| | |  src/pages/auth/register/RegisterPage.tsx        |  13 +-
+| | |  src/pages/loading/LoadingPage.css               |   0
+| | |  src/pages/loading/LoadingPage.tsx               |   0
+| | |  src/shared/api/client.ts                        |  42 +++---
+| | |  19 files changed, 364 insertions(+), 137 deletions(-)
+| | |
+| | * commit 80a5a2a0baba7ef25477856d7ee5b67993d87bdb
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Thu Nov 12 20:18:47 2026 +0700
+| | |
+| | |     add: verify otp functionality
+| | |
+| | |  src/app/guard/auth-guard.tsx                 |   6 +-
+| | |  src/app/guard/otp-guard.tsx                  |   2 -
+| | |  src/app/guard/public-only.tsx                |   8 +-
+| | |  src/app/providers/router/router-provider.tsx |  15 +-
+| | |  src/entities/otp/otp-store.ts                |  11 +-
+| | |  src/entities/otp/type.ts                     |   1 -
+| | |  src/entities/session/auth-store.ts           |   4 +
+| | |  src/features/authentication/login/login.ts   |   1 -
+| | |  src/features/authentication/logout/logout.ts |   0
+| | |  src/features/authentication/otp/otp.ts       |  49 +++++-
+| | |  src/features/authentication/otp/type.ts      |  10 +-
+| | |  src/pages/auth/login/LoginPage.tsx           |   6 +-
+| | |  src/pages/auth/otp/OtpPage.css               |  18 ++
+| | |  src/pages/auth/otp/OtpPage.tsx               | 189 +++++++++++++++++++--
+| | |  src/pages/route_error/RouteErrorPage.tsx     |   2 -
+| | |  src/shared/api/client.ts                     |  25 ++-
+| | |  src/shared/api/error.ts                      |   5 +-
+| | |  src/shared/ui/input/Input.tsx                | 117 ++++++-------
+| | |  vite.config.ts                               |   1 -
+| | |  19 files changed, 349 insertions(+), 121 deletions(-)
+| | |
+* | | commit 811cd714fe3d12fba4bafb046c1a013eafa526b6
+| | | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | | Date:   Mon Nov 16 21:06:03 2026 +0700
+| | |
+| | |     add: raw feed and browse page of forum
+| | |
+| | |  src/pages/forums/forum/ForumPage.tsx           |  14 +--
+| | |  src/pages/forums/forum/feed/FeedPage.css       | 107 ++++++++++++++++++
+| | |  src/pages/forums/forum/feed/FeedPage.tsx       |  44 ++++++++
+| | |  src/pages/forums/forum/feed/TrendingThread.css | 110 +++++++++++++++++++
+| | |  src/pages/forums/forum/feed/TrendingThread.tsx |  60 ++++++++++
+| | |  src/shared/assets/icon/post.svg                |   3 +
+| | |  src/shared/assets/icon/save.svg                |   3 +
+| | |  src/shared/assets/icon/school.svg              |   3 +
+| | |  8 files changed, 337 insertions(+), 7 deletions(-)
+| | |
+* | | commit 482fa1aeddb11508da5ad35b9d03a893b4695e35
+|/ /  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| |   Date:   Fri Nov 13 19:18:03 2026 +0700
+| |
+| |       add: browse page of main forum
+| |
+| |    src/app/providers/router/router-provider.tsx |  22 +-
+| |    src/pages/forums/forum/ForumPage.css         |  30 ++
+| |    src/pages/forums/forum/ForumPage.tsx         |  23 ++
+| |    src/pages/forums/forum/LoginPage.test.tsx    |   0
+| |    src/pages/forums/forum/browse/BrowsePage.css | 341 +++++++++++++++++++++
+| |    src/pages/forums/forum/browse/BrowsePage.tsx | 146 +++++++++
+| |    src/pages/home/HomePage.tsx                  |   6 +-
+| |    7 files changed, 555 insertions(+), 13 deletions(-)
+| |
+* | commit 515469789d0cefd5770428ee806396d511bd72c5
+|\| Merge: db543a4 e5dc3fe
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Wed Nov 11 13:50:48 2026 +0700
+| |
+| |     Merge origin/feature/auth-ui
+| |
+| * commit e5dc3fe759bf4e7d2072ea5c4f076ad4fe2d99eb
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Wed Nov 11 13:43:29 2026 +0700
+| |
+| |     Add OTP and auth guard
+| |
+| |  package-lock.json                                |  33 +++-
+| |  package.json                                     |   3 +-
+| |  src/app/App.tsx                                  |   2 +
+| |  src/app/guard/auth-guard.tsx                     |  22 +++
+| |  src/app/guard/otp-guard.tsx                      |  24 +++
+| |  src/app/guard/public-only.tsx                    |  24 +++
+| |  src/app/providers/auth/auth-initializer.tsx      |  38 +++++
+| |  src/app/providers/router/router-provider.tsx     |  54 ++++++-
+| |  src/entities/otp/otp-store.ts                    |  31 ++++
+| |  src/entities/otp/type.ts                         |   7 +
+| |  src/entities/session/auth-store.ts               |  54 +++++++
+| |  src/entities/session/token-store.ts              |  19 ---
+| |  src/entities/session/types.ts                    |   7 -
+| |  src/features/authentication/login/login.ts       |  17 ++-
+| |  src/features/authentication/login/type.ts        |   8 +-
+| |  src/features/authentication/otp/otp.ts           |  14 ++
+| |  src/features/authentication/otp/type.ts          |   8 +
+| |  src/features/authentication/register/register.ts |  18 ++-
+| |  src/features/authentication/register/type.ts     |   8 +-
+| |  src/pages/{ => auth}/login/LoginPage.css         |  20 ++-
+| |  src/pages/{ => auth}/login/LoginPage.test.tsx    |   0
+| |  src/pages/{ => auth}/login/LoginPage.tsx         | 153 ++++++-------------
+| |  src/pages/auth/otp/OtpPage.css                   |  93 +++++++++++
+| |  src/pages/auth/otp/OtpPage.test.tsx              |   0
+| |  src/pages/auth/otp/OtpPage.tsx                   |  87 +++++++++++
+| |  .../auth/recover_password/RecoverPassword.css    |  83 ++++++++++
+| |  .../recover_password/RecoverPassword.test.tsx    |   0
+| |  .../recover_password/RecoverPasswordPage.tsx     |  41 +++++
+| |  src/pages/auth/set_password/SetPassword.css      |  83 ++++++++++
+| |  src/pages/auth/set_password/SetPassword.test.tsx |   0
+| |  src/pages/auth/set_password/SetPassword.tsx      |  47 ++++++
+| |  src/pages/home/HomePage.tsx                      |   8 +-
+| |  src/pages/route_error/RouteErrorPage.css         |  15 ++
+| |  src/pages/route_error/RouteErrorPage.tsx         |   4 +-
+| |  src/shared/api/client.ts                         |  31 ++--
+| |  src/shared/api/error.ts                          |   2 +
+| |  src/shared/assets/icon/key.svg                   |  10 ++
+| |  src/shared/assets/icon/mail-open.svg             |   3 +
+| |  src/shared/ui/input/Input.test.tsx               |   2 +-
+| |  src/shared/ui/input/Input.tsx                    |   4 +-
+| |  40 files changed, 898 insertions(+), 179 deletions(-)
+| |
+| * commit bd3cc7005552b8b52717fd00a753de6f53696b52
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Wed Nov 11 13:42:32 2026 +0700
+| |
+| |     Add OTP and auth guard
+| |
+| |  src/pages/auth/register/RegisterPage.css      |  94 +++++
+| |  src/pages/auth/register/RegisterPage.test.tsx |   0
+| |  src/pages/auth/register/RegisterPage.tsx      | 412 ++++++++++++++++++++++
+| |  3 files changed, 506 insertions(+)
+| |
+* | commit db543a489fd6422dca372c00c70825340b12b5c9
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Mon Nov 9 12:42:54 2026 +0700
+| |
+| |     feat: basic deploy code
+| |
+| |  .gitignore                         |  2 +-
+| |  deploy/config.ts                   | 24 +++++++++++++++
+| |  deploy/main.ts                     | 29 ++++++++++++++++++
+| |  deploy/model.ts                    | 23 ++++++++++++++
+| |  deploy/request_analyzer.ts         | 17 +++++++++++
+| |  deploy/response_handlers.ts        | 23 ++++++++++++++
+| |  deploy/web_director.ts             | 22 +++++++++++++
+| |  package.json                       |  3 +-
+| |  src/pages/home/HomePage.tsx        | 56 +++++++++++++++++-----------------
+| |  src/shared/api/client.ts           |  2 +-
+| |  src/shared/ui/input/Input.test.tsx |  2 +-
+| |  tsconfig.deploy.json               | 23 ++++++++++++++
+| |  tsconfig.json                      |  3 +-
+| |  vite.config.ts                     |  1 -
+| |  14 files changed, 196 insertions(+), 34 deletions(-)
+| |
+* |   commit 6ea217b406706981b4161e3e2f2c800f189e0216
+|\ \  Merge: 4e53b07 63edc33
+| | | Author: Nah <huynguyenlequoc13@gmail.com>
+| | | Date:   Mon Nov 9 09:18:06 2026 +0700
+| | |
+| | |     Merge pull request #3 from RoundFloor/feature/login-page
+| | |
+| | |     Feature/login page
+| | |
+| * |   commit 63edc33e56b8ef2797f4cc2f47cad04341fb9c24
+| |\ \  Merge: 8eb8021 4e53b07
+| |/ /  Author: Nah <huynguyenlequoc13@gmail.com>
+|/| /   Date:   Mon Nov 9 09:17:53 2026 +0700
+| |/
+| |         Merge branch 'dev' into feature/login-page
+| |
+* | commit 4e53b07bdcdf65c93d247580e8c8091d740aecf6
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Sun Oct 25 13:10:16 2026 +0700
+| |
+| |     update: remove base path because of proxy changing
+| |
+| |  vite.config.ts | 3 +--
+| |  1 file changed, 1 insertion(+), 2 deletions(-)
+| |
+| * commit 8eb80213808927874d2cd35b4fd5d1c0ec4fc2c8
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Mon Nov 2 11:28:24 2026 +0700
+| |
+| |     add: implement login page's main functions
+| |
+| |  src/app/index.css                                |   7 +
+| |  src/app/layouts/auth/AuthLayout.css              |   6 +-
+| |  src/features/authentication/login/login.ts       |  17 +-
+| |  src/features/authentication/login/use-login.ts   |  15 --
+| |  src/features/authentication/register/register.ts |  20 +-
+| |  .../authentication/register/use-register.ts      |  14 -
+| |  src/pages/home/HomePage.tsx                      |   2 +-
+| |  src/pages/login/LoginPage.tsx                    | 264 ++++++++++++++++++-
+| |  src/shared/api/error.ts                          |   2 +-
+| |  src/shared/assets/icon/unhide.svg                |   2 +-
+| |  src/shared/ui/input/Input.module.css             |  27 +-
+| |  src/shared/ui/input/Input.tsx                    |  11 +-
+| |  src/shared/ui/input/index.ts                     |   2 +-
+| |  13 files changed, 334 insertions(+), 55 deletions(-)
+| |
+| *   commit 6fa93642414b600b7ac228f8a055bc8a4e77bae8
+| |\  Merge: 1578969 de7c612
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Mon Nov 2 10:34:49 2026 +0700
+| | |
+| | |     Merge branch 'feature/auth-api' into feature/login-page
+| | |
+| | * commit de7c6127e01be48c9e445ff1956c8f98fdc8d044
+| | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | Date:   Fri Oct 30 18:35:00 2026 +0700
+| | |
+| | |     add: login and register api
+| | |
+| | |  src/app/providers/query/index.ts                |   2 +-
+| | |  ...rovider.test.tsx => query-provider.test.tsx} |   2 +-
+| | |  .../{QueryProvider.tsx => query-provider.tsx}   |   0
+| | |  src/app/providers/router/index.ts               |   4 +-
+| | |  ...router.test.tsx => router-provider.test.tsx} |   2 +-
+| | |  .../router/{router.tsx => router-provider.tsx}  |  28 +++--
+| | |  src/entities/session/token-store.ts             |  19 ++++
+| | |  src/entities/session/types.ts                   |   7 ++
+| | |  src/features/authentication/login/login.ts      |  24 +++++
+| | |  src/features/authentication/login/type.ts       |  11 ++
+| | |  src/features/authentication/login/use-login.ts  |  15 +++
+| | |  .../authentication/register/register.ts         |  18 ++++
+| | |  src/features/authentication/register/type.ts    |   8 ++
+| | |  .../authentication/register/use-register.ts     |  14 +++
+| | |  src/shared/api/client.ts                        | 101 +++++++++++++++++-
+| | |  src/shared/api/error.ts                         |  32 ++++++
+| | |  16 files changed, 262 insertions(+), 25 deletions(-)
+| | |
+| * |   commit 1578969b8f86692723e7cf09de9754473e392ef9
+| |\ \  Merge: 63f6bc8 0fda99e
+| | | | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | | | Date:   Sun Nov 1 20:18:47 2026 +0700
+| | | |
+| | | |     Merge branch 'feature/share-component' into feature/login-page
+| | | |
+| * | | commit 63f6bc8901919680a830a4815a35b9adee11e439
+| | |/  Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| |/|   Date:   Sat Oct 31 16:17:22 2026 +0700
+| | |
+| | |       add: render auth layout
+| | |
+| | |    src/app/layouts/auth/AuthLayout.css      | 114 +++++++++++++++++++++++
+| | |    src/app/layouts/auth/AuthLayout.tsx      |  48 ++++++++++
+| | |    src/pages/login/LoginPage.tsx            |   6 ++
+| | |    src/shared/assets/image/sparkles.svg     |   3 +
+| | |    src/shared/assets/image/star.svg         |  10 ++
+| | |    src/shared/assets/image/study-poster.svg |  21 +++++
+| | |    6 files changed, 202 insertions(+)
+| | |
+| | | * commit 701d03b4657009f6dbfcaf767d6a2242219a736d
+| | | | Author: Tuan <tuan06nbk@gmail.com>
+| | | | Date:   Mon Nov 2 13:49:29 2026 +0700
+| | | |
+| | | |     feat: implement preference page phase 1 layout shell
+| | | |
+| | | |  package-lock.json                             | 39 ++++++++++---------
+| | | |  src/app/App.test.tsx                          |  8 ++--
+| | | |  src/app/index.css                             | 20 ++++++++++
+| | | |  src/app/providers/router/router.test.tsx      | 27 +++++++++++--
+| | | |  src/app/providers/router/router.tsx           |  6 ++-
+| | | |  src/pages/home/HomePage.tsx                   |  1 -
+| | | |  src/pages/preference/index.ts                 |  1 +
+| | | |  .../preference/ui/preference-page.module.css  | 35 +++++++++++++++++
+| | | |  .../preference/ui/preference-page.test.tsx    | 25 ++++++++++++
+| | | |  src/pages/preference/ui/preference-page.tsx   | 11 ++++++
+| | | |  10 files changed, 144 insertions(+), 29 deletions(-)
+| | | |
+| | | * commit 6bfd976d419537428e1506ccf3747dabb29fcfab
+| | | | Author: Tuan <tuan06nbk@gmail.com>
+| | | | Date:   Mon Nov 2 13:49:22 2026 +0700
+| | | |
+| | | |     docs: add preference page layout phase 1 specs
+| | | |
+| | | |  .specify/memory/constitution.md               | 268 ++++++-
+| | | |  .../2026-11-01-preference-page-layout/plan.md | 171 +++++
+| | | |  .../requirements.md                           | 273 +++++++
+| | | |  .../validation.md                             | 137 ++++
+| | | |  specs/CHANGELOG.md                            |  72 ++
+| | | |  specs/branches.md                             |  36 +
+| | | |  specs/des-preference-req.md                   |  69 ++
+| | | |  specs/mission.md                              |  13 +
+| | | |  specs/preference-page-design.md               | 205 ++++++
+| | | |  specs/preference-page-investigation.md        | 676 ++++++++++++++++++
+| | | |  specs/roadmap.md                              |  33 +
+| | | |  specs/skills/changelog-update.md              |  34 +
+| | | |  specs/tech-stack.md                           |  24 +
+| | | |  13 files changed, 1983 insertions(+), 28 deletions(-)
+| | | |
+| | | * commit 1480380f92bb4a04c9a2e0fa9525cbc876c73d70
+| | |/  Author: Tuan <tuan06nbk@gmail.com>
+| | |   Date:   Sun Nov 1 23:06:28 2026 +0700
+| | |
+| | |       Refactor code structure for improved readability and maintainability
+| | |
+| | |    src/app/layouts/auth/AuthLayout.css      | 114 +++++++++++++++++++++++
+| | |    src/app/layouts/auth/AuthLayout.tsx      |  48 ++++++++++
+| | |    src/app/providers/router/router.tsx      |  28 +++---
+| | |    src/pages/login/LoginPage.tsx            |   6 ++
+| | |    src/shared/assets/icon/unhide.svg        |   2 +-
+| | |    src/shared/assets/image/sparkles.svg     |   3 +
+| | |    src/shared/assets/image/star.svg         |  10 ++
+| | |    src/shared/assets/image/study-poster.svg |  21 +++++
+| | |    8 files changed, 217 insertions(+), 15 deletions(-)
+| | |
+| | * commit 0fda99ece5329eac9afc2434e06f3c02e0cc8f39
+| |/  Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| |   Date:   Sun Nov 1 10:58:58 2026 +0700
+| |
+| |       add: test for UI components
+| |
+| |    src/app/providers/router/router.tsx             | 28 +++++-----
+| |    src/pages/home/HomePage.tsx                     | 16 ++++--
+| |    src/shared/assets/icon/unhide.svg               |  2 +-
+| |    src/shared/ui/button/Button.test.tsx            | 43 +++++++++++++++
+| |    src/shared/ui/input/Input.test.tsx              | 54 +++++++++++++++++++
+| |    src/shared/ui/input/Input.tsx                   | 21 ++++----
+| |    src/shared/ui/select_card/SelectCard.test.tsx   | 29 ++++++++++
+| |    src/shared/ui/select_card/SelectCard.tsx        | 14 ++---
+| |    src/shared/ui/tick_box/TickBox.test.tsx         | 29 ++++++++++
+| |    src/shared/ui/tick_box/TickBox.tsx              | 16 +++---
+| |    .../ui/toggle_switch/ToggleSwitch.module.css    | 11 ++--
+| |    .../ui/toggle_switch/ToggleSwitch.test.tsx      | 30 +++++++++++
+| |    src/shared/ui/toggle_switch/ToggleSwitch.tsx    | 14 ++---
+| |    13 files changed, 252 insertions(+), 55 deletions(-)
+| |
+| * commit c07045a9740b1f848400acb926f20d20391b2f8b
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Thu Oct 29 10:35:27 2026 +0700
+| |
+| |     add: Common UI component
+| |
+| |  index.html                                       |   2 +-
+| |  package-lock.json                                |  84 +++++++-
+| |  package.json                                     |   4 +-
+| |  src/app/App.test.tsx                             |  11 ++
+| |  src/app/App.tsx                                  |  11 +-
+| |  src/app/index.css                                | 191 ++++++++++---------
+| |  src/app/main.test.tsx                            |  51 +++++
+| |  src/app/main.tsx                                 |  10 +-
+| |  src/app/providers/query/QueryProvider.test.tsx   |  51 +++++
+| |  src/app/providers/query/QueryProvider.tsx        |  23 +++
+| |  src/app/providers/query/index.ts                 |   1 +
+| |  src/app/providers/router/index.ts                |   2 +
+| |  src/app/providers/router/router.test.tsx         |  15 ++
+| |  src/app/providers/router/router.tsx              |  33 ++++
+| |  src/pages/home/HomePage.tsx                      |  23 +++
+| |  src/pages/route_error/RouteErrorPage.tsx         |  24 +++
+| |  src/shared/api/client.ts                         |  29 +++
+| |  src/shared/api/index.ts                          |   1 +
+| |  src/shared/assets/icon/camera.svg                |   3 +
+| |  src/shared/assets/icon/chat.svg                  |   3 +
+| |  src/shared/assets/icon/community.svg             |   3 +
+| |  src/shared/assets/icon/error.svg                 |   3 +
+| |  src/shared/assets/icon/friends.svg               |   3 +
+| |  src/shared/assets/icon/hide.svg                  |   3 +
+| |  src/shared/assets/icon/house.svg                 |   3 +
+| |  src/shared/assets/icon/library.svg               |   3 +
+| |  src/shared/assets/icon/lock.svg                  |   3 +
+| |  src/shared/assets/icon/mic.svg                   |   3 +
+| |  src/shared/assets/icon/profile.svg               |   3 +
+| |  src/shared/assets/icon/rooms.svg                 |   3 +
+| |  src/shared/assets/icon/screen-share.svg          |   3 +
+| |  src/shared/assets/icon/search.svg                |   3 +
+| |  src/shared/assets/icon/settings.svg              |   3 +
+| |  src/shared/assets/icon/success.svg               |   3 +
+| |  src/shared/assets/icon/tick.svg                  |   3 +
+| |  src/shared/assets/icon/timer.svg                 |   3 +
+| |  src/shared/assets/icon/unhide.svg                |   3 +
+| |  src/shared/assets/icon/upload.svg                |   3 +
+| |  src/shared/assets/icon/white_board.svg           |   3 +
+| |  src/shared/assets/image/logo.svg                 |  18 ++
+| |  src/shared/ui/button/Button.module.css           |  49 +++++
+| |  src/shared/ui/button/Button.tsx                  |  30 +++
+| |  src/shared/ui/button/index.ts                    |   1 +
+| |  src/shared/ui/input/Input.module.css             |  85 +++++++++
+| |  src/shared/ui/input/Input.tsx                    |  88 +++++++++
+| |  src/shared/ui/input/index.ts                     |   1 +
+| |  src/shared/ui/select_card/SelectCard.module.css  |  30 +++
+| |  src/shared/ui/select_card/SelectCard.tsx         |  34 ++++
+| |  src/shared/ui/select_card/index.ts               |   1 +
+| |  src/shared/ui/tick_box/TickBox.module.css        |  25 +++
+| |  src/shared/ui/tick_box/TickBox.tsx               |  31 +++
+| |  src/shared/ui/tick_box/index.ts                  |   1 +
+| |  .../ui/toggle_switch/ToggleSwitch.module.css     |  40 ++++
+| |  src/shared/ui/toggle_switch/ToggleSwitch.tsx     |  31 +++
+| |  src/shared/ui/toggle_switch/index.ts             |   1 +
+| |  vite.config.ts                                   |  11 +-
+| |  56 files changed, 1003 insertions(+), 103 deletions(-)
+| |
+| * commit 14e2b1ffbafa7fcd0805703b123937aaf9579f17
+| | Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| | Date:   Sun Oct 25 14:37:54 2026 +0700
+| |
+| |     fix: include missing project files
+| |
+| |  .specify/memory/constitution.md |  135 +---
+| |  package-lock.json               | 1212 ++++++++++++++++++++++++++++++++---
+| |  package.json                    |   12 +-
+| |  public/favicon.svg              |    1 -
+| |  public/icons.svg                |   24 -
+| |  src/App.css                     |  184 ------
+| |  src/App.tsx                     |  122 ----
+| |  src/app/App.tsx                 |   12 +
+| |  src/{ => app}/index.css         |    0
+| |  src/{ => app}/main.tsx          |    0
+| |  src/assets/hero.png             |  Bin 13057 -> 0 bytes
+| |  src/assets/react.svg            |    1 -
+| |  src/assets/vite.svg             |    1 -
+| |  src/test/setup.ts               |    7 +
+| |  vite.config.ts                  |   11 +-
+| |  15 files changed, 1194 insertions(+), 528 deletions(-)
+| |
+| * commit 98cfbe0ad79bdb5f5203a428e75ee79845f6057a
+|/  Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+|   Date:   Sun Oct 25 14:29:30 2026 +0700
+|
+|       add: Refactor structure and setup testing
+|
+|    docs/architecture/api-catalog.md           | 0
+|    docs/architecture/component-catalog.md     | 0
+|    docs/architecture/frontend-architecture.md | 0
+|    3 files changed, 0 insertions(+), 0 deletions(-)
+|
+* commit 3356b2988e617e3343146db091d16e91ca176a58
+| Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| Date:   Thu Oct 22 12:33:25 2026 +0700
+|
+|     add: Specify the project architecture approach and the naming conventions
+|
+|  .specify/memory/constitution.md | 190 +++++++++++++++++++++++++++++---------
+|  1 file changed, 145 insertions(+), 45 deletions(-)
+|
+*   commit 2b846585213f5e7d6350c9169ac3be3fbdac7532
+|\  Merge: bf789a3 8dccc65
+| | Author: Nah <huynguyenlequoc13@gmail.com>
+| | Date:   Tue Oct 20 13:28:41 2026 +0700
+| |
+| |     Merge pull request #2 from RoundFloor/fix/https-convert
+| |
+| |     hotfox: remove redundant backslash
+| |
+| * commit 8dccc65372ec1530aa10db037fdbf564d0c40363
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Tue Oct 20 13:27:18 2026 +0700
+| |
+| |     hotfox: remove redundant backslash
+| |
+| |  vite.config.ts | 2 +-
+| |  1 file changed, 1 insertion(+), 1 deletion(-)
+| |
+* | commit bf789a37dd5cc3bb6603466238a5cf7cd21d7619
+|\| Merge: c8d3315 650a335
+| | Author: Nah <huynguyenlequoc13@gmail.com>
+| | Date:   Tue Oct 20 13:19:54 2026 +0700
+| |
+| |     Merge pull request #1 from RoundFloor/fix/https-convert
+| |
+| |     Fix/https convert
+| |
+| * commit 650a335debaa2f407f323e94c8d1bd28bae4c587
+| | Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+| | Date:   Tue Oct 20 10:24:56 2026 +0700
+| |
+| |     update: base root of web
+| |
+| |  vite.config.ts | 3 ++-
+| |  1 file changed, 2 insertions(+), 1 deletion(-)
+| |
+| * commit c14980231bcb851eb0e5f3c185bfcf63d4419271
+|/  Author: wanderer2414 <huynguyenlequoc13@gmail.com>
+|   Date:   Tue Oct 20 09:56:48 2026 +0700
+|
+|       update: adapt http to https by add tls certs
+|
+|    vite.config.ts | 7 ++++++-
+|    1 file changed, 6 insertions(+), 1 deletion(-)
+|
+* commit c8d3315bcfe84b46d6ad2c8e015efd9cca3800fb
+| Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| Date:   Mon Oct 19 15:53:05 2026 +0700
+|
+|     chore: change server port
+|
+|  vite.config.ts | 4 ++++
+|  1 file changed, 4 insertions(+)
+|
+* commit e068d5e909e831a9ced931959963cbaedeac1fbb
+| Author: Nguyen Thanh An <ntan2419@apcs.fitus.edu.vn>
+| Date:   Mon Oct 19 11:26:17 2026 +0700
+|
+|     feat: initialize speckit and constitution
+|
+|  .agents/skills/speckit-analyze/SKILL.md       | 259 +++++++
+|  .agents/skills/speckit-checklist/SKILL.md     | 383 ++++++++++
+|  .agents/skills/speckit-clarify/SKILL.md       | 291 ++++++++
+|  .agents/skills/speckit-constitution/SKILL.md  | 179 +++++
+|  .agents/skills/speckit-converge/SKILL.md      | 283 +++++++
+|  .agents/skills/speckit-implement/SKILL.md     | 226 ++++++
+|  .agents/skills/speckit-plan/SKILL.md          | 166 +++++
+|  .agents/skills/speckit-specify/SKILL.md       | 345 +++++++++
+|  .agents/skills/speckit-tasks/SKILL.md         | 215 ++++++
+|  .agents/skills/speckit-taskstoissues/SKILL.md | 117 +++
+|  .specify/.gitignore                           |  14 +
+|  .specify/init-options.json                    |  10 +
+|  .specify/integration.json                     |  15 +
+|  .specify/integrations/agy.manifest.json       |  17 +
+|  .specify/integrations/speckit.manifest.json   |  19 +
+|  .specify/memory/.constitution-template.json   |   4 +
+|  .specify/memory/constitution.md               | 206 ++++++
+|  .specify/scripts/bash/check-prerequisites.sh  | 243 ++++++
+|  .specify/scripts/bash/common.sh               | 942 ++++++++++++++++++++++++
+|  .specify/scripts/bash/create-new-feature.sh   | 504 +++++++++++++
+|  .specify/scripts/bash/resolve-template.sh     |  57 ++
+|  .specify/scripts/bash/setup-plan.sh           |  85 +++
+|  .specify/scripts/bash/setup-tasks.sh          |  94 +++
+|  .specify/templates/checklist-template.md      |  45 ++
+|  .specify/templates/constitution-template.md   |  50 ++
+|  .specify/templates/plan-template.md           | 113 +++
+|  .specify/templates/spec-template.md           | 131 ++++
+|  .specify/templates/tasks-template.md          | 252 +++++++
+|  .specify/workflows/speckit/workflow.yml       |  74 ++
+|  .specify/workflows/workflow-registry.json     |  13 +
+|  30 files changed, 5352 insertions(+)
+|
+* commit 28a5a313df96d257d17de6a58f5d07acf5c0a3a2
+  Author: Wanderer2414 <huynguyenlequoc13@gmail.com>
+  Date:   Tue Oct 6 08:00:18 2026 +0700
+
+      Initial commit
+
+   .gitignore           |   24 +
+   README.md            |   78 ++
+   eslint.config.js     |   22 +
+   index.html           |   13 +
+   package-lock.json    | 2851 ++++++++++++++++++++++++++++++++++++++++++++++++
+   package.json         |   34 +
+   public/favicon.svg   |    1 +
+   public/icons.svg     |   24 +
+   src/App.css          |  184 ++++
+   src/App.tsx          |  122 +++
+   src/assets/hero.png  |  Bin 0 -> 13057 bytes
+   src/assets/react.svg |    1 +
+   src/assets/vite.svg  |    1 +
+   src/index.css        |  111 ++
+   src/main.tsx         |   10 +
+   tsconfig.app.json    |   26 +
+   tsconfig.json        |    7 +
+   tsconfig.node.json   |   23 +
+   vite.config.ts       |   11 +
+   19 files changed, 3543 insertions(+)
+\end{lstlisting}
+
+\end{document}

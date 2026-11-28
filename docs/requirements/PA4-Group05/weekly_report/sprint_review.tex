@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=red]{hyperref}
+\usepackage{url}
+\usepackage[top=.75in,left=.75in,right=.75in,bottom=1in]{geometry}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\else
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\fi
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+\lstset{style=mystyle}
+\graphicspath{{./}}
+\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{label=\arabic*.,leftmargin=*}
+\setlist[itemize]{leftmargin=*}
+\setlength{\headheight}{29.43912pt}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\coursename}{Introduction of Software Engineering}
+\newcommand{\reportname}{Studitopia}
+\newcommand{\reporttitle}{\href{https://github.com/RoundFloor/Studitopia.git}{Studitopia}}
+\newcommand{\studentname}{%
+Nguyen Thanh An (24125024)\\
+Nguyen Chi Bao (24125025)\\
+Tran Nguyen Khanh Binh (24125026)\\
+Tran Canh Anh Tuan (24125048)\\
+Nguyen Le Quoc Huy (24125100)
+}
+\newcommand{\teachername}{Ho Tuan Thanh, Nguyen Thi Minh Tuyen}
+\lhead{\reporttitle}
+\rhead{University of Science - VNUHCM\\
+\coursename}
+\newcommand{\leftfooter}{}
+\lfoot{\leftfooter}
+\begin{document}
+\pagenumbering{arabic}
+
+\section{Sprint 4 Review}
+
+\textbf{Performed by:} Nguyen Le Quoc Huy | \textbf{Edited by:} Nguyen Le Quoc Huy
+
+\subsection{Review scope}
+
+This review summarizes Sprint 4 using the 17/11 and 24/11 meeting reports and the real Git history of the Studitopia parent repository and its three implementation repositories: \texttt{\detokenize{src/frontend}}, \texttt{\detokenize{src/backend}}, and \texttt{\detokenize{src/database}}.
+
+The raw \texttt{\detokenize{git log --graph --all --stat}} exports are stored in four Markdown files:
+
+\begin{itemize}
+
+\item \texttt{\detokenize{git_log_studitopia.md}}
+
+\item \texttt{\detokenize{git_log_frontend.md}}
+
+\item \texttt{\detokenize{git_log_backend.md}}
+
+\item \texttt{\detokenize{git_log_database.md}}
+
+\end{itemize}
+
+The parent repository mainly records documentation and submodule-pointer changes, while the child repositories contain the implementation history. Parent history is included in both the exported log and the commit counts below.
+
+\subsection{Commit summary}
+
+Commit counts are normalized by author email because several members used multiple Git display names. The review count covers commits from 15/11/2026 to 28/11/2026 inclusive.
+
+\begin{longtable}{|p{0.24\linewidth}|p{0.24\linewidth}|p{0.24\linewidth}|p{0.24\linewidth}|}
+\hline
+Member & 15-28/11 commits & All-history commits & Main contribution \\
+\endfirsthead
+\hline
+Member & 15-28/11 commits & All-history commits & Main contribution \\
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{Nguyen Thanh An} & 21 & 56 & Frontend forum pages, post detail, area/subject pages, search/filter refresh, email verification loading, and forum routing fixes. \\
+\hline
+\textbf{Nguyen Chi Bao} & 6 & 10 & Test-case preparation for forum browsing, keyword search, and tag filtering; AI recommendation research; Component and Context diagram work. \\
+\hline
+\textbf{Tran Nguyen Khanh Binh} & 12 & 20 & Figma UI design, card variants, screen references, System diagram, use-case specification, and API updates. \\
+\hline
+\textbf{Tran Canh Anh Tuan} & 6 & 17 & Database schema, area/subject/post migrations, query-plan validation, relational schema update, deployment research, server work, and emergency bug handling. \\
+\hline
+\textbf{Nguyen Le Quoc Huy} & 33 & 140 & Backend APIs, database adapter tests, recommendation API contracts, repository documentation, integration support, and deployment-related fixes. \\
+\hline
+\textbf{Total} & \textbf{74} & \textbf{243} & Parent repository: 101 commits; frontend: 64; backend: 46; database: 32. \\
+\hline
+\end{longtable}
+
+\subsection{Work completed in Sprint 4}
+
+\begin{itemize}
+
+\item \textbf{Frontend:} the forum browsing flow was extended with post detail, area, and subject pages. Search/filter refresh, email verification loading, and inconsistent forum routing were addressed.
+
+\item \textbf{Backend:} forum browsing, area/subject/post retrieval, post viewing, keyword search, tag filtering, and recommend post/tag contract work were reported and partially landed.
+
+\item \textbf{Database:} forum/post/comment/tag schema work continued, with migrations for area, subject, and post tables and relevant-tag/post-filter tests added.
+
+\item \textbf{Testing:} backend and database suites cover registration, OTP support, token generation, database adapter mapping, post/tag/file functions, avatar handling, relevant tags, and HOT propagation. Frontend coverage remains mainly bootstrap, providers, router shell, and shared UI components.
+
+\item \textbf{Documentation/design:} UI screens, card variants, PA4 diagrams, use cases, functional requirements, non-functional requirements, and architecture documentation were updated.
+
+\end{itemize}
+
+\subsection{Analysis of lower direct-commit counts}
+
+\begin{itemize}
+
+\item \textbf{Nguyen Chi Bao} had fewer commits because most of his time was spent researching the AI model and recommendation input for the final Sprint. That work is exploratory and often produces decisions, test cases, and design notes before code, so it does not always appear as frequent commits.
+
+\item \textbf{Tran Nguyen Khanh Binh} had fewer code commits because his Sprint 4 workload focused on Figma UI design and written documentation. Design screens, workflow notes, and specification material are major deliverables but are not always committed to the implementation repositories.
+
+\item \textbf{Tran Canh Anh Tuan} had fewer commits because his time was split across technology research, deployment preparation, server work, and emergency bug handling. Those tasks are important for stability and delivery, but they are less continuous than feature coding and therefore create fewer commits.
+
+\item These lower counts should not be read as lower contribution: Sprint 4 depended on research, design, validation, and deployment decisions as much as on direct feature commits.
+
+\end{itemize}
+
+\subsection{Tested code and testing priority}
+
+\subsubsection{Code that already has executable test coverage}
+
+\begin{itemize}
+
+\item \textbf{Backend unit/integration tests:} registration controller/service, Postgres validation and registration methods, SQL statement/parameter mapping for tag/forum/post/file/account wrappers, email OTP dispatch, environment service, and security token/OTP generation.
+
+\item \textbf{Backend E2E:} full \texttt{\detokenize{POST /api/v1/auth/register}} flow, including success, duplicate credentials, and invalid payload cases.
+
+\item \textbf{Database integration tests:} registration, email/username validation, login, OTP storage and removal, account activation, session creation/check/logout, account/avatar reads, file CRUD, post/comment/vote behavior, tag queries, relevant tags, and HOT trigger propagation.
+
+\item \textbf{Frontend tests:} app bootstrap, query provider, router provider, and shared UI controls such as button, input, select card, tick box, and toggle switch.
+
+\item \textbf{Note:} several frontend auth/forum page test files exist but are empty placeholders; they should not be treated as real coverage.
+
+\end{itemize}
+
+\subsubsection{Code that should be tested first}
+
+\begin{enumerate}
+
+\item \textbf{Cross-layer forum/tag/search contract:} \texttt{\detokenize{/forum}}, \texttt{\detokenize{/post/relevant}}, \texttt{\detokenize{/tag/relevant}}, and \texttt{\detokenize{/tag}} need HTTP-level and frontend API-client tests for query parameters, include/exclude tags, pagination, status codes, and response DTOs. This seam should be tested first because both weekly reports identified search/pagination mismatch and unconfirmed recommendation contracts as active integration risks.
+
+\item \textbf{Auth/security gaps:} OTP request/activation/resend, login/logout, refresh-token reuse, and session invalidation should be tested before final delivery because these paths affect account security and some planned test files are absent or empty in the current source.
+
+\item \textbf{Schema migrations and query plans:} area/subject/post migrations should be applied and rolled back against a disposable database, and post-list/relevant-tag queries should have \texttt{\detokenize{EXPLAIN}} checks. This should be done early because schema and index regressions can silently damage the forum flows.
+
+\end{enumerate}
+
+\subsubsection{Code that can be tested at the final stage}
+
+\begin{itemize}
+
+\item Stable shared UI components and static page rendering can be rechecked at the final stage because they already have basic coverage and low integration risk.
+
+\item Documentation, diagrams, and generated reports only need consistency review; they do not need early automated testing.
+
+\item Performance, load, and capacity tests can wait until endpoints, representative data, and a production-like deployment are stable. Testing them now would produce unstable results because the search and recommendation contracts are still moving.
+
+\item AI recommendation behavior should be tested near the final stage because it depends on the recommendation input and model choice, which are still being researched.
+
+\item Features that are not implemented yet, such as friends, meeting rooms, notifications, full resource-library management, and complete create-post/comment/vote HTTP routes, should only receive integration tests after their implementations exist.
+
+\end{itemize}
+
+\subsection{Conclusion}
+
+Sprint 4 produced substantial progress in forum browsing, backend APIs, database behavior, frontend integration, UI design, and PA4 documentation. The main remaining risk is not the amount of work completed, but whether the unstable API contracts for search, pagination, and recommendation are validated across frontend and backend before final testing. The next testing effort should therefore focus first on the cross-layer contract, auth/security paths, and schema/query-plan validation, while deferring stable UI checks, performance tests, and AI-specific tests to the final stage.
+
+\subsection{Source}
+
+YouTube source: \href{https://www.youtube.com/watch?v=l0PKjKdXL-s}{Sprint 4 demo and review}
+
+\end{document}
